@@ -10,7 +10,10 @@ def index():
 
 @router.route('/parse', methods = ['GET','POST'])
 def parse():
+    print("Got request", request.args)
     url = request.args.get('url', None)
+    if url is None:
+        return "null"
     result = online_entity.get_content(url)
-    return result
+    return {'response':result}
     
