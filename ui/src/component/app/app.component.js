@@ -50,7 +50,7 @@ class App extends Component{
 function WithoutURL(props) {
     return (
         <div>
-            <h1>Hello World!</h1>
+            <h1>Project Idk</h1>
             <button type="button" onClick={props.onClick}>Return</button>
             <p>{props.text}</p>
         </div>
@@ -59,7 +59,7 @@ function WithoutURL(props) {
 function WithURL(props) {
     return (
         <div>
-            <h1>Hello World!</h1>
+            <h1>Project Idk</h1>
             <form>
                 <label>Url link</label>
                 <input type="text" name="url" onChange={props.onUrlChange}  value={props.value}></input>
