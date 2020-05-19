@@ -20,3 +20,16 @@ pip install -r ./webapp/requirements.txt
 cd ui
 npm install
 ```
+
+### Starting Server
+
+1. For starting backend server:
+```
+cd webapp
+python main.py
+```
+2. For starting ui server:
+```
+cd ui
+npm start
+```
