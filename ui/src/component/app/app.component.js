@@ -49,21 +49,41 @@ class App extends Component{
 
 function WithoutURL(props) {
     return (
-        <div>
-            <h1>Project Idk</h1>
-            <button type="button" onClick={props.onClick}>Return</button>
+        <div className="jumbotron mb3">
+            <h1 className="display-4 text-center">Project Viral News</h1>
+            <hr class="my-4"></hr>
+            <button type="button" className="btn btn-primary btn-lg " onClick={props.onClick}>Return</button>
             <p>{props.text}</p>
         </div>
     );
 }
 function WithURL(props) {
     return (
-        <div>
-            <h1>Project Idk</h1>
+        <div className="jumbotron mb3">
+            <h1 className="display-4 text-center">Project Viral News</h1>
+            <hr class="my-4"></hr>
             <form>
-                <label>Url link</label>
-                <input type="text" name="url" onChange={props.onUrlChange}  value={props.value}></input>
-                <button type="button" onClick={props.onClick}>Submit</button>
+            <div class="form-group">
+                <div class="input-group input-group-lg">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-lg">URL</span>
+                    </div>
+                    <input type="text" class="form-control" name="url" aria-label="URL" aria-describedby="inputGroup-sizing-sm" onChange={props.onUrlChange}  value={props.value}></input>
+                    {/* <input type="text" class="form-control" name="url" aria-label="URL" aria-describedby="inputGroup-sizing-sm" /> */}
+                </div>
+            </div>
+            <div className="row">
+            <div class="col-sm"></div>
+            <div class="col-sm">
+                <button className="btn btn-primary btn-lg btn-block" type="button" onClick={props.onClick}>
+                Submit
+            </button>
+            </div>
+            <div class="col-sm"></div> 
+            </div>
+                {/* <label>Url link</label>
+                <input type="text" name="url" onChange={props.onUrlChange}  value={props.value}></input>*/}
+                
             </form>
         </div>
     );

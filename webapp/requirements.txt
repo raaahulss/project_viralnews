@@ -1,2 +1,2 @@
-flask
-BeautifulSoup4
+flask==1.1.2
+BeautifulSoup4==4.9.1
