@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import InputTabs from './input_tabs.js';
-import {Grid, Row, Col} from 'react-bootstrap';
 
 class Input extends Component {
     constructor(props){
