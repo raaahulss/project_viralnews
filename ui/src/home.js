@@ -1,5 +1,15 @@
-import React from 'react'
+import React, {Component} from 'react'
+import Input from './components/input.js';
 
-export const Home = (props) => (
-  <p>This is where the About page goes</p>
-)
+class Home extends Component {
+  constructor(props){
+    super(props);
+  }
+  render() {
+    return (
+      <Input />
+    );
+  }
+}
+
+export default Home;

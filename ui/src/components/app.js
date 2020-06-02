@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { NavBar } from './navbar.js';
-import { Api } from '../api.js';
-import { Ml } from '../ml.js';
-import { About } from '../about.js';
-import Input from './input.js'; 
+import NavBar from './navbar.js';
+import Home from '../home.js';
+import Api from '../api.js';
+import Ml from '../ml.js';
+import About from '../about.js';
 
 
 class App extends Component {
@@ -19,9 +19,11 @@ class App extends Component {
             <Router>
               <NavBar />
                 <Switch>
-                  <Route exact path="/api" component={Api} />
-                  <Route exact path="/ml" component={Ml} />
-                  <Route exact path="/about" component={About} />
+                  <Route exact path="/" component={Home} />
+                  <Route path="/index" component={Home} />
+                  <Route path="/api" component={Api} />
+                  <Route path="/ml" component={Ml} />
+                  <Route path="/about" component={About} />
                 </Switch>
             </Router>
           </React.Fragment>
