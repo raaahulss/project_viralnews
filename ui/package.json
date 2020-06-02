@@ -17,7 +17,9 @@
   "author": "Gaurav Deshpande, Rahul Salla, Samuel Teplov, Fangzhou Xie",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^4.5.0",
     "react": "^16.13.1",
+    "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1"
   },
   "browserslist": {
