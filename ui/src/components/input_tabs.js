@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { Tab, Tabs } from 'react-bootstrap';
 import UrlForm from './url_form.js';
+import FileUpload from './file_upload.js';
 import '../css/input_tabs.css'
 
 class InputTabs extends Component {
@@ -18,7 +19,7 @@ class InputTabs extends Component {
             <UrlForm />
           </Tab>
           <Tab eventKey="file" title="Unpublished Article">
-            <div><p>Home</p></div>
+            <FileUpload />
           </Tab>
         </Tabs>
       </div>
