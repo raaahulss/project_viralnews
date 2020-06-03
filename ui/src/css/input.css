@@ -1,4 +1,13 @@
 .index-page-title {
-	background-color: #BBDCDB;
-	padding: 50px 50px 50px 50px;
+  padding: 50px 50px 50px 50px;
+  color: #E27D60;
+  text-align: center;
+  font-family: "Lucida Console", Courier, monospace;
+  font-style: oblique;
+  font-weight: 900;
+  font-size: 320%;
+}
+
+.input {
+  width: 100%;
 }

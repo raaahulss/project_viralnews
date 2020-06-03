@@ -8,8 +8,8 @@ class Input extends Component {
     }
     render() {
       return (
-        <div bg="light" expand="lg">
-          <h2 className="index-page-title">Learn more about the News you are reading!</h2>
+        <div className="input">
+          <h2 className="index-page-title">Learn more about the News <br /> you are reading!</h2>
           <InputTabs />
         </div>
       );

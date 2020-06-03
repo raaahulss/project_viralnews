@@ -1,4 +1,13 @@
 .url-form {
-	background-color: #EECEA4;
-	padding: 25px 50px 50px 0px;
+	padding-top: 50px;
+	padding-bottom: 25px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.btn-primary {
+	background-image: linear-gradient(to bottom right, #e27d60, #f0c4a8);
+	text-align: center;
+	font-size: 90%;
+	text-shadow: 
 }

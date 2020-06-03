@@ -1,4 +1,40 @@
 .index-page-tabs {
-	background-color: #BBDCCE;
-	padding: 25px 50px 50px 50px;
+	padding: 50px 50px 50px 50px;
+	/*background-image: radial-gradient(#b0e8d3, #85dcbb, #69c9bc);*/
+}
+
+#controlled-tab-example-tabpane-url {
+	/*background-image: radial-gradient(#b4e4cd, #69c9bc);*/
+	background-image: radial-gradient(#b0e8d3, #85dcbb, #69c9bc);
+	height: 150px;
+	border-style: solid;
+	border-color: #ffffff;
+}
+
+#controlled-tab-example-tabpane-file {
+	/*background-image: radial-gradient(#b4e4cd, #69c9bc);*/
+	background-image: radial-gradient(#b0e8d3, #85dcbb, #69c9bc);
+	height: 150px;
+	border-style: solid;
+	border-color: #ffffff;
+}
+
+#controlled-tab-example-tab-url {
+	width: 20%;
+	text-align: center;
+	color: #2f8378;
+	font-family: "Lucida Console", Courier, monospace;
+  	font-weight: 900;
+  	background-image: linear-gradient(to bottom right, #e27d60, #f0c4a8);
+  	background-blend-mode: lighten;
+}
+
+#controlled-tab-example-tab-file{
+	width: 30%;
+	text-align: center;
+	color: #2f8378;
+	font-family: "Lucida Console", Courier, monospace;
+  	font-weight: 900;
+  	background-image: linear-gradient(to bottom right, #e27d60, #f0c4a8);
+  	background-blend-mode: lighten;
 }

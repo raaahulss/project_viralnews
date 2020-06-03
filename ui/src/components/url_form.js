@@ -14,12 +14,12 @@ class UrlForm extends Component {
         <Form>
           <Container>
             <Row>
-              <Col md={8}>
+              <Col md={10}>
                 <Form.Group controlId="formBasicUrl">
                   <Form.Control type="email" placeholder="Enter a political news url..." />
                 </Form.Group>
               </Col>
-              <Col md={4}>
+              <Col md={2}>
                 <SubmitButton />
               </Col>
             </Row>

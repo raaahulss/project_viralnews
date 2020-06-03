@@ -15,10 +15,10 @@ class InputTabs extends Component {
     return (
       <div className="index-page-tabs">
         <Tabs id="controlled-tab-example" activeKey={this.state.key} onSelect={key => this.setState({ key })}>
-          <Tab eventKey="url" title="URL">
+          <Tab eventKey="url" title="URL" className="url_tab">
             <UrlForm />
           </Tab>
-          <Tab eventKey="file" title="Unpublished Article">
+          <Tab eventKey="file" title="Unpublished Article" className="file_tab">
             <FileUpload />
           </Tab>
         </Tabs>

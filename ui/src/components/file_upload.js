@@ -3,6 +3,7 @@
 import React, { Component } from "react";
 import Dropzone from './file_dropzone.js';
 import Progress from './file_progress.js';
+import { Container, Row, Col } from 'react-bootstrap';
 import '../css/file_upload.css'
 
 class FileUpload extends Component {
@@ -124,25 +125,33 @@ class FileUpload extends Component {
   render() {
     return (
       <div className="Upload">
-        <div className="Content">
-          <div>
-            <Dropzone
-              onFilesAdded={this.onFilesAdded}
-              disabled={this.state.uploading || this.state.successfullUploaded}
-            />
-          </div>
-          <div className="Files">
-            {this.state.files.map(file => {
-              return (
-                <div key={file.name} className="Row">
-                  <span className="Filename">{file.name}</span>
-                  {this.renderProgress(file)}
+        <Container>
+          <Row>
+            <Col md={10}>
+              <div className="Content">
+                <div>
+                  <Dropzone
+                    onFilesAdded={this.onFilesAdded}
+                    disabled={this.state.uploading || this.state.successfullUploaded}
+                  />
                 </div>
-              );
-            })}
-          </div>
-        </div>
-        <div className="Actions">{this.renderActions()}</div>
+                <div className="Files">
+                  {this.state.files.map(file => {
+                    return (
+                      <div key={file.name} className="Row">
+                        <span className="Filename">{file.name}</span>
+                        {this.renderProgress(file)}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </Col>
+            <Col md={2}>
+              <div className="Actions">{this.renderActions()}</div>
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }
