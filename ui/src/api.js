@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import Table from './components/table.js';
 
 class Api extends Component {

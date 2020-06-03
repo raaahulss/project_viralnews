@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import SubmitButton from './submit_button.js';
 import { Form } from 'react-bootstrap';
 import { Container, Row, Col } from 'react-bootstrap';
+import '../css/url_form.css'
 
 class UrlForm extends Component {
   constructor(props){
@@ -9,7 +10,7 @@ class UrlForm extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="url-form">
         <Form>
           <Container>
             <Row>
