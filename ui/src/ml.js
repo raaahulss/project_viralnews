@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import CarouselMl from './components/carousel.js';
 
 class Ml extends Component {
   constructor(props){
@@ -6,7 +7,12 @@ class Ml extends Component {
   }
   render() {
     return (
-      <p>This is where information on the ML models goes</p>
+      <div style={{display: 'flex',
+                  justifyContent:'center',
+                  alignItems:'center',
+                  height: '75vh'}}>
+                  <CarouselMl />
+      </div>
     );
   }
 }
