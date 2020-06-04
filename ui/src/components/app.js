@@ -5,6 +5,7 @@ import Home from '../home.js';
 import Api from '../api.js';
 import Ml from '../ml.js';
 import About from '../about.js';
+import Dashboard from '../dashboard.js';
 import '../css/app.css'
 
 
@@ -24,6 +25,7 @@ class App extends Component {
                 <Route path="/api" component={Api} />
                 <Route path="/ml" component={Ml} />
                 <Route path="/about" component={About} />
+                <Route path="/dashboard" component={Dashboard} />
               </Switch>
           </Router>
         </React.Fragment>
