@@ -16,13 +16,13 @@ class Dashboard extends Component {
         "public_opinion": 0.88
       },
       "details": {
-        "title": "abc",
-        "source": "def",
-        "authors": "ghi",
-        "published_date": "1591080596",
+        "title": "Trump invokes George Floyd's name while taking economic victory lap",
+        "source": "CNN",
+        "authors": "Maegan Vazquez",
+        "published_date": "3:30 PM ET, Fri June 5, 2020",
     //    "last_updated": "1591080599",
-        "content": "jkl",
-        "op_url": "www.mno.com"
+        "content": "President Donald Trump invoked George Floyd's name during a Friday bill signing ceremony touting the latest jobs report, which exceeded economists' expectations.",
+        "op_url": "https://www.cnn.com/2020/06/05/politics/donald-trump-george-floyd-rose-garden/index.html"
       },
       "metrics": {
         "retweets": 1234567,
@@ -40,7 +40,12 @@ class Dashboard extends Component {
     if (response.published === true) {
       return (
         <div>
-          <ArticleDetails />
+          <ArticleDetails title={response.details.title}
+                          url={response.details.op_url}
+                          source={response.details.source}
+                          author={response.details.authors}
+                          date={response.details.published_date}
+                          content={response.details.content}/>
           <Analysis models={response.models} published={response.published}/>
           <Statistics metrics={response.metrics}/>
         </div>

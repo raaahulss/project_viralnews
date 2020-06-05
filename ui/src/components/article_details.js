@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Jumbotron} from 'react-bootstrap';
 import '../css/article_details.css'
 
 class ArticleDetails extends Component {
@@ -8,7 +9,23 @@ class ArticleDetails extends Component {
   render() {
     return (
       <div id="article-details-main">
-        <h1>Article Details </h1>
+        <Jumbotron >
+          <h1>Article Title: {this.props.title}</h1>
+          <p>
+            Source: {this.props.source}
+            <br />
+            URL: {this.props.url}
+            <br />
+            Author: {this.props.author}
+            <br />
+            Date Published: {this.props.date}
+            <br />
+            Content: {this.props.content}
+
+          </p>
+
+
+        </Jumbotron>
       </div>
     );
   }

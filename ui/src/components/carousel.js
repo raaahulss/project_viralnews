@@ -8,15 +8,6 @@ import bias from './img/test_image_2.jpeg';
 import sentiment from './img/test_image_3.jpg';
 import '../css/carousel.css'
 
-/*
-const HoverText = styled.p`
-	color: #000;
-	:hover {
-		color: #ed1212;
-		cursor: pointer;
-	}
-`
-*/
 
 class CarouselMl extends Component {
   constructor(props){

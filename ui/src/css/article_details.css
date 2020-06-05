@@ -1,8 +1,21 @@
 #article-details-main {
-	text-align: center;
+	/*text-align: center;*/
 	width: 100%;
 	margin-top: 100px;
-	margin-bottom: 100px;
-	height: 700px;
-	background-color: #e27d60;
+	margin-bottom: 50px;
+	height: 300px;
+	/*background-color: #e27d60;*/
 }
+/*
+.jumbo_pad{
+  padding: 50px 50px 50px 50px;
+}
+
+.jumbotron{
+  margin-bottom: 2rem;
+  background-color: #E27D60;
+  border-radius: .3rem;
+  color: white;
+
+}
+*/
