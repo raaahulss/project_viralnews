@@ -1,0 +1,36 @@
+#body_par{
+  color: white;
+  text-align: center;
+  font-size: x-large;
+
+
+}
+
+
+.jumbo_pad{
+  padding: 150px 100px 100px 100px;
+}
+
+
+.api_title {
+  padding: 50px 50px 50px 50px;
+  color: #E27D60;
+  text-align: center;
+  font-family: "Lucida Console", Courier, monospace;
+  font-weight: 900;
+  font-size: 320%;
+}
+
+.card-img, .card-img-bottom, .card-img-top{
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 100%;
+  height: 60%;
+}
+
+.about_section{
+
+  padding-top: 250px;
+
+
+}
