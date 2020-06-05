@@ -15,7 +15,7 @@ class AboutCards extends Component {
   }
   render() {
     return (
-      <div className = "jumbo_pad">
+      <div className = "about_pad">
           <h2 className="api_title">About our Project</h2>
           <div id="body_par">
             <p>
