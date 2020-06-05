@@ -9,8 +9,6 @@ class Statistics extends Component {
     super(props);
   }
   render() {
-    console.log(this.props)
-    console.log(this.props.metrics.retweets)
     return (
       <div id="statistics-details-main">
         <Container>

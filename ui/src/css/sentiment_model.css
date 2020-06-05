@@ -1,25 +1,26 @@
-#number-card-main {
+#sentiment-card-main {
 	/*background-image: radial-gradient(#b0e8d3, #85dcbb, #69c9bc);*/
 	margin-bottom: 50px;
 	background-color: #69c9bc;
+	padding-left: 50px; 
 }
 
-#number-card-body {
+#sentiment-card-body {
 	height: 200px;
 	background-image: radial-gradient(#b0e8d3, #85dcbb, #69c9bc);
-	border-radius: 50%;
+	border-radius: 25px;
 }
 
-.card {
-	width: 300px;
+#sentiment-card {
+	width: 100%;
 	border-color: #69c9bc;
 }
 
-#number-card-title {
+#sentiment-card-title {
 	color: #e27d60;
 }
 
-#number-text {
+#sentiment-text {
 	margin-top: 30px;
     background: -webkit-linear-gradient(#e27d60, #f0c4a8);
     -webkit-background-clip: text;
@@ -28,4 +29,9 @@
     font-family: "American Typewriter", Helvetica, serif;
     /*background-image: linear-gradient(to bottom right, #e27d60, #f0c4a8);*/
   	background-blend-mode: lighten;
+}
+
+#sentiment-details-main {
+	width: 330px;
+	align-content: center;
 }

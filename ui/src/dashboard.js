@@ -11,9 +11,9 @@ class Dashboard extends Component {
     let response = {
       "published": true,
       "models": {
-        "viralness": 0.5,
-        "sentiment": 0.5,
-        "public_opinion": 0.5
+        "viralness": 0.77,
+        "sentiment": 0.23,
+        "public_opinion": 0.88
       },
       "details": {
         "title": "abc",
@@ -25,9 +25,9 @@ class Dashboard extends Component {
         "op_url": "www.mno.com"
       },
       "metrics": {
-        "retweets": 123,
-        "favourites": 456,
-        "responses": 789,
+        "retweets": 1234567,
+        "favourites": 1234567,
+        "responses": 1234567,
         "trending": "Yes",
         "first_tweet": "6:00 PM, June 05, 2020",
         "last_tweet": "8:45 PM, June 05, 2020"
@@ -37,13 +37,23 @@ class Dashboard extends Component {
         "error_code": "ERR_XYZ"
       }
     }
-    return (
-      <div>
-        <ArticleDetails />
-        <Analysis />
-        <Statistics metrics={response.metrics}/>
-      </div>
-    );
+    if (response.published === true) {
+      return (
+        <div>
+          <ArticleDetails />
+          <Analysis models={response.models} published={response.published}/>
+          <Statistics metrics={response.metrics}/>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <ArticleDetails />
+          <Analysis models={response.models} published={response.published}/>
+        </div>
+      );
+    }
+    
   }
 }
 
