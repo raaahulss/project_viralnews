@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Table from './components/table.js';
+import Jumbo from './components/jumbo.js';
 
 class Api extends Component {
   constructor(props){
@@ -7,7 +7,7 @@ class Api extends Component {
   }
   render() {
     return (
-      <Table />
+      <Jumbo />
     );
   }
 }
