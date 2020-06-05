@@ -1,2 +1,5 @@
 flask==1.1.2
 BeautifulSoup4==4.9.1
+tldextract
+validators
+newspaper3k
