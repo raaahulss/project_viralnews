@@ -1,14 +1,4 @@
-# pesudo model functions
-def viralness_model(news):
-    return 0.5
-
-
-def sentiment_model(news):
-    return 0.5
-
-
-def public_opinion_model(twitter):
-    return 0.5
+from ml_models import ViralnessModel, SentimentModel, PublicOpinionModel
 
 
 class Aggregator(object):
@@ -28,9 +18,12 @@ class Aggregator(object):
             self.error_code = 'none_news_object'
             return
 
+        viralness_model = ViralnessModel()
         self.models['viralness'] = viralness_model(self.news)
+        sentiment_model = SentimentModel()
         self.models['sentiment'] = sentiment_model(self.news)
         if self.published:
+            public_opinion_model = PublicOpinionModel()
             self.models['public_opinion'] = public_opinion_model(self.twitter)
 
 
