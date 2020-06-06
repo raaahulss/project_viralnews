@@ -1,6 +1,8 @@
 flask==1.1.2
 BeautifulSoup4==4.9.1
 jupyterlab==2.1.4
+tweepy
+pytest==5.3.5
 tldextract
 validators
 newspaper3k
