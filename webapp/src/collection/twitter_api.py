@@ -1,6 +1,7 @@
 import tweepy
 from tweepy import TweepError, RateLimitError
 from src.error import *
+import re
 class TwitterApi(object):
 
     def __init__(self, consumer_key, consumer_secret, access_token_key="", access_token_secret=""):
@@ -19,11 +20,10 @@ class TwitterApi(object):
         self._api = tweepy.API(auth_handler=auth)
 
     # @property
-    def get_tweet(self, tweet_id):
+    def get_tweet_from_id(self, tweet_id):
         """
         given a valid twitter url, the method returns the tweet as a tweepy
         status object
-        :error: malformed url, the application error "MAL_URL" is raised,
         :error: in case of limit reached "RT_LMT_RCHD" is raised
         :returns: tweet object 
         """
@@ -37,3 +37,19 @@ class TwitterApi(object):
             print("Error occured", str(e))
             raise ApplicationError(*error_list["FTCH_ERR"])
 
+    def get_tweet_from_url(self, tweet_url):
+        """
+        Given a tweet url this method identifies the tweet id from the url
+        and then queries get_tweet_from_id to return a tweet object.
+        The URL must be of the form https://twitter.com/[user]/status/[tweet_id]
+        or twitter.com/[user]/status/[tweet_id] 
+        :error: malformed url, the application error "MAL_URL" is raised,
+        :returns: tweet object
+        """
+        m = re.match("https://twitter.com/(.*)/status/(.*)", tweet_url)
+        n = re.match("twitter.com/(.*)/status/(.*)", tweet_url)
+        o = m or n
+        if type(tweet_url) is str and o and o.group(2).isnumeric():
+            return self.get_tweet_from_id(int(o.group(2)))
+        else:
+            raise ApplicationError(*error_list["MAL_URL"])

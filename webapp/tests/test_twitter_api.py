@@ -50,7 +50,7 @@ def test_given_valid_keys_returns_tweet():
                     constants.CONSUMER_SECRET, 
                     constants.ACCESS_TOKEN_KEY,
                     constants.ACCESS_TOKEN_SECRET)
-    tweet = api.get_tweet(TWEET_ID)
+    tweet = api.get_tweet_from_id(TWEET_ID)
     assert tweet.id == TWEET_ID
 
 
@@ -73,6 +73,41 @@ def test_given_invalid_keys_or_tweetid_return_error(token, secret, tweetid):
                     constants.CONSUMER_SECRET,
                     token,
                     secret)
-        api.get_tweet(tweetid)
+        api.get_tweet_from_id(tweetid)
 
 # TODO: Search for a way to rate limit exceed error check
+
+@pytest.mark.parametrize("url, id",
+[
+    ("https://twitter.com/nytimes/status/1267366725588185091",1267366725588185091),
+    ("twitter.com/nytimes/status/1267366725588185091",1267366725588185091),
+
+])
+def test_given_valid_url_returns_tweet_object(url, id):
+    """
+    given a valid tweet url, the method returns a tweet object
+    """
+    api = TwitterApi(constants.CONSUMER_KEY,
+                    constants.CONSUMER_SECRET, 
+                    constants.ACCESS_TOKEN_KEY,
+                    constants.ACCESS_TOKEN_SECRET)
+    tweet = api.get_tweet_from_url(url)
+    assert tweet.id == id
+    assert type(tweet) is tweepy.Status
+
+
+@pytest.mark.parametrize("url",
+[
+    "https://twitter.com/home",
+    "https://twitter.com/nytimes/status/1267366725588185091123123",
+    "twitter.com/nytimes/status/1267366725588185091123123",
+    "twitter.com/nytimes/status/asdasd",
+]
+)
+def test_given_invalid_url_or_tweet_returns_error(url):
+    api = TwitterApi(constants.CONSUMER_KEY,
+                    constants.CONSUMER_SECRET, 
+                    constants.ACCESS_TOKEN_KEY,
+                    constants.ACCESS_TOKEN_SECRET)
+    with pytest.raises(ApplicationError) as error:
+        api.get_tweet_from_url(url)
