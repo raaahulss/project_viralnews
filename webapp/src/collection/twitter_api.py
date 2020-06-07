@@ -37,19 +37,46 @@ class TwitterApi(object):
             print("Error occured", str(e))
             raise ApplicationError(*error_list["FTCH_ERR"])
 
+    def _is_valid_url(self, tweet_url):
+        m = re.match("https://twitter.com/(.*)/status/(.*)", tweet_url)
+        n = re.match("twitter.com/(.*)/status/(.*)", tweet_url)
+        o = m or n
+        return o
+    
     def get_tweet_from_url(self, tweet_url):
         """
         Given a tweet url this method identifies the tweet id from the url
         and then queries get_tweet_from_id to return a tweet object.
         The URL must be of the form https://twitter.com/[user]/status/[tweet_id]
         or twitter.com/[user]/status/[tweet_id] 
-        :error: malformed url, the application error "MAL_URL" is raised,
+        :error: malformed url, the application error "MAL_TWT_URL" is raised,
         :returns: tweet object
         """
-        m = re.match("https://twitter.com/(.*)/status/(.*)", tweet_url)
-        n = re.match("twitter.com/(.*)/status/(.*)", tweet_url)
-        o = m or n
+        o = self._is_valid_url(tweet_url)
         if type(tweet_url) is str and o and o.group(2).isnumeric():
             return self.get_tweet_from_id(int(o.group(2)))
         else:
-            raise ApplicationError(*error_list["MAL_URL"])
+            raise ApplicationError(*error_list["MAL_TWT_URL"])
+    
+    def get_original_tweet_from_url(self,tweet_url):
+        """
+        Given a url this method returns the source twitter object of the tweet.
+        That is, if a tweet A is a retweet, this method returns the source tweet B
+        for retweet A or if the tweet A is  source tweet, it returns tweet A.
+        The system is coded with assumption that there can be retweets or a retweet,
+        hence this method searches the original tweet by looping over and over
+        till the "in_reply_to_status_id_str" is None"
+        """
+        original_tweet, tweet = None, None
+        while(True):
+            # if tweet is None then this is first call and we use the tweet_url
+            if tweet is None:
+                tweet = self.get_tweet_from_url(tweet_url)
+                print("Got tweet with id", tweet.id)
+            print("Type of obj", type(tweet))
+            if tweet.in_reply_to_status_id_str is None:
+                original_tweet = tweet
+                break
+            else:
+                tweet = self.get_tweet_from_id(tweet.in_reply_to_status_id)
+        return original_tweet

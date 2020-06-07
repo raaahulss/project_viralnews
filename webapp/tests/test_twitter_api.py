@@ -104,6 +104,7 @@ def test_given_valid_url_returns_tweet_object(url, id):
     "twitter.com/nytimes/status/asdasd",
 ]
 )
+
 def test_given_invalid_url_or_tweet_returns_error(url):
     api = TwitterApi(constants.CONSUMER_KEY,
                     constants.CONSUMER_SECRET, 
@@ -111,3 +112,27 @@ def test_given_invalid_url_or_tweet_returns_error(url):
                     constants.ACCESS_TOKEN_SECRET)
     with pytest.raises(ApplicationError) as error:
         api.get_tweet_from_url(url)
+
+@pytest.mark.parametrize("url, id",
+[
+    # original retweet
+    ("https://twitter.com/nytimes/status/1269460338329739264",1269460338329739264),
+    # retweet to a tweet
+    ("https://twitter.com/nytimes/status/1269461026795393025",1269460338329739264),
+    ("https://twitter.com/nytimes/status/1269461451326062592",1269460338329739264),
+    # retweet to a retweet
+    ("https://twitter.com/nytimes/status/1269474208574308352",1269460338329739264),
+
+])
+def test_given_valid_url_returns_original_tweet(url, id):
+    """
+    given a valid tweet url, the method returns a tweet object
+    """
+    api = TwitterApi(constants.CONSUMER_KEY,
+                    constants.CONSUMER_SECRET, 
+                    constants.ACCESS_TOKEN_KEY,
+                    constants.ACCESS_TOKEN_SECRET)
+    tweet = api.get_original_tweet_from_url(url)
+    assert tweet.id == id
+    assert type(tweet) is tweepy.Status
+
