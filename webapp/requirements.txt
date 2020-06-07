@@ -5,9 +5,9 @@ tweepy==3.8.0
 rope==0.17.0
 pytest==5.3.5
 twarc==1.8.5
-tldextract
-validators
-newspaper3k
-torch
-torchvision
-python-docx
+tldextract=2.2.2
+validators=0.15.0
+newspaper3k=0.2.8
+torch=1.5.0
+torchvision=0.6.0
+python-docx=0.8.10
