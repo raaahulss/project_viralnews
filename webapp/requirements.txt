@@ -5,3 +5,4 @@ validators
 newspaper3k
 torch
 torchvision
+python-docx
