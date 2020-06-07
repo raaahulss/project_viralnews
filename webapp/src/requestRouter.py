@@ -8,7 +8,7 @@ router = Blueprint(__name__, "router")
 def index():
     return "Hello"
 
-@router.route('/parse', methods = ['GET','POST'])
+@router.route('/api/url', methods = ['GET','POST'])
 def parse():
     print("Got request", request.args)
     url = request.args.get('url', None)
