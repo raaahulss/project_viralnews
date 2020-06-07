@@ -6,7 +6,7 @@ from src.collection.twitter_api import TwitterApi
 from src.error import *
 
 
-TWEET_ID = 1267366725588185091
+TWEET_ID = 1269460338329739264
 
 def test_given_valid_keys_returns_valid_api():
     """
@@ -79,8 +79,8 @@ def test_given_invalid_keys_or_tweetid_return_error(token, secret, tweetid):
 
 @pytest.mark.parametrize("url, id",
 [
-    ("https://twitter.com/nytimes/status/1267366725588185091",1267366725588185091),
-    ("twitter.com/nytimes/status/1267366725588185091",1267366725588185091),
+    ("https://twitter.com/nytimes/status/1269460338329739264",1269460338329739264),
+    ("twitter.com/nytimes/status/1269460338329739264",1269460338329739264),
 
 ])
 def test_given_valid_url_returns_tweet_object(url, id):
@@ -99,8 +99,8 @@ def test_given_valid_url_returns_tweet_object(url, id):
 @pytest.mark.parametrize("url",
 [
     "https://twitter.com/home",
-    "https://twitter.com/nytimes/status/1267366725588185091123123",
-    "twitter.com/nytimes/status/1267366725588185091123123",
+    "https://twitter.com/nytimes/status/1269460338329739264123123",
+    "twitter.com/nytimes/status/1269460338329739264123123",
     "twitter.com/nytimes/status/asdasd",
 ]
 )
