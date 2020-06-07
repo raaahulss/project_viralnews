@@ -136,3 +136,20 @@ def test_given_valid_url_returns_original_tweet(url, id):
     assert tweet.id == id
     assert type(tweet) is tweepy.Status
 
+
+@pytest.mark.parametrize("url, target",
+[
+    ("https://twitter.com/home", None),
+    # ("twitter.com/nytimes/status/asdasd",None),
+    ("",None),
+    ("www.google.com",None),
+    # ("twitter.com/ny/times/status/asdasd",None),
+]
+)
+def test_given_invalid_url_return_obj(url, target):
+    api = TwitterApi(constants.CONSUMER_KEY,
+                    constants.CONSUMER_SECRET, 
+                    constants.ACCESS_TOKEN_KEY,
+                    constants.ACCESS_TOKEN_SECRET)
+    actual = api._is_valid_url(url)
+    assert actual is target
