@@ -15,6 +15,10 @@ class Aggregator(object):
         self.error_code = ''
 
     def run_models(self):
+        """
+        Run the given article via sentiment analysis model. If the article is published, run it via viralness model and
+        public opinion model too.
+        """
         if not self.news:
             self.error = True
             self.error_code = 'none_news_object'
