@@ -153,3 +153,17 @@ def test_given_invalid_url_return_obj(url, target):
                     constants.ACCESS_TOKEN_SECRET)
     actual = api._is_valid_url(url)
     assert actual is target
+
+
+def test_given_valid_tweet_url_get_replies():
+    api = TwitterApi(constants.CONSUMER_KEY,
+                    constants.CONSUMER_SECRET, 
+                    constants.ACCESS_TOKEN_KEY,
+                    constants.ACCESS_TOKEN_SECRET)
+    tweet = api.get_tweet_from_id(TWEET_ID)
+    # pytest.set_trace()
+    replies = api.get_replies(tweet, reply_limit=10, search_per_request=100)
+    # pytest.set_trace()
+    print(replies)
+    assert len(replies) == 10
+    

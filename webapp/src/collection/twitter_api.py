@@ -3,6 +3,7 @@ import re
 from tweepy import TweepError, RateLimitError
 from src.error import *
 import src.constants as cnst
+import pytest
 
 class TwitterApi(object):
 
@@ -129,19 +130,21 @@ class TwitterApi(object):
         tweet_id = tweet.id
         user_name = tweet.user.screen_name
         max_id = None
-        replies = tweepy.Cursor(api.search, 
+        replies = tweepy.Cursor(self._api.search, count=search_per_request,
                             q='to:{}'.format(user_name),
                             since_id=tweet_id, max_id=max_id,
-                            tweet_mode='extended').items(reply_limit)
+                            tweet_mode='extended').items()
         
         try:
             for reply in replies:
                 if(reply.in_reply_to_status_id == tweet_id):
-                    reply_tweet_ids.append(id)
-                if len(reply_tweet_ids) == reply_limit:
+                    # pytest.set_trace()
+                    reply_tweet_ids_list.append(reply.id)
+                if len(reply_tweet_ids_list) == reply_limit:
                     break
                 max_id = reply.id
-            return reply_tweet_ids
+            # pytest.set_trace()
+            return reply_tweet_ids_list
         except tweepy.TweepError as e:
             raise ApplicationError(*error_list["LMT_RCHD_ERROR"])
 
