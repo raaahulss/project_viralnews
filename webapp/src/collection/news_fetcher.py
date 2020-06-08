@@ -2,7 +2,7 @@ import tldextract
 import validators
 from newspaper import Article, ArticleException
 from datetime import datetime
-
+from src.error import ApplicationError, error_list
 # class DataFetcher(object):
 #     """Fetch data from supported domains
 #     Attributes:
@@ -107,25 +107,7 @@ from datetime import datetime
 #                                  for element in tree.xpath('//div[@class="article-body"]/div/section/div')])
 #         self.date = tree.xpath('//meta[@name="last_updated_date"]/@content')[0]
 
-supported_sources=('twitter', 'nytimes', 'washingtonpost', 'wsj', 'cnn', 'nbcnews')
 
-
-def parse_url(url):
-    """
-    Parse a given url to determine whether it is a valid url and whether the source is supported.
-    :param url: A url given by user.
-    :return: Return error code if the source is not supported or invalid. Return the source otherwise.
-    """
-    if not validators.url(url):
-        print('invalid url')
-        return -1
-
-    _, source, _ = tldextract.extract(url)
-    if tldextract.extract(url).domain in supported_sources:
-        return source
-    else:
-        print('unsupported source')
-        return -1   # Error codes are not defined yet, use -1 for convenience
 
 
 class NewsObject(object):
@@ -167,6 +149,16 @@ class NewsObject(object):
                             'content': self.content,
                             'url': self.url}}
 
+def get_news(url, published=False):
+    try:
+        news = NewsObject(url)
+        news.fetch()
+        # expecting that in case of error you throw error
+        if news.error:
+            raise ApplicationError(*error_list["UNBL_FTCH_NEWS"])
+        return (news, None)
+    except ApplicationError as err:
+        return (None, err)
 
 if __name__ == '__main__':
     # url = 'https://www.nytimes.com/2020/05/30/us/george-floyd-minneapolis.html?action=click&module=Spotlight&pgtype=Homepage'

@@ -9,12 +9,15 @@ router = Blueprint(__name__, "router")
 def index():
     return "Hello"
 
-@router.route('/api/url', methods = ['GET','POST'])
+@router.route('/api/url', methods = ['POST'])
 def parse():
     print("Got request", request.args)
     url = request.args.get('url', None)
-    processed_data = preprocessor(url)
+    processed_data = preprocessor(url, published=True)
     if url is None:
         return App
     result = online_entity.get_content(url)
     return {'response':result}
+
+# @router.route('/api/file', methods = ['POST'])
+

@@ -4,6 +4,8 @@ from tweepy import TweepError, RateLimitError
 from src.error import *
 import src.constants as cnst
 import pytest
+import requests
+
 
 class TwitterApi(object):
 
@@ -149,12 +151,15 @@ class TwitterApi(object):
             raise ApplicationError(*error_list["LMT_RCHD_ERROR"])
 
 class Tweet:
-    def __init__(self, tweet_id,retweet_count, favorite_count, responses):
-        self.tweet_id = tweepy
-        self.retweet_count = retweet_count
-        self.favorite_count = favorite_count
+    def __init__(self, tweet, responses):
+        self.tweet_id = tweet.id
+        self.retweet_count = tweet.retweet_count
+        self.favorite_count = tweet.favorite_count
         self.responses = responses
         self.responses_count = len(responses)
+        self.embeded_url = tweet.entities["urls"][0]["url"]
+        resp = requests.get(tweet.entities["urls"][0]["url"])
+        self.expanded_url = resp.url
         # self.trending = trending
     def to_dict(self):
         return {"retweet_count": self.retweet_count,
@@ -174,9 +179,9 @@ def get_tweet(tweet_url):
                     cnst.ACCESS_TOKEN_KEY, cnst.ACCESS_TOKEN_SECRET)
         tweet = api.get_tweet_from_url(url)
         responses = api.get_replies(tweet)
-        return (Tweet(tweet.id, tweet.retweet_count, tweet.favorite_count, responses ), None)
-    except ApplicationError as e:
-        return (None, e)
+        return (Tweet(tweet, responses ), None)
+    except ApplicationError as err:
+        return (None, err)
     
 
         
