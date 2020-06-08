@@ -1,7 +1,9 @@
 import tweepy
+import re
 from tweepy import TweepError, RateLimitError
 from src.error import *
-import re
+import src.constants as cnst
+
 class TwitterApi(object):
 
     def __init__(self, consumer_key, consumer_secret, access_token_key="", access_token_secret=""):
@@ -80,3 +82,98 @@ class TwitterApi(object):
             else:
                 tweet = self.get_tweet_from_id(tweet.in_reply_to_status_id)
         return original_tweet
+
+    def get_replies(self, tweet, reply_limit=200, search_per_request=100):
+        """
+        This method takes in the tweet object and returns replies
+        for the tweet, the count of replies are defined by reply_limit.
+        :error: AssertionError if the tweet object is not of type Tweepy.status
+        :error: Application Error if the limit for the twitter API is reached.
+        """
+        assert type(tweet) == tweepy.Status
+        reply_tweet_ids_list = list()
+        # get replies on the original tweet
+        self.get_reply_ids(tweet, reply_limit, search_per_request, reply_tweet_ids_list)
+        
+        # in case the list is not big enough get replies to the reply tweets
+        # until limit is reached. We do not go deeper that level 1 tweet.
+        if len(reply_tweet_ids_list) < reply_limit:
+            temp_list = reply_tweet_ids_list.copy()
+            for tweet_id in temp_list:
+                tweet = api.get_tweet_from_id(tweet_id)
+                self.get_reply_ids(tweet, reply_limit, search_per_request, reply_tweet_ids_list)
+                if len(reply_tweet_ids_list) < reply_limit:
+                    break
+        
+        # get comments from the list
+        replies = list()
+        for reply_id in reply_tweet_ids_list:
+            tweet = self.get_tweet_from_id(reply_id)
+            try:
+                replies.append(tweet.retweeted_status.full_text)
+            except AttributeError:  # Not a Retweet should never occur
+                replies.append(tweet.full_text)
+        return replies
+
+
+    def get_reply_ids(self, tweet, reply_limit, search_per_request, reply_tweet_ids_list):
+        """
+        given a tweet this method returns list of reply tweet ids for the given tweet.
+        The upper limit for the tweets returned is defined by reply_limit
+        :error: Applicaiton Error when limit is reached.
+        :error: Assertion Error if the reply_tweet_ids_list is None or not a list
+        """
+        # reply_tweet_ids = list()
+        assert reply_tweet_ids_list is not None
+        assert type(reply_tweet_ids_list) == list
+        tweet_id = tweet.id
+        user_name = tweet.user.screen_name
+        max_id = None
+        replies = tweepy.Cursor(api.search, 
+                            q='to:{}'.format(user_name),
+                            since_id=tweet_id, max_id=max_id,
+                            tweet_mode='extended').items(reply_limit)
+        
+        try:
+            for reply in replies:
+                if(reply.in_reply_to_status_id == tweet_id):
+                    reply_tweet_ids.append(id)
+                if len(reply_tweet_ids) == reply_limit:
+                    break
+                max_id = reply.id
+            return reply_tweet_ids
+        except tweepy.TweepError as e:
+            raise ApplicationError(*error_list["LMT_RCHD_ERROR"])
+
+class Tweet:
+    def __init__(self, tweet_id,retweet_count, favorite_count, responses):
+        self.tweet_id = tweepy
+        self.retweet_count = retweet_count
+        self.favorite_count = favorite_count
+        self.responses = responses
+        self.responses_count = len(responses)
+        # self.trending = trending
+    def to_dict(self):
+        return {"retweet_count": self.retweet_count,
+                "favorite_count": self.favorite_count,
+                "responses_count": self.responses_count,}
+                # "trending": self.trending}
+
+def get_tweet(tweet_url):
+    """
+    given a twitter url this method returns tweet object and error object
+    if the method recieves an error tweet object is set to None
+    if things are processor successfully it returns tweet object and error object
+    as None
+    """
+    try:
+        api = TwitterApi(cnst.CONSUMER_KEY, cnst.CONSUMER_SECRET,
+                    cnst.ACCESS_TOKEN_KEY, cnst.ACCESS_TOKEN_SECRET)
+        tweet = api.get_tweet_from_url(url)
+        responses = api.get_replies(tweet)
+        return (Tweet(tweet.id, tweet.retweet_count, tweet.favorite_count, responses ), None)
+    except ApplicationError as e:
+        return (None, e)
+    
+
+        
