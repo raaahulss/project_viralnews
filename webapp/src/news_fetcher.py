@@ -111,13 +111,10 @@ supported_sources=('twitter', 'nytimes', 'washingtonpost', 'wsj', 'cnn', 'nbcnew
 
 
 def parse_url(url):
-    """Parse a given url to determine whether it is a valid url and whether the source is supported.
-
-    Args:
-        url: A url given by user.
-
-    Returns:
-        Return error code if the source is not supported or invalid. Return the source otherwise.
+    """
+    Parse a given url to determine whether it is a valid url and whether the source is supported.
+    :param url: A url given by user.
+    :return: Return error code if the source is not supported or invalid. Return the source otherwise.
     """
     if not validators.url(url):
         print('invalid url')
@@ -132,9 +129,6 @@ def parse_url(url):
 
 
 class NewsObject(object):
-    """News article base class
-
-    """
     def __init__(self, url):
         self.url = url
         self.title = ''
@@ -145,6 +139,9 @@ class NewsObject(object):
         self.error_code = ''
 
     def fetch(self):
+        """
+        Given a news article url, fetch its metadata and content.
+        """
         article = Article(url)
         try:
             article.download()
@@ -158,6 +155,10 @@ class NewsObject(object):
             self.error_code = "connection_error"
 
     def to_dict(self):
+        """
+        Transform this news object to a dict.
+        :return: A dict of related member variables.
+        """
         return {'metadata': {'error': self.error,
                              'error_code': self.error_code},
                 'details': {'title': self.title,
