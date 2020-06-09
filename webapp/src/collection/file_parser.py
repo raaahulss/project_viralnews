@@ -31,8 +31,13 @@ class WordFile(object):
         self.body = []
 
 
-if __name__ == '__main__':
+def get_file(path):
     fp = FileParser()
-    file = fp.parse('./Test.docx')
-    print(file.title)
-    print(file.body)
+    word_file = fp.parse(path)
+    return word_file
+
+
+if __name__ == '__main__':
+    word_file = get_file('./Test.docx')
+    print(word_file.title)
+    print(word_file.body)
