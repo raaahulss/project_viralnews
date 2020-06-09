@@ -136,6 +136,14 @@ def test_given_valid_url_returns_original_tweet(url, id):
     assert tweet.id == id
     assert type(tweet) is tweepy.Status
 
+def test_given_expired_tweet_returns_error():
+    api = TwitterApi(constants.CONSUMER_KEY,
+                    constants.CONSUMER_SECRET, 
+                    constants.ACCESS_TOKEN_KEY,
+                    constants.ACCESS_TOKEN_SECRET)
+    with pytest.raises(ApplicationError) as error:
+        
+        api.get_original_tweet_from_url("https://twitter.com/Reuters/status/1267219302769278976")
 
 @pytest.mark.parametrize("url, target",
 [

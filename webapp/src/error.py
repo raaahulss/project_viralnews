@@ -6,7 +6,8 @@ error_list = {
     "MAL_TWT_URL" : ["MAL_TWT_URL", "The twitter url given to the application does not contain tweet id"],
     "MAL_URL" : ["MAL_URL", "Invalid Request URL."],
     "UNSUP_SRC" : ["UNSUP_SRC", "The provided url is not supported."],
-    "UNBL_FTCH_NEWS" : ["UNBL_FTCH_NEWS", "Unable to fetch news article."]
+    "UNBL_FTCH_NEWS" : ["UNBL_FTCH_NEWS", "Unable to fetch news article."],
+    "NO_EMBD_URL" : ["NO_EMBD_URL","The tweet does not have an embeded URL."]
     }
 
 

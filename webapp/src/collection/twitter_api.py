@@ -71,6 +71,9 @@ class TwitterApi(object):
         The system is coded with assumption that there can be retweets or a retweet,
         hence this method searches the original tweet by looping over and over
         till the "in_reply_to_status_id_str" is None"
+        :error: Application error if there is no embeded url
+        :error: Application error if the original tweet is older than 7 or 30 days,
+                depending on the end
         """
         original_tweet, tweet = None, None
         while(True):
@@ -84,6 +87,9 @@ class TwitterApi(object):
                 break
             else:
                 tweet = self.get_tweet_from_id(tweet.in_reply_to_status_id)
+        if len(original_tweet.entities["urls"]) == 0:
+            pytest.set_trace()
+            raise ApplicationError(*error_list["NO_EMBD_URL"])
         return original_tweet
 
     def get_replies(self, tweet, reply_limit=200, search_per_request=100):
@@ -169,7 +175,7 @@ class Tweet:
 
 def get_tweet(tweet_url):
     """
-    given a twitter url this method returns tweet object and error object
+    given a twitter url this method returns original tweet object and error object
     if the method recieves an error tweet object is set to None
     if things are processor successfully it returns tweet object and error object
     as None
@@ -177,10 +183,12 @@ def get_tweet(tweet_url):
     try:
         api = TwitterApi(cnst.CONSUMER_KEY, cnst.CONSUMER_SECRET,
                     cnst.ACCESS_TOKEN_KEY, cnst.ACCESS_TOKEN_SECRET)
-        tweet = api.get_tweet_from_url(url)
-        responses = api.get_replies(tweet, reply_limit=cnst.MAX_REPLY,
+        # tweet = api.get_tweet_from_url(url)
+        original_tweet = api.get_original_tweet_from_url(url)
+        
+        responses = api.get_replies(original_tweet, reply_limit=cnst.MAX_REPLY,
                     search_per_request=cnst.SEARCH_PER_REQUEST)
-        return (Tweet(tweet, responses ), None)
+        return (Tweet(original_tweet, responses ), None)
     except ApplicationError as err:
         return (None, err)
     
