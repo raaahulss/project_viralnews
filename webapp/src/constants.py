@@ -9,3 +9,7 @@ ACCESS_TOKEN_SECRET='wYdkYaNCakb7sX5PnHjF1u0oJc7Y73iijqbJ4VeB4yyEd'
 WHITE_LIST=[
     {"url":"https://www.nytimes.com/","twitter_user_id":807095},
 ]
+
+MAX_REPLY=200
+# 100 for standard twitter api and 500 for premium
+SEARCH_PER_REQUEST=100

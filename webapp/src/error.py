@@ -20,4 +20,4 @@ class ApplicationError(Exception):
         return "Application Error {} : {}".format(self._code, self._message)
     
     def to_dict():
-        pass
+        return {"error": True, "error_code": self._code, "error_msg" : self._message}

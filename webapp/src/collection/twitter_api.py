@@ -178,7 +178,8 @@ def get_tweet(tweet_url):
         api = TwitterApi(cnst.CONSUMER_KEY, cnst.CONSUMER_SECRET,
                     cnst.ACCESS_TOKEN_KEY, cnst.ACCESS_TOKEN_SECRET)
         tweet = api.get_tweet_from_url(url)
-        responses = api.get_replies(tweet)
+        responses = api.get_replies(tweet, reply_limit=cnst.MAX_REPLY,
+                    search_per_request=cnst.SEARCH_PER_REQUEST)
         return (Tweet(tweet, responses ), None)
     except ApplicationError as err:
         return (None, err)
