@@ -108,8 +108,6 @@ from src.error import ApplicationError, error_list
 #         self.date = tree.xpath('//meta[@name="last_updated_date"]/@content')[0]
 
 
-
-
 class NewsObject(object):
     def __init__(self, url):
         self.url = url
@@ -149,6 +147,7 @@ class NewsObject(object):
                             'content': self.content,
                             'url': self.url}}
 
+
 def get_news(url, published=False):
     try:
         news = NewsObject(url)
@@ -159,6 +158,7 @@ def get_news(url, published=False):
         return (news, None)
     except ApplicationError as err:
         return (None, err)
+
 
 if __name__ == '__main__':
     # url = 'https://www.nytimes.com/2020/05/30/us/george-floyd-minneapolis.html?action=click&module=Spotlight&pgtype=Homepage'
