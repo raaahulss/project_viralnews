@@ -18,7 +18,7 @@ class FileParser(object):
             if paragraph.style.name == 'Title':
                 word_file.title = paragraph.text
             else:
-                word_file.body.append(paragraph.text)
+                word_file.content.append(paragraph.text)
         return word_file
 
 
@@ -28,7 +28,7 @@ class WordFile(object):
     """
     def __init__(self):
         self.title = ''
-        self.body = []
+        self.content = []
 
 
 def get_file(path):
@@ -40,4 +40,4 @@ def get_file(path):
 if __name__ == '__main__':
     word_file = get_file('./Test.docx')
     print(word_file.title)
-    print(word_file.body)
+    print(word_file.content)
