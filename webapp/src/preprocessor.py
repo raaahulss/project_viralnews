@@ -2,12 +2,14 @@ import tldextract
 import validators
 import pytest
 from src.collection.twitter_api import get_tweet
-from src.collection.news_fetcher import get_news
+from src.collection.news_fetcher import get_news_from_url
+from src.collection.news_fetcher import get_news_from_file
 from src.error import ApplicationError, error_list
 
 supported_sources=('twitter', 'nytimes', 'washingtonpost', 'wsj', 'cnn', 'nbcnews')
 
-def preprocessor(url, publi):
+
+def preprocessor(url, published):
     """
     Given a url, the preprocessor identifies the type of the url and generates
     news article data and/or twitter data. 
@@ -15,27 +17,32 @@ def preprocessor(url, publi):
     :returns: Returns newsObject, tweeter object and error object
     """
     news, tweet, error = None, None, None
-    source = ""
-    if url is not None and not url.startswith("https://"):
-        url = "https://" + url
-       
-    try:
-        source = is_whitelisted_url(url)
-    except ApplicationError as error:
-        return (None, None, error)
-    
-    # if the 
-    if source == "twitter":
-        tweet, error = get_tweet(url)
+    # article is published
+    if published:
+        source = ""
+        if url is not None and not url.startswith("https://"):
+            url = "https://" + url
+
+        try:
+            source = is_whitelisted_url(url)
+        except ApplicationError as error:
+            return None, None, error
+
+        # if the url is from twitter
+        if source == "twitter":
+            tweet, error = get_tweet(url)
+            if error is not None:
+                return news, tweet, error
+        # in case
+        news, error = get_news_from_url(tweet.expanded_url if source is "twitter" else url)
+
         if error is not None:
-            return (news, tweet, error)
-    # in case
-    news, error = get_news(tweet.expanded_url if source is "twitter" else url)
-    
-    if error is not None:
-        return (news, tweet, error)
-    
-    return (news, tweet, error)
+            return news, tweet, error
+        return news, tweet, error
+    # article is not published
+    else:
+        news, error = get_news_from_file(url)
+        return news, tweet, error
 
     # code for news media outlet.
 
