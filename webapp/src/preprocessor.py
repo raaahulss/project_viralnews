@@ -11,7 +11,8 @@ supported_sources=('twitter', 'nytimes', 'washingtonpost', 'wsj', 'cnn', 'nbcnew
 
 def preprocessor(url, published):
     """
-    Given a url, the preprocessor identifies the type of the url and generates
+    Given a url(a web url or a file object), the preprocessor identifies 
+    the type of the url and generates
     news article data and/or twitter data. 
     
     :returns: Returns newsObject, tweeter object and error object
