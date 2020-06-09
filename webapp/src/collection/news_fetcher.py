@@ -1,8 +1,9 @@
-import tldextract
-import validators
+import docx
 from newspaper import Article, ArticleException
 from datetime import datetime
 from src.error import ApplicationError, error_list
+
+
 # class DataFetcher(object):
 #     """Fetch data from supported domains
 #     Attributes:
@@ -108,8 +109,6 @@ from src.error import ApplicationError, error_list
 #         self.date = tree.xpath('//meta[@name="last_updated_date"]/@content')[0]
 
 
-
-
 class NewsObject(object):
     def __init__(self, url):
         self.url = url
@@ -120,11 +119,11 @@ class NewsObject(object):
         self.error = False
         self.error_code = ''
 
-    def fetch(self):
+    def fetch_from_url(self):
         """
         Given a news article url, fetch its metadata and content.
         """
-        article = Article(url)
+        article = Article(self.url)
         try:
             article.download()
             article.parse()
@@ -135,6 +134,21 @@ class NewsObject(object):
         except ArticleException:
             self.error = True
             self.error_code = "connection_error"
+
+    def fetch_from_file(self):
+        """
+        Parse a file to extract its title and body
+        :param file_path: path of a file
+        :return: title and body of the file
+        """
+        doc = docx.Document(self.url)
+        content = []
+        for paragraph in doc.paragraphs:
+            if paragraph.style.name == 'Title':
+                self.title = paragraph.text
+            else:
+                content.append(paragraph.text)
+        self.content = ' '.join(content)
 
     def to_dict(self):
         """
@@ -149,42 +163,25 @@ class NewsObject(object):
                             'content': self.content,
                             'url': self.url}}
 
-def get_news(url, published=False):
+
+def get_news_from_file(path):
+    try:
+        word_file = NewsObject(path)
+        word_file.fetch_from_file()
+        if word_file.error:
+            raise ApplicationError(*error_list["UNBL_FTCH_NEWS"])
+        return word_file, None
+    except ApplicationError as err:
+        return None, err
+
+
+def get_news_from_url(url):
     try:
         news = NewsObject(url)
-        news.fetch()
+        news.fetch_from_url()
         # expecting that in case of error you throw error
         if news.error:
             raise ApplicationError(*error_list["UNBL_FTCH_NEWS"])
-        return (news, None)
+        return news, None
     except ApplicationError as err:
-        return (None, err)
-
-if __name__ == '__main__':
-    # url = 'https://www.nytimes.com/2020/05/30/us/george-floyd-minneapolis.html?action=click&module=Spotlight&pgtype=Homepage'
-    url = 'https://www.washingtonpost.com/technology/2020/05/30/spacex-nasa-launch-live-updates/'
-    # url = 'https://www.cnn.com/us/live-news/george-floyd-protests-06-02-20/h_b7545fe33352aa03273bb774c926444a'
-    # url = 'https://www.nbcnews.com/news/us-news/curfews-may-not-be-enough-keep-peace-tension-builds-coast-n1221531'
-    # df = DataFetcher()
-    # article = df.fetch(url)
-    # print(article.title)
-    # print(article.published_date)
-    # print(article.authors)
-    # print(article.body)
-    news = NewsObject(url)
-    news.fetch()
-    if news.error:
-        print(news.error_code)
-    else:
-        print(news.title)
-        print(news.authors)
-        print(news.published_date)
-
-    # url = 'https://www.cnn.com/us/live-news/george-floyd-protests-06-02-20/h_b7545fe33352aa03273bb774c926444a'
-    # article = Article(url)
-    # article.download()
-    # article.parse()
-    # print(article.title)
-    # print(article.authors)
-    # print(article.publish_date)
-    # print(article.text)
+        return None, err

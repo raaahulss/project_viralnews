@@ -1,6 +1,6 @@
-from models.viralness import ViralnessModel
-from models.sentiment import SentimentModel
-from models.public_opinion import PublicOpinionModel
+from src.models.viralness import ViralnessModel
+from src.models.sentiment import SentimentModel
+from src.models.public_opinion import PublicOpinionModel
 
 
 class Aggregator(object):
