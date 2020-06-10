@@ -27,11 +27,7 @@ class Analysis extends Component {
     } else {
       return (
         <div id="analysis-details-main">
-          <Container>
-            <Row>
-              <SentimentHTML value={this.props.models.sentiment}/>
-            </Row>
-          </Container>
+          <SentimentHTML value={this.props.models.sentiment}/>
         </div>
       );
     }
@@ -59,7 +55,7 @@ function SentimentHTML(props) {
   return (
     <Col id="sentiment-column">
       <SentimentModel title="Is this Article Biased?" value={props.value}/>
-      <Row >
+      <Row style={{width: 330}}>
         <Col>
           <p style={{color:'#e27d60'}}>Left Wing</p>
         </Col>

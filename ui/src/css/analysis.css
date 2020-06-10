@@ -2,8 +2,9 @@
 	text-align: center;
 	width: 100%;
 	margin-top: 100px;
-	margin-bottom: 100px;
-	height: 250px;
+	margin-bottom: 75px;
+	height: 225px;
+	align-content: center;
 }
 
 .vline {
@@ -23,8 +24,13 @@
 #sentiment-column {
 	width: 300px;
 	align-content: center;
+	margin: auto;
 }
 
 #opinion-column {
 	width: 300px;
+}
+
+.row {
+	margin: auto;
 }

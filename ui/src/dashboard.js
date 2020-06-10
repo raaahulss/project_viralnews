@@ -40,21 +40,21 @@ class Dashboard extends Component {
     if (response.published === true) {
       return (
         <div>
+          <Analysis models={response.models} published={response.published}/>
+          <Statistics metrics={response.metrics}/>
           <ArticleDetails title={response.details.title}
                           url={response.details.op_url}
                           source={response.details.source}
                           author={response.details.authors}
                           date={response.details.published_date}
                           content={response.details.content}/>
-          <Analysis models={response.models} published={response.published}/>
-          <Statistics metrics={response.metrics}/>
         </div>
       );
     } else {
       return (
         <div>
-          <ArticleDetails />
           <Analysis models={response.models} published={response.published}/>
+          <ArticleDetails />
         </div>
       );
     }
