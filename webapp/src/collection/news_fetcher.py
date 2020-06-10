@@ -128,7 +128,7 @@ class NewsObject(object):
             article.download()
             article.parse()
             self.title = article.title
-            self.published_date = datetime.timestamp(article.publish_date)
+            self.published_date = article.publish_date
             self.authors = article.authors
             self.content = article.text
         except ArticleException:
