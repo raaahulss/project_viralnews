@@ -5,6 +5,8 @@ import pytz
 import time
 import threading
 from twarc import Twarc
+import time
+import os
 
 from random import seed
 from random import randint
@@ -25,20 +27,24 @@ access_token_secret='wYdkYaNCakb7sX5PnHjF1u0oJc7Y73iijqbJ4VeB4yyEd'
 t = Twarc(consumer_key, consumer_secret, access_token, access_token_secret)
 
 def bird_watcher():
+	if os.path.exists("bird_watcher.log"):
+  		os.remove("bird_watcher.log")
+	bird_log = open("bird_watcher.log", "a")
+	
 	global original_df 
 	columns = ["screen_name", "tweet_id","created_at","embeded_url","expanded_url","author","title",
 	   "content", "day_0_time","day_0_retweet_count", "next_update", "count"]
 
 	original_df = pd.DataFrame(columns=columns)
-	parsed = 0
+	#parsed = 0
 	
 	follow_list = [759251,3108351,2467791,14173315,51241574,28785486,16664681,807095,5392522,14293310,6577642,15754281]
 	follow_str = ",".join([str(x) for x in follow_list])
 
-	start = time.time()
-	print("Following users ",follow_str)
+	#start = time.time()
+	#print("Following users ",follow_str)
 	for tweet in t.filter(follow=follow_str):
-		parsed += 1
+		#parsed += 1
 		if 'retweeted_status' not in tweet:
 			try:
 				if tweet['user']['id'] in follow_list \
@@ -47,7 +53,11 @@ def bird_watcher():
 					current = datetime.datetime.now(datetime.timezone.utc)
 					datetimePublished = datetime.datetime.strptime(tweet["created_at"], '%a %b %d %H:%M:%S %z %Y')
 					nextUpdate =  datetimePublished + datetime.timedelta(hours=1)
-					print("\nBIRDWATCHER \t Adding tweet From source", tweet['id'], "\tcreated_time: ", tweet['created_at'], "\tnext_update: ", nextUpdate)
+					log = str("\n[" + str(current) + "] BIRDWATCHER \t Adding tweet From source "+str( tweet['id'])+"\tcreated_time: "+str(datetimePublished)+"\tnext_update: "+str(nextUpdate))
+					#print("\nBIRDWATCHER \t Adding tweet From source", tweet['id'], "\tcreated_time: ", tweet['created_at'], "\tnext_update: ", nextUpdate)
+					print(log)
+					bird_log.write(log)
+					bird_log.flush()
 					original_df = original_df.append({'screen_name':tweet['user']['screen_name'], 
 							'tweet_id':tweet['id'],
 							'created_at' : tweet['created_at'],
@@ -57,7 +67,11 @@ def bird_watcher():
 							'next_update': nextUpdate,
 							'count' : 0 }, ignore_index=True)
 			except:
-				print("\nBIRDWATCHER \t Error in conditional, tweet_id: ", tweet['id'])	
+				log = str("\n[" + str(current) + "] BIRDWATCHER \t Error in conditional, tweet_id: " + str(tweet['id']))
+				print(log)
+				bird_log.write(log)
+				bird_log.flush()
+				#print("\nBIRDWATCHER \t Error in conditional, tweet_id: ", tweet['id'])	
 		else:
 			try:
 				if tweet['retweeted_status']['user']['id'] in follow_list \
@@ -71,7 +85,11 @@ def bird_watcher():
 					if diff.days == 0:
 						datetimePublished = datetime.datetime.strptime(tweet["retweeted_status"]["created_at"], '%a %b %d %H:%M:%S %z %Y')
 						nextUpdate =  datetimePublished + datetime.timedelta(hours=1)
-						print("\nBIRDWATCHER \t From retweet", tweet['id'], "Adding tweet: ", tweet["retweeted_status"]["id"], "\tcreated_time: ", datetimePublished, "\tnext_update: ", nextUpdate)
+						#print("\nBIRDWATCHER \t From retweet", tweet['id'], "Adding tweet: ", tweet["retweeted_status"]["id"], "\tcreated_time: ", datetimePublished, "\tnext_update: ", nextUpdate)
+						log = str("\n[" + str(current) + "] BIRDWATCHER \t From retweet "+str(tweet['id'])+" Adding tweet: "+str(tweet["retweeted_status"]["created_at"])+ "\tcreated_time: "+str(datetimePublished)+"\tnext_update: "+str( nextUpdate))
+						print(log)
+						bird_log.write(log)
+						bird_log.flush()
 						original_df = original_df.append({'screen_name':tweet["retweeted_status"]["user"]["screen_name"], 
 							'tweet_id':tweet["retweeted_status"]["id"],
 							'created_at' : tweet["retweeted_status"]["created_at"],
@@ -81,11 +99,19 @@ def bird_watcher():
 							'next_update': nextUpdate,
 							'count' : 0 }, ignore_index=True)
 			except:
-				print("\nBIRDWATCHER \t Error in conditional, tweet_id: ", tweet['id'])	
+				#print("\nBIRDWATCHER \t Error in conditional, tweet_id: ", tweet['id'])	
+				log = str("\n[" + str(current) + "] BIRDWATCHER \t Error in conditional, tweet_id: " + str(tweet['id']))
+				print(log)
+				bird_log.write(log)
+				bird_log.flush()
 				
-
+	
 def scheduler():
 	global original_df
+
+	if os.path.exists("scheduler.log"):
+  		os.remove("scheduler.log")
+	scheduler_log = open("scheduler.log", "a")
 
 	column_names = ['tweet_id','url','handle','count','created_time','next_update']
 	for i in range(1, 101):
@@ -94,16 +120,25 @@ def scheduler():
 	df = pd.DataFrame(columns = column_names)
 
 	count=0
+	start_time = time.time()
 	while(1):
 		# Run loop every 60s
-		time.sleep(60)
-		print("\nSCHEDULER\t loop starting...")
+		time.sleep(30)
+		#log = str("\n["+str(datetime.datetime.utcnow().replace(tzinfo=utc)) + "] SCHEDULER \t Loop starting...")
+		#print(log)
+		#scheduler_log.write(log)
+		#scheduler_log.flush()
+		#print("\nSCHEDULER\t loop starting...\t current_time: ", datetime.datetime.utcnow().replace(tzinfo=utc))
 
 		# Time range is 2 minutes
 		time_now = datetime.datetime.utcnow().replace(tzinfo=utc)
 		time_range = time_now + datetime.timedelta(minutes=2)
         
-		print("\nSCHEDULER\t", "time_now: ", time_now, " time_range: ", time_range)
+		#print("\nSCHEDULER\t", "time_now: ", time_now, " time_range: ", time_range)
+		log = str("\n["+str(time_now) + "] SCHEDULER \t Loop starting \t time_now: "+str(time_now)+"\ttime_range: "+str(time_range))
+		print(log)
+		scheduler_log.write(log)
+		scheduler_log.flush()
 		for row in original_df.itertuples():
 			try:
 				current_update = ((df.loc[(df.tweet_id == row.tweet_id), 'next_update'])[0])
@@ -113,7 +148,12 @@ def scheduler():
 				curr_retweets = get_retweets(row.tweet_id,t)
 				if(not(row.tweet_id in df.tweet_id.values)):
 					next_update = row.next_update + datetime.timedelta(hours=1)
-					print("\nSCHEDULER\t ", row.tweet_id, " first time being added\t create_time: ", row.created_at, "\tnext_update: ", next_update)
+					current_time = datetime.datetime.utcnow().replace(tzinfo=utc)
+					#print("\nSCHEDULER\t ", row.tweet_id, " first time being added\t create_time: ", row.created_at, "\tnext_update: ", next_update)
+					log=str("\n[" + str(current_time)+"] SCHEDULER\t "+str(row.tweet_id)+" first time being added\t create_time: "+str(row.created_at)+"\tcurrent update: " + str(row.next_update)+"\tnext_update: "+str(next_update))
+					print(log)
+					scheduler_log.write(log)
+					scheduler_log.flush()
 					data = { 'tweet_id':[row.tweet_id],
 							 'url':[row.embeded_url],
 							 'handle':[row.screen_name],
@@ -125,20 +165,38 @@ def scheduler():
 					df = df.append(df_temp).fillna(-1)
 					count = count + 1
 				else:
-					current_count = (df.loc[(df.tweet_id == row.tweet_id), 'count'])[0]
-					df.loc[(df.tweet_id == row.tweet_id), str(current_count)] = curr_retweets
 					current_update = ((df.loc[(df.tweet_id == row.tweet_id), 'next_update'])[0])
-					new_time = current_update + datetime.timedelta(hours=1)
-					print("\nSCHEDULER\t ", row.tweet_id, " updating retweets for offfset # ", current_count, 
-						  "created_time: ", row.created_at, "\tcurrent_update: ", current_update, "\tnew_update: ", new_time)
-					df.loc[(df.tweet_id == row.tweet_id), 'next_update'] = new_time
-					df.loc[(df.tweet_id == row.tweet_id), 'count'] = (int(current_count) + 1)
-					count= count + 1
+					if(current_update >= time_now and current_update <= time_range):
+						current_count = (df.loc[(df.tweet_id == row.tweet_id), 'count'])[0]
+						df.loc[(df.tweet_id == row.tweet_id), str(current_count)] = curr_retweets
+						new_time = current_update + datetime.timedelta(hours=1)
+						current_time = datetime.datetime.utcnow().replace(tzinfo=utc)
+						log=str("\n[" + str(current_time)+"] SCHEDULER\t "+str(row.tweet_id)+" update retweets for offset: " +str(current_count)+ "\t create_time: "+str(row.created_at)+"\tcurrent update: " + str(current_update)+"\tnext_update: "+str(new_time))
+						print(log)
+						scheduler_log.write(log)
+						scheduler_log.flush()
+						#print("\nSCHEDULER\t ", row.tweet_id, " updating retweets for offfset # ", current_count, 
+						#	"created_time: ", row.created_at, "\tcurrent_update: ", current_update, "\tnew_update: ", new_time)
+						df.loc[(df.tweet_id == row.tweet_id), 'next_update'] = new_time
+						df.loc[(df.tweet_id == row.tweet_id), 'count'] = (int(current_count) + 1)
+						count= count + 1
 
-				# write to file when 25 tweets have been updated/added
-				if(count >=25):
+				elapsed_time = time.time() - start_time
+				if(elapsed_time >= 60):
+					# write to file every 30 min 
+					log=str("\n["+str(datetime.datetime.utcnow().replace(tzinfo=utc))+"] SCHEDULER\t Writing to file")
+					print(log)
+					scheduler_log.write(log)
+					scheduler_log.flush()
+					#print("\nSCHEDULER\t writing to file")
 					df.to_csv('sample_output.csv', index=True)
-					count = 0
+					start_time = time.time()
+
+		log=str("\n["+str(datetime.datetime.utcnow().replace(tzinfo=utc))+"] SCHEDULER\t Loop ending")
+		print(log)
+		scheduler_log.write(log)
+		scheduler_log.flush()
+		#print("\nSCHEDULER\t loop ending...\t current_time: ", datetime.datetime.utcnow().replace(tzinfo=utc))
 
 def get_retweets(tweet_id, twarc_api):
 	for tweet in twarc_api.hydrate([tweet_id]):
