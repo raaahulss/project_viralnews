@@ -110,10 +110,9 @@ def scheduler():
 
 	df = pd.DataFrame(columns = column_names)
 
-	count=0
 	start_time = time.time()
 	while(1):
-		time.sleep(30)
+		time.sleep(60)
 
 		# Time range is 2 minutes
 		time_now = datetime.datetime.utcnow().replace(tzinfo=utc)
@@ -146,7 +145,6 @@ def scheduler():
 							 '1':[curr_retweets]}
 					df_temp = pd.DataFrame(data, columns=column_names)
 					df = df.append(df_temp).fillna(-1)
-					count = count + 1
 				else:
 					current_update = ((df.loc[(df.tweet_id == row.tweet_id), 'next_update'])[0])
 					if(current_update >= time_now and current_update <= time_range):
@@ -160,7 +158,6 @@ def scheduler():
 						scheduler_log.flush()
 						df.loc[(df.tweet_id == row.tweet_id), 'next_update'] = new_time
 						df.loc[(df.tweet_id == row.tweet_id), 'count'] = (int(current_count) + 1)
-						count= count + 1
 
 		elapsed_time = time.time() - start_time
 		#print("\n SCHEDULER \t start_time: ", start_time, "\telapsed: ", elapsed_time)
