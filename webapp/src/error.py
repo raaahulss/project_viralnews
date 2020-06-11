@@ -11,7 +11,6 @@ error_list = {
     }
 
 
-
 class ApplicationError(Exception):
     def __init__(self, code, message):
         self._code = code
@@ -20,5 +19,5 @@ class ApplicationError(Exception):
     def __str__(self):
         return "Application Error {} : {}".format(self._code, self._message)
     
-    def to_dict():
+    def to_dict(self):
         return {"error": True, "error_code": self._code, "error_msg" : self._message}
