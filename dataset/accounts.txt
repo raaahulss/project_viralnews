@@ -1,0 +1,15 @@
+cnn
+wsj
+washingtonpost
+nbcnews
+ap
+abc
+latimes
+nytimes
+npr
+time
+usnews
+usatoday
+foxnews
+Reuters
+huffpost
