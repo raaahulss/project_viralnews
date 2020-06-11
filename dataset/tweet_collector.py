@@ -1,11 +1,9 @@
-import csv
 import pandas as pd
 import datetime
 import pytz
 import time
 import threading
 from twarc import Twarc
-import time
 import os
 import tweepy
 
