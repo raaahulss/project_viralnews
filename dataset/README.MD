@@ -6,6 +6,8 @@ This script uses the Twarc library to log every tweet from specified twitter acc
 In this specific implementation, the script is configured to follow the twitter accounts of various news media outlets such as Wall Street Journal, New York Times, etc.
 It only logs the tweet if it contains an embedded URL to an article. 
 
+
+
 ## Install Requirements
 ```bash
 pip3 install -r requirements.txt
@@ -13,6 +15,10 @@ pip3 install -r requirements.txt
 ```
 
 ## Running Tweet Collector
+First specify what twitter accounts you want to follow by adding them to the ```accounts.txt``` file. Add one account per line without the "@" symbol. 
+
+Then, simply run the script:
+
 
 ```bash
 python3 tweet_collector.py
