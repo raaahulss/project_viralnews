@@ -7,9 +7,7 @@ import threading
 from twarc import Twarc
 import time
 import os
-
-from random import seed
-from random import randint
+import tweepy
 
 utc=pytz.UTC
 
@@ -26,19 +24,20 @@ t = Twarc(consumer_key, consumer_secret, access_token, access_token_secret)
 def bird_watcher():
 	global original_df 
 	
-	# Delete old log file and create new one
+# Delete old log file and create new one
 	if os.path.exists("bird_watcher.log"):
-  		os.remove("bird_watcher.log")
+		os.remove("bird_watcher.log")
 	bird_log = open("bird_watcher.log", "a")
-	
+
 	columns = ["screen_name", "tweet_id","created_at","embeded_url","expanded_url","author","title",
-	   "content", "day_0_time","day_0_retweet_count", "next_update", "count"]
-
-	original_df = pd.DataFrame(columns=columns)
+					 	 "content", "day_0_time","day_0_retweet_count", "next_update", "count"]
 	
-	follow_list = [759251,3108351,2467791,14173315,51241574,28785486,16664681,807095,5392522,14293310,6577642,15754281]
-	follow_str = ",".join([str(x) for x in follow_list])
+	original_df = pd.DataFrame(columns=columns)
 
+	# Convert twitter handles from accounts.txt to user IDs
+	follow_list = get_userIds()
+	follow_str = ",".join([str(x) for x in follow_list])
+	
 	for tweet in t.filter(follow=follow_str):
 		if 'retweeted_status' not in tweet:
 			try:
@@ -61,6 +60,7 @@ def bird_watcher():
 							'next_update': nextUpdate,
 							'count' : 0 }, ignore_index=True)
 			except:
+				current = datetime.datetime.now(datetime.timezone.utc)
 				log = str("\n[" + str(current) + "] BIRDWATCHER \t Error in conditional")
 				print(log)
 				bird_log.write(log)
@@ -76,6 +76,7 @@ def bird_watcher():
 					current = datetime.datetime.now(datetime.timezone.utc)
 					diff =  current - created_time
 					if diff.days == 0:
+						current = datetime.datetime.now(datetime.timezone.utc)
 						datetimePublished = datetime.datetime.strptime(tweet["retweeted_status"]["created_at"], '%a %b %d %H:%M:%S %z %Y')
 						nextUpdate =  datetimePublished + datetime.timedelta(hours=1)
 						log = str("\n[" + str(current) + "] BIRDWATCHER \t From retweet "+str(tweet['id'])+" Adding tweet: "+str(tweet["retweeted_status"]["created_at"])+ "\tcreated_time: "+str(datetimePublished)+"\tnext_update: "+str( nextUpdate))
@@ -91,6 +92,7 @@ def bird_watcher():
 							'next_update': nextUpdate,
 							'count' : 0 }, ignore_index=True)
 			except:
+				current = datetime.datetime.now(datetime.timezone.utc)
 				log = str("\n[" + str(current) + "] BIRDWATCHER \t Error in conditional")
 				print(log)
 				bird_log.write(log)
@@ -162,14 +164,15 @@ def scheduler():
 						df.loc[(df.tweet_id == row.tweet_id), 'count'] = (int(current_count) + 1)
 						count= count + 1
 
-				elapsed_time = time.time() - start_time
-				if(elapsed_time >= 60):
-					log=str("\n["+str(datetime.datetime.utcnow().replace(tzinfo=utc))+"] SCHEDULER\t Writing to file")
-					print(log)
-					scheduler_log.write(log)
-					scheduler_log.flush()
-					df.to_csv('data.csv', index=True)
-					start_time = time.time()
+		elapsed_time = time.time() - start_time
+		#print("\n SCHEDULER \t start_time: ", start_time, "\telapsed: ", elapsed_time)
+		if(elapsed_time >= 900):
+			log=str("\n["+str(datetime.datetime.utcnow().replace(tzinfo=utc))+"] SCHEDULER\t Writing to file")
+			print(log)
+			scheduler_log.write(log)
+			scheduler_log.flush()
+			df.to_csv('data.csv', index=True)
+			start_time = time.time()
 
 		log=str("\n["+str(datetime.datetime.utcnow().replace(tzinfo=utc))+"] SCHEDULER\t Loop ending")
 		print(log)
@@ -179,6 +182,28 @@ def scheduler():
 def get_retweets(tweet_id, twarc_api):
 	for tweet in twarc_api.hydrate([tweet_id]):
 		return tweet['retweet_count']
+
+
+# convert handles to user_ids
+def get_userIds():
+
+	# create Tweepy object
+	auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+	auth.set_access_token(access_token, access_token_secret)
+	api = tweepy.API(auth)
+
+	# read twitter handles from accounts.txt
+	account_list = list()
+	account_file = open("accounts.txt", "r")
+	accounts = account_file.readlines()
+	for account in accounts:
+		account_list.append(account.strip())
+	account_file.close()
+
+	# convert handles to user ID's
+	user_objects = api.lookup_users(screen_names=account_list)
+	user_ids = [user.id_str for user in user_objects]
+	return list(map(int, user_ids))
 
 def main():
 	watcher_t = threading.Thread(target=bird_watcher, daemon=True)
