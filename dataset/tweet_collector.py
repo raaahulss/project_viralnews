@@ -38,7 +38,7 @@ def export_dataset(df,name):
 					datetime.datetime.now().strftime("%B_%d_%y_%H_%M_%S"))
     df.to_csv(name, index=True)
 
-def get_original_df():
+def create_original_df():
 	columns = [
 		# "screen_name",
 		"tweet_id",
@@ -56,7 +56,7 @@ def get_original_df():
 	df = pd.DataFrame(columns=columns)
 	return df
 
-def get_df():
+def create_df():
 	column_names = ['tweet_id'
 					# 'url'
 					# 'handle'
@@ -215,6 +215,7 @@ def scheduler(df):
 			scheduler_log.write(log)
 			scheduler_log.flush()
 			export_dataset(df, "retweet")
+			export_dataset(original_df, "original_df")
 			# df.to_csv('data.csv', index=True)
 			start_time = time.time()
 
@@ -251,8 +252,10 @@ def get_userIds():
 
 def main():
 	global original_df
-	original_df = get_original_df()
-	df = get_df()
+	temp_df = get_latest_df("original_df")
+	original_df = create_original_df() if temp_df is None else temp_df
+	temp_df = get_latest_df("retweet")
+	df = create_df() if temp_df is None else temp_df
 
 	watcher_t = threading.Thread(target=bird_watcher, daemon=True)
 	scheduler_t = threading.Thread(target=scheduler, daemon=True, kwargs={'df':df})
