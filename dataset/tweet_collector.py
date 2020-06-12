@@ -6,17 +6,70 @@ import threading
 from twarc import Twarc
 import os
 import tweepy
-
+import constants as cnst
 utc=pytz.UTC
 
-# Twitter keys 
-consumer_key='58wlGpzEOwum6nghvA8tj6nz6'
-consumer_secret='b04KqyzRyquIiYGwqv9B12hRqjEj9tvOp53DtoFZJtetaZ7cZE'
-access_token='1243275961824612358-65qxIlXTEhjw0jlbBaK4I0olH9nRP9'
-access_token_secret='wYdkYaNCakb7sX5PnHjF1u0oJc7Y73iijqbJ4VeB4yyEd'
 
 # global twarc object
-t = Twarc(consumer_key, consumer_secret, access_token, access_token_secret)
+t = Twarc(cnst.consumer_key, cnst.consumer_secret,
+		cnst.access_token, cnst.access_token_secret)
+
+def get_latest_df(name):
+	"""
+	given the file name, this method identifies the most recently "created"
+	file and returns path to that file.
+	if no file is found with that name or the "creation" time is not accessible
+	it returns None.
+	"""
+	files = glob.glob("{}/{}*.csv".format(cnst.dataset_root_path, name))
+	if len(files) == 0:
+		return None
+	try:
+		files_time = [(path.getctime(file), file) for file in files]
+	except OSError as err:
+		print(str(err))
+		return None
+	files_time.sort(key=itemgetter(0), reverse=True)
+	return pd.read_csv(files_time[0][1])
+
+def export_dataset(df,name):
+    name = "{}/{}_{}.csv".format(cnst.dataset_root_path,
+					name, 
+					datetime.datetime.now().strftime("%B_%d_%y_%H_%M_%S"))
+    df.to_csv(name, index=True)
+
+def get_original_df():
+	columns = [
+		# "screen_name",
+		"tweet_id",
+		"created_at",
+		# "embeded_url",
+		# "expanded_url",
+		# "author",
+		# "title",
+ 		# "content",
+		# "day_0_time",
+		# "day_0_retweet_count",
+		"next_update",
+		"count"]
+	
+	df = pd.DataFrame(columns=columns)
+	return df
+
+def get_df():
+	column_names = ['tweet_id'
+					# 'url'
+					# 'handle'
+					'count'
+					'created_time'
+					'next_update']
+	for i in range(1, 101):
+		column_names.append(str(i))
+
+	df = pd.DataFrame(columns = column_names)
+	return df
+
+
 
 # This thread monitors the twitter accounts
 def bird_watcher():
@@ -27,11 +80,7 @@ def bird_watcher():
 		os.remove("bird_watcher.log")
 	bird_log = open("bird_watcher.log", "a")
 
-	columns = ["screen_name", "tweet_id","created_at","embeded_url","expanded_url","author","title",
-					 	 "content", "day_0_time","day_0_retweet_count", "next_update", "count"]
 	
-	original_df = pd.DataFrame(columns=columns)
-
 	# Convert twitter handles from accounts.txt to user IDs
 	follow_list = get_userIds()
 	follow_str = ",".join([str(x) for x in follow_list])
@@ -49,12 +98,13 @@ def bird_watcher():
 					print(log)
 					bird_log.write(log)
 					bird_log.flush()
-					original_df = original_df.append({'screen_name':tweet['user']['screen_name'], 
+					original_df = original_df.append({
+						# 'screen_name':tweet['user']['screen_name'], 
 							'tweet_id':tweet['id'],
 							'created_at' : tweet['created_at'],
-							'embeded_url' : tweet['entities']['urls'][0]['url'],
-							'day_0_retweet_count': tweet['retweet_count'],
-							'day_0_time': current,
+							# 'embeded_url' : tweet['entities']['urls'][0]['url'],
+							# 'day_0_retweet_count': tweet['retweet_count'],
+							# 'day_0_time': current,
 							'next_update': nextUpdate,
 							'count' : 0 }, ignore_index=True)
 			except:
@@ -81,12 +131,13 @@ def bird_watcher():
 						print(log)
 						bird_log.write(log)
 						bird_log.flush()
-						original_df = original_df.append({'screen_name':tweet["retweeted_status"]["user"]["screen_name"], 
+						original_df = original_df.append({
+							# 'screen_name':tweet["retweeted_status"]["user"]["screen_name"], 
 							'tweet_id':tweet["retweeted_status"]["id"],
 							'created_at' : tweet["retweeted_status"]["created_at"],
-							'embeded_url' : tweet["retweeted_status"]["extended_tweet"]["entities"]["urls"][0]["url"],
-							'day_0_retweet_count': tweet['retweeted_status']['retweet_count'],
-							'day_0_time': current,
+							# 'embeded_url' : tweet["retweeted_status"]["extended_tweet"]["entities"]["urls"][0]["url"],
+							# 'day_0_retweet_count': tweet['retweeted_status']['retweet_count'],
+							# 'day_0_time': current,
 							'next_update': nextUpdate,
 							'count' : 0 }, ignore_index=True)
 			except:
@@ -97,19 +148,14 @@ def bird_watcher():
 				bird_log.flush()
 				
 # This thread is responsible for getting the retweets every 24 hrs
-def scheduler():
+def scheduler(df):
 	global original_df
 
 	if os.path.exists("scheduler.log"):
   		os.remove("scheduler.log")
 	scheduler_log = open("scheduler.log", "a")
 
-	column_names = ['tweet_id','url','handle','count','created_time','next_update']
-	for i in range(1, 101):
-		column_names.append(str(i))
-
-	df = pd.DataFrame(columns = column_names)
-
+	
 	start_time = time.time()
 	while(1):
 		time.sleep(60)
@@ -122,11 +168,13 @@ def scheduler():
 		print(log)
 		scheduler_log.write(log)
 		scheduler_log.flush()
+		print("Original DF length from scheduler ",len(original_df))
 		for row in original_df.itertuples():
 			try:
 				current_update = ((df.loc[(df.tweet_id == row.tweet_id), 'next_update'])[0])
 			except:
 				current_update = row.next_update
+			
 			if((row.next_update >= time_now and row.next_update <= time_range) or (current_update >= time_now and current_update <= time_range)):
 				curr_retweets = get_retweets(row.tweet_id,t)
 				if(not(row.tweet_id in df.tweet_id.values)):
@@ -137,8 +185,8 @@ def scheduler():
 					scheduler_log.write(log)
 					scheduler_log.flush()
 					data = { 'tweet_id':[row.tweet_id],
-							 'url':[row.embeded_url],
-							 'handle':[row.screen_name],
+							#  'url':[row.embeded_url],
+							#  'handle':[row.screen_name],
 							 'count' : 2,
 							 'created_time': [row.created_at],
 							 'next_update' : [next_update],
@@ -166,7 +214,8 @@ def scheduler():
 			print(log)
 			scheduler_log.write(log)
 			scheduler_log.flush()
-			df.to_csv('data.csv', index=True)
+			export_dataset(df, "retweet")
+			# df.to_csv('data.csv', index=True)
 			start_time = time.time()
 
 		log=str("\n["+str(datetime.datetime.utcnow().replace(tzinfo=utc))+"] SCHEDULER\t Loop ending")
@@ -201,12 +250,17 @@ def get_userIds():
 	return list(map(int, user_ids))
 
 def main():
+	global original_df
+	original_df = get_original_df()
+	df = get_df()
+
 	watcher_t = threading.Thread(target=bird_watcher, daemon=True)
-	scheduler_t = threading.Thread(target=scheduler, daemon=True)
+	scheduler_t = threading.Thread(target=scheduler, daemon=True, kwargs={'df':df})
 	watcher_t.start()
 	scheduler_t.start()
 	watcher_t.join()
 	scheduler_t.join()
+	
 
 if __name__ == "__main__":
 	main()
