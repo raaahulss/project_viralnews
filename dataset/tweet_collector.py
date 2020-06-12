@@ -7,6 +7,10 @@ from twarc import Twarc
 import os
 import tweepy
 import constants as cnst
+import glob
+import os.path as path
+from operator import itemgetter
+
 utc=pytz.UTC
 
 
@@ -23,20 +27,23 @@ def get_latest_df(name):
 	"""
 	files = glob.glob("{}/{}*.csv".format(cnst.dataset_root_path, name))
 	if len(files) == 0:
+		print("Existing dataset not found for ", name)
 		return None
 	try:
 		files_time = [(path.getctime(file), file) for file in files]
 	except OSError as err:
+		print("Existing dataset not found for ", name)
 		print(str(err))
 		return None
 	files_time.sort(key=itemgetter(0), reverse=True)
+	print("Existing dataset found for ", name, "returning", files_time[0][1])
 	return pd.read_csv(files_time[0][1])
 
 def export_dataset(df,name):
     name = "{}/{}_{}.csv".format(cnst.dataset_root_path,
 					name, 
 					datetime.datetime.now().strftime("%B_%d_%y_%H_%M_%S"))
-    df.to_csv(name, index=True)
+    df.to_csv(name)
 
 def create_original_df():
 	columns = [
@@ -57,11 +64,11 @@ def create_original_df():
 	return df
 
 def create_df():
-	column_names = ['tweet_id'
-					# 'url'
-					# 'handle'
-					'count'
-					'created_time'
+	column_names = ['tweet_id',
+					# 'url',
+					# 'handle',
+					'count',
+					'created_time',
 					'next_update']
 	for i in range(1, 101):
 		column_names.append(str(i))
@@ -93,7 +100,7 @@ def bird_watcher():
 				and (original_df['tweet_id'] != tweet['id']).all():
 					current = datetime.datetime.now(datetime.timezone.utc)
 					datetimePublished = datetime.datetime.strptime(tweet["created_at"], '%a %b %d %H:%M:%S %z %Y')
-					nextUpdate =  datetimePublished + datetime.timedelta(hours=1)
+					nextUpdate =  datetimePublished + datetime.timedelta(minutes=5)
 					log = str("\n[" + str(current) + "] BIRDWATCHER \t Adding tweet From source "+str( tweet['id'])+"\tcreated_time: "+str(datetimePublished)+"\tnext_update: "+str(nextUpdate))
 					print(log)
 					bird_log.write(log)
@@ -126,7 +133,7 @@ def bird_watcher():
 					if diff.days == 0:
 						current = datetime.datetime.now(datetime.timezone.utc)
 						datetimePublished = datetime.datetime.strptime(tweet["retweeted_status"]["created_at"], '%a %b %d %H:%M:%S %z %Y')
-						nextUpdate =  datetimePublished + datetime.timedelta(hours=1)
+						nextUpdate =  datetimePublished + datetime.timedelta(minutes=5)
 						log = str("\n[" + str(current) + "] BIRDWATCHER \t From retweet "+str(tweet['id'])+" Adding tweet: "+str(tweet["retweeted_status"]["created_at"])+ "\tcreated_time: "+str(datetimePublished)+"\tnext_update: "+str( nextUpdate))
 						print(log)
 						bird_log.write(log)
@@ -150,11 +157,20 @@ def bird_watcher():
 # This thread is responsible for getting the retweets every 24 hrs
 def scheduler(df):
 	global original_df
-
+	print("original_df columns :", original_df.columns)
+	print("df columns :", df.columns)
 	if os.path.exists("scheduler.log"):
   		os.remove("scheduler.log")
 	scheduler_log = open("scheduler.log", "a")
 
+	column_names = ['tweet_id',
+					# 'url',
+					# 'handle',
+					'count',
+					'created_time',
+					'next_update']
+	for i in range(1, 101):
+		column_names.append(str(i))
 	
 	start_time = time.time()
 	while(1):
@@ -162,7 +178,7 @@ def scheduler(df):
 
 		# Time range is 2 minutes
 		time_now = datetime.datetime.utcnow().replace(tzinfo=utc)
-		time_range = time_now + datetime.timedelta(minutes=2)
+		time_range = time_now + datetime.timedelta(minutes=10)
         
 		log = str("\n["+str(time_now) + "] SCHEDULER \t Loop starting \t time_now: "+str(time_now)+"\ttime_range: "+str(time_range))
 		print(log)
@@ -171,14 +187,14 @@ def scheduler(df):
 		print("Original DF length from scheduler ",len(original_df))
 		for row in original_df.itertuples():
 			try:
-				current_update = ((df.loc[(df.tweet_id == row.tweet_id), 'next_update'])[0])
+				current_update = pd.to_datetime((df.loc[(df.tweet_id == row.tweet_id), 'next_update'])[0])
 			except:
-				current_update = row.next_update
+				current_update = pd.to_datetime(row.next_update)
 			
-			if((row.next_update >= time_now and row.next_update <= time_range) or (current_update >= time_now and current_update <= time_range)):
+			if current_update >= time_now and current_update <= time_range :
 				curr_retweets = get_retweets(row.tweet_id,t)
 				if(not(row.tweet_id in df.tweet_id.values)):
-					next_update = row.next_update + datetime.timedelta(hours=1)
+					next_update = pd.to_datetime(row.next_update) + datetime.timedelta(minutes=5)
 					current_time = datetime.datetime.utcnow().replace(tzinfo=utc)
 					log=str("\n[" + str(current_time)+"] SCHEDULER\t "+str(row.tweet_id)+" first time being added\t create_time: "+str(row.created_at)+"\tcurrent update: " + str(row.next_update)+"\tnext_update: "+str(next_update))
 					print(log)
@@ -198,7 +214,7 @@ def scheduler(df):
 					if(current_update >= time_now and current_update <= time_range):
 						current_count = (df.loc[(df.tweet_id == row.tweet_id), 'count'])[0]
 						df.loc[(df.tweet_id == row.tweet_id), str(current_count)] = curr_retweets
-						new_time = current_update + datetime.timedelta(hours=1)
+						new_time = current_update + datetime.timedelta(minutes=5)
 						current_time = datetime.datetime.utcnow().replace(tzinfo=utc)
 						log=str("\n[" + str(current_time)+"] SCHEDULER\t "+str(row.tweet_id)+" update retweets for offset: " +str(current_count)+ "\t create_time: "+str(row.created_at)+"\tcurrent update: " + str(current_update)+"\tnext_update: "+str(new_time))
 						print(log)
@@ -209,13 +225,19 @@ def scheduler(df):
 
 		elapsed_time = time.time() - start_time
 		#print("\n SCHEDULER \t start_time: ", start_time, "\telapsed: ", elapsed_time)
-		if(elapsed_time >= 900):
+		if(elapsed_time >= 60):
 			log=str("\n["+str(datetime.datetime.utcnow().replace(tzinfo=utc))+"] SCHEDULER\t Writing to file")
 			print(log)
 			scheduler_log.write(log)
 			scheduler_log.flush()
-			export_dataset(df, "retweet")
-			export_dataset(original_df, "original_df")
+			log=str("\n["+str(datetime.datetime.utcnow().replace(tzinfo=utc))+"] SCHEDULER\t Original Frame len : "+str(len(original_df))+ "Data Frame len : "+str(len(df)))
+			print(log)
+			scheduler_log.write(log)
+			scheduler_log.flush()
+			if len(df) != 0:
+				export_dataset(df, "retweet")
+			if len(original_df) != 0:
+				export_dataset(original_df, "original_df")
 			# df.to_csv('data.csv', index=True)
 			start_time = time.time()
 
@@ -233,8 +255,8 @@ def get_retweets(tweet_id, twarc_api):
 def get_userIds():
 
 	# create Tweepy object
-	auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-	auth.set_access_token(access_token, access_token_secret)
+	auth = tweepy.OAuthHandler(cnst.consumer_key, cnst.consumer_secret)
+	auth.set_access_token(cnst.access_token, cnst.access_token_secret)
 	api = tweepy.API(auth)
 
 	# read twitter handles from accounts.txt
@@ -253,10 +275,14 @@ def get_userIds():
 def main():
 	global original_df
 	temp_df = get_latest_df("original_df")
+	print(len(temp_df) if temp_df is not None else "None")
 	original_df = create_original_df() if temp_df is None else temp_df
+	# if original_df is not None:
+	# 	original_df['next_update'] = pd.to_datetime(original_df['next_update'])
 	temp_df = get_latest_df("retweet")
+	print(len(temp_df) if temp_df is not None else "None")
 	df = create_df() if temp_df is None else temp_df
-
+	# df['next_update'] = pd.to_datetime(df['next_update'])
 	watcher_t = threading.Thread(target=bird_watcher, daemon=True)
 	scheduler_t = threading.Thread(target=scheduler, daemon=True, kwargs={'df':df})
 	watcher_t.start()
