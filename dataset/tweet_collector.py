@@ -200,7 +200,8 @@ def scheduler(df, recover):
 		
 		curr_retweets = get_retweets(retweetables,t)
 		for retweetable_id  in retweetables:
-			row = original_df.loc[original_df==retweetable_id]
+			row = original_df.loc[original_df['tweet_id']==retweetable_id]
+			print(row.tweet_id, retweetable_id)
 			if(not(row.tweet_id in df.tweet_id.values)):
 				next_update = pd.to_datetime(row.next_update) + datetime.timedelta(minutes=5)
 				current_time = datetime.datetime.utcnow().replace(tzinfo=utc)
@@ -234,7 +235,7 @@ def scheduler(df, recover):
 				
 		elapsed_time = time.time() - start_time
 		#print("\n SCHEDULER \t start_time: ", start_time, "\telapsed: ", elapsed_time)
-		if(elapsed_time >= 2):
+		if(elapsed_time >= 120):
 			log=str("\n["+str(datetime.datetime.utcnow().replace(tzinfo=utc))+"] SCHEDULER\t Writing to file")
 			print(log)
 			scheduler_log.write(log)
@@ -261,7 +262,7 @@ def get_retweets(tweets, twarc_api, step=100):
 	requesting for 100 retweets at a time.
 	:returns: A dictionary with tweet_id as key and retweet_count as value {int:long}
 	"""
-	retweets = dict{}
+	retweets = dict()
 	for i in range(0,len(tweets),step):
 		last_idx = min(i+step, len(tweets))
 		sub_list = tweets[i:last_idx]
