@@ -43,7 +43,7 @@ def get_latest_df(name):
 def export_dataset(df,name):
     name = "{}/{}_{}.csv".format(cnst.dataset_root_path,
 					name, 
-					datetime.datetime.now().strftime("%B_%d_%y_%H_%M_%S"))
+					datetime.datetime.now().strftime("%B_%d_%y_%H"))
     df.to_csv(name)
 
 def create_original_df():
@@ -187,6 +187,8 @@ def scheduler(df, recover):
 		scheduler_log.write(log)
 		scheduler_log.flush()
 		print("Original DF length from scheduler ",len(original_df))
+		# A list of (tweet_id)
+		retweetables = list()
 		for row in original_df.itertuples():
 			try:
 				current_update = pd.to_datetime((df.loc[(df.tweet_id == row.tweet_id), 'next_update'])[0])
@@ -194,37 +196,42 @@ def scheduler(df, recover):
 				current_update = pd.to_datetime(row.next_update)
 			
 			if current_update >= time_travel and current_update <= time_range :
-				curr_retweets = get_retweets(row.tweet_id,t)
-				if(not(row.tweet_id in df.tweet_id.values)):
-					next_update = pd.to_datetime(row.next_update) + datetime.timedelta(minutes=5)
-					current_time = datetime.datetime.utcnow().replace(tzinfo=utc)
-					log=str("\n[" + str(current_time)+"] SCHEDULER\t "+str(row.tweet_id)+" first time being added\t create_time: "+str(row.created_at)+"\tcurrent update: " + str(row.next_update)+"\tnext_update: "+str(next_update))
-					print(log)
-					scheduler_log.write(log)
-					scheduler_log.flush()
-					data = { 'tweet_id':[row.tweet_id],
-							#  'url':[row.embeded_url],
-							#  'handle':[row.screen_name],
-							 'count' : 2,
-							 'created_time': [row.created_at],
-							 'next_update' : [next_update],
-							 '1':[curr_retweets]}
-					df_temp = pd.DataFrame(data, columns=column_names)
-					df = df.append(df_temp).fillna(-1)
-				else:
-					current_update = ((df.loc[(df.tweet_id == row.tweet_id), 'next_update'])[0])
-					# if(current_update >= time_now and current_update <= time_range):
-					current_count = (df.loc[(df.tweet_id == row.tweet_id), 'count'])[0]
-					df.loc[(df.tweet_id == row.tweet_id), str(current_count)] = curr_retweets
-					new_time = current_update + datetime.timedelta(minutes=5)
-					current_time = datetime.datetime.utcnow().replace(tzinfo=utc)
-					log=str("\n[" + str(current_time)+"] SCHEDULER\t "+str(row.tweet_id)+" update retweets for offset: " +str(current_count)+ "\t create_time: "+str(row.created_at)+"\tcurrent update: " + str(current_update)+"\tnext_update: "+str(new_time))
-					print(log)
-					scheduler_log.write(log)
-					scheduler_log.flush()
-					df.loc[(df.tweet_id == row.tweet_id), 'next_update'] = new_time
-					df.loc[(df.tweet_id == row.tweet_id), 'count'] = (int(current_count) + 1)
+				retweetables.append(row.tweet_id)
+		
+		curr_retweets = get_retweets(retweetables,t)
+		for retweetable_id  in retweetables:
+			row = original_df.loc[original_df==retweetable_id]
+			if(not(row.tweet_id in df.tweet_id.values)):
+				next_update = pd.to_datetime(row.next_update) + datetime.timedelta(minutes=5)
+				current_time = datetime.datetime.utcnow().replace(tzinfo=utc)
+				log=str("\n[" + str(current_time)+"] SCHEDULER\t "+str(row.tweet_id)+" first time being added\t create_time: "+str(row.created_at)+"\tcurrent update: " + str(row.next_update)+"\tnext_update: "+str(next_update))
+				print(log)
+				scheduler_log.write(log)
+				scheduler_log.flush()
+				data = { 'tweet_id':[row.tweet_id],
+						#  'url':[row.embeded_url],
+						#  'handle':[row.screen_name],
+							'count' : 2,
+							'created_time': [row.created_at],
+							'next_update' : [next_update],
+							'1':[curr_retweets[row.tweet_id]]}
+				df_temp = pd.DataFrame(data, columns=column_names)
+				df = df.append(df_temp).fillna(-1)
+			else:
+				current_update = ((df.loc[(df.tweet_id == row.tweet_id), 'next_update'])[0])
+				# if(current_update >= time_now and current_update <= time_range):
+				current_count = (df.loc[(df.tweet_id == row.tweet_id), 'count'])[0]
+				df.loc[(df.tweet_id == row.tweet_id), str(current_count)] = curr_retweets[row.tweet_id]
+				new_time = current_update + datetime.timedelta(minutes=5)
+				current_time = datetime.datetime.utcnow().replace(tzinfo=utc)
+				log=str("\n[" + str(current_time)+"] SCHEDULER\t "+str(row.tweet_id)+" update retweets for offset: " +str(current_count)+ "\t create_time: "+str(row.created_at)+"\tcurrent update: " + str(current_update)+"\tnext_update: "+str(new_time))
+				print(log)
+				scheduler_log.write(log)
+				scheduler_log.flush()
+				df.loc[(df.tweet_id == row.tweet_id), 'next_update'] = new_time
+				df.loc[(df.tweet_id == row.tweet_id), 'count'] = (int(current_count) + 1)
 
+				
 		elapsed_time = time.time() - start_time
 		#print("\n SCHEDULER \t start_time: ", start_time, "\telapsed: ", elapsed_time)
 		if(elapsed_time >= 2):
@@ -248,9 +255,19 @@ def scheduler(df, recover):
 		scheduler_log.write(log)
 		scheduler_log.flush()
 
-def get_retweets(tweet_id, twarc_api):
-	for tweet in twarc_api.hydrate([tweet_id]):
-		return tweet['retweet_count']
+def get_retweets(tweets, twarc_api, step=100):
+	"""
+	For all the tweets passed to this method, if retrieves retweets by 
+	requesting for 100 retweets at a time.
+	:returns: A dictionary with tweet_id as key and retweet_count as value {int:long}
+	"""
+	retweets = dict{}
+	for i in range(0,len(tweets),step):
+		last_idx = min(i+step, len(tweets))
+		sub_list = tweets[i:last_idx]
+		for tweet in twarc_api.hydrate(sub_list):
+			retweets[tweet['id']]=tweet['retweet_count']
+	return retweets
 
 
 # convert handles to user_ids
