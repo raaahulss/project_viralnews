@@ -182,7 +182,7 @@ def scheduler(df, recover):
 		time_now = datetime.datetime.utcnow().replace(tzinfo=utc)
 		time_range = time_now + datetime.timedelta(minutes=3)
 		time_travel = time_now - datetime.timedelta(minutes=3)
-        
+		export_counter +=1
 		log = str("\n["+str(time_now) + "] SCHEDULER \t Loop starting \t time_now: "+str(time_now)+"\ttime_range: "+str(time_range))
 		print(log)
 		scheduler_log.write(log)
@@ -222,7 +222,8 @@ def scheduler(df, recover):
 							'next_update' : [next_update],
 							'1':[curr_retweets[row.tweet_id]]}
 				df_temp = pd.DataFrame(data, columns=column_names)
-				df = df.append(df_temp).fillna(-1)
+				df_temp = df_temp.fillna(-1)
+				df = df.append(df_temp)
 			else:
 				# print("\n")
 				# print("Printing error part",type(df.loc[(df.tweet_id == row.tweet_id), 'next_update']),df.loc[(df.tweet_id == row.tweet_id), 'next_update'])
@@ -242,9 +243,10 @@ def scheduler(df, recover):
 				df.loc[(df.tweet_id == row.tweet_id), 'count'] = (int(current_count) + 1)
 
 				
-		elapsed_time = time.time() - start_time
+		# elapsed_time = time.time() - start_time
 		#print("\n SCHEDULER \t start_time: ", start_time, "\telapsed: ", elapsed_time)
-		if(elapsed_time >= 60):
+		# if(elapsed_time >= 60):
+		if export_counter % 2 == 0:
 			log=str("\n["+str(datetime.datetime.utcnow().replace(tzinfo=utc))+"] SCHEDULER\t Writing to file")
 			print(log)
 			scheduler_log.write(log)
