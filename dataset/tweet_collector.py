@@ -44,7 +44,7 @@ def export_dataset(df,name):
     name = "{}/{}_{}.csv".format(cnst.dataset_root_path,
 					name, 
 					datetime.datetime.now().strftime("%B_%d_%y_%H"))
-    df.to_csv(name)
+    df.to_csv(name, index=False)
 
 def create_original_df():
 	columns = [
@@ -61,7 +61,7 @@ def create_original_df():
 		"next_update",
 		"count"]
 	
-	df = pd.DataFrame(columns=columns)
+	df = pd.DataFrame(columns=columns, )
 	return df
 
 def create_df():
@@ -174,13 +174,14 @@ def scheduler(df, recover):
 		column_names.append(str(i))
 	
 	start_time = time.time()
+	export_counter = 0
 	while(1):
-		time.sleep(60)
+		time.sleep(10)
 
 		# Time range is 2 minutes
 		time_now = datetime.datetime.utcnow().replace(tzinfo=utc)
-		time_range = time_now + datetime.timedelta(minutes=10)
-		time_travel = time_now - datetime.timedelta(minutes=10)
+		time_range = time_now + datetime.timedelta(minutes=3)
+		time_travel = time_now - datetime.timedelta(minutes=3)
         
 		log = str("\n["+str(time_now) + "] SCHEDULER \t Loop starting \t time_now: "+str(time_now)+"\ttime_range: "+str(time_range))
 		print(log)
@@ -189,19 +190,23 @@ def scheduler(df, recover):
 		print("Original DF length from scheduler ",len(original_df))
 		# A list of (tweet_id)
 		retweetables = list()
+		retweetables_id = list()
+		
 		for row in original_df.itertuples():
 			try:
-				current_update = pd.to_datetime((df.loc[(df.tweet_id == row.tweet_id), 'next_update'])[0])
+				current_update = pd.to_datetime((df.loc[(df.tweet_id == row.tweet_id), 'next_update'])).item()#[0])
 			except:
 				current_update = pd.to_datetime(row.next_update)
-			
+				
 			if current_update >= time_travel and current_update <= time_range :
-				retweetables.append(row.tweet_id)
+				retweetables_id.append(row.tweet_id)
+				retweetables.append(row)
 		
-		curr_retweets = get_retweets(retweetables,t)
-		for retweetable_id  in retweetables:
-			row = original_df.loc[original_df['tweet_id']==retweetable_id]
-			print(row.tweet_id, retweetable_id)
+		curr_retweets = get_retweets(retweetables_id,t)
+		for row  in retweetables:
+			# row = original_df.where[original_df['tweet_id']==retweetable_id,["tweet_id","created_at","next_update"]  ]
+			# print(row)
+			# print(row.tweet_id,row.created_at)
 			if(not(row.tweet_id in df.tweet_id.values)):
 				next_update = pd.to_datetime(row.next_update) + datetime.timedelta(minutes=5)
 				current_time = datetime.datetime.utcnow().replace(tzinfo=utc)
@@ -219,9 +224,13 @@ def scheduler(df, recover):
 				df_temp = pd.DataFrame(data, columns=column_names)
 				df = df.append(df_temp).fillna(-1)
 			else:
-				current_update = ((df.loc[(df.tweet_id == row.tweet_id), 'next_update'])[0])
+				# print("\n")
+				# print("Printing error part",type(df.loc[(df.tweet_id == row.tweet_id), 'next_update']),df.loc[(df.tweet_id == row.tweet_id), 'next_update'])
+				# print(df.index)
+				# print("\n")
+				current_update = ((df.loc[(df.tweet_id == row.tweet_id), 'next_update'])).item()#[0])
 				# if(current_update >= time_now and current_update <= time_range):
-				current_count = (df.loc[(df.tweet_id == row.tweet_id), 'count'])[0]
+				current_count = (df.loc[(df.tweet_id == row.tweet_id), 'count']).item()# [0]
 				df.loc[(df.tweet_id == row.tweet_id), str(current_count)] = curr_retweets[row.tweet_id]
 				new_time = current_update + datetime.timedelta(minutes=5)
 				current_time = datetime.datetime.utcnow().replace(tzinfo=utc)
@@ -235,7 +244,7 @@ def scheduler(df, recover):
 				
 		elapsed_time = time.time() - start_time
 		#print("\n SCHEDULER \t start_time: ", start_time, "\telapsed: ", elapsed_time)
-		if(elapsed_time >= 120):
+		if(elapsed_time >= 60):
 			log=str("\n["+str(datetime.datetime.utcnow().replace(tzinfo=utc))+"] SCHEDULER\t Writing to file")
 			print(log)
 			scheduler_log.write(log)
@@ -304,7 +313,8 @@ def main():
 	temp_df = get_latest_df("retweet")
 	print(len(temp_df) if temp_df is not None else "None")
 	df = create_df() if temp_df is None else temp_df
-	# df['next_update'] = pd.to_datetime(df['next_update'])
+	df['next_update'] = pd.to_datetime(df['next_update'])
+	df['created_time'] = pd.to_datetime(df['created_time'])
 	watcher_t = threading.Thread(target=bird_watcher, daemon=True)
 	scheduler_t = threading.Thread(target=scheduler, daemon=True, kwargs={'df':df, 'recover':recover})
 	watcher_t.start()
