@@ -10,7 +10,8 @@ import constants as cnst
 import glob
 import os.path as path
 from operator import itemgetter
-
+import argparse
+from distutils import util
 utc=pytz.UTC
 
 
@@ -155,7 +156,7 @@ def bird_watcher():
 				bird_log.flush()
 				
 # This thread is responsible for getting the retweets every 24 hrs
-def scheduler(df):
+def scheduler(df, recover):
 	global original_df
 	print("original_df columns :", original_df.columns)
 	print("df columns :", df.columns)
@@ -179,6 +180,7 @@ def scheduler(df):
 		# Time range is 2 minutes
 		time_now = datetime.datetime.utcnow().replace(tzinfo=utc)
 		time_range = time_now + datetime.timedelta(minutes=10)
+		time_travel = time_now - datetime.timedelta(minutes=10)
         
 		log = str("\n["+str(time_now) + "] SCHEDULER \t Loop starting \t time_now: "+str(time_now)+"\ttime_range: "+str(time_range))
 		print(log)
@@ -191,7 +193,7 @@ def scheduler(df):
 			except:
 				current_update = pd.to_datetime(row.next_update)
 			
-			if current_update >= time_now and current_update <= time_range :
+			if current_update >= time_travel and current_update <= time_range :
 				curr_retweets = get_retweets(row.tweet_id,t)
 				if(not(row.tweet_id in df.tweet_id.values)):
 					next_update = pd.to_datetime(row.next_update) + datetime.timedelta(minutes=5)
@@ -211,21 +213,21 @@ def scheduler(df):
 					df = df.append(df_temp).fillna(-1)
 				else:
 					current_update = ((df.loc[(df.tweet_id == row.tweet_id), 'next_update'])[0])
-					if(current_update >= time_now and current_update <= time_range):
-						current_count = (df.loc[(df.tweet_id == row.tweet_id), 'count'])[0]
-						df.loc[(df.tweet_id == row.tweet_id), str(current_count)] = curr_retweets
-						new_time = current_update + datetime.timedelta(minutes=5)
-						current_time = datetime.datetime.utcnow().replace(tzinfo=utc)
-						log=str("\n[" + str(current_time)+"] SCHEDULER\t "+str(row.tweet_id)+" update retweets for offset: " +str(current_count)+ "\t create_time: "+str(row.created_at)+"\tcurrent update: " + str(current_update)+"\tnext_update: "+str(new_time))
-						print(log)
-						scheduler_log.write(log)
-						scheduler_log.flush()
-						df.loc[(df.tweet_id == row.tweet_id), 'next_update'] = new_time
-						df.loc[(df.tweet_id == row.tweet_id), 'count'] = (int(current_count) + 1)
+					# if(current_update >= time_now and current_update <= time_range):
+					current_count = (df.loc[(df.tweet_id == row.tweet_id), 'count'])[0]
+					df.loc[(df.tweet_id == row.tweet_id), str(current_count)] = curr_retweets
+					new_time = current_update + datetime.timedelta(minutes=5)
+					current_time = datetime.datetime.utcnow().replace(tzinfo=utc)
+					log=str("\n[" + str(current_time)+"] SCHEDULER\t "+str(row.tweet_id)+" update retweets for offset: " +str(current_count)+ "\t create_time: "+str(row.created_at)+"\tcurrent update: " + str(current_update)+"\tnext_update: "+str(new_time))
+					print(log)
+					scheduler_log.write(log)
+					scheduler_log.flush()
+					df.loc[(df.tweet_id == row.tweet_id), 'next_update'] = new_time
+					df.loc[(df.tweet_id == row.tweet_id), 'count'] = (int(current_count) + 1)
 
 		elapsed_time = time.time() - start_time
 		#print("\n SCHEDULER \t start_time: ", start_time, "\telapsed: ", elapsed_time)
-		if(elapsed_time >= 60):
+		if(elapsed_time >= 2):
 			log=str("\n["+str(datetime.datetime.utcnow().replace(tzinfo=utc))+"] SCHEDULER\t Writing to file")
 			print(log)
 			scheduler_log.write(log)
@@ -274,17 +276,19 @@ def get_userIds():
 
 def main():
 	global original_df
+	recover = False
 	temp_df = get_latest_df("original_df")
 	print(len(temp_df) if temp_df is not None else "None")
 	original_df = create_original_df() if temp_df is None else temp_df
-	# if original_df is not None:
-	# 	original_df['next_update'] = pd.to_datetime(original_df['next_update'])
+	if len(original_df) != 0 :
+		recover = True
+		print("recovering the system from the existing files")
 	temp_df = get_latest_df("retweet")
 	print(len(temp_df) if temp_df is not None else "None")
 	df = create_df() if temp_df is None else temp_df
 	# df['next_update'] = pd.to_datetime(df['next_update'])
 	watcher_t = threading.Thread(target=bird_watcher, daemon=True)
-	scheduler_t = threading.Thread(target=scheduler, daemon=True, kwargs={'df':df})
+	scheduler_t = threading.Thread(target=scheduler, daemon=True, kwargs={'df':df, 'recover':recover})
 	watcher_t.start()
 	scheduler_t.start()
 	watcher_t.join()
@@ -292,4 +296,9 @@ def main():
 	
 
 if __name__ == "__main__":
+	# parser = argparse.ArgumentParser(description='Starting in recovery mode', argument_default=False)
+	# parser.add_argument("--recover", type=lambda x:bool(util.strtobool(x)),choices=[True, False],
+	# 		help="Setting this variable to true or false will enable or disable recovery mode")
+	# args = parser.parse_args()
+	# main(args['recover'])
 	main()
