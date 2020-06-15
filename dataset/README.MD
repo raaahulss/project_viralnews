@@ -47,12 +47,12 @@ This service is configured to restart on failure.
 
 ## Output
 
-The output data is saved to ```data.csv```
+The output data is saved to ```retweet_[MON]_[DAY]_[YEAR]_[HOUR]```
 
 Here is the column structure of the output:
 
-| tweet_id  | url  | handle  | count  | created_time  |next_update | 1| 2 | 3| 4| ...| 100|
-|---|---|---|---|---|---|---|---|---|---|---|---|
+| tweet_id  | count  | created_time  |next_update | 1| 2 | 3| 4| ...| 100|
+|---|---|---|---|---|---|---|---|---|---|
 
 Where the numbered columns represent the offset in days from the ```created_time``` of the tweet and the values are the total number of retweets.
 
