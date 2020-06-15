@@ -47,7 +47,7 @@ This service is configured to restart on failure.
 
 ## Output
 
-The output data is saved to ```retweet_[MON]_[DAY]_[YEAR]_[HOUR]```
+The output data is saved to ```../data/retweet_[MON]_[DAY]_[YEAR]_[HOUR]```
 
 Here is the column structure of the output:
 
