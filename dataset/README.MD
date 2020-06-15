@@ -61,7 +61,7 @@ Where the numbered columns represent the offset in days from the ```created_time
 
 By default, the script is configured to write debug information to ```bird_watcher.log``` and ```scheduler.log```
 
-The script also outputs the debug information for both threads to ```stdout```
+The script also outputs the debug information for both threads to ```stdout```. This can be redirected to a file. 
 
 ## Fault Tolerance
 
