@@ -63,5 +63,8 @@ By default, the script is configured to write debug information to ```bird_watch
 
 The script also outputs the debug information for both threads to ```stdout```
 
+## Fault Tolerance
+
+By default, the script is made to be resilient from failures. On every other iteration through the  ```scheduler``` thread, both dataframes are written to disk in the ```../data``` directory. The original tweet IDs from the ```bird_watcher``` thread are written to ```../data/original_df_[MON]_[DAY]_[YEAR]_[HOUR]``` and the retweets from the ```scheduler``` thread are written to ```../data/retweet_[MON]_[DAY]_[YEAR]_[HOUR]```. When the script starts up after a failure, it looks for the newest instances of these two files and regenerates the dataframes to regain state. Every hour, a new version of both of these files is created, which means that the state of both dataframes is exported and saved. 
 
 
