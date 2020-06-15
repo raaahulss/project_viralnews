@@ -237,7 +237,7 @@ def scheduler(df, recover):
 			#print(log)
 			scheduler_log.write(log)
 			scheduler_log.flush()
-			log=str("\n["+str(datetime.datetime.utcnow().replace(tzinfo=utc))+"] SCHEDULER\t Original Frame len : "+str(len(original_df))+ "Data Frame len : "+str(len(df)))
+			log=str("\n["+str(datetime.datetime.utcnow().replace(tzinfo=utc))+"] SCHEDULER\t Original Frame len : "+str(len(original_df))+ " Data Frame len : "+str(len(df)))
 			#print(log)
 			scheduler_log.write(log)
 			scheduler_log.flush()
