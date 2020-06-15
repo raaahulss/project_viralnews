@@ -28,38 +28,44 @@ def get_latest_df(name):
 	"""
 	files = glob.glob("{}/{}*.csv".format(cnst.dataset_root_path, name))
 	if len(files) == 0:
-		#print("Existing dataset not found for ", name)
 		return None
 	try:
 		files_time = [(path.getctime(file), file) for file in files]
 	except OSError as err:
-		#print("Existing dataset not found for ", name)
-		#print(str(err))
 		return None
 	files_time.sort(key=itemgetter(0), reverse=True)
-	#print("Existing dataset found for ", name, "returning", files_time[0][1])
 	return pd.read_csv(files_time[0][1])
 
 def export_dataset(df,name):
-    name = "{}/{}_{}.csv".format(cnst.dataset_root_path,
-					name, 
+	"""
+	given a dataframe and a file name, this will write out the dataframe to the file
+	"""
+   name = "{}/{}_{}.csv".format(cnst.dataset_root_path, name, 
 					datetime.datetime.now().strftime("%B_%d_%y_%H"))
-    df.to_csv(name, index=False)
+   df.to_csv(name, index=False)
 
 def create_original_df():
+	"""
+	This creates the original dataframe that is used to store the tweets
+	"""
 	columns = ["tweet_id","created_at","next_update","count"]
 	df = pd.DataFrame(columns=columns, )
 	return df
 
 def create_df():
+	"""
+	This creates the original dataframe that is used to store the retweet counts
+	"""
 	column_names = ['tweet_id','count','created_time','next_update']
 	for i in range(1, 101):
 		column_names.append(str(i))
 	df = pd.DataFrame(columns = column_names)
 	return df
 
-# This thread monitors the twitter accounts
 def bird_watcher():
+	"""
+	This thread monitors specified twitter accounts and saves the tweets to a dataframe 
+	"""
 	global original_df 
 	
 	if os.path.exists("bird_watcher.log"):
@@ -168,7 +174,7 @@ def scheduler(df, recover):
 				time_travel = time_now - datetime.timedelta(minutes=15)
 		export_counter +=1
 		
-		log = str("\n["+str(time_now) + "] SCHEDULER \t Loop starting \t time_now: "+str(time_now)+"\ttime_range: "+str(time_range))
+		log = str("\n["+str(time_now) + "] SCHEDULER \t Loop starting \ttime_range: "+str(time_travel)+" -> "+str(time_range))
 		#print(log)
 		scheduler_log.write(log)
 		scheduler_log.flush()
