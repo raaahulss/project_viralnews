@@ -69,6 +69,7 @@ def bird_watcher():
 	
 	if os.path.exists("bird_watcher.log"):
 		bird_log = open("bird_watcher.log", "a")
+		time_now = datetime.datetime.utcnow().replace(tzinfo=utc)
 		log = str("\n["+str(time_now) + "] BIRDWATCHER \t Recovering from Failure")
 		bird_log.write(log)
 		bird_log.flush()
