@@ -140,6 +140,7 @@ def scheduler(df, recover):
 	#print("df columns :", df.columns)
 	if os.path.exists("scheduler.log"):
 		scheduler_log = open("scheduler.log", "a")
+		time_now = datetime.datetime.utcnow().replace(tzinfo=utc)
 		log = str("\n["+str(time_now) + "] SCHEDULER \t Recovering from Failure")
 		scheduler_log.write(log)
 		scheduler_log.flush()
