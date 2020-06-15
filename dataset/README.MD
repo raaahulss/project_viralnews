@@ -15,14 +15,35 @@ pip3 install -r requirements.txt
 ```
 
 ## Running Tweet Collector
+
+### Setting up twitter accounts to follow
+
 First specify what twitter accounts you want to follow by adding them to the ```accounts.txt``` file. Add one account per line without the "@" symbol. 
 
-Then, simply run the script:
 
+### Running from command line
+
+You can run the python script from the command line with the following script. However, if the script crashes or fails for any reason, it will not restart on its own.
 
 ```bash
-python3 tweet_collector.py
+nohup python3 tweet_collector.py > output.log
 ```
+
+### Running as systemd service
+
+As a service, the script will continuously run in the background, and if it encounters any errors and crashes, it will restart. 
+
+Move the systemd unit file ```dataset.service``` to ```/etc/systemd/system```
+
+Run the following commands:
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable dataset
+sudo systemctl start dataset
+```
+
+This service is configured to restart on failure. 
 
 ## Output
 
@@ -41,3 +62,6 @@ Where the numbered columns represent the offset in days from the ```created_time
 By default, the script is configured to write debug information to ```bird_watcher.log``` and ```scheduler.log```
 
 The script also outputs the debug information for both threads to ```stdout```
+
+
+
