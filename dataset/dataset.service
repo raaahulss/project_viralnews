@@ -1,0 +1,13 @@
+[Unit]
+# Dataset Creator
+Description = Service that builds the twitter dataset
+
+[Service]
+# Run python script to build dataset
+Environment=PYTHONUNBUFFERED=1
+WorkingDirectory=/home/ec2-user/project_viralnews/dataset
+ExecStart=/usr/bin/python3 /home/ec2-user/project_viralnews/dataset/tweet_collector.py > /home/ec2-user/project_viralnews/dataset/output.log
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
