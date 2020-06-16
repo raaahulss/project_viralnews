@@ -144,7 +144,7 @@ class NewsObject(object):
         doc = docx.Document(self.url)
         content = []
         for paragraph in doc.paragraphs:
-            if paragraph.style.name == 'Title':
+            if not self.title:
                 self.title = paragraph.text
             else:
                 content.append(paragraph.text)

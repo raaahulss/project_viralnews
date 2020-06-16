@@ -45,3 +45,13 @@ def test_fetch_news_from_invalid_url(url, target):
     """
     _, _, error = preprocessor(url, True)
     assert str(error) == target
+
+
+@pytest.mark.parametrize("path, target",
+[
+("webapp/src/Test.docx", "Test"),
+("webapp/src/Test1.docx", ""),
+])
+def test_fetch_news_from_valid_file(path, target):
+    news, _, _ = preprocessor(path, False)
+    assert news.title == target
