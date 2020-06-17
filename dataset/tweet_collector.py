@@ -229,7 +229,7 @@ def scheduler(df, recover):
 					current_time = datetime.datetime.utcnow().replace(tzinfo=utc)
 					log=str("\n[" + str(current_time)+"] SCHEDULER\t "+str(row.tweet_id)+" update retweets for offset: " +str(current_count)+ "\t create_time: "+str(row.created_at)+"\tcurrent update: " + str(current_update)+"\tnext_update: "+str(new_time))
 					#print(log)
-					#scheduler_log.write(log)
+					scheduler_log.write(log)
 					scheduler_log.flush()
 					df.loc[(df.tweet_id == row.tweet_id), 'next_update'] = new_time
 					df.loc[(df.tweet_id == row.tweet_id), 'count'] = (int(current_count) + 1)
