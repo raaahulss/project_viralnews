@@ -14,24 +14,24 @@ class Statistics extends Component {
         <Container>
           <Row>
             <Col>
-              <NumberCard title="Retweets" value={this.props.metrics.retweets}/>
+              <center>
+                <NumberCard title="Retweets" value={this.props.metrics.retweets}/>
+              </center>
             </Col>
             <Col>
-              <NumberCard title="Favourites" value={this.props.metrics.favourites}/>
+              <center>
+                <NumberCard title="Favourites" value={this.props.metrics.favourites}/>
+              </center>
             </Col>
             <Col>
-              <NumberCard title="Responses" value={this.props.metrics.responses}/>
-            </Col>
-          </Row>
-          <Row id="second-row">
-            <Col>
-              <NumberCard title="Trending?" value={this.props.metrics.trending}/>
+              <center>
+                <NumberCard title="Responses" value={this.props.metrics.responses}/>
+              </center>
             </Col>
             <Col>
-              <DateCard id="date-card" title="First Tweet" value={this.props.metrics.first_tweet}/>
-            </Col>
-            <Col>
-              <DateCard title="Last Tweet" value={this.props.metrics.last_tweet}/>
+              <center>
+                <NumberCard title="Trending?" value={this.props.metrics.trending}/>
+              </center>
             </Col>
           </Row>
         </Container>
@@ -41,3 +41,15 @@ class Statistics extends Component {
 }
 
 export default Statistics;
+
+
+// <Row id="second-row">
+            
+            
+// </Row>
+// <Col>
+//   <DateCard id="date-card" title="First Tweet" value={this.props.metrics.first_tweet}/>
+// </Col>
+// <Col>
+//   <DateCard title="Last Tweet" value={this.props.metrics.last_tweet}/>
+// </Col>

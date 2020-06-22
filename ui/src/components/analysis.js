@@ -38,7 +38,7 @@ class Analysis extends Component {
 function ViralnessHTML(props) {
   return (
     <Col id="viralness-column">
-      <ViralnessModel title="Will this Article go Viral?" value={props.value}/>
+      <ViralnessModel title="Article Viralness" value={props.value}/>
       <Row>
         <Col>
           <p style={{color:'#e27d60'}}>Low</p>
@@ -54,13 +54,13 @@ function ViralnessHTML(props) {
 function SentimentHTML(props) {
   return (
     <Col id="sentiment-column">
-      <SentimentModel title="Is this Article Biased?" value={props.value}/>
+      <SentimentModel title="Political Bias" value={props.value}/>
       <Row style={{width: 330}}>
         <Col>
-          <p style={{color:'#e27d60'}}>Left Wing</p>
+          <p style={{color:'#e27d60'}}>Liberal</p>
         </Col>
         <Col>
-          <p style={{color:'#e27d60'}}>Right Wing</p>
+          <p style={{color:'#e27d60'}}>Conservative</p>
         </Col>
       </Row>
     </Col>
@@ -70,13 +70,13 @@ function SentimentHTML(props) {
 function OpinionHTML(props) {
   return (
     <Col id="opinion-column">
-      <OpinionModel title="How is the Public Reacting?" value={props.value}/>
+      <OpinionModel title="Public Reaction" value={props.value}/>
       <Row>
         <Col>
-          <p style={{color:'#e27d60'}}>Unhappy</p>
+          <p style={{color:'#e27d60'}}>Disagree</p>
         </Col>
         <Col>
-          <p style={{color:'#e27d60'}}>Happy</p>
+          <p style={{color:'#e27d60'}}>Agree</p>
         </Col>
       </Row>
     </Col>
