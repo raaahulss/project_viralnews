@@ -75,9 +75,10 @@ class FileUpload extends Component {
 
       const formData = new FormData();
       formData.append("file", file, file.name);
-
-      req.open("POST", "http://localhost:8000/upload");
+      // req.setRequestHeader("Access-Control-Allow-Origin","*")
+      req.open("POST", "http://localhost:5000/");
       req.send(formData);
+      console.log("Works")
     });
   }
 
