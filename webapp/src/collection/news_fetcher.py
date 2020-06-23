@@ -150,7 +150,7 @@ class NewsObject(object):
                 content.append(paragraph.text)
         self.content = ' '.join(content)
 
-    def to_dict(self):
+    def to_dict(self) -> dict:
         """
         Transform this news object to a dict.
         :return: A dict of related member variables.
@@ -164,7 +164,7 @@ class NewsObject(object):
                             'url': self.url}}
 
 
-def get_news_from_file(path):
+def get_news_from_file(path: str) -> [NewsObject, ApplicationError]:
     try:
         word_file = NewsObject(path)
         word_file.fetch_from_file()
@@ -175,7 +175,7 @@ def get_news_from_file(path):
         return None, err
 
 
-def get_news_from_url(url):
+def get_news_from_url(url: str) -> [NewsObject, ApplicationError]:
     try:
         news = NewsObject(url)
         news.fetch_from_url()
