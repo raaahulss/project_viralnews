@@ -1,10 +1,11 @@
 from src.models.viralness import ViralnessModel
-from src.models.sentiment import SentimentModel
+from src.models.sentiment import get_sentiment
 from src.models.public_opinion import PublicOpinionModel
+from src.collection.news_fetcher import NewsObject
 
 
 class Aggregator(object):
-    def __init__(self, news=None, twitter=None, published=False):
+    def __init__(self, news: NewsObject = None, twitter=None, published: bool = False):
         self.news = news
         self.twitter = twitter
         self.published = published
@@ -24,8 +25,7 @@ class Aggregator(object):
             self.error_code = 'none_news_object'
             return
 
-        sentiment_model = SentimentModel()
-        self.models['sentiment'] = sentiment_model(self.news)
+        self.models['sentiment'] = get_sentiment(self.news)
         if self.published:
             viralness_model = ViralnessModel()
             self.models['viralness'] = viralness_model(self.news)
