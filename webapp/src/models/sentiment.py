@@ -31,8 +31,8 @@ def get_sentiment(news: NewsObject) -> float:
     """
     Given a news object, return the probability that its underlying sentiment is liberal
     """
-    with open('vocab.json', 'r') as f:
+    with open('/Users/xie/Documents/cmu/capstone/project_viralnews/webapp/src/models/vocab.json', 'r') as f:
         vocab = json.load(f)
     sentiment_model = SentimentModel(vocab, 2)
-    sentiment_model.load_state_dict(torch.load('lr.model', map_location=sentiment_model.device))
+    sentiment_model.load_state_dict(torch.load('/Users/xie/Documents/cmu/capstone/project_viralnews/webapp/src/models/lr.model', map_location=sentiment_model.device))
     return sentiment_model(news.title + news.content)

@@ -32,6 +32,29 @@ class Aggregator(object):
 
 
 if __name__ == '__main__':
-    agg = Aggregator(1, 1, True)
+    news = NewsObject('')
+    news.title = 'test'
+    news.content = 'test'
+    twitter = ['awww that bummer you shoulda got david carr of third day to do it',
+               'is upset that he can not update his facebook by texting it and might cry as result school today also blah',
+               'dived many times for the ball managed to save the rest go out of bounds',
+               'my whole body feels itchy and like its on fire',
+               'no it not behaving at all mad why am here because can not see you all over there',
+               'not the whole crew',
+               'need hug',
+               'hey long time no see yes rains bit only bit lol fine thanks how you',
+               'nope they did not have it',
+               'que me muera',
+               'love guys the best',
+               'im meeting up with one of my besties tonight cant wait girl talk',
+               'thanks for the twitter add sunisa got to meet you once at hin show here in the dc area and you were sweetheart',
+               'being sick can be really cheap when it hurts too much to eat real food plus your friends make you soup',
+               'he has that effect on everyone',
+               'you can tell him that just burst out laughing really loud because of that thanks for making me come out of my sulk',
+               'thans for your response ihad already find this answer',
+               'am so jealous hope you had great time in vegas how did you like the acm love your show',
+               'ah congrats mr fletcher for finally joining twitter',
+               'responded stupid cat is helping me type forgive errors']
+    agg = Aggregator(news, twitter, True)
     agg.run_models()
     print(agg.models)

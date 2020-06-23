@@ -5,12 +5,12 @@ from keras.models import load_model
 from keras import Model
 
 
-def load_tokenizer_and_model() -> list[Tokenizer, Model]:
+def load_tokenizer_and_model() -> [Tokenizer, Model]:
     """
     Load model and tokenizer from file
     :return:
     """
-    csv = 'clean_tweet_1.csv'
+    csv = '/Users/xie/Documents/cmu/capstone/project_viralnews/webapp/src/models/clean_tweet_1.csv'
     my_df = pd.read_csv(csv, index_col=0)
     my_df.head()
     my_df.dropna(inplace=True)
@@ -19,11 +19,11 @@ def load_tokenizer_and_model() -> list[Tokenizer, Model]:
     x = my_df.text
     tokenizer = Tokenizer(num_words=100000)
     tokenizer.fit_on_texts(x)
-    model = load_model('CNN_best_weights.02-0.8318.hdf5')
+    model = load_model('/Users/xie/Documents/cmu/capstone/project_viralnews/webapp/src/models/CNN_best_weights.02-0.8318.hdf5')
     return tokenizer, model
 
 
-def get_public_opinion(twitter: list[str]) -> float:
+def get_public_opinion(twitter: [str]) -> float:
     tokenizer, model = load_tokenizer_and_model()
     seq_test = tokenizer.texts_to_sequences(twitter)
     padded_seq_test = pad_sequences(seq_test, maxlen=45)
