@@ -20,7 +20,7 @@ class Statistics extends Component {
             </Col>
             <Col>
               <center>
-                <NumberCard title="Favourites" value={this.props.metrics.favourites}/>
+                <NumberCard title="Favorites" value={this.props.metrics.favourites}/>
               </center>
             </Col>
             <Col>
@@ -44,8 +44,8 @@ export default Statistics;
 
 
 // <Row id="second-row">
-            
-            
+
+
 // </Row>
 // <Col>
 //   <DateCard id="date-card" title="First Tweet" value={this.props.metrics.first_tweet}/>

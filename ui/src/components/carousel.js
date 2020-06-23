@@ -1,13 +1,9 @@
 import React, {Component} from 'react'
-import { useState } from 'react'
-import {CardGroup, Card, Image, Button, Carousel} from 'react-bootstrap';
-import { Grid, Row, Col, Container } from 'react-bootstrap';
-import styled from 'styled-components';
+import {Carousel} from 'react-bootstrap';
 import viral from './img/test_image_1.jpeg';
 import bias from './img/test_image_2.jpeg';
 import sentiment from './img/test_image_3.jpg';
 import '../css/carousel.css'
-
 
 class CarouselMl extends Component {
   constructor(props){
@@ -15,7 +11,7 @@ class CarouselMl extends Component {
   }
   render() {
     return (
-      <div className="slide">
+    <div className="slide">
       <Carousel>
         <Carousel.Item>
           <img
@@ -68,7 +64,7 @@ class CarouselMl extends Component {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-    </div>
+      </div>
     );
   }
 }

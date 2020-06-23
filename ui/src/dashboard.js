@@ -3,6 +3,7 @@ import ArticleDetails from './components/article_details'
 import Analysis from './components/analysis'
 import Statistics from './components/statistics'
 
+
 class Dashboard extends Component {
   constructor(props){
     super(props);
@@ -16,7 +17,7 @@ class Dashboard extends Component {
         "public_opinion": 0.88
       },
       "details": {
-        "title": "Trump invokes George Floyd's name while taking economic victory lap",
+        "title": "Two more Trump staffers test positive for coronavirus after Tulsa rally",
         "source": "CNN",
         "authors": "Maegan Vazquez",
         "published_date": "3:30 PM ET, Fri June 5, 2020",
@@ -25,9 +26,9 @@ class Dashboard extends Component {
         "op_url": "https://www.cnn.com/2020/06/05/politics/donald-trump-george-floyd-rose-garden/index.html"
       },
       "metrics": {
-        "retweets": 1234567,
-        "favourites": 1234567,
-        "responses": 1234567,
+        "retweets": 432,
+        "favourites": 874,
+        "responses": 45,
         "trending": "Yes",
         "first_tweet": "6:00 PM, June 05, 2020",
         "last_tweet": "8:45 PM, June 05, 2020"
@@ -39,22 +40,23 @@ class Dashboard extends Component {
     }
     if (response.published === true) {
       return (
-        <div>
+        <div id="margin-top: 30px">
+        <ArticleDetails title={response.details.title}
+                        url={response.details.op_url}
+                        source={response.details.source}
+                        author={response.details.authors}
+                        date={response.details.published_date}
+                        content={response.details.content}/>
           <Analysis models={response.models} published={response.published}/>
           <Statistics metrics={response.metrics}/>
-          <ArticleDetails title={response.details.title}
-                          url={response.details.op_url}
-                          source={response.details.source}
-                          author={response.details.authors}
-                          date={response.details.published_date}
-                          content={response.details.content}/>
+
         </div>
       );
     } else {
       return (
         <div>
-          <Analysis models={response.models} published={response.published}/>
           <ArticleDetails />
+          <Analysis models={response.models} published={response.published}/>
         </div>
       );
     }

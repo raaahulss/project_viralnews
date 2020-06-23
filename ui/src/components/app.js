@@ -15,8 +15,7 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
-        <React.Fragment>
+        <React.Fragment id="container">
           <Router>
             <NavBar />
               <Switch>
@@ -29,7 +28,6 @@ class App extends Component {
               </Switch>
           </Router>
         </React.Fragment>
-      </div>
     );
   }
 }

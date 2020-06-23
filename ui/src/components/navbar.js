@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Nav, Navbar, Grid, Row, Col} from 'react-bootstrap';
+import {Nav} from 'react-bootstrap';
 import '../css/navbar.css'
 
 class NavBar extends Component {
@@ -8,7 +8,7 @@ class NavBar extends Component {
   }
   render() {
     return (
-      <Nav variant="pills" className="justify-content-center">
+      <Nav fluid ariant="pills" className="justify-content-center" id="sticky-nav">
         <Nav.Item>
           <Nav.Link href="/">Home</Nav.Link>
         </Nav.Item>
