@@ -5,10 +5,11 @@ from src.collection.news_fetcher import NewsObject
 from src.collection.twitter_api import Tweet
 from src.error import *
 
+
 class Aggregator(object):
-    def __init__(self, news: NewsObject = None, twitter : Tweet=None, published: bool = False):
+    def __init__(self, news: NewsObject = None, tweet: Tweet = None, published: bool = False):
         self.news = news
-        self.twitter = twitter
+        self.tweet = tweet
         self.published = published
         self.models = {'viralness': None,
                        'sentiment': None,
@@ -27,7 +28,7 @@ class Aggregator(object):
         # we might use virality model based on text for virality
         self.models['viralness'] = get_viralness(self.news)
         if self.published:
-            self.models['public_opinion'] = get_public_opinion(self.twitter)
+            self.models['public_opinion'] = get_public_opinion(self.tweet)
 
     def to_dict(self):
         dictionary = {"viralness" : self.models['viralness'],
@@ -41,7 +42,7 @@ if __name__ == '__main__':
     news = NewsObject('')
     news.title = 'test'
     news.content = 'test'
-    twitter = ['awww that bummer you shoulda got david carr of third day to do it',
+    tweet = ['awww that bummer you shoulda got david carr of third day to do it',
                'is upset that he can not update his facebook by texting it and might cry as result school today also blah',
                'dived many times for the ball managed to save the rest go out of bounds',
                'my whole body feels itchy and like its on fire',
@@ -61,6 +62,6 @@ if __name__ == '__main__':
                'am so jealous hope you had great time in vegas how did you like the acm love your show',
                'ah congrats mr fletcher for finally joining twitter',
                'responded stupid cat is helping me type forgive errors']
-    agg = Aggregator(news, twitter, True)
+    agg = Aggregator(news, tweet, True)
     agg.run_models()
     print(agg.models)
