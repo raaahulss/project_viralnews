@@ -31,7 +31,7 @@ def parse_url():
     aggregator = Aggregator(news=news_obj, twitter=twitter_obj, published=False)
     try:
         aggregator.run_models()
-    raise ApplicationError as error:
+    except ApplicationError as error:
         return return_result(error)
 
     return return_result(error, True,  aggregator, twitter_obj, file_obj)
