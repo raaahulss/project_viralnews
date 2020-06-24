@@ -3,6 +3,7 @@ from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
 from keras.models import load_model
 from keras import Model
+from src.collection.twitter_api import Tweet
 
 
 def load_tokenizer_and_model() -> [Tokenizer, Model]:
@@ -23,33 +24,33 @@ def load_tokenizer_and_model() -> [Tokenizer, Model]:
     return tokenizer, model
 
 
-def get_public_opinion(twitter: [str]) -> float:
+def get_public_opinion(tweet: Tweet) -> float:
     tokenizer, model = load_tokenizer_and_model()
-    seq_test = tokenizer.texts_to_sequences(twitter)
+    seq_test = tokenizer.texts_to_sequences(tweet.responses)
     padded_seq_test = pad_sequences(seq_test, maxlen=45)
     yhat_cnn = model.predict(padded_seq_test)
     return yhat_cnn.mean()
 
 
-if __name__ == '__main__':
-    test = ['awww that bummer you shoulda got david carr of third day to do it',
-              'is upset that he can not update his facebook by texting it and might cry as result school today also blah',
-              'dived many times for the ball managed to save the rest go out of bounds',
-              'my whole body feels itchy and like its on fire',
-              'no it not behaving at all mad why am here because can not see you all over there',
-              'not the whole crew',
-              'need hug',
-              'hey long time no see yes rains bit only bit lol fine thanks how you',
-              'nope they did not have it',
-              'que me muera',
-              'love guys the best',
-              'im meeting up with one of my besties tonight cant wait girl talk',
-              'thanks for the twitter add sunisa got to meet you once at hin show here in the dc area and you were sweetheart',
-              'being sick can be really cheap when it hurts too much to eat real food plus your friends make you soup',
-              'he has that effect on everyone',
-              'you can tell him that just burst out laughing really loud because of that thanks for making me come out of my sulk',
-              'thans for your response ihad already find this answer',
-              'am so jealous hope you had great time in vegas how did you like the acm love your show',
-              'ah congrats mr fletcher for finally joining twitter',
-              'responded stupid cat is helping me type forgive errors']
-    print(get_public_opinion(test))
+# if __name__ == '__main__':
+#     test = ['awww that bummer you shoulda got david carr of third day to do it',
+#               'is upset that he can not update his facebook by texting it and might cry as result school today also blah',
+#               'dived many times for the ball managed to save the rest go out of bounds',
+#               'my whole body feels itchy and like its on fire',
+#               'no it not behaving at all mad why am here because can not see you all over there',
+#               'not the whole crew',
+#               'need hug',
+#               'hey long time no see yes rains bit only bit lol fine thanks how you',
+#               'nope they did not have it',
+#               'que me muera',
+#               'love guys the best',
+#               'im meeting up with one of my besties tonight cant wait girl talk',
+#               'thanks for the twitter add sunisa got to meet you once at hin show here in the dc area and you were sweetheart',
+#               'being sick can be really cheap when it hurts too much to eat real food plus your friends make you soup',
+#               'he has that effect on everyone',
+#               'you can tell him that just burst out laughing really loud because of that thanks for making me come out of my sulk',
+#               'thans for your response ihad already find this answer',
+#               'am so jealous hope you had great time in vegas how did you like the acm love your show',
+#               'ah congrats mr fletcher for finally joining twitter',
+#               'responded stupid cat is helping me type forgive errors']
+#     print(get_public_opinion(test))
