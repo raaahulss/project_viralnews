@@ -58,7 +58,7 @@ def parse_file():
     aggregator = Aggregator(news=news_obj, twitter=twitter_obj, published=False)
     try:
         aggregator.run_models()
-    raise ApplicationError as error:
+    except ApplicationError as error:
         return return_result(error)
 
     # TODO: returning result
