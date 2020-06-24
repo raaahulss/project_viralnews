@@ -16,8 +16,9 @@ def parse_url():
     print("Got request", request.args)
     # No URL found. Raise error
     url = request.args.get('url', None)
-    if url is None:
-        raise ApplicationError(*error_list["URL_NT_FND"])
+    try:
+        if url is None:
+            raise ApplicationError(*error_list["URL_NT_FND"])
     except ApplicationError as error:
         return return_result(error)
 
