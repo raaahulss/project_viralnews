@@ -85,12 +85,18 @@ def url_upload():
         return jsonify(twitter_url)
     else :
         return jsonify(error)
-    # return "Works"
+    # test = Test()
+    # return jsonify(test.__dict__)
 
 @app.route("/api/file", methods=['GET','POST'])
 @cross_origin()
 def file_upload():
     # print(request)
+    filest = request.files['file'].read()
+    decoded = list()
+    for x in filest:
+      decoded.append(chr(x))
+      
     population = [0,1]
     weights = [0.5,0.5]
     choice = choices(population, weights)[0]
@@ -102,8 +108,16 @@ def file_upload():
     # return "Works"
  
 
+class Test:
+  def __init__(self,):
+    self.i = "test"
+    self.j = "test2"
+  
+  def __repr__():
+    return {"I": self.i, "J" : self.j}
 
-
+  def __dict__():
+    return {"I": self.i, "J" : self.j}
 
 
 
