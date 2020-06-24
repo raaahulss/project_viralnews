@@ -3,7 +3,7 @@ from src.models.sentiment import get_sentiment
 from src.models.public_opinion import get_public_opinion
 from src.collection.news_fetcher import NewsObject
 from src.collection.twitter_api import Tweet
-
+from src.error import *
 
 class Aggregator(object):
     def __init__(self, news: NewsObject = None, twitter : Tweet=None, published: bool = False):
@@ -13,8 +13,7 @@ class Aggregator(object):
         self.models = {'viralness': None,
                        'sentiment': None,
                        'public_opinion': None}
-        self.error = False
-        self.error_code = ''
+        self.error = None
 
     def run_models(self):
         """
@@ -22,14 +21,20 @@ class Aggregator(object):
         public opinion model too.
         """
         if not self.news:
-            self.error = True
-            self.error_code = 'none_news_object'
-            return
+            raise ApplicationError(*error_list["FILE_NT_FND"])
 
         self.models['sentiment'] = get_sentiment(self.news)
+        # we might use virality model based on text for virality
+        self.models['viralness'] = get_viralness(self.news)
         if self.published:
-            self.models['viralness'] = get_viralness(self.news)
             self.models['public_opinion'] = get_public_opinion(self.twitter)
+
+    def to_dict(self):
+        dictionary = {"viralness" : self.models['viralness'],
+                       "sentiment" : self.models['sentiment'] }
+        if self.published:
+            dictionary["public_opinion"] = self.models['public_opinion']
+        return dictionary
 
 
 if __name__ == '__main__':

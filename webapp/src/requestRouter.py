@@ -19,19 +19,21 @@ def parse_url():
     if url is None:
         raise ApplicationError(*error_list["URL_NT_FND"])
     except ApplicationError as error:
-        return jsonify(error.to_dict())
+        return return_result(error)
 
     # TODO: Throwing error not added
-    news_obj, twitter_obj, error = preprocessor(url, published=True)
+    news_obj, twitter_obj, error= preprocessor(url, published=True)
     
     if error is not None:
-        return jsonify(error.to_dict())
+        return return_result(error)
     
     aggregator = Aggregator(news=news_obj, twitter=twitter_obj, published=False)
-    aggregator.run_models()
+    try:
+        aggregator.run_models()
+    raise ApplicationError as error:
+        return return_result(error)
 
-    # TODO: returning result
-    return {'response':None}
+    return return_result(error, True,  aggregator, twitter_obj, file_obj)
 
 
 @router.route('/api/file', methods = ['POST'])
@@ -45,15 +47,38 @@ def parse_file():
         else:
             fileobj = request.files['file']
     except ApplicationError  as error:
-            return jsonify(error.to_dict())
+            return return_result(error)
 
-    news_obj, twitter_obj, error = preprocessor(url, published=False)
+    news_obj, twitter_obj, error = preprocessor(fileobj, published=False)
     
     if error is not None:
-        return jsonify(error.to_dict())
+        return return_result(error)
 
     aggregator = Aggregator(news=news_obj, twitter=twitter_obj, published=False)
-    aggregator.run_models()
+    try:
+        aggregator.run_models()
+    raise ApplicationError as error:
+        return return_result(error)
 
     # TODO: returning result
-    return {'response': None}
+    return return_result(error, False, aggregator, twitter_obj, file_obj)
+
+def return_result(error:ApplicationError, published=None, aggregator=None, tweet=None, file_obj=None):
+    if error is not None:
+        agg_dict = aggregator.to_dict() if aggregator is not None else None
+        file_dict = file_obj.to_dict() if file_obj is not None else None
+        tweet_dict = tweet.to_dict() if tweet is not None else None
+        input_type = None
+        if published:
+            input_type = 'Twitter' if tweet is not None else "NonTwitter"
+        else:
+            input_type = "UnPub"
+        return jsonify({
+            "input_type" : input_type,
+            "models" : agg_dict ,
+            "details" : file_dict,
+            "metrics" : tweet_dict,
+            "error" : ""
+        })
+    else:
+        return jsonify({"error": error.to_dict()})
