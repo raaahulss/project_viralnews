@@ -22,4 +22,4 @@
 import src
 
 if __name__ == '__main__':
-    src.main("config").run()
+    src.main("config").run(host="0.0.0.0",debug = True)

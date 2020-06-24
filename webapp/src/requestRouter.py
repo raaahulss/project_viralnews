@@ -2,7 +2,7 @@ from flask import Blueprint, request, jsonify
 from src.preprocessor import preprocessor as preprocessor
 import src.collection.online_entity as online_entity
 from src.error import ApplicationError, error_list
-from aggregator import Aggregator
+from src.aggregator import Aggregator
 
 router = Blueprint(__name__, "router")
 

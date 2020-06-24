@@ -8,7 +8,7 @@ error_list = {
     "UNSUP_SRC" : ["UNSUP_SRC", "The provided url is not supported."],
     "UNBL_FTCH_NEWS" : ["UNBL_FTCH_NEWS", "Unable to fetch news article."],
     "NO_EMBD_URL" : ["NO_EMBD_URL","The tweet does not have an embeded URL."],
-    "FILE_NT_FND" : ["FILE_NT_FND", "File not found in the request."]
+    "FILE_NT_FND" : ["FILE_NT_FND", "File not found in the request."],
     "URL_NT_FND" : ["URL_NT_FND" , "URL not found"]
     }
 
