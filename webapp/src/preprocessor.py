@@ -33,17 +33,20 @@ def preprocessor(url, published):
         if source == "twitter":
             tweet, error = get_tweet(url)
             if error is not None:
-                return news, tweet, error
+                return None, None, error
         # in case
         news, error = get_news_from_url(tweet.expanded_url if source is "twitter" else url)
 
         if error is not None:
-            return news, tweet, error
-        return news, tweet, error
+            return None, None, error
+        # return news, tweet, error
     # article is not published
     else:
         news, error = get_news_from_file(url)
-        return news, tweet, error
+        if error is not None:
+            return None, None, error
+    
+    return news, tweet, error
 
     # code for news media outlet.
 

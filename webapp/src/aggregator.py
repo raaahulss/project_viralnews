@@ -2,10 +2,11 @@ from src.models.viralness import get_viralness
 from src.models.sentiment import get_sentiment
 from src.models.public_opinion import get_public_opinion
 from src.collection.news_fetcher import NewsObject
+from src.collection.twitter_api import Tweet
 
 
 class Aggregator(object):
-    def __init__(self, news: NewsObject = None, twitter=None, published: bool = False):
+    def __init__(self, news: NewsObject = None, twitter : Tweet=None, published: bool = False):
         self.news = news
         self.twitter = twitter
         self.published = published
