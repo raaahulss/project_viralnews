@@ -1,4 +1,4 @@
-import docx
+from docx import Document
 from newspaper import Article, ArticleException
 from datetime import datetime
 from src.error import ApplicationError, error_list
@@ -141,7 +141,7 @@ class NewsObject(object):
         :param file_path: path of a file
         :return: title and body of the file
         """
-        doc = docx.Document(self.url)
+        doc = Document(self.url)
         content = []
         for paragraph in doc.paragraphs:
             if not self.title:
