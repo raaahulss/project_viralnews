@@ -4,6 +4,8 @@ import src.collection.online_entity as online_entity
 from src.error import ApplicationError, error_list
 from src.aggregator import Aggregator
 
+import io
+
 router = Blueprint(__name__, "router")
 
 
@@ -42,15 +44,19 @@ def parse_url():
 @router.route('/api/file', methods = ['POST'])
 def parse_file():
     print("Got request", request.args)
-    file_obj = None
+
     # If file not found, raise error
     try:
         if 'file' not in request.files:
             raise ApplicationError()
         else:
-            file_obj = request.files['file']
-    except ApplicationError  as error:
-            return return_result(error)
+            file = request.files['file']
+            if file.filename == '':
+                raise ApplicationError()
+            else:
+                file_obj = io.BytesIO(file.read())
+    except ApplicationError as error:
+        return return_result(error)
 
     news_obj, twitter_obj, error = preprocessor(file_obj, published=False)
     
@@ -67,7 +73,7 @@ def parse_file():
     return return_result(error, False, aggregator, twitter_obj, file_obj)
 
 
-def return_result(error:ApplicationError, published=None, aggregator=None, tweet=None, file_obj=None):
+def return_result(error: ApplicationError, published=None, aggregator=None, tweet=None, file_obj=None):
     if error is None:
         agg_dict = aggregator.to_dict() if aggregator is not None else None
         file_dict = file_obj.to_dict() if file_obj is not None else None
