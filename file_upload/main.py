@@ -2,6 +2,8 @@ from flask import Flask
 from flask import request, jsonify
 from flask_cors import CORS, cross_origin
 from random import choices
+import io
+from docx import Document
 app = Flask("IDK")
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
@@ -93,10 +95,13 @@ def url_upload():
 def file_upload():
     # print(request)
     filest = request.files['file'].read()
+
     decoded = list()
-    for x in filest:
-      decoded.append(chr(x))
-      
+    f = io.BytesIO(filest)
+    d = Document(f)
+    for p in d.paragraphs:
+        decoded.append(p.text)
+
     population = [0,1]
     weights = [0.5,0.5]
     choice = choices(population, weights)[0]
