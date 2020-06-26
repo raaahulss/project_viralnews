@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import NavBar from './navbar.js';
 import Home from '../home.js';
 import Api from '../api.js';
@@ -25,6 +25,7 @@ class App extends Component {
                 <Route path="/ml" component={Ml} />
                 <Route path="/about" component={About} />
                 <Route path="/dashboard" component={Dashboard} />
+                <Redirect to="/" />
               </Switch>
           </Router>
         </React.Fragment>
