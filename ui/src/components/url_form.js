@@ -5,12 +5,15 @@ import { Container, Row, Col } from 'react-bootstrap';
 import '../css/url_form.css'
 import axios from 'axios';
 import { Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
 
 class UrlForm extends Component {
   constructor(props){
     super(props);
     this.state = {
-      url: ""
+      url: "",
+      redirect: false,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -20,7 +23,7 @@ class UrlForm extends Component {
   handleChange = (event) => {
     this.setState({
       url: event.target.value,
-      data: {}
+      data: {},
     })
   };
 
@@ -28,46 +31,42 @@ class UrlForm extends Component {
     event.preventDefault();
     let form_data = new FormData();
     form_data.append('url', this.state.url);
-
+    //this.setState({ redirect: true });
+    var self = this;
     let response = axios({
                   method: 'post',
                   url: 'http://localhost:5000/api/url',
                   data: form_data,
                   headers: {'Content-Type': 'text/html' }
                   })
-                  .then(function (response) {
+                  .then((response) => {
                       //handle success
-                      console.log(response);
+                      //console.log(response.data);
+                      self.setState({responseData: response.data});
+                      self.setState({ redirect: true });
                   })
-                  .catch(function (response) {
+                  .catch((response) => {
                       //handle error
-                      console.log(response);
+                      //console.log(response);
                   });
+
+          //console.log(response.data)
+          //this.setState({response_data: response.data});
+
+    //console.log(response.data);
+
   };
 
-  // render() {
-  //   return (
-  //     <div className="url-form">
-  //       <Form onSubmit={this.handleSubmit}>
-  //         <Container>
-  //           <Row>
-  //             <Col md={10}>
-  //               <Form.Group controlId="formBasicUrl">
-  //                 <Form.Control type="email" placeholder="Enter a political news url..." />
-  //               </Form.Group>
-  //             </Col>
-  //             <Col md={2}>
-  //               <SubmitButton />
-  //             </Col>
-  //           </Row>
-  //         </Container>
-  //       </Form>
-  //     </div>
-  //   );
-  // }
 
   render() {
-    let fireRedirect = false;
+    const { redirect } = this.state;
+    if (redirect) {
+      return <Redirect to={{
+                pathname: '/dashboard',
+                state: this.state.responseData
+              }}
+            />
+    }
     return (
       <div className="url-form">
         <Form onSubmit={this.handleSubmit}>
@@ -76,13 +75,9 @@ class UrlForm extends Component {
           </Form.Group>
           <SubmitButton/>
         </Form>
-        {fireRedirect && (
-          <Redirect to={'/dashboard'}/>
-        )}
       </div>
     );
   }
 }
 
 export default UrlForm;
-

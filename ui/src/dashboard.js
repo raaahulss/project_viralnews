@@ -8,6 +8,7 @@ class Dashboard extends Component {
     super(props);
   }
   render() {
+    /*
     let response = {
       "published": true,
       "models": {
@@ -36,7 +37,9 @@ class Dashboard extends Component {
         "error": true,
         "error_code": "ERR_XYZ"
       }
-    }
+    }*/
+    //let response = this.props.location.state.data
+    let response = this.props.location.state
     if (response.published === true) {
       return (
         <div>
