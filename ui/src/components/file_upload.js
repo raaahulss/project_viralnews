@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import Dropzone from './file_dropzone.js';
 import Progress from './file_progress.js';
 import { Container, Row, Col } from 'react-bootstrap';
+import { Redirect } from "react-router-dom";
 import '../css/file_upload.css'
 import axios from 'axios';
 
@@ -80,6 +81,8 @@ class FileUpload extends Component {
       formData.append("file", file, file.name);
       // req.setRequestHeader("Access-Control-Allow-Origin","*")
 
+      var self = this;
+
       axios({
         method: 'post',
         url: 'http://localhost:5000/api/file',
@@ -87,13 +90,14 @@ class FileUpload extends Component {
         })
         .then(function (response) {
             //handle success
-            console.log(response);
+            // console.log(response.data);
+            self.setState({responseData: response.data});
+            self.setState({ redirect: true });
         })
         .catch(function (response) {
             //handle error
-            console.log(response);
+            // console.log(response);
         });
-        console.log("Works")
       });
   }
 
@@ -173,6 +177,15 @@ class FileUpload extends Component {
   }
 
   render() {
+    const { redirect } = this.state;
+    if (redirect) {
+      return <Redirect to={{
+                pathname: '/dashboard',
+                state: this.state.responseData
+              }}
+            />
+    }
+
     return (
       <div className="Upload">
         <Container>
