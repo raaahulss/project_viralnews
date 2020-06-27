@@ -22,7 +22,12 @@ class Dashboard extends Component {
         if (response.input_type === "UnPub") {
           return (
             <div>
-              <ArticleDetails />
+              <ArticleDetails title={response.details.title}
+                              url={response.details.op_url}
+                              source={response.details.source}
+                              author={response.details.authors}
+                              date={response.details.published_date}
+                              content={response.details.content}/>
               <Analysis models={response.models} input_type={response.input_type}/>
             </div>
           );
