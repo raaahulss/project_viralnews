@@ -50,11 +50,11 @@ def parse_file():
         if 'file' not in request.files:
             raise ApplicationError()
         else:
-            file = request.files['file']
-            if file.filename == '':
+            filest = request.files['file']
+            if not filest.filename.endswith('doc') and not filest.filename.endswith('docx'):
                 raise ApplicationError()
             else:
-                file_obj = io.BytesIO(file.read())
+                file_obj = io.BytesIO(filest.read())
     except ApplicationError as error:
         return return_result(error)
 
