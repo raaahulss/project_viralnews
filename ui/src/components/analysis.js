@@ -13,15 +13,17 @@ class Analysis extends Component {
     if (this.props.input_type === "Twitter") {
       return (
         <div id="analysis-details-main">
-          <Container>
-            <Row>
-              <ViralnessHTML value={this.props.models.viralness}/>
-              <div className="vline" />
-              <SentimentHTML value={this.props.models.sentiment}/>
-              <div className="vline" />
-              <OpinionHTML value={this.props.models.public_opinion}/>
-            </Row>
-          </Container>
+          <center>
+            <Container>
+              <Row>
+                <ViralnessHTML value={this.props.models.viralness}/>
+                <div className="vline" />
+                <SentimentHTML value={this.props.models.sentiment}/>
+                <div className="vline" />
+                <OpinionHTML value={this.props.models.public_opinion}/>
+              </Row>
+            </Container>
+          </center>
         </div>
       );
     } else if (this.props.input_type === "NonTwitter") {
@@ -41,9 +43,15 @@ class Analysis extends Component {
     } else if (this.props.input_type === "UnPub") {
       return (
         <div id="analysis-details-main">
-          <ViralnessHTML value={this.props.models.viralness}/>
-          <div className="vline" />
-          <SentimentHTML value={this.props.models.sentiment}/>
+          <center>
+            <Container>
+              <Row>
+                <ViralnessHTML value={this.props.models.viralness}/>
+                <div className="vline" />
+                <SentimentHTML value={this.props.models.sentiment}/>
+              </Row>
+            </Container>
+          </center>
         </div>
       );
     }

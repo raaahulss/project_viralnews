@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import Dropzone from './file_dropzone.js';
 import Progress from './file_progress.js';
 import { Container, Row, Col } from 'react-bootstrap';
+import { Redirect } from "react-router-dom";
 import '../css/file_upload.css'
 import axios from 'axios';
 
@@ -80,6 +81,8 @@ class FileUpload extends Component {
       formData.append("file", file, file.name);
       // req.setRequestHeader("Access-Control-Allow-Origin","*")
 
+      var self = this;
+
       axios({
         method: 'post',
         url: 'http://localhost:5000/api/file',
@@ -87,56 +90,16 @@ class FileUpload extends Component {
         })
         .then(function (response) {
             //handle success
-            console.log(response);
+            // console.log(response.data);
+            self.setState({responseData: response.data});
+            self.setState({ redirect: true });
         })
         .catch(function (response) {
             //handle error
-            console.log(response);
+            // console.log(response);
         });
-        console.log("Works")
       });
   }
-
-  // sendRequest(file) {
-  //   return new Promise((resolve, reject) => {
-  //     const req = new XMLHttpRequest();
-
-  //     req.upload.addEventListener("progress", event => {
-  //       if (event.lengthComputable) {
-  //         const copy = { ...this.state.uploadProgress };
-  //         copy[file.name] = {
-  //           state: "pending",
-  //           percentage: (event.loaded / event.total) * 100
-  //         };
-  //         this.setState({ uploadProgress: copy });
-  //       }
-  //     });
-
-  //     req.upload.addEventListener("load", event => {
-  //       const copy = { ...this.state.uploadProgress };
-  //       copy[file.name] = { state: "done", percentage: 100 };
-  //       this.setState({ uploadProgress: copy });
-  //       console.log(req)
-  //       console.log(req.response)
-  //       resolve(req.response);
-  //     });
-
-  //     req.upload.addEventListener("error", event => {
-  //       const copy = { ...this.state.uploadProgress };
-  //       copy[file.name] = { state: "error", percentage: 0 };
-  //       this.setState({ uploadProgress: copy });
-  //       reject(req.response);
-  //     });
-
-  //     const formData = new FormData();
-  //     formData.append("file", file, file.name);
-  //     // req.setRequestHeader("Access-Control-Allow-Origin","*")
-  //     req.open("POST", "http://localhost:5000/api/file");
-  //     req.send(formData);
-
-  //     console.log("Works")
-  //   });
-  // }
 
   renderProgress(file) {
     const uploadProgress = this.state.uploadProgress[file.name];
@@ -173,6 +136,15 @@ class FileUpload extends Component {
   }
 
   render() {
+    const { redirect } = this.state;
+    if (redirect) {
+      return <Redirect to={{
+                pathname: '/dashboard',
+                state: this.state.responseData
+              }}
+            />
+    }
+
     return (
       <div className="Upload">
         <Container>
