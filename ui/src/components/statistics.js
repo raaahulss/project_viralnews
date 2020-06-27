@@ -30,7 +30,7 @@ class Statistics extends Component {
             </Col>
             <Col>
               <center>
-                <NumberCard title="Trending?" value={this.props.metrics.trending}/>
+                <NumberCard title="Trending?" value={this.props.metrics.trending.toString().toUpperCase()}/>
               </center>
             </Col>
           </Row>
