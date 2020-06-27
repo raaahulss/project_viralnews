@@ -1,6 +1,7 @@
 .justify-content-center {
   font-size: x-large;
   padding-top: 30px;
+  top: 0;
 }
 
 .nav-link {
@@ -12,4 +13,17 @@
 .vline {
 	border-left: 1px solid green;
 	border-color: #0b7d6e;
+}
+
+#sticky-nav {
+  font-size: x-large;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  width: 200%;
+  margin-left: -60%;
+  font-size: x-large;
+  background-color: #ffbb43;
 }

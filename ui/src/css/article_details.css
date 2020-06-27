@@ -1,10 +1,30 @@
 #article-details-main {
 	/*text-align: center;*/
 	width: 100%;
-	margin-top: 100px;
+	margin-top: 150px;
 	margin-bottom: 50px;
-	height: 400px;
+	/*height: 20px;*/
 	/*background-color: #e27d60;*/
+}
+
+#article-details-card{
+	width: 100%;
+
+
+}
+
+#article-details-button{
+	width: 100%;
+	height: fit-content;
+	border-radius: 20px;
+	white-space: normal;
+}
+
+#article-details-card-header{
+	background-color: #69c9bc;
+
+
+
 }
 /*
 .jumbo_pad{

@@ -10,8 +10,7 @@ class Home extends Component {
     return (
       <div style={{display: 'flex',
                   justifyContent:'center',
-                  alignItems:'center',
-                  height: '75vh'}}>
+                  alignItems:'center'}}>
                   <Input />
       </div>
     );

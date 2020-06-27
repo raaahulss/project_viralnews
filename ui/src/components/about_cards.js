@@ -26,7 +26,7 @@ class AboutCards extends Component {
         <div className = "about_section">
         <h2 className="api_title">Developer Team</h2>
         <CardDeck>
-          <Card border="primary" style={{ width: '18rem' }}>
+          <Card border="primary">
             <Card.Img variant="top" src={fz} />
             <Card.Body>
               <Card.Title>Fangzhou Xie</Card.Title>
@@ -39,7 +39,7 @@ class AboutCards extends Component {
               <Card.Link href="#">Linkedin</Card.Link>
             </Card.Footer>
           </Card>
-          <Card border="primary"style={{ width: '5rem' }}>
+          <Card border="primary">
             <Card.Img variant="top" src={rs} />
             <Card.Body>
               <Card.Title>Rahul Salla</Card.Title>
@@ -52,7 +52,7 @@ class AboutCards extends Component {
               <Card.Link href="#">Linkedin</Card.Link>
             </Card.Footer>
           </Card>
-          <Card border="primary"style={{ width: '5rem' }}>
+          <Card border="primary">
             <Card.Img variant="top" src={gd} />
             <Card.Body>
               <Card.Title>Gaurav Deshpande</Card.Title>
@@ -65,7 +65,7 @@ class AboutCards extends Component {
               <Card.Link href="#">Linkedin</Card.Link>
             </Card.Footer>
           </Card>
-          <Card border="primary"style={{ width: '5rem' }}>
+          <Card border="primary">
             <Card.Img variant="top" src={st} />
             <Card.Body>
               <Card.Title>Sam Teplov</Card.Title>
