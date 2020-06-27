@@ -30,3 +30,8 @@
     /*background-image: linear-gradient(to bottom right, #e27d60, #f0c4a8);*/
   	background-blend-mode: lighten;
 }
+
+#viralness-details-main {
+  width: 330px;
+  align-content: center;
+}

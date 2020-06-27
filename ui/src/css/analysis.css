@@ -19,6 +19,8 @@
 
 #viralness-column {
 	width: 300px;
+	align-content: center;
+	margin: auto;
 }
 
 #sentiment-column {

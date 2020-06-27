@@ -9,7 +9,7 @@ cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 public_article_return = {
-  "published": True,
+  "input_type": "NonTwitter",
   "models": {
     "viralness": 0.5,
     "sentiment": 0.5,
@@ -26,7 +26,7 @@ public_article_return = {
 }
 
 twitter_url = {
-  "published": True,
+  "input_type": "Twitter",
   "models": {
     "viralness": 0.5,
     "sentiment": 0.5,
@@ -50,7 +50,7 @@ twitter_url = {
 }
 
 file_upload_resp= {
-  "published": False,
+  "input_type": "UnPub",
   "models": {
     "viralness": 0.5,
     "sentiment": 0.5,
@@ -66,6 +66,7 @@ file_upload_resp= {
   "metrics": "",
   "error": ""
 }
+
 error = {
     "error": {
       "err_code" : "ERR_ABC",

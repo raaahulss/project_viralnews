@@ -10,7 +10,7 @@ class Analysis extends Component {
     super(props);
   }
   render() {
-    if (this.props.published === true) {
+    if (this.props.input_type === "Twitter") {
       return (
         <div id="analysis-details-main">
           <Container>
@@ -24,14 +24,29 @@ class Analysis extends Component {
           </Container>
         </div>
       );
-    } else {
+    } else if (this.props.input_type === "NonTwitter") {
       return (
         <div id="analysis-details-main">
+          <center>
+            <Container>
+              <Row>
+                <ViralnessHTML value={this.props.models.viralness}/>
+                <div className="vline" />
+                <SentimentHTML value={this.props.models.sentiment}/>
+              </Row>
+            </Container>
+          </center>
+        </div>
+      );
+    } else if (this.props.input_type === "UnPub") {
+      return (
+        <div id="analysis-details-main">
+          <ViralnessHTML value={this.props.models.viralness}/>
+          <div className="vline" />
           <SentimentHTML value={this.props.models.sentiment}/>
         </div>
       );
     }
-    
   }
 }
 
@@ -39,7 +54,7 @@ function ViralnessHTML(props) {
   return (
     <Col id="viralness-column">
       <ViralnessModel title="Article Viralness" value={props.value}/>
-      <Row>
+      <Row style={{width: 330}}>
         <Col>
           <p style={{color:'#e27d60'}}>Low</p>
         </Col>
