@@ -11,7 +11,7 @@ def load_tokenizer_and_model() -> [Tokenizer, Model]:
     Load model and tokenizer from file
     :return:
     """
-    csv = '/Users/xie/Documents/cmu/capstone/project_viralnews/webapp/src/models/clean_tweet_1.csv'
+    csv = './src/models/clean_tweet_1.csv'
     my_df = pd.read_csv(csv, index_col=0)
     my_df.head()
     my_df.dropna(inplace=True)
@@ -20,7 +20,7 @@ def load_tokenizer_and_model() -> [Tokenizer, Model]:
     x = my_df.text
     tokenizer = Tokenizer(num_words=100000)
     tokenizer.fit_on_texts(x)
-    model = load_model('/Users/xie/Documents/cmu/capstone/project_viralnews/webapp/src/models/CNN_best_weights.02-0.8318.hdf5')
+    model = load_model('./src/models/CNN_best_weights.02-0.8318.hdf5')
     return tokenizer, model
 
 
