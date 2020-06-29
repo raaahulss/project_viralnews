@@ -8,11 +8,7 @@ import About from '../about.js';
 import Dashboard from '../dashboard.js';
 import '../css/app.css'
 
-
 class App extends Component {
-  constructor(props){
-    super(props);
-  }
   render() {
     return (
         <React.Fragment id="container">

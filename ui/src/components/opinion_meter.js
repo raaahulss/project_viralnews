@@ -2,13 +2,10 @@ import React, { Component } from 'react'
 import GaugeChart from 'react-gauge-chart'
 
 class OpinionMeter extends Component {
-  constructor(props){
-    super(props);
-  }
   render() {
     return (
       <div>
-        <GaugeChart id="gauge-chart5" 
+        <GaugeChart id="gauge-chart5"
           nrOfLevels={420}
           arcsLength={[0.35, 0.3, 0.35]}
           colors={['#ff0000', '#ffff00', '#00cc00']}

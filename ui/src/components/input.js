@@ -3,9 +3,6 @@ import InputTabs from './input_tabs.js';
 import '../css/input.css'
 
 class Input extends Component {
-    constructor(props){
-        super(props);
-    }
     render() {
       return (
         <div className="input">

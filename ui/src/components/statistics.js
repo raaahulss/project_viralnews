@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
 import NumberCard from './number_card.js';
-import DateCard from './date_card.js';
 import '../css/statistics.css'
+import '../css/date_card.css'
 
 class Statistics extends Component {
   constructor(props){
@@ -41,15 +41,3 @@ class Statistics extends Component {
 }
 
 export default Statistics;
-
-
-// <Row id="second-row">
-
-
-// </Row>
-// <Col>
-//   <DateCard id="date-card" title="First Tweet" value={this.props.metrics.first_tweet}/>
-// </Col>
-// <Col>
-//   <DateCard title="Last Tweet" value={this.props.metrics.last_tweet}/>
-// </Col>

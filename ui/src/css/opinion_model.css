@@ -1,8 +1,7 @@
 #opinion-card-main {
-	/*background-image: radial-gradient(#b0e8d3, #85dcbb, #69c9bc);*/
 	margin-bottom: 50px;
 	background-color: #69c9bc;
-	padding-left: 50px; 
+	padding-left: 50px;
 }
 
 #opinion-card-body {
@@ -27,6 +26,5 @@
     -webkit-text-fill-color: transparent;
     font-size: 300%;
     font-family: "American Typewriter", Helvetica, serif;
-    /*background-image: linear-gradient(to bottom right, #e27d60, #f0c4a8);*/
   	background-blend-mode: lighten;
 }

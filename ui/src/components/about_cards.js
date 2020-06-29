@@ -10,9 +10,6 @@ import jm from './img/moritz-jen.jpg'
 import stel from './img/st.jpeg';
 
 class AboutCards extends Component {
-  constructor(props){
-    super(props);
-  }
   render() {
     return (
       <div className = "about_pad">
@@ -22,7 +19,6 @@ class AboutCards extends Component {
               The goal of our project is to enable the analysis of viral news in order to better understand how disinformation is spread. Our platform will provide journalists, analysts, and researchers with a number of tools for analyzing viral news during the 2020 U.S. presidential election news cycle.
             </p>
           </div>
-
         <div className = "about_section">
         <h2 className="api_title">Developer Team</h2>
         <CardDeck>
@@ -127,7 +123,6 @@ class AboutCards extends Component {
             </Card>
           </CardDeck>
           </div>
-
     </div>
     );
   }

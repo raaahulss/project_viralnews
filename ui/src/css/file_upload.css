@@ -94,7 +94,6 @@ button {
   user-select: none;
   border: 0;
   border-radius: 2px;
-  /*background: rgba(103, 58, 183, 1);*/
   background-image: linear-gradient(to bottom right, #e27d60, #f0c4a8);
   color: #fff;
   outline: 0;

@@ -3,9 +3,6 @@ import {Nav} from 'react-bootstrap';
 import '../css/navbar.css'
 
 class NavBar extends Component {
-  constructor(props){
-    super(props);
-  }
   render() {
     return (
       <Nav fluid ariant="pills" className="justify-content-center" id="sticky-nav">

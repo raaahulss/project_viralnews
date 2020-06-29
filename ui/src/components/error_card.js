@@ -2,9 +2,6 @@ import React, { Component } from 'react'
 import '../css/error_card.css'
 
 class ErrorCard extends Component {
-  constructor(props){
-    super(props);
-  }
   render() {
     return (
       <div className="input">

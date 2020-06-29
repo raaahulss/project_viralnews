@@ -1,18 +1,12 @@
 import React, {Component} from 'react'
-import {Jumbotron, Card, Button} from 'react-bootstrap';
+import { Jumbotron } from 'react-bootstrap';
 import '../css/jumbo.css'
 
 class Jumbo extends Component {
-  constructor(props){
-    super(props);
-  }
   render() {
     return (
       <div className = "jumbo_pad">
-
       <h2 className="api_title">API for Published Articles</h2>
-
-
       <Jumbotron >
         <h1>POST /url</h1>
         <p>

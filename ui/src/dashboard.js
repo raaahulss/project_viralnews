@@ -12,7 +12,7 @@ class Dashboard extends Component {
   render() {
     //let response = this.props.location.state.data
     let response = this.props.location.state
-    console.log(response);
+    //console.log(response);
 
     if (response.error !== "") {
       return (
@@ -22,7 +22,8 @@ class Dashboard extends Component {
         if (response.input_type === "UnPub") {
           return (
             <div>
-              <ArticleDetails title={response.details.title}
+              <ArticleDetails type={response.input_type}
+                              title={response.details.title}
                               url={response.details.op_url}
                               source={response.details.source}
                               author={response.details.authors}
@@ -34,7 +35,8 @@ class Dashboard extends Component {
         } else if (response.input_type === "Twitter") {
             return (
               <div>
-                <ArticleDetails title={response.details.title}
+                <ArticleDetails type={response.input_type}
+                                title={response.details.title}
                                 url={response.details.op_url}
                                 source={response.details.source}
                                 author={response.details.authors}
@@ -47,7 +49,8 @@ class Dashboard extends Component {
         } else if (response.input_type === "NonTwitter") {
             return (
               <div>
-                <ArticleDetails title={response.details.title}
+                <ArticleDetails type={response.input_type}
+                                title={response.details.title}
                                 url={response.details.op_url}
                                 source={response.details.source}
                                 author={response.details.authors}

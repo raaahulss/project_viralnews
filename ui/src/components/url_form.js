@@ -1,12 +1,9 @@
 import React, {Component} from 'react'
 import SubmitButton from './submit_button.js';
 import { Form } from 'react-bootstrap';
-import { Container, Row, Col } from 'react-bootstrap';
-import '../css/url_form.css'
-import axios from 'axios';
 import { Redirect } from "react-router-dom";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
+import axios from 'axios';
+import '../css/url_form.css'
 
 class UrlForm extends Component {
   constructor(props){
@@ -15,7 +12,6 @@ class UrlForm extends Component {
       url: "",
       redirect: false,
     };
-
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -31,32 +27,24 @@ class UrlForm extends Component {
     event.preventDefault();
     let form_data = new FormData();
     form_data.append('url', this.state.url);
-    //this.setState({ redirect: true });
     var self = this;
     let response = axios({
                   method: 'post',
                   url: 'http://localhost:5000/api/url',
-                  data: form_data,
-                  headers: {'Content-Type': 'text/html' }
+                  params: {
+                    url: this.state.url
+                  },
+                  headers: {'Content-Type': 'text/html'}
                   })
                   .then((response) => {
                       //handle success
-                      //console.log(response.data);
                       self.setState({responseData: response.data});
                       self.setState({ redirect: true });
                   })
                   .catch((response) => {
                       //handle error
-                      //console.log(response);
                   });
-
-          //console.log(response.data)
-          //this.setState({response_data: response.data});
-
-    //console.log(response.data);
-
   };
-
 
   render() {
     const { redirect } = this.state;
