@@ -149,6 +149,7 @@ class NewsObject(object):
             else:
                 content.append(paragraph.text)
         self.content = ' '.join(content)
+        self.url = ''
 
     def to_dict(self) -> dict:
         """
