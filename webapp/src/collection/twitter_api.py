@@ -76,7 +76,7 @@ class TwitterApi(object):
                 depending on the end
         """
         original_tweet, tweet = None, None
-        while(True):
+        while True:
             # if tweet is None then this is first call and we use the tweet_url
             if tweet is None:
                 tweet = self.get_tweet_from_url(tweet_url)
@@ -109,7 +109,7 @@ class TwitterApi(object):
         if len(reply_tweet_ids_list) < reply_limit:
             temp_list = reply_tweet_ids_list.copy()
             for tweet_id in temp_list:
-                tweet = api.get_tweet_from_id(tweet_id)
+                tweet = self.get_tweet_from_id(tweet_id)
                 self.get_reply_ids(tweet, reply_limit, search_per_request, reply_tweet_ids_list)
                 if len(reply_tweet_ids_list) < reply_limit:
                     break
@@ -123,7 +123,6 @@ class TwitterApi(object):
             except AttributeError:  # Not a Retweet should never occur
                 replies.append(tweet.full_text)
         return replies
-
 
     def get_reply_ids(self, tweet, reply_limit, search_per_request, reply_tweet_ids_list):
         """
@@ -139,13 +138,13 @@ class TwitterApi(object):
         user_name = tweet.user.screen_name
         max_id = None
         replies = tweepy.Cursor(self._api.search, count=search_per_request,
-                            q='to:{}'.format(user_name),
-                            since_id=tweet_id, max_id=max_id,
-                            tweet_mode='extended').items()
+                                q='to:{}'.format(user_name),
+                                since_id=tweet_id, max_id=max_id,
+                                tweet_mode='extended').items()
         
         try:
             for reply in replies:
-                if(reply.in_reply_to_status_id == tweet_id):
+                if reply.in_reply_to_status_id == tweet_id:
                     # pytest.set_trace()
                     reply_tweet_ids_list.append(reply.id)
                 if len(reply_tweet_ids_list) == reply_limit:
@@ -155,6 +154,7 @@ class TwitterApi(object):
             return reply_tweet_ids_list
         except tweepy.TweepError as e:
             raise ApplicationError(*error_list["LMT_RCHD_ERROR"])
+
 
 class Tweet:
     def __init__(self, tweet, responses):
@@ -167,11 +167,13 @@ class Tweet:
         resp = requests.get(tweet.entities["urls"][0]["url"])
         self.expanded_url = resp.url
         # self.trending = trending
+
     def to_dict(self):
         return {"retweet_count": self.retweet_count,
                 "favorite_count": self.favorite_count,
                 "responses_count": self.responses_count,}
                 # "trending": self.trending}
+
 
 def get_tweet(tweet_url):
     """
@@ -182,15 +184,12 @@ def get_tweet(tweet_url):
     """
     try:
         api = TwitterApi(cnst.CONSUMER_KEY, cnst.CONSUMER_SECRET,
-                    cnst.ACCESS_TOKEN_KEY, cnst.ACCESS_TOKEN_SECRET)
+                         cnst.ACCESS_TOKEN_KEY, cnst.ACCESS_TOKEN_SECRET)
         # tweet = api.get_tweet_from_url(url)
-        original_tweet = api.get_original_tweet_from_url(url)
+        original_tweet = api.get_original_tweet_from_url(tweet_url)
         
         responses = api.get_replies(original_tweet, reply_limit=cnst.MAX_REPLY,
-                    search_per_request=cnst.SEARCH_PER_REQUEST)
-        return (Tweet(original_tweet, responses ), None)
+                                    search_per_request=cnst.SEARCH_PER_REQUEST)
+        return Tweet(original_tweet, responses), None
     except ApplicationError as err:
-        return (None, err)
-    
-
-        
+        return None, err
