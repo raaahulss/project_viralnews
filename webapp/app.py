@@ -16,10 +16,9 @@
 #         return "No url information is given"
 
 
-
 # if __name__ == '__main__':
 #     app.run(debug = True)
 import src
 
 if __name__ == '__main__':
-    src.main("config").run(host="0.0.0.0",debug = True)
+    src.main("config").run(host="0.0.0.0", debug=True)
