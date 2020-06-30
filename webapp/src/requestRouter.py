@@ -51,11 +51,11 @@ def parse_file():
     # If file not found, raise error
     try:
         if 'file' not in request.files:
-            raise ApplicationError()
+            raise ApplicationError(*error_list["FILE_NT_FND"])
         else:
             filest = request.files['file']
             if not filest.filename.endswith('doc') and not filest.filename.endswith('docx'):
-                raise ApplicationError()
+                raise ApplicationError(*error_list["FILE_NT_SUP"])
             else:
                 file_obj = io.BytesIO(filest.read())
     except ApplicationError as error:
