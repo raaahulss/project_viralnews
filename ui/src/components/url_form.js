@@ -29,20 +29,23 @@ class UrlForm extends Component {
     form_data.append('url', this.state.url);
     var self = this;
     let response = axios({
-                  method: 'post',
-                  url: 'http://localhost:5000/api/url',
-                  params: {
-                    url: this.state.url
-                  },
-                  headers: {'Content-Type': 'text/html'}
+                    method: 'post',
+                    url: 'http://localhost:5000/api/url',
+                    params: {
+                      url: this.state.url
+                    },
+                    headers: {
+                      'Content-Type': 'text/html',
+                      'Access-Control-Allow-Origin': '*'
+                    }
                   })
                   .then((response) => {
-                      //handle success
-                      self.setState({responseData: response.data});
-                      self.setState({ redirect: true });
+                    //handle success
+                    self.setState({ responseData: response.data });
+                    self.setState({ redirect: true });
                   })
                   .catch((response) => {
-                      //handle error
+                    //handle error
                   });
   };
 

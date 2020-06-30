@@ -87,6 +87,7 @@ class FileUpload extends Component {
         method: 'post',
         url: 'http://localhost:5000/api/file',
         data: formData,
+        headers: {"Access-Control-Allow-Origin": "*"}
         })
         .then(function (response) {
             //handle success
