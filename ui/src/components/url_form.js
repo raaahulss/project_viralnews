@@ -11,7 +11,8 @@ class UrlForm extends Component {
     super(props);
     this.state = {
       url: "",
-      redirect: false,
+      redirect_success: false,
+      redirect_failure: false,
       loader: false
     };
     this.handleChange = this.handleChange.bind(this);
@@ -47,20 +48,30 @@ class UrlForm extends Component {
                     //handle success
                     self.setState({ responseData: response.data });
                     self.setState({ loader: false });
-                    self.setState({ redirect: true });
+                    self.setState({ redirect_success: true });
                   })
-                  .catch((response) => {
+                  .catch((error) => {
                     //handle error
+                    self.setState({ errorData: error.message });
+                    self.setState({ loader: false });
+                    self.setState({ redirect_failure: true });
                   });
   };
 
   render() {
-    const { redirect } = this.state;
+    const { redirect_success } = this.state;
     const { loader } = this.state;
-    if (redirect) {
+    const { redirect_failure } = this.state;
+    if (redirect_success) {
       return <Redirect to={{
                 pathname: '/dashboard',
                 state: this.state.responseData
+              }}
+            />
+    } else if (redirect_failure) {
+      return <Redirect to={{
+                pathname: '/error',
+                state: this.state.errorData
               }}
             />
     } else if (loader) {
