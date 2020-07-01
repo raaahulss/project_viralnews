@@ -26,7 +26,7 @@ npm install
 1. For starting backend server:
 ```
 cd webapp
-python main.py
+python app.py
 ```
 2. For starting ui server:
 ```
