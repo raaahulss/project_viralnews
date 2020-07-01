@@ -28,11 +28,6 @@ class Statistics extends Component {
                 <NumberCard title="Responses" value={this.props.metrics.responses}/>
               </center>
             </Col>
-            <Col>
-              <center>
-                <NumberCard title="Trending?" value={this.props.metrics.trending.toString().toUpperCase()}/>
-              </center>
-            </Col>
           </Row>
         </Container>
       </div>

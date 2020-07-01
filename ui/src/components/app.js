@@ -21,7 +21,7 @@ class App extends Component {
                 <Route path="/ml" component={Ml} />
                 <Route path="/about" component={About} />
                 <Route path="/dashboard" component={Dashboard} />
-                <Redirect to="/" />
+                <Redirect to="/" component={Home}/>
               </Switch>
           </Router>
         </React.Fragment>
