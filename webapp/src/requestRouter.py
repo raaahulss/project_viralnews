@@ -1,6 +1,5 @@
 from flask import Blueprint, request, jsonify
 from src.preprocessor import preprocessor as preprocessor
-import src.collection.online_entity as online_entity
 from src.error import ApplicationError, error_list
 from src.aggregator import Aggregator
 from flask_cors import cross_origin
@@ -29,7 +28,7 @@ def parse_url():
         return return_result(error)
 
     # TODO: Throwing error not added
-    news_obj, twitter_obj, error= preprocessor(url, published=True)
+    news_obj, twitter_obj, error = preprocessor(url, published=True)
     
     if error is not None:
         return return_result(error)
