@@ -1,6 +1,6 @@
 .justify-content-center {
   font-size: x-large;
-  padding-top: 30px;
+  /*padding-top: 30px;*/
   top: 0;
 }
 
@@ -16,14 +16,17 @@
 }
 
 #sticky-nav {
-  font-size: x-large;
   padding-top: 30px;
   padding-bottom: 30px;
-  position: fixed;
-  top: 0;
-  z-index: 9999;
-  width: 200%;
-  margin-left: -60%;
+  width: 100%;
   font-size: x-large;
-  background-color: #ffbb43;
+}
+
+#navbar-center {
+  font-size: x-large;
+  width: 100%;
+  left: 0;
+  right: 0;
+  position: absolute;
+  background: #ffbb43;
 }
