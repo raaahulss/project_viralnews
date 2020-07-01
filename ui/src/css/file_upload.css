@@ -103,3 +103,9 @@ button:disabled {
   background: rgb(189, 189, 189);
   cursor: default;
 }
+
+#file-note{
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+}

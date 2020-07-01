@@ -45,7 +45,6 @@ twitter_url = {
     "retweets": 123,
     "favourites": 123,
     "responses": 123,
-    "trending": True,
   },
   "error": ""
 }

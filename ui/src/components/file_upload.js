@@ -161,34 +161,37 @@ class FileUpload extends Component {
       )
     } else {
       return (
-        <div className="Upload">
-          <Container>
-            <Row>
-              <Col md={10}>
-                <div className="Content">
-                  <div>
-                    <Dropzone
-                      onFilesAdded={this.onFilesAdded}
-                      disabled={this.state.uploading || this.state.successfullUploaded}
-                    />
+        <div>
+          <div className="Upload">
+            <Container>
+              <Row>
+                <Col md={10}>
+                  <div className="Content">
+                    <div>
+                      <Dropzone
+                        onFilesAdded={this.onFilesAdded}
+                        disabled={this.state.uploading || this.state.successfullUploaded}
+                      />
+                    </div>
+                    <div className="Files">
+                      {this.state.files.map(file => {
+                        return (
+                          <div key={file.name} className="Row">
+                            <span className="Filename">{file.name}</span>
+                            {this.renderProgress(file)}
+                          </div>
+                        );
+                      })}
+                    </div>
                   </div>
-                  <div className="Files">
-                    {this.state.files.map(file => {
-                      return (
-                        <div key={file.name} className="Row">
-                          <span className="Filename">{file.name}</span>
-                          {this.renderProgress(file)}
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              </Col>
-              <Col md={2}>
-                <div className="Actions">{this.renderActions()}</div>
-              </Col>
-            </Row>
-          </Container>
+                </Col>
+                <Col md={2}>
+                  <div className="Actions">{this.renderActions()}</div>
+                </Col>
+              </Row>
+            </Container>
+          </div>
+          <div id="file-note">Note: Please upload a .doc/.docx file containing the article title as the first paragraph and the article content as the remaining text.</div>
         </div>
       );
     }
