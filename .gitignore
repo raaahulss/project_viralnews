@@ -1,5 +1,0 @@
-.vscode
-venv
-*/**/bird_watcher.log
-*/**/scheduler.log
-data/**/*
