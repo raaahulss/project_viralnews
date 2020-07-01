@@ -21,13 +21,13 @@ class ArticleDetails extends Component {
             <Accordion.Collapse eventKey="0">
               <Card.Body>
                 <Jumbotron >
-                  <p>
+                  <div>
                     <ArticleEntry field="Source" value={this.props.source}/>
                     <ArticleEntry field="URL" value={this.props.url}/>
                     <ArticleEntry field="Author" value={this.props.author}/>
                     <ArticleEntry field="Date Published" value={this.props.date}/>
                     <ArticleEntry field="Content" value={this.props.content}/>
-                  </p>
+                  </div>
                 </Jumbotron>
               </Card.Body>
             </Accordion.Collapse>

@@ -5,12 +5,12 @@ class ArticleEntry extends Component {
     super(props);
   }
   render() {
-    if (this.props.value !== "") {
+    if ("value" in this.props && this.props.value !== undefined && this.props.value !== "") {
       return(
-        <div>
+        <p>
           {this.props.field}: {this.props.value}
           <br />
-        </div>
+        </p>
       )
     } else {
       return(null);
