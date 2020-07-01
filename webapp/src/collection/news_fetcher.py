@@ -156,13 +156,11 @@ class NewsObject(object):
         Transform this news object to a dict.
         :return: A dict of related member variables.
         """
-        return {'metadata': {'error': self.error,
-                             'error_code': self.error_code},
-                'details': {'title': self.title,
-                            'authors': self.authors,
-                            'published_date': self.published_date,
-                            'content': self.content,
-                            'url': self.url}}
+        return {'title': self.title,
+                'authors': self.authors,
+                'published_date': self.published_date,
+                'content': self.content,
+                'url': self.url}
 
 
 def get_news_from_file(path: str) -> [NewsObject, ApplicationError]:
