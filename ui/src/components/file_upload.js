@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import Dropzone from './file_dropzone.js';
 import Progress from './file_progress.js';
 import { Container, Row, Col } from 'react-bootstrap';
+import { Spinner } from 'react-bootstrap';
 import { Redirect } from "react-router-dom";
 import '../css/file_upload.css'
 import axios from 'axios';
@@ -15,7 +16,8 @@ class FileUpload extends Component {
       files: [],
       uploading: false,
       uploadProgress: {},
-      successfullUploaded: false
+      successfullUploaded: false,
+      loader: false
     };
 
     this.onFilesAdded = this.onFilesAdded.bind(this);
@@ -31,7 +33,7 @@ class FileUpload extends Component {
   }
 
   async uploadFiles() {
-    this.setState({ uploadProgress: {}, uploading: true });
+    this.setState({ uploadProgress: {}, uploading: true, loader: true });
     const promises = [];
     this.state.files.forEach(file => {
       promises.push(this.sendRequest(file));
@@ -93,6 +95,7 @@ class FileUpload extends Component {
             //handle success
             // console.log(response.data);
             self.setState({responseData: response.data});
+            self.setState({ loader: false });
             self.setState({ redirect: true });
         })
         .catch(function (response) {
@@ -138,45 +141,57 @@ class FileUpload extends Component {
 
   render() {
     const { redirect } = this.state;
+    const { loader } = this.state;
+
     if (redirect) {
       return <Redirect to={{
                 pathname: '/dashboard',
                 state: this.state.responseData
               }}
             />
+    } else if (loader) {
+      return (
+        <div>
+          <br />
+          <br />
+          <center>
+            <Spinner animation="border" />
+          </center>
+        </div>
+      )
+    } else {
+      return (
+        <div className="Upload">
+          <Container>
+            <Row>
+              <Col md={10}>
+                <div className="Content">
+                  <div>
+                    <Dropzone
+                      onFilesAdded={this.onFilesAdded}
+                      disabled={this.state.uploading || this.state.successfullUploaded}
+                    />
+                  </div>
+                  <div className="Files">
+                    {this.state.files.map(file => {
+                      return (
+                        <div key={file.name} className="Row">
+                          <span className="Filename">{file.name}</span>
+                          {this.renderProgress(file)}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </Col>
+              <Col md={2}>
+                <div className="Actions">{this.renderActions()}</div>
+              </Col>
+            </Row>
+          </Container>
+        </div>
+      );
     }
-
-    return (
-      <div className="Upload">
-        <Container>
-          <Row>
-            <Col md={10}>
-              <div className="Content">
-                <div>
-                  <Dropzone
-                    onFilesAdded={this.onFilesAdded}
-                    disabled={this.state.uploading || this.state.successfullUploaded}
-                  />
-                </div>
-                <div className="Files">
-                  {this.state.files.map(file => {
-                    return (
-                      <div key={file.name} className="Row">
-                        <span className="Filename">{file.name}</span>
-                        {this.renderProgress(file)}
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </Col>
-            <Col md={2}>
-              <div className="Actions">{this.renderActions()}</div>
-            </Col>
-          </Row>
-        </Container>
-      </div>
-    );
   }
 }
 

@@ -4,6 +4,7 @@ from flask_cors import CORS, cross_origin
 from random import choices
 import io
 from docx import Document
+import time
 app = Flask("IDK")
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
@@ -78,6 +79,7 @@ error = {
 @app.route("/api/url", methods=['GET','POST'])
 @cross_origin()
 def url_upload():
+    time.sleep(3)
     population = [0,1,2]
     weights = [0.33,0.33,0.33]
     choice = choices(population, weights)[0]
@@ -94,6 +96,7 @@ def url_upload():
 @app.route("/api/file", methods=['GET','POST'])
 @cross_origin()
 def file_upload():
+    time.sleep(3)
     # print(request)
     filest = request.files['file'].read()
 
