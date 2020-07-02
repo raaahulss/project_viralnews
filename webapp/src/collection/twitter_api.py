@@ -84,12 +84,15 @@ class TwitterApi(object):
             print("Type of obj", type(tweet))
             if tweet.in_reply_to_status_id_str is None:
                 original_tweet = tweet
+                # pytest.set_trace()
                 break
             else:
                 tweet = self.get_tweet_from_id(tweet.in_reply_to_status_id)
         if len(original_tweet.entities["urls"]) == 0:
-            # pytest.set_trace
             raise ApplicationError(*error_list["NO_EMBD_URL"])
+        if (original_tweet.created_at - datetime.now()).days >= cnst.MAX_TWEET_CREATION_RANGE:
+            # pytest.set_trace()
+            raise ApplicationError(*error_list["EXPRD_TWT"])
         return original_tweet
 
     def get_replies(self, tweet, reply_limit=200, search_per_request=100):

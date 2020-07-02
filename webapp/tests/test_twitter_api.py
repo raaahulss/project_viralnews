@@ -116,12 +116,12 @@ def test_given_invalid_url_or_tweet_returns_error(url):
 @pytest.mark.parametrize("url, id",
 [
     # original retweet
-    ("https://twitter.com/nytimes/status/1269460338329739264",1269460338329739264),
+    ("https://twitter.com/nytimes/status/1278720150993281025",1278720150993281025),
     # retweet to a tweet
-    ("https://twitter.com/nytimes/status/1269463607240245248",1269460338329739264),
-    ("https://twitter.com/nytimes/status/1269461451326062592",1269460338329739264),
+    ("https://twitter.com/nytimes/status/1278721949963710464",1278720150993281025),
+    ("https://twitter.com/nytimes/status/1278722708289789955",1278720150993281025),
     # retweet to a retweet
-    ("https://twitter.com/nytimes/status/1269464750108409859",1269460338329739264),
+    ("https://twitter.com/nytimes/status/1278723345282932739",1278720150993281025),
 
 ])
 def test_given_valid_url_returns_original_tweet(url, id):

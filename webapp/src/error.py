@@ -10,7 +10,8 @@ error_list = {
     "NO_EMBD_URL" : ["NO_EMBD_URL","The tweet does not have an embeded URL."],
     "FILE_NT_FND" : ["FILE_NT_FND", "File not found in the request."],
     "FILE_NT_SUP" : ["FILE_NT_SUP", "File type not supported."],
-    "URL_NT_FND" : ["URL_NT_FND" , "URL not found"]
+    "URL_NT_FND" : ["URL_NT_FND" , "URL not found"],
+    "EXPRD_TWT" : ["EXPRD_TWT", "The tweet is beyond the range of API. Tweet should be less than 7 days old."]
     }
 
 

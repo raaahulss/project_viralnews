@@ -12,6 +12,8 @@ WHITE_LIST=[
 
 MAX_REPLY=200
 MAX_TIME_REPLY_SEARCH=7
+# time in seconds for 7 days
+MAX_TWEET_CREATION_RANGE=7
 # 100 for standard twitter api and 500 for premium
 SEARCH_PER_REQUEST=100
 # 7 for standard and 30 for premium
