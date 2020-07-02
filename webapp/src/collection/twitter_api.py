@@ -88,7 +88,7 @@ class TwitterApi(object):
             else:
                 tweet = self.get_tweet_from_id(tweet.in_reply_to_status_id)
         if len(original_tweet.entities["urls"]) == 0:
-            pytest.set_trace()
+            # pytest.set_trace
             raise ApplicationError(*error_list["NO_EMBD_URL"])
         return original_tweet
 
@@ -106,13 +106,14 @@ class TwitterApi(object):
         
         # in case the list is not big enough get replies to the reply tweets
         # until limit is reached. We do not go deeper that level 1 tweet.
-        if len(reply_tweet_ids_list) < reply_limit:
-            temp_list = reply_tweet_ids_list.copy()
-            for tweet_id in temp_list:
-                tweet = api.get_tweet_from_id(tweet_id)
-                self.get_reply_ids(tweet, reply_limit, search_per_request, reply_tweet_ids_list)
-                if len(reply_tweet_ids_list) < reply_limit:
-                    break
+        # NOTE: Commenting below code as we are not going deeper than level one.
+        # if len(reply_tweet_ids_list) < reply_limit:
+        #     temp_list = reply_tweet_ids_list.copy()
+        #     for tweet_id in temp_list:
+        #         tweet = api.get_tweet_from_id(tweet_id)
+        #         self.get_reply_ids(tweet, reply_limit, search_per_request, reply_tweet_ids_list)
+        #         if len(reply_tweet_ids_list) < reply_limit:
+        #             break
         
         # get comments from the list
         replies = list()
@@ -151,9 +152,10 @@ class TwitterApi(object):
                 if(reply.in_reply_to_status_id == tweet_id):
                     # pytest.set_trace()
                     reply_tweet_ids_list.append(reply.id)
-                if len(reply_tweet_ids_list) == reply_limit or
+                if len(reply_tweet_ids_list) == reply_limit or \
                      (current_time-startTime).total_seconds() >= cnst.MAX_TIME_REPLY_SEARCH :
                     print("Breaking time : ", (current_time - startTime))
+                    # pytest.set_trace()
                     break
                 max_id = reply.id
             # pytest.set_trace()

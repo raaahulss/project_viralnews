@@ -118,10 +118,10 @@ def test_given_invalid_url_or_tweet_returns_error(url):
     # original retweet
     ("https://twitter.com/nytimes/status/1269460338329739264",1269460338329739264),
     # retweet to a tweet
-    ("https://twitter.com/nytimes/status/1269461026795393025",1269460338329739264),
+    ("https://twitter.com/nytimes/status/1269463607240245248",1269460338329739264),
     ("https://twitter.com/nytimes/status/1269461451326062592",1269460338329739264),
     # retweet to a retweet
-    ("https://twitter.com/nytimes/status/1269474208574308352",1269460338329739264),
+    ("https://twitter.com/nytimes/status/1269464750108409859",1269460338329739264),
 
 ])
 def test_given_valid_url_returns_original_tweet(url, id):
@@ -168,7 +168,7 @@ def test_given_valid_tweet_url_get_replies():
                     constants.CONSUMER_SECRET, 
                     constants.ACCESS_TOKEN_KEY,
                     constants.ACCESS_TOKEN_SECRET)
-    tweet = api.get_tweet_from_id(TWEET_ID)
+    tweet = api.get_tweet_from_id(1278654663479435264)
     # pytest.set_trace()
     replies = api.get_replies(tweet, reply_limit=10, search_per_request=100)
     # pytest.set_trace()
