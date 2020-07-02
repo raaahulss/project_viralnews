@@ -5,7 +5,7 @@ from src.error import *
 import src.constants as cnst
 import pytest
 import requests
-
+from datetime import datetime
 
 class TwitterApi(object):
 
@@ -116,6 +116,7 @@ class TwitterApi(object):
         
         # get comments from the list
         replies = list()
+
         for reply_id in reply_tweet_ids_list:
             tweet = self.get_tweet_from_id(reply_id)
             try:
@@ -144,11 +145,15 @@ class TwitterApi(object):
                             tweet_mode='extended').items()
         
         try:
+            startTime = datetime.now()
             for reply in replies:
+                current_time = datetime.now()
                 if(reply.in_reply_to_status_id == tweet_id):
                     # pytest.set_trace()
                     reply_tweet_ids_list.append(reply.id)
-                if len(reply_tweet_ids_list) == reply_limit:
+                if len(reply_tweet_ids_list) == reply_limit or
+                     (current_time-startTime).total_seconds() >= cnst.MAX_TIME_REPLY_SEARCH :
+                    print("Breaking time : ", (current_time - startTime))
                     break
                 max_id = reply.id
             # pytest.set_trace()
