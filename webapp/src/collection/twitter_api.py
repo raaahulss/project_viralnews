@@ -106,7 +106,6 @@ class TwitterApi(object):
         
         # in case the list is not big enough get replies to the reply tweets
         # until limit is reached. We do not go deeper that level 1 tweet.
-<<<<<<< HEAD
         # NOTE: Commenting below code as we are not going deeper than level one.
         # if len(reply_tweet_ids_list) < reply_limit:
         #     temp_list = reply_tweet_ids_list.copy()
@@ -115,15 +114,6 @@ class TwitterApi(object):
         #         self.get_reply_ids(tweet, reply_limit, search_per_request, reply_tweet_ids_list)
         #         if len(reply_tweet_ids_list) < reply_limit:
         #             break
-=======
-        if len(reply_tweet_ids_list) < reply_limit:
-            temp_list = reply_tweet_ids_list.copy()
-            for tweet_id in temp_list:
-                tweet = self.get_tweet_from_id(tweet_id)
-                self.get_reply_ids(tweet, reply_limit, search_per_request, reply_tweet_ids_list)
-                if len(reply_tweet_ids_list) < reply_limit:
-                    break
->>>>>>> ae69b701eb0e96d0f82d7e7a0ae4a30b10d5f7ed
         
         # get comments from the list
         replies = list()
@@ -157,12 +147,8 @@ class TwitterApi(object):
         try:
             startTime = datetime.now()
             for reply in replies:
-<<<<<<< HEAD
                 current_time = datetime.now()
                 if(reply.in_reply_to_status_id == tweet_id):
-=======
-                if reply.in_reply_to_status_id == tweet_id:
->>>>>>> ae69b701eb0e96d0f82d7e7a0ae4a30b10d5f7ed
                     # pytest.set_trace()
                     reply_tweet_ids_list.append(reply.id)
                 if len(reply_tweet_ids_list) == reply_limit or \
