@@ -18,8 +18,11 @@ def load_tokenizer_and_model() -> [Tokenizer, Model]:
 
 
 def get_public_opinion(tweet: Tweet) -> float:
-    tokenizer, model = load_tokenizer_and_model()
     seq_test = tokenizer.texts_to_sequences(tweet.responses)
     padded_seq_test = pad_sequences(seq_test, maxlen=45)
     yhat_cnn = model.predict(padded_seq_test)
     return float(yhat_cnn.mean())
+
+
+# only load once when the server starts
+tokenizer, model = load_tokenizer_and_model()
