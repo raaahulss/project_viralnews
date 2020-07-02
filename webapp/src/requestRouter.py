@@ -33,7 +33,7 @@ def parse_url():
     if error is not None:
         return return_result(error)
     
-    aggregator = Aggregator(news=news_obj, tweet=twitter_obj, published=False)
+    aggregator = Aggregator(news=news_obj, tweet=twitter_obj, is_twitter=twitter_obj is not None)
     try:
         aggregator.run_models()
     except ApplicationError as error:
@@ -65,7 +65,7 @@ def parse_file():
     if error is not None:
         return return_result(error)
 
-    aggregator = Aggregator(news=news_obj, tweet=twitter_obj, published=False)
+    aggregator = Aggregator(news=news_obj, tweet=twitter_obj, is_twitter=False)
     try:
         aggregator.run_models()
     except ApplicationError as error:
@@ -86,7 +86,7 @@ def return_result(error: ApplicationError, published=None, aggregator=None, twee
             input_type = "UnPub"
         return jsonify({
             "input_type": input_type,
-            "models": agg_dict ,
+            "models": agg_dict,
             "details": news_dict,
             "metrics": tweet_dict,
             "error": ""
