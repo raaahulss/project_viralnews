@@ -1,12 +1,11 @@
 import tldextract
 import validators
-import pytest
 from src.collection.twitter_api import get_tweet
 from src.collection.news_fetcher import get_news_from_url
 from src.collection.news_fetcher import get_news_from_file
 from src.error import ApplicationError, error_list
 
-supported_sources=('twitter', 'nytimes', 'washingtonpost', 'wsj', 'cnn', 'nbcnews')
+supported_sources = ('twitter', 'nytimes', 'washingtonpost', 'wsj', 'cnn', 'nbcnews')
 
 
 def preprocessor(url, published):
@@ -20,7 +19,6 @@ def preprocessor(url, published):
     news, tweet, error = None, None, None
     # article is published
     if published:
-        source = ""
         if url is not None and not url.startswith("https://"):
             url = "https://" + url
 
@@ -35,11 +33,10 @@ def preprocessor(url, published):
             if error is not None:
                 return None, None, error
         # in case
-        news, error = get_news_from_url(tweet.expanded_url if source is "twitter" else url)
+        news, error = get_news_from_url(tweet.expanded_url if source == "twitter" else url)
 
         if error is not None:
             return None, None, error
-        # return news, tweet, error
     # article is not published
     else:
         news, error = get_news_from_file(url)
@@ -47,8 +44,6 @@ def preprocessor(url, published):
             return None, None, error
     
     return news, tweet, error
-
-    # code for news media outlet.
 
 
 def is_whitelisted_url(url):
@@ -71,4 +66,3 @@ def is_whitelisted_url(url):
     else:
         print('unsupported source')
         raise ApplicationError(*error_list["UNSUP_SRC"])
-        # return -1   # Error codes are not defined yet, use -1 for convenience

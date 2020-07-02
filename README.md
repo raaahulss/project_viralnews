@@ -26,10 +26,17 @@ npm install
 1. For starting backend server:
 ```
 cd webapp
-python main.py
+python app.py
 ```
 2. For starting ui server:
 ```
 cd ui
 npm start
+```
+
+### Deployment
+
+1. For deploying backend server:
+```
+gunicorn --bind 0.0.0.0:5000 app:app
 ```
