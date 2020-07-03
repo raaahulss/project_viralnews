@@ -179,9 +179,9 @@ class Tweet:
         # self.trending = trending
 
     def to_dict(self):
-        return {"retweet_count": self.retweet_count,
-                "favorite_count": self.favorite_count,
-                "responses_count": self.responses_count,}
+        return {"retweets": self.retweet_count,
+                "favourites": self.favorite_count,
+                "responses": self.responses_count,}
                 # "trending": self.trending}
 
 
