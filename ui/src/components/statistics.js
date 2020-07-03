@@ -23,11 +23,6 @@ class Statistics extends Component {
                 <NumberCard title="Favorites" value={this.props.metrics.favourites}/>
               </center>
             </Col>
-            <Col>
-              <center>
-                <NumberCard title="Responses" value={this.props.metrics.responses}/>
-              </center>
-            </Col>
           </Row>
         </Container>
       </div>
