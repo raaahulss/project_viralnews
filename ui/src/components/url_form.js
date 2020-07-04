@@ -90,10 +90,11 @@ class UrlForm extends Component {
         <div className="url-form">
           <Form onSubmit={this.handleSubmit}>
             <Form.Group controlId="formBasicUrl">
-              <Form.Control type="url" placeholder="Enter a political news url..." value={this.state.url} onChange={this.handleChange} required/>
+              <Form.Control type="url" placeholder="Enter a political news url or a twitter url that contains a political news url..." value={this.state.url} onChange={this.handleChange} required/>
             </Form.Group>
             <SubmitButton/>
           </Form>
+          <div id="url-note">Note: The list of supported politcal news sources are The New York Times, The Wall Street Journal, CNN, NBC News, Los Angeles Times, National Public Radio(NPR), Reuters, HuffPost and ABC News.</div>
         </div>
       );
     }
