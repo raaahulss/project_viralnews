@@ -5,7 +5,7 @@ from src.collection.news_fetcher import get_news_from_url
 from src.collection.news_fetcher import get_news_from_file
 from src.error import ApplicationError, error_list
 
-supported_sources = ('twitter', 'nytimes', 'washingtonpost', 'wsj', 'cnn', 'nbcnews')
+supported_sources = ('twitter', 'nytimes', 'wsj', 'cnn', 'nbcnews','latimes','npr','reuters','huffpost','abcnews')
 
 
 def preprocessor(url, published):
