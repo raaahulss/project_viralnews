@@ -27,13 +27,13 @@ class Aggregator(object):
         self.models['sentiment'] = get_sentiment(self.news)
         # we might use virality model based on text for virality
         self.models['viralness'] = get_viralness(self.news)
-        if self.is_twitter:
+        if self.is_twitter and self.tweet.responses:
             self.models['public_opinion'] = get_public_opinion(self.tweet)
 
     def to_dict(self):
         dictionary = {"viralness" : self.models['viralness'],
                        "sentiment" : self.models['sentiment'] }
-        if self.is_twitter:
+        if self.is_twitter and self.tweet.responses:
             dictionary["public_opinion"] = self.models['public_opinion']
         return dictionary
 
