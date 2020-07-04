@@ -1,11 +1,19 @@
-from flask import Blueprint, request, jsonify
 from src.preprocessor import preprocessor as preprocessor
 from src.error import ApplicationError, error_list
 from src.aggregator import Aggregator
+
+from flask import Blueprint, request, jsonify, Flask
 from flask_cors import cross_origin
 import io
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
 
 router = Blueprint(__name__, "router")
+limiter = Limiter(
+    Flask(__name__),
+    key_func=get_remote_address,
+    default_limits=["200 per day", "50 per hour"]
+)
 
 
 @router.route('/', methods=['GET'])
@@ -15,6 +23,7 @@ def index():
 
 
 @router.route('/api/url', methods=['POST'])
+@limiter.limit('5/minute')
 @cross_origin()
 def parse_url():
     print("Got request", request.args)
@@ -43,6 +52,7 @@ def parse_url():
 
 
 @router.route('/api/file', methods=['POST'])
+@limiter.limit('5/minute')
 @cross_origin()
 def parse_file():
     print("Got request", request.args)
