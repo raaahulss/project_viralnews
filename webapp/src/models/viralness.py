@@ -78,14 +78,13 @@ class LSTM_fixed_len(nn.Module):
         lstm_out, (ht, ct) = self.lstm(x)
         return self.linear(ht[-1])
 
-import pytest
 def get_viralness(news: NewsObject) -> float:
     encoded_content, length, vocab_size = preprocess(news.content)
     encoded_content = torch.from_numpy(encoded_content).to(torch.int64)
     encoded_content = encoded_content.unsqueeze(0)
     viralness_model = LSTM_fixed_len(vocab_size, 256, 256)
-    viralness_model.load_state_dict(torch.load("./src/models/viralness.pt"))
-    pytest.set_trace()
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    viralness_model.load_state_dict(torch.load("./src/models/viralness.pt", map_location=device))
     y_hat = viralness_model(encoded_content, len)
     return int(torch.max(y_hat, 1)[1])
 
