@@ -7,10 +7,10 @@ from src.error import *
 
 
 class Aggregator(object):
-    def __init__(self, news: NewsObject = None, tweet: Tweet = None, published: bool = False):
+    def __init__(self, news: NewsObject = None, tweet: Tweet = None, is_twitter: bool = False):
         self.news = news
         self.tweet = tweet
-        self.published = published
+        self.is_twitter = is_twitter
         self.models = {'viralness': None,
                        'sentiment': None,
                        'public_opinion': None}
@@ -27,13 +27,13 @@ class Aggregator(object):
         self.models['sentiment'] = get_sentiment(self.news)
         # we might use virality model based on text for virality
         self.models['viralness'] = get_viralness(self.news)
-        if self.published:
+        if self.is_twitter:
             self.models['public_opinion'] = get_public_opinion(self.tweet)
 
     def to_dict(self):
         dictionary = {"viralness" : self.models['viralness'],
                        "sentiment" : self.models['sentiment'] }
-        if self.published:
+        if self.is_twitter:
             dictionary["public_opinion"] = self.models['public_opinion']
         return dictionary
 
