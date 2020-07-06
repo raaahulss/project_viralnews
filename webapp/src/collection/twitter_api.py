@@ -37,7 +37,7 @@ class TwitterApi(object):
             return tweet
         except RateLimitError as r:
             print("Rate limit exceeded", str(r))
-            raise ApplicationError(*error_list["RT_LMT_RCHD"])
+            raise ApplicationError(*error_list["LMT_RCHD_ERROR"])
         except TweepError as e:
             print("Error occured", str(e))
             raise ApplicationError(*error_list["FTCH_ERR"])
