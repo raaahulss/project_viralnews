@@ -35,7 +35,7 @@ class UrlForm extends Component {
     var self = this;
     let response = axios({
                     method: 'post',
-                    url: 'http://localhost:5000/api/url',
+                    url: 'http://3.22.37.246:5000/api/url',
                     params: {
                       url: input_url
                     },
