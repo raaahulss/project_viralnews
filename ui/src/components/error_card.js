@@ -11,7 +11,7 @@ class ErrorCard extends Component {
       let response = this.props.location.state;
       return (
         <div className="input">
-          <h2 className="error-page-title">Oops!!!<br /> There seems to be a problems.</h2>
+          <h2 className="error-page-title">Oops!!!<br /> There seems to be a problem.</h2>
           <h4 className="error-message">Error : {response}</h4>
           <h4 className="error-message">Please go back to the home page and retry...</h4>
         </div>
@@ -19,7 +19,7 @@ class ErrorCard extends Component {
     } else {
       return (
         <div className="input">
-          <h2 className="error-page-title">Oops!!!<br /> There seems to be a problems.</h2>
+          <h2 className="error-page-title">Oops!!!<br /> There seems to be a problem.</h2>
           <h4 className="error-message">{this.props.error.err_code} : {this.props.error.err_msg}</h4>
           <h4 className="error-message">Please go back to the home page and retry...</h4>
         </div>
