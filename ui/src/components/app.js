@@ -6,6 +6,7 @@ import Api from '../api.js';
 import Ml from '../ml.js';
 import About from '../about.js';
 import Dashboard from '../dashboard.js';
+import Privacy from '../privacy.js';
 import ErrorCard from './error_card.js';
 import '../css/app.css'
 
@@ -22,6 +23,7 @@ class App extends Component {
                 <Route path="/ml" component={Ml} />
                 <Route path="/about" component={About} />
                 <Route path="/dashboard" component={Dashboard} />
+                <Route path="/privacy" component={Privacy} />
                 <Route path="/error" component={ErrorCard} />
                 <Redirect to="/" component={Home}/>
               </Switch>
