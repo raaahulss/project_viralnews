@@ -1,3 +1,1 @@
-*.model filter=lfs diff=lfs merge=lfs -text
-*.vocab filter=lfs diff=lfs merge=lfs -text
 viralness.pt filter=lfs diff=lfs merge=lfs -text
