@@ -9,7 +9,7 @@ User=ubuntu
 Group=www-data
 WorkingDirectory=/home/ubuntu/project_viralnews/webapp
 Environment="PATH=/home/ubuntu/project_viralnews/venv/bin"
-ExecStart=/home/ubuntu/project_viralnews/venv/bin/gunicorn --bind unix:project_viralnews.sock -m 007 app:app
+ExecStart=/home/ubuntu/project_viralnews/venv/bin/gunicorn --timeout 60 --bind unix:project_viralnews.sock -m 007 app:app
 
 [Install]
 WantedBy=multi-user.target
