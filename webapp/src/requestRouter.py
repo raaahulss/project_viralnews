@@ -11,7 +11,7 @@ from flask_limiter.util import get_remote_address
 router = Blueprint(__name__, "router")
 limiter = Limiter(
     key_func=get_remote_address,
-    default_limits=["200 per day", "50 per hour"]
+    default_limits=["2000 per day", "500 per hour"]
 )
 
 
@@ -28,7 +28,7 @@ def ratelimit_handler(e):
 
 
 @router.route('/api/url', methods=['POST'])
-@limiter.limit('1/minute')
+@limiter.limit('60/minute')
 @cross_origin()
 def parse_url():
     print("Got request", request.args)
@@ -57,7 +57,7 @@ def parse_url():
 
 
 @router.route('/api/file', methods=['POST'])
-@limiter.limit('1/minute')
+@limiter.limit('60/minute')
 @cross_origin()
 def parse_file():
     print("Got request", request.args)
