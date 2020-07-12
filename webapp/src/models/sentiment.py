@@ -1,3 +1,5 @@
+import boto3
+from io import BytesIO
 import json
 import torch
 from torch import nn
@@ -27,6 +29,19 @@ class SentimentModel(nn.Module):
         return bow_vec.view(1, -1)
 
 
+def load_vocab_and_model():
+    s3 = boto3.resource('s3')
+    vocab = json.load(
+        BytesIO(s3.Object('project-viralnews-model', 'sentiment_analysis.vocab').get()['Body'].read())
+    )
+    model = SentimentModel(vocab, 2)
+    model.load_state_dict(torch.load(
+        BytesIO(s3.Object('project-viralnews-model', 'sentiment_analysis.model').get()['Body'].read()),
+        map_location=model.device
+    ))
+    return vocab, model
+
+
 def get_sentiment(news: NewsObject) -> float:
     """
     Given a news object, return the probability that its underlying sentiment is liberal
@@ -35,8 +50,4 @@ def get_sentiment(news: NewsObject) -> float:
 
 
 # only load once when the server starts
-with open('./src/models/sentiment_analysis.vocab', 'r') as f:
-    vocab = json.load(f)
-sentiment_model = SentimentModel(vocab, 2)
-sentiment_model.load_state_dict(torch.load('./src/models/sentiment_analysis.model',
-                                           map_location=sentiment_model.device))
+sentiment_vocab, sentiment_model = load_vocab_and_model()
