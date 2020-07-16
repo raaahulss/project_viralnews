@@ -1,3 +1,5 @@
 .vscode
 venv
 OnlineNewsPopularity_extended.csv
+*/**/*.csv
+*/**/*.npy
