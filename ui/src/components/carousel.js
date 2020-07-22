@@ -23,14 +23,13 @@ class CarouselMl extends Component {
           <h1 id="h2-title">Article Viralness</h1>
 
 
-              <p>  Using the median number of retweets in our dataset as the threshold
-              between popular and unpopular articles allows us to set up a binary
-              classification problem. We use a combination of metadata features
-              (date published, time published, length of content, etc) and textual
-              features (content, title) to train a neural network that can predict
-              with 60% accuracy if a certain article will go viral. The purpose of
-              this model is to provide insight into what features of an article cause
-              it to go viral. The dataset used to train our model, as well as the retweet count
+              <p>  We pose the problem of viralness as a multi-class text classification
+              problem in which four classes are defined using a base-10 log scale. Our Bi-LSTM
+              model outputs a 0, 1, 2, or 3 corresponding to 0-10 retweets, 11-100 retweets, 101-1000
+              retweets, and 1000+ retweets respectively. The model is only trained on the
+              content and text of the article, meaning that the model can analyze both published
+              and unpublished articles. The overall accuracy of this model is 60%
+              The dataset used to train our model, as well as the retweet count
               thresholds for various sources can be found in our GitHub Repo.   </p>
           </Carousel.Caption>
         </Carousel.Item>
