@@ -64,12 +64,13 @@ function ViralnessHTML(props) {
       <ViralnessModel title="Article Viralness" value={props.value}/>
       <Row style={{width: 330}}>
         <Col>
-          <p style={{color:'#e27d60'}}>Low</p>
+          <p style={{color:'#ffffff'}}>0 Retweets</p>
         </Col>
         <Col>
-          <p style={{color:'#e27d60'}}>High</p>
+          <p style={{color:'#ffffff'}}>1000+ Retweets</p>
         </Col>
       </Row>
+      <a href='/ml' style={{color:'#ffffff',fontWeight: "bold"}}>Uses a base-10 log scale</a>
     </Col>
   );
 }
@@ -80,12 +81,13 @@ function SentimentHTML(props) {
       <SentimentModel title="Political Bias" value={props.value}/>
       <Row style={{width: 330}}>
         <Col>
-          <p style={{color:'#e27d60'}}>Liberal</p>
+          <p style={{color:'#ffffff'}}>Liberal</p>
         </Col>
         <Col>
-          <p style={{color:'#e27d60'}}>Conservative</p>
+          <p style={{color:'#ffffff'}}>Conservative</p>
         </Col>
       </Row>
+      <a href='/ml' style={{color:'#ffffff',fontWeight: "bold"}}>0% is Liberal - 100% is Conservative </a>
     </Col>
   );
 }
@@ -96,12 +98,13 @@ function OpinionHTML(props) {
       <OpinionModel title="Public Reaction" value={props.value}/>
       <Row>
         <Col>
-          <p style={{color:'#e27d60'}}>Disagree</p>
+          <p style={{color:'#ffffff'}}>Disagree</p>
         </Col>
         <Col>
-          <p style={{color:'#e27d60'}}>Agree</p>
+          <p style={{color:'#ffffff'}}>Agree</p>
         </Col>
       </Row>
+    <a href='/ml' style={{color:'#ffffff',fontWeight: "bold"}}>Percentage of users that agree</a>
     </Col>
   );
 }

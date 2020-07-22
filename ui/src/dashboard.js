@@ -10,10 +10,7 @@ class Dashboard extends Component {
     super(props);
   }
   render() {
-    //let response = this.props.location.state.data
     let response = this.props.location.state
-    //console.log(response);
-
     if (response.error !== "") {
       return (
         <ErrorCard error={response.error}/>
@@ -31,6 +28,7 @@ class Dashboard extends Component {
                               content={response.details.content}/>
               <Analysis models={response.models} input_type={response.input_type}/>
             </div>
+
           );
         } else if (response.input_type === "Twitter") {
             return (

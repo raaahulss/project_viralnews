@@ -6,8 +6,9 @@ class ViralnessMeter extends Component {
     return (
       <div>
         <GaugeChart id="gauge-chart2"
-          nrOfLevels={15}
-          arcWidth={0.4}
+          nrOfLevels={4}
+          arcsLength={[0.10, 0.20, 0.30, 0.40]}
+          arcWidth={0.2}
           percent={this.props.value}
           textColor={'#e27d60'}
           style={{width: 300}}
