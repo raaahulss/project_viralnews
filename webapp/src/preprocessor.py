@@ -32,8 +32,14 @@ def preprocessor(url, published):
             tweet, error = get_tweet(url)
             if error is not None:
                 return None, None, error
-        # in case
-        news, error = get_news_from_url(tweet.expanded_url if source == "twitter" else url)
+            # check expanded url to make sure it is supported
+            try:
+                is_whitelisted_url(tweet.expanded_url)
+                news, error = get_news_from_url(tweet.expanded_url)
+            except ApplicationError as error:
+                return None, None, error
+        else:
+            news, error = get_news_from_url(url)
 
         if error is not None:
             return None, None, error
