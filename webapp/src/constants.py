@@ -19,4 +19,4 @@ SEARCH_PER_REQUEST=100
 # 7 for standard and 30 for premium
 SEARCH_WINDOW = 7
 
-
+MIN_CONTENT_LEN = 50

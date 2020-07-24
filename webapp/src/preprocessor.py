@@ -37,6 +37,7 @@ def preprocessor(url, published):
                 is_whitelisted_url(tweet.expanded_url)
                 news, error = get_news_from_url(tweet.expanded_url)
             except ApplicationError as error:
+                error = ApplicationError(*error_list["UNSUP_EMB_URL"])
                 return None, None, error
         else:
             news, error = get_news_from_url(url)
