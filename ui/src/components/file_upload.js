@@ -89,7 +89,7 @@ class FileUpload extends Component {
 
       axios({
         method: 'post',
-        url: 'http://3.22.37.246:5000/api/file',
+        url: 'http://3.128.42.45:5000/api/file',
         data: formData,
         headers: {"Access-Control-Allow-Origin": "*"}
         })
