@@ -1,6 +1,7 @@
 from src.preprocessor import preprocessor as preprocessor
 from src.error import ApplicationError, error_list
 from src.aggregator import Aggregator
+from src.constants import MIN_CONTENT_LEN
 
 from flask import Blueprint, request, jsonify
 from flask_cors import cross_origin
@@ -46,7 +47,9 @@ def parse_url():
     
     if error is not None:
         return return_result(error)
-    
+    if len(news_obj.content.split(' ')) < MIN_CONTENT_LEN:
+        return return_result(ApplicationError(*error_list["CONTENT_TOO_SHORT"]))
+
     aggregator = Aggregator(news=news_obj, tweet=twitter_obj, is_twitter=twitter_obj is not None)
     try:
         aggregator.run_models()
@@ -79,6 +82,8 @@ def parse_file():
     
     if error is not None:
         return return_result(error)
+    if len(news_obj.content.split(' ')) < MIN_CONTENT_LEN:
+        return return_result(ApplicationError(*error_list["CONTENT_TOO_SHORT"]))
 
     aggregator = Aggregator(news=news_obj, tweet=twitter_obj, is_twitter=False)
     try:
