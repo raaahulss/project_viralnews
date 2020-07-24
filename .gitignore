@@ -1,0 +1,8 @@
+.vscode
+venv
+*/**/.pytest_cache
+*/**/twarc.log
+*/**/*.json
+*/**/*.jsonl
+*/**/*.csv
+*/**/*.ipynb_checkpoints

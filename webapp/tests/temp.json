@@ -1,0 +1,3650 @@
+{
+    "created_at": "Fri Jun 05 20:29:09 +0000 2020",
+    "id": 1269003347803111430,
+    "id_str": "1269003347803111430",
+    "text": "RT @nytimes: 6 members of a military family, including 4 young children, were found dead in their car in the family\u2019s garage in San Antonio\u2026",
+    "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+    "truncated": false,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+        "id": 42739985,
+        "id_str": "42739985",
+        "name": "Stuffed Teddy",
+        "screen_name": "gildur09",
+        "location": "Canada",
+        "url": null,
+        "description": "None of your business",
+        "translator_type": "none",
+        "protected": false,
+        "verified": false,
+        "followers_count": 258,
+        "friends_count": 707,
+        "listed_count": 60,
+        "favourites_count": 47253,
+        "statuses_count": 68503,
+        "created_at": "Tue May 26 22:23:41 +0000 2009",
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": true,
+        "lang": null,
+        "contributors_enabled": false,
+        "is_translator": false,
+        "profile_background_color": "07090B",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_tile": false,
+        "profile_link_color": "D63131",
+        "profile_sidebar_border_color": "BFBFBF",
+        "profile_sidebar_fill_color": "C9C9C9",
+        "profile_text_color": "1C1F23",
+        "profile_use_background_image": true,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/711085118413099008/0jkLI0nD_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/711085118413099008/0jkLI0nD_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/42739985/1576243129",
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": null,
+        "follow_request_sent": null,
+        "notifications": null
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "retweeted_status": {
+        "created_at": "Fri Jun 05 15:40:05 +0000 2020",
+        "id": 1268930601714946059,
+        "id_str": "1268930601714946059",
+        "text": "6 members of a military family, including 4 young children, were found dead in their car in the family\u2019s garage in\u2026 https://t.co/1AMERURLCs",
+        "source": "<a href=\"http://www.socialflow.com\" rel=\"nofollow\">SocialFlow</a>",
+        "truncated": true,
+        "in_reply_to_status_id": null,
+        "in_reply_to_status_id_str": null,
+        "in_reply_to_user_id": null,
+        "in_reply_to_user_id_str": null,
+        "in_reply_to_screen_name": null,
+        "user": {
+            "id": 807095,
+            "id_str": "807095",
+            "name": "The New York Times",
+            "screen_name": "nytimes",
+            "location": "New York City",
+            "url": "http://www.nytimes.com/",
+            "description": "News tips? Share them here: http://nyti.ms/2FVHq9v",
+            "translator_type": "none",
+            "protected": false,
+            "verified": true,
+            "followers_count": 46793259,
+            "friends_count": 906,
+            "listed_count": 199487,
+            "favourites_count": 18494,
+            "statuses_count": 397870,
+            "created_at": "Fri Mar 02 20:41:42 +0000 2007",
+            "utc_offset": null,
+            "time_zone": null,
+            "geo_enabled": false,
+            "lang": null,
+            "contributors_enabled": false,
+            "is_translator": false,
+            "profile_background_color": "131516",
+            "profile_background_image_url": "http://abs.twimg.com/images/themes/theme14/bg.gif",
+            "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme14/bg.gif",
+            "profile_background_tile": true,
+            "profile_link_color": "607696",
+            "profile_sidebar_border_color": "FFFFFF",
+            "profile_sidebar_fill_color": "EFEFEF",
+            "profile_text_color": "333333",
+            "profile_use_background_image": true,
+            "profile_image_url": "http://pbs.twimg.com/profile_images/1098244578472280064/gjkVMelR_normal.png",
+            "profile_image_url_https": "https://pbs.twimg.com/profile_images/1098244578472280064/gjkVMelR_normal.png",
+            "profile_banner_url": "https://pbs.twimg.com/profile_banners/807095/1584666392",
+            "default_profile": false,
+            "default_profile_image": false,
+            "following": null,
+            "follow_request_sent": null,
+            "notifications": null
+        },
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "is_quote_status": false,
+        "extended_tweet": {
+            "full_text": "6 members of a military family, including 4 young children, were found dead in their car in the family\u2019s garage in San Antonio, apparently after suffering from intentional carbon monoxide poisoning, the police said https://t.co/EHx14oIMy1",
+            "display_text_range": [
+                0,
+                238
+            ],
+            "entities": {
+                "hashtags": [],
+                "urls": [
+                    {
+                        "url": "https://t.co/EHx14oIMy1",
+                        "expanded_url": "https://nyti.ms/2XXkFso",
+                        "display_url": "nyti.ms/2XXkFso",
+                        "indices": [
+                            215,
+                            238
+                        ]
+                    }
+                ],
+                "user_mentions": [],
+                "symbols": []
+            }
+        },
+        "quote_count": 17,
+        "reply_count": 47,
+        "retweet_count": 82,
+        "favorite_count": 246,
+        "entities": {
+            "hashtags": [],
+            "urls": [
+                {
+                    "url": "https://t.co/1AMERURLCs",
+                    "expanded_url": "https://twitter.com/i/web/status/1268930601714946059",
+                    "display_url": "twitter.com/i/web/status/1\u2026",
+                    "indices": [
+                        116,
+                        139
+                    ]
+                }
+            ],
+            "user_mentions": [],
+            "symbols": []
+        },
+        "favorited": false,
+        "retweeted": false,
+        "possibly_sensitive": false,
+        "filter_level": "low",
+        "lang": "en"
+    },
+    "is_quote_status": false,
+    "quote_count": 0,
+    "reply_count": 0,
+    "retweet_count": 0,
+    "favorite_count": 0,
+    "entities": {
+        "hashtags": [],
+        "urls": [],
+        "user_mentions": [
+            {
+                "screen_name": "nytimes",
+                "name": "The New York Times",
+                "id": 807095,
+                "id_str": "807095",
+                "indices": [
+                    3,
+                    11
+                ]
+            }
+        ],
+        "symbols": []
+    },
+    "favorited": false,
+    "retweeted": false,
+    "filter_level": "low",
+    "lang": "en",
+    "timestamp_ms": "1591388949715"
+}
+    {
+    "created_at": "Fri Jun 05 20:29:17 +0000 2020",
+    "id": 1269003381051240450,
+    "id_str": "1269003381051240450",
+    "text": "RT @nytimes: Attacks against journalists covering demonstrations against racial injustice have prompted foreign governments to call on Amer\u2026",
+    "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+    "truncated": false,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+        "id": 996929040,
+        "id_str": "996929040",
+        "name": "AJ",
+        "screen_name": "Sir_Blumpkin_",
+        "location": null,
+        "url": null,
+        "description": null,
+        "translator_type": "none",
+        "protected": false,
+        "verified": false,
+        "followers_count": 109,
+        "friends_count": 315,
+        "listed_count": 2,
+        "favourites_count": 15610,
+        "statuses_count": 24910,
+        "created_at": "Sat Dec 08 11:00:00 +0000 2012",
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": false,
+        "lang": null,
+        "contributors_enabled": false,
+        "is_translator": false,
+        "profile_background_color": "C0DEED",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_tile": false,
+        "profile_link_color": "1DA1F2",
+        "profile_sidebar_border_color": "C0DEED",
+        "profile_sidebar_fill_color": "DDEEF6",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/1180001943025942529/VPUXZAkD_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/1180001943025942529/VPUXZAkD_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/996929040/1570169362",
+        "default_profile": true,
+        "default_profile_image": false,
+        "following": null,
+        "follow_request_sent": null,
+        "notifications": null
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "retweeted_status": {
+        "created_at": "Fri Jun 05 08:00:11 +0000 2020",
+        "id": 1268814861196296197,
+        "id_str": "1268814861196296197",
+        "text": "Attacks against journalists covering demonstrations against racial injustice have prompted foreign governments to c\u2026 https://t.co/GS8euQ04Cb",
+        "source": "<a href=\"http://www.socialflow.com\" rel=\"nofollow\">SocialFlow</a>",
+        "truncated": true,
+        "in_reply_to_status_id": null,
+        "in_reply_to_status_id_str": null,
+        "in_reply_to_user_id": null,
+        "in_reply_to_user_id_str": null,
+        "in_reply_to_screen_name": null,
+        
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "is_quote_status": false,
+        "extended_tweet": {
+            "full_text": "Attacks against journalists covering demonstrations 
+    against racial injustice have prompted foreign governments to call on American authorities to respect press freedom and protect reporters. For the United States, it is a role reversal. https: //t.co/27M8rdXNuM", "display_text_range": [0, 260], "entities": {"hashtags": [], "urls": [{"url": "https://t.co/27M8rdXNuM", "expanded_url": "https://nyti.ms/2Mt45LV", "display_url": "nyti.ms/2Mt45LV", "indices": [237, 260]}], "user_mentions": [], "symbols": []}}, "quote_count": 162, "reply_count": 234, "retweet_count": 2008, "favorite_count": 5121, "entities": {"hashtags": [], "urls": [{"url": "https://t.co/GS8euQ04Cb", "expanded_url": "https://twitter.com/i/web/status/1268814861196296197", "display_url": "twitter.com/i/web/status/1\u2026", "indices": [117, 140]}], "user_mentions": [], "symbols": []}, "favorited": false, "retweeted": false, "possibly_sensitive": false, "filter_level": "low", "lang": "en"}, "is_quote_status": false, "quote_count": 0, "reply_count": 0, "retweet_count": 0, "favorite_count": 0, "entities": {"hashtags": [], "urls": [], "user_mentions": [{"screen_name": "nytimes", "name": "The New York Times", "id": 807095, "id_str": "807095", "indices": [3, 11]}], "symbols": []}, "favorited": false, "retweeted": false, "filter_level": "low", "lang": "en", "timestamp_ms": "1591388957642"} {
+                "created_at": "Fri Jun 05 20:29:21 +0000 2020",
+                "id": 1269003397652344832,
+                "id_str": "1269003397652344832",
+                "text": "RT @nytimes: President Trump, hailing a dip in the unemployment rate, said Friday that it was a \u201cgreat day\u201d for Americans and for George Fl\u2026",
+                "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+                "truncated": false,
+                "in_reply_to_status_id": null,
+                "in_reply_to_status_id_str": null,
+                "in_reply_to_user_id": null,
+                "in_reply_to_user_id_str": null,
+                "in_reply_to_screen_name": null,
+                "user": {
+                    "id": 817534560346873856,
+                    "id_str": "817534560346873856",
+                    "name": "Wake Up America!\ud83d\uddfd",
+                    "screen_name": "USDemocracy2020",
+                    "location": "USA ProtectDemocracy\ud83d\uddfd",
+                    "url": null,
+                    "description": "What matters: the Truth! 
+    We the People must stand up for the common good! #ClimateActionNow #SaveACA #Education   #Leadership #StayHome #DefendDemocracy #ENOUGH", "translator_type": "none", "protected": false, "verified": false, "followers_count": 579, "friends_count": 1990, "listed_count": 2, "favourites_count": 19053, "statuses_count": 173299, "created_at": "Sat Jan 07 00: 53: 23 +0000 2017", "utc_offset": null, "time_zone": null, "geo_enabled": false, "lang": null, "contributors_enabled": false, "is_translator": false, "profile_background_color": "F5F8FA", "profile_background_image_url": "", "profile_background_image_url_https": "", "profile_background_tile": false, "profile_link_color": "1DA1F2", "profile_sidebar_border_color": "C0DEED", "profile_sidebar_fill_color": "DDEEF6", "profile_text_color": "333333", "profile_use_background_image": true, "profile_image_url": "http: //pbs.twimg.com/profile_images/839757469496729600/oTM_j9XZ_normal.jpg", "profile_image_url_https": "https://pbs.twimg.com/profile_images/839757469496729600/oTM_j9XZ_normal.jpg", "profile_banner_url": "https://pbs.twimg.com/profile_banners/817534560346873856/1483879180", "default_profile": true, "default_profile_image": false, "following": null, "follow_request_sent": null, "notifications": null}, "geo": null, "coordinates": null, "place": null, "contributors": null, "retweeted_status": {"created_at": "Fri Jun 05 18:20:04 +0000 2020", "id": 1268970860569923588, "id_str": "1268970860569923588", "text": "President Trump, hailing a dip in the unemployment rate, said Friday that it was a \u201cgreat day\u201d for Americans and fo\u2026 https://t.co/uped6LFP5X", "display_text_range": [0, 140], "source": "<a href=\"http://www.socialflow.com\" rel=\"nofollow\">SocialFlow</a>", "truncated": true, "in_reply_to_status_id": null, "in_reply_to_status_id_str": null, "in_reply_to_user_id": null, "in_reply_to_user_id_str": null, "in_reply_to_screen_name": null, "user": {"id": 807095, "id_str": "807095", "name": "The New York Times", "screen_name": "nytimes", "location": "New York City", "url": "http://www.nytimes.com/", "description": "News tips? Share them here: http://nyti.ms/2FVHq9v", "translator_type": "none", "protected": false, "verified": true, "followers_count": 46792592, "friends_count": 906, "listed_count": 199472, "favourites_count": 18494, "statuses_count": 397870, "created_at": "Fri Mar 02 20:41:42 +0000 2007", "utc_offset": null, "time_zone": null, "geo_enabled": false, "lang": null, "contributors_enabled": false, "is_translator": false, "profile_background_color": "131516", "profile_background_image_url": "http://abs.twimg.com/images/themes/theme14/bg.gif", "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme14/bg.gif", "profile_background_tile": true, "profile_link_color": "607696", "profile_sidebar_border_color": "FFFFFF", "profile_sidebar_fill_color": "EFEFEF", "profile_text_color": "333333", "profile_use_background_image": true, "profile_image_url": "http://pbs.twimg.com/profile_images/1098244578472280064/gjkVMelR_normal.png", "profile_image_url_https": "https://pbs.twimg.com/profile_images/1098244578472280064/gjkVMelR_normal.png", "profile_banner_url": "https://pbs.twimg.com/profile_banners/807095/1584666392", "default_profile": false, "default_profile_image": false, "following": null, "follow_request_sent": null, "notifications": null}, "geo": null, "coordinates": null, "place": null, "contributors": null, "is_quote_status": false, "extended_tweet": {"full_text": "President Trump, hailing a dip in the unemployment rate, said Friday that it was a \u201cgreat day\u201d for Americans and for George Floyd. The comments drew immediate criticism, and he ignored a question from a reporter who asked why it was a great day for Floyd. https://t.co/iAZnMfOMxo https://t.co/YvTNlKXxCy", "display_text_range": [0, 279], "entities": {"hashtags": [], "urls": [{"url": "https://t.co/iAZnMfOMxo", "expanded_url": "https://nyti.ms/3dAtxLq", "display_url": "nyti.ms/3dAtxLq", "indices": [256, 279]}], "user_mentions": [], "symbols": [], "media": [{"id": 1268970858833469440, "id_str": "1268970858833469440", "indices": [280, 303], "media_url": "http://pbs.twimg.com/media/EZxKRdcXYAAbIJM.jpg", "media_url_https": "https://pbs.twimg.com/media/EZxKRdcXYAAbIJM.jpg", "url": "https://t.co/YvTNlKXxCy", "display_url": "pic.twitter.com/YvTNlKXxCy", "expanded_url": "https://twitter.com/nytimes/status/1268970860569923588/photo/1", "type": "photo", "sizes": {"medium": {"w": 1000, "h": 560, "resize": "fit"}, "thumb": {"w": 150, "h": 150, "resize": "crop"}, "large": {"w": 1000, "h": 560, "resize": "fit"}, "small": {"w": 680, "h": 381, "resize": "fit"}}}]}, "extended_entities": {"media": [{"id": 1268970858833469440, "id_str": "1268970858833469440", "indices": [280, 303], "media_url": "http://pbs.twimg.com/media/EZxKRdcXYAAbIJM.jpg", "media_url_https": "https://pbs.twimg.com/media/EZxKRdcXYAAbIJM.jpg", "url": "https://t.co/YvTNlKXxCy", "display_url": "pic.twitter.com/YvTNlKXxCy", "expanded_url": "https://twitter.com/nytimes/status/1268970860569923588/photo/1", "type": "photo", "sizes": {"medium": {"w": 1000, "h": 560, "resize": "fit"}, "thumb": {"w": 150, "h": 150, "resize": "crop"}, "large": {"w": 1000, "h": 560, "resize": "fit"}, "small": {"w":  680,
+                    "h": 381,
+                    "resize": "fit"
+                }
+            }
+        }
+    ]
+}
+},
+"quote_count": 106,
+"reply_count": 213,
+"retweet_count": 301,
+"favorite_count": 889,
+"entities": {
+"hashtags": [],
+"urls": [
+    {
+        "url": "https://t.co/uped6LFP5X",
+        "expanded_url": "https://twitter.com/i/web/status/1268970860569923588",
+        "display_url": "twitter.com/i/web/status/1\u2026",
+        "indices": [
+            117,
+            140
+        ]
+    }
+],
+"user_mentions": [],
+"symbols": []
+},
+"favorited": false,
+"retweeted": false,
+"possibly_sensitive": false,
+"filter_level": "low",
+"lang": "en"
+},
+"is_quote_status": false,
+"quote_count": 0,
+"reply_count": 0,
+"retweet_count": 0,
+"favorite_count": 0,
+"entities": {
+"hashtags": [],
+"urls": [],
+"user_mentions": [
+{
+    "screen_name": "nytimes",
+    "name": "The New York Times",
+    "id": 807095,
+    "id_str": "807095",
+    "indices": [
+        3,
+        11
+    ]
+}
+],
+"symbols": []
+},
+"favorited": false,
+"retweeted": false,
+"filter_level": "low",
+"lang": "en",
+"timestamp_ms": "1591388961600"
+}
+    {
+"created_at": "Fri Jun 05 20:29:26 +0000 2020",
+"id": 1269003417906638848,
+"id_str": "1269003417906638848",
+"text": "RT @nytimes: 2 Buffalo police officers were suspended without pay on Thursday night after a video showed them shoving a 75-year-old protest\u2026",
+"source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+"truncated": false,
+"in_reply_to_status_id": null,
+"in_reply_to_status_id_str": null,
+"in_reply_to_user_id": null,
+"in_reply_to_user_id_str": null,
+"in_reply_to_screen_name": null,
+"user": {
+"id": 1266399608730574848,
+"id_str": "1266399608730574848",
+"name": "k",
+"screen_name": "k34420333",
+"location": null,
+"url": null,
+"description": "Simply a Hongkonger. #standwithHongKong",
+"translator_type": "none",
+"protected": false,
+"verified": false,
+"followers_count": 15,
+"friends_count": 52,
+"listed_count": 0,
+"favourites_count": 1338,
+"statuses_count": 250,
+"created_at": "Fri May 29 16:03:01 +0000 2020",
+"utc_offset": null,
+"time_zone": null,
+"geo_enabled": false,
+"lang": null,
+"contributors_enabled": false,
+"is_translator": false,
+"profile_background_color": "F5F8FA",
+"profile_background_image_url": "",
+"profile_background_image_url_https": "",
+"profile_background_tile": false,
+"profile_link_color": "1DA1F2",
+"profile_sidebar_border_color": "C0DEED",
+"profile_sidebar_fill_color": "DDEEF6",
+"profile_text_color": "333333",
+"profile_use_background_image": true,
+"profile_image_url": "http://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png",
+"profile_image_url_https": "https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png",
+"default_profile": true,
+"default_profile_image": false,
+"following": null,
+"follow_request_sent": null,
+"notifications": null
+},
+"geo": null,
+"coordinates": null,
+"place": null,
+"contributors": null,
+"retweeted_status": {
+"created_at": "Fri Jun 05 14:00:15 +0000 2020",
+"id": 1268905477615890432,
+"id_str": "1268905477615890432",
+"text": "2 Buffalo police officers were suspended without pay on Thursday night after a video showed them shoving a 75-year-\u2026 https://t.co/R9x0pJskiQ",
+"source": "<a href=\"http://www.socialflow.com\" rel=\"nofollow\">SocialFlow</a>",
+"truncated": true,
+"in_reply_to_status_id": null,
+"in_reply_to_status_id_str": null,
+"in_reply_to_user_id": null,
+"in_reply_to_user_id_str": null,
+"in_reply_to_screen_name": null,
+"user": {
+"id": 807095,
+"id_str": "807095",
+"name": "The New York Times",
+"screen_name": "nytimes",
+"location": "New York City",
+"url": "http://www.nytimes.com/",
+"description": "News tips? Share them here: http://nyti.ms/2FVHq9v",
+"translator_type": "none",
+"protected": false,
+"verified": true,
+"followers_count": 46792594,
+"friends_count": 906,
+"listed_count": 199472,
+"favourites_count": 18494,
+"statuses_count": 397870,
+"created_at": "Fri Mar 02 20:41:42 +0000 2007",
+"utc_offset": null,
+"time_zone": null,
+"geo_enabled": false,
+"lang": null,
+"contributors_enabled": false,
+"is_translator": false,
+"profile_background_color": "131516",
+"profile_background_image_url": "http://abs.twimg.com/images/themes/theme14/bg.gif",
+"profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme14/bg.gif",
+"profile_background_tile": true,
+"profile_link_color": "607696",
+"profile_sidebar_border_color": "FFFFFF",
+"profile_sidebar_fill_color": "EFEFEF",
+"profile_text_color": "333333",
+"profile_use_background_image": true,
+"profile_image_url": "http://pbs.twimg.com/profile_images/1098244578472280064/gjkVMelR_normal.png",
+"profile_image_url_https": "https://pbs.twimg.com/profile_images/1098244578472280064/gjkVMelR_normal.png",
+"profile_banner_url": "https://pbs.twimg.com/profile_banners/807095/1584666392",
+"default_profile": false,
+"default_profile_image": false,
+"following": null,
+"follow_request_sent": null,
+"notifications": null
+},
+"geo": null,
+"coordinates": null,
+"place": null,
+"contributors": null,
+"is_quote_status": false,
+"extended_tweet": {
+"full_text": "2 Buffalo police officers were suspended without pay on Thursday night after a video showed them shoving a 75-year-old protester, who was hospitalized with a head injury, the authorities said https://t.co/q9KOrn2xn3",
+"display_text_range": [
+    0,
+    215
+],
+"entities": {
+    "hashtags": [],
+    "urls": [
+        {
+            "url": "https://t.co/q9KOrn2xn3",
+            "expanded_url": "https://nyti.ms/3eRZtuP",
+            "display_url": "nyti.ms/3eRZtuP",
+            "indices": [
+                192,
+                215
+            ]
+        }
+    ],
+    "user_mentions": [],
+    "symbols": []
+}
+},
+"quote_count": 306,
+"reply_count": 520,
+"retweet_count": 1054,
+"favorite_count": 3832,
+"entities": {
+"hashtags": [],
+"urls": [
+    {
+        "url": "https://t.co/R9x0pJskiQ",
+        "expanded_url": "https://twitter.com/i/web/status/1268905477615890432",
+        "display_url": "twitter.com/i/web/status/1\u2026",
+        "indices": [
+            117,
+            140
+        ]
+    }
+],
+"user_mentions": [],
+"symbols": []
+},
+"favorited": false,
+"retweeted": false,
+"possibly_sensitive": false,
+"filter_level": "low",
+"lang": "en"
+},
+"is_quote_status": false,
+"quote_count": 0,
+"reply_count": 0,
+"retweet_count": 0,
+"favorite_count": 0,
+"entities": {
+"hashtags": [],
+"urls": [],
+"user_mentions": [
+{
+    "screen_name": "nytimes",
+    "name": "The New York Times",
+    "id": 807095,
+    "id_str": "807095",
+    "indices": [
+        3,
+        11
+    ]
+}
+],
+"symbols": []
+},
+"favorited": false,
+"retweeted": false,
+"filter_level": "low",
+"lang": "en",
+"timestamp_ms": "1591388966429"
+}
+    {
+"created_at": "Fri Jun 05 20:29:37 +0000 2020",
+"id": 1269003463964360706,
+"id_str": "1269003463964360706",
+"text": "RT @nytimes: Watch as New York City police officers began arresting protesters in Manhattan about 30 minutes after the city\u2019s 8 p.m. curfew\u2026",
+"source": "<a href=\"https://mobile.twitter.com\" rel=\"nofollow\">Twitter Web App</a>",
+"truncated": false,
+"in_reply_to_status_id": null,
+"in_reply_to_status_id_str": null,
+"in_reply_to_user_id": null,
+"in_reply_to_user_id_str": null,
+"in_reply_to_screen_name": null,
+"user": {
+"id": 247077085,
+"id_str": "247077085",
+"name": "\ud83c\udd98Joe Bishoff #STAYHOME TrumptMalignant Narcissist",
+"screen_name": "JABaloney",
+"location": null,
+"url": null,
+"description": "The world will not be destroyed by those who do evil, but by those who watch them, and do NOTHING. ~ Albert Einstein #Resist\n#SendMePPE #WhereAreTheTests",
+"translator_type": "none",
+"protected": false,
+"verified": false,
+"followers_count": 4265,
+"friends_count": 5002,
+"listed_count": 66,
+"favourites_count": 184818,
+"statuses_count": 144097,
+"created_at": "Fri Feb 04 01:36:19 +0000 2011",
+"utc_offset": null,
+"time_zone": null,
+"geo_enabled": false,
+"lang": null,
+"contributors_enabled": false,
+"is_translator": false,
+"profile_background_color": "000000",
+"profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+"profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+"profile_background_tile": false,
+"profile_link_color": "1B95E0",
+"profile_sidebar_border_color": "000000",
+"profile_sidebar_fill_color": "000000",
+"profile_text_color": "000000",
+"profile_use_background_image": false,
+"profile_image_url": "http://pbs.twimg.com/profile_images/1075213933630418945/KZZn1u0s_normal.jpg",
+"profile_image_url_https": "https://pbs.twimg.com/profile_images/1075213933630418945/KZZn1u0s_normal.jpg",
+"profile_banner_url": "https://pbs.twimg.com/profile_banners/247077085/1586584090",
+"default_profile": false,
+"default_profile_image": false,
+"following": null,
+"follow_request_sent": null,
+"notifications": null
+},
+"geo": null,
+"coordinates": null,
+"place": null,
+"contributors": null,
+"retweeted_status": {
+"created_at": "Fri Jun 05 02:45:06 
+    +0000 2020", "id": 1268735571482103814, "id_str": "1268735571482103814", "text": "Watch as New York City police officers began arresting protesters in Manhattan about 30 minutes after the city\u2019s 8\u2026 https: //t.co/tZmkbMat3H", "display_text_range": [0, 140], "source": "<a href=\"http://www.socialflow.com\" rel=\"nofollow\">SocialFlow</a>", "truncated": true, "in_reply_to_status_id": null, "in_reply_to_status_id_str": null, "in_reply_to_user_id": null, "in_reply_to_user_id_str": null, "in_reply_to_screen_name": null, "user": {"id": 807095, "id_str": "807095", "name": "The New York Times", "screen_name": "nytimes", "location":  "New York City",
+"url": "http://www.nytimes.com/",
+"description": "News tips? Share them here: http://nyti.ms/2FVHq9v",
+"translator_type": "none",
+"protected": false,
+"verified": true,
+"followers_count": 46793269,
+"friends_count": 906,
+"listed_count": 199487,
+"favourites_count": 18494,
+"statuses_count": 397870,
+"created_at": "Fri Mar 02 20:41:42 +0000 2007",
+"utc_offset": null,
+"time_zone": null,
+"geo_enabled": false,
+"lang": null,
+"contributors_enabled": false,
+"is_translator": false,
+"profile_background_color": "131516",
+"profile_background_image_url": "http://abs.twimg.com/images/themes/theme14/bg.gif",
+"profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme14/bg.gif",
+"profile_background_tile": true,
+"profile_link_color": "607696",
+"profile_sidebar_border_color": "FFFFFF",
+"profile_sidebar_fill_color": "EFEFEF",
+"profile_text_color": "333333",
+"profile_use_background_image": true,
+"profile_image_url": "http://pbs.twimg.com/profile_images/1098244578472280064/gjkVMelR_normal.png",
+"profile_image_url_https": "https://pbs.twimg.com/profile_images/1098244578472280064/gjkVMelR_normal.png",
+"profile_banner_url": "https://pbs.twimg.com/profile_banners/807095/1584666392",
+"default_profile": false,
+"default_profile_image": false,
+"following": null,
+"follow_request_sent": null,
+"notifications": null
+},
+"geo": null,
+"coordinates": null,
+"place": null,
+"contributors": null,
+"is_quote_status": false,
+"extended_tweet": {
+"full_text": "Watch as New York City police officers began arresting protesters in Manhattan about 30 minutes after the city\u2019s 8 p.m. curfew began Thursday.\n\nElsewhere, police surrounded a group of protesters in the Bronx, then charged at them. Read the latest. https://t.co/qdvQMsy8xa https://t.co/98mmvVACJe",
+"display_text_range": [
+0,
+271
+],
+"entities": {
+"hashtags": [],
+"urls": [
+    {
+        "url": "https://t.co/qdvQMsy8xa",
+        "expanded_url": "https://nyti.ms/372wodk",
+        "display_url": "nyti.ms/372wodk",
+        "indices": [
+            248,
+            271
+        ]
+    }
+],
+"user_mentions": [],
+"symbols": [],
+"media": [
+    {
+        "id": 1268735267936100353,
+        "id_str": "1268735267936100353",
+        "indices": [
+            272,
+            295
+        ],
+        "additional_media_info": {
+            "monetizable": false
+        },
+        "media_url": "http://pbs.twimg.com/amplify_video_thumb/1268735267936100353/img/vE_G9yQLZ0TEK-Fs.jpg",
+        "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/1268735267936100353/img/vE_G9yQLZ0TEK-Fs.jpg",
+        "url": "https://t.co/98mmvVACJe",
+        "display_url": "pic.twitter.com/98mmvVACJe",
+        "expanded_url": "https://twitter.com/nytimes/status/1268735571482103814/video/1",
+        "type": "video",
+        "video_info": {
+            "aspect_ratio": [
+                16,
+                9
+            ],
+            "duration_millis": 78712,
+            "variants": [
+                {
+                    "content_type": "application/x-mpegURL",
+                    "url": "https://video.twimg.com/amplify_video/1268735267936100353/pl/TePM4ntKdssZBQKF.m3u8?tag=13"
+                },
+                {
+                    "bitrate": 2176000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/1268735267936100353/vid/1280x720/sBqXNbFWdcCuPSUj.mp4?tag=13"
+                },
+                {
+                    "bitrate": 832000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/1268735267936100353/vid/640x360/k2BVItZWcT4AUnFV.mp4?tag=13"
+                },
+                {
+                    "bitrate": 288000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/1268735267936100353/vid/480x270/2d9X5svNN4hmc2nv.mp4?tag=13"
+                }
+            ]
+        },
+        "sizes": {
+            "thumb": {
+                "w": 150,
+                "h": 150,
+                "resize": "crop"
+            },
+            "medium": {
+                "w": 1200,
+                "h": 675,
+                "resize": "fit"
+            },
+            "small": {
+                "w": 680,
+                "h": 383,
+                "resize": "fit"
+            },
+            "large": {
+                "w": 1280,
+                "h": 720,
+                "resize": "fit"
+            }
+        }
+    }
+]
+},
+"extended_entities": {
+"media": [
+    {
+        "id": 1268735267936100353,
+        "id_str": "1268735267936100353",
+        "indices": [
+            272,
+            295
+        ],
+        "additional_media_info": {
+            "monetizable": false
+        },
+        "media_url": "http://pbs.twimg.com/amplify_video_thumb/1268735267936100353/img/vE_G9yQLZ0TEK-Fs.jpg",
+        "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/1268735267936100353/img/vE_G9yQLZ0TEK-Fs.jpg",
+        "url": "https://t.co/98mmvVACJe",
+        "display_url": "pic.twitter.com/98mmvVACJe",
+        "expanded_url": "https://twitter.com/nytimes/status/1268735571482103814/video/1",
+        "type": "video",
+        "video_info": {
+            "aspect_ratio": [
+                16,
+                9
+            ],
+            "duration_millis": 78712,
+            "variants": [
+                {
+                    "content_type": "application/x-mpegURL",
+                    "url": "https://video.twimg.com/amplify_video/1268735267936100353/pl/TePM4ntKdssZBQKF.m3u8?tag=13"
+                },
+                {
+                    "bitrate": 2176000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/1268735267936100353/vid/1280x720/sBqXNbFWdcCuPSUj.mp4?tag=13"
+                },
+                {
+                    "bitrate": 832000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/1268735267936100353/vid/640x360/k2BVItZWcT4AUnFV.mp4?tag=13"
+                },
+                {
+                    "bitrate": 288000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/1268735267936100353/vid/480x270/2d9X5svNN4hmc2nv.mp4?tag=13"
+                }
+            ]
+        },
+        "sizes": {
+            "thumb": {
+                "w": 150,
+                "h": 150,
+                "resize": "crop"
+            },
+            "medium": {
+                "w": 1200,
+                "h": 675,
+                "resize": "fit"
+            },
+            "small": {
+                "w": 680,
+                "h": 383,
+                "resize": "fit"
+            },
+            "large": {
+                "w": 1280,
+                "h": 720,
+                "resize": "fit"
+            }
+        }
+    }
+]
+}
+},
+"quote_count": 54,
+"reply_count": 195,
+"retweet_count": 551,
+"favorite_count": 1006,
+"entities": {
+"hashtags": [],
+"urls": [
+{
+    "url": "https://t.co/tZmkbMat3H",
+    "expanded_url": "https://twitter.com/i/web/status/1268735571482103814",
+    "display_url": "twitter.com/i/web/status/1\u2026",
+    "indices": [
+        116,
+        139
+    ]
+}
+],
+"user_mentions": [],
+"symbols": []
+},
+"favorited": false,
+"retweeted": false,
+"possibly_sensitive": false,
+"filter_level": "low",
+"lang": "en"
+},
+"is_quote_status": false,
+"quote_count": 0,
+"reply_count": 0,
+"retweet_count": 0,
+"favorite_count": 0,
+"entities": {
+"hashtags": [],
+"urls": [],
+"user_mentions": [
+{
+"screen_name": "nytimes",
+"name": "The New York Times",
+"id": 807095,
+"id_str": "807095",
+"indices": [
+    3,
+    11
+]
+}
+],
+"symbols": []
+},
+"favorited": false,
+"retweeted": false,
+"filter_level": "low",
+"lang": "en",
+"timestamp_ms": "1591388977410"
+}
+    {
+"created_at": "Fri Jun 05 20:29:39 +0000 2020",
+"id": 1269003472411807744,
+"id_str": "1269003472411807744",
+"text": "RT @nytimes: 2 Buffalo police officers were suspended without pay on Thursday night after a video showed them shoving a 75-year-old protest\u2026",
+"source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+"truncated": false,
+"in_reply_to_status_id": null,
+"in_reply_to_status_id_str": null,
+"in_reply_to_user_id": null,
+"in_reply_to_user_id_str": null,
+"in_reply_to_screen_name": null,
+"user": {
+"id": 25464300,
+"id_str": "25464300",
+"name": "My Moment of Zen \ud83c\udff3\ufe0f\u200d\ud83c\udf08\ud83c\udf0a",
+"screen_name": "ToniRagusa",
+"location": "Wrigley Field",
+"url": null,
+"description": "The work is always within! #DACA #BlackLivesMatter #BlueTsunami #SaveTheUSPS #WarrenDemocrat",
+"translator_type": "none",
+"protected": false,
+"verified": false,
+"followers_count": 2563,
+"friends_count": 3951,
+"listed_count": 41,
+"favourites_count": 9918,
+"statuses_count": 237306,
+"created_at": "Fri Mar 20 05:06:36 +0000 2009",
+"utc_offset": null,
+"time_zone": null,
+"geo_enabled": true,
+"lang": null,
+"contributors_enabled": false,
+"is_translator": false,
+"profile_background_color": "352726",
+"profile_background_image_url": "http://abs.twimg.com/images/themes/theme5/bg.gif",
+"profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme5/bg.gif",
+"profile_background_tile": false,
+"profile_link_color": "D02B55",
+"profile_sidebar_border_color": "829D5E",
+"profile_sidebar_fill_color": "99CC33",
+"profile_text_color": "3E4415",
+"profile_use_background_image": true,
+"profile_image_url": "http://pbs.twimg.com/profile_images/1253326805227855872/72b3h1sk_normal.jpg",
+"profile_image_url_https": "https://pbs.twimg.com/profile_images/1253326805227855872/72b3h1sk_normal.jpg",
+"profile_banner_url": "https://pbs.twimg.com/profile_banners/25464300/1590794770",
+"default_profile": false,
+"default_profile_image": false,
+"following": null,
+"follow_request_sent": null,
+"notifications": null
+},
+"geo": null,
+"coordinates": null,
+"place": null,
+"contributors": null,
+"retweeted_status": {
+"created_at": "Fri Jun 05 14:00:15 +0000 2020",
+"id": 1268905477615890432,
+"id_str": "1268905477615890432",
+"text": "2 Buffalo police officers were suspended without pay on Thursday night after a video showed them shoving a 75-year-\u2026 https://t.co/R9x0pJskiQ",
+"source": "<a href=\"http://www.socialflow.com\" rel=\"nofollow\">SocialFlow</a>",
+"truncated": true,
+"in_reply_to_status_id": null,
+"in_reply_to_status_id_str": null,
+"in_reply_to_user_id": null,
+"in_reply_to_user_id_str": null,
+"in_reply_to_screen_name": null,
+"user": {
+"id": 807095,
+"id_str": "807095",
+"name": "The New York Times",
+"screen_name": "nytimes",
+"location": "New York City",
+"url": "http://www.nytimes.com/",
+"description": "News tips? Share them here: http://nyti.ms/2FVHq9v",
+"translator_type": "none",
+"protected": false,
+"verified": true,
+"followers_count": 46793269,
+"friends_count": 906,
+"listed_count": 199487,
+"favourites_count": 18494,
+"statuses_count": 397870,
+"created_at": "Fri Mar 02 20:41:42 +0000 2007",
+"utc_offset": null,
+"time_zone": null,
+"geo_enabled": false,
+"lang": null,
+"contributors_enabled": false,
+"is_translator": false,
+"profile_background_color": "131516",
+"profile_background_image_url": "http://abs.twimg.com/images/themes/theme14/bg.gif",
+"profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme14/bg.gif",
+"profile_background_tile": true,
+"profile_link_color": "607696",
+"profile_sidebar_border_color": "FFFFFF",
+"profile_sidebar_fill_color": "EFEFEF",
+"profile_text_color": "333333",
+"profile_use_background_image": true,
+"profile_image_url": "http://pbs.twimg.com/profile_images/1098244578472280064/gjkVMelR_normal.png",
+"profile_image_url_https": "https://pbs.twimg.com/profile_images/1098244578472280064/gjkVMelR_normal.png",
+"profile_banner_url": "https://pbs.twimg.com/profile_banners/807095/1584666392",
+"default_profile": false,
+"default_profile_image": false,
+"following": null,
+"follow_request_sent": null,
+"notifications": null
+},
+"geo": null,
+"coordinates": null,
+"place": null,
+"contributors": null,
+"is_quote_status": false,
+"extended_tweet": {
+"full_text": "2 Buffalo police officers were suspended without pay on Thursday night after a video showed them shoving a 75-year-old protester, who was hospitalized with a head injury, the authorities said https://t.co/q9KOrn2xn3",
+"display_text_range": [
+0,
+215
+],
+"entities": {
+"hashtags": [],
+"urls": [
+    {
+        "url": "https://t.co/q9KOrn2xn3",
+        "expanded_url": "https://nyti.ms/3eRZtuP",
+        "display_url": "nyti.ms/3eRZtuP",
+        "indices": [
+            192,
+            215
+        ]
+    }
+],
+"user_mentions": [],
+"symbols": []
+}
+},
+"quote_count": 306,
+"reply_count": 520,
+"retweet_count": 1056,
+"favorite_count": 3832,
+"entities": {
+"hashtags": [],
+"urls": [
+{
+    "url": "https://t.co/R9x0pJskiQ",
+    "expanded_url": "https://twitter.com/i/web/status/1268905477615890432",
+    "display_url": "twitter.com/i/web/status/1\u2026",
+    "indices": [
+        117,
+        140
+    ]
+}
+],
+"user_mentions": [],
+"symbols": []
+},
+"favorited": false,
+"retweeted": false,
+"possibly_sensitive": false,
+"filter_level": "low",
+"lang": "en"
+},
+"is_quote_status": false,
+"quote_count": 0,
+"reply_count": 0,
+"retweet_count": 0,
+"favorite_count": 0,
+"entities": {
+"hashtags": [],
+"urls": [],
+"user_mentions": [
+{
+"screen_name": "nytimes",
+"name": "The New York Times",
+"id": 807095,
+"id_str": "807095",
+"indices": [
+    3,
+    11
+]
+}
+],
+"symbols": []
+},
+"favorited": false,
+"retweeted": false,
+"filter_level": "low",
+"lang": "en",
+"timestamp_ms": "1591388979424"
+}
+    {
+"created_at": "Fri Jun 05 20:29:41 +0000 2020",
+"id": 1269003482989760513,
+"id_str": "1269003482989760513",
+"text": "RT @nytimes: This is the new 2-block-long 
+    mural on the streets leading to the White House, painted by the city of Washington, D.C. It reads\u2026", "source": "<a href=\"https://mobile.twitter.com\" rel=\"nofollow\">Twitter Web App</a>",
+"truncated": false,
+"in_reply_to_status_id": null,
+"in_reply_to_status_id_str": null,
+"in_reply_to_user_id": null,
+"in_reply_to_user_id_str": null,
+"in_reply_to_screen_name": null,
+"user": {
+"id": 27513547,
+"id_str": "27513547",
+"name": "Rand0m1y",
+"screen_name": "Rand0m1y",
+"location": null,
+"url": null,
+"description": null,
+"translator_type": "none",
+"protected": false,
+"verified": false,
+"followers_count": 24,
+"friends_count": 12,
+"listed_count": 2,
+"favourites_count": 24,
+"statuses_count": 2266,
+"created_at": "Sun Mar 29 21:53:13 +0000 2009",
+"utc_offset": null,
+"time_zone": null,
+"geo_enabled": true,
+"lang": null,
+"contributors_enabled": false,
+"is_translator": false,
+"profile_background_color": "C0DEED",
+"profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+"profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+"profile_background_tile": false,
+"profile_link_color": "1DA1F2",
+"profile_sidebar_border_color": "C0DEED",
+"profile_sidebar_fill_color": "DDEEF6",
+"profile_text_color": "333333",
+"profile_use_background_image": true,
+"profile_image_url": "http://pbs.twimg.com/profile_images/231245818/jimmystewart2_normal.jpg",
+"profile_image_url_https": "https://pbs.twimg.com/profile_images/231245818/jimmystewart2_normal.jpg",
+"profile_banner_url": "https://pbs.twimg.com/profile_banners/27513547/1472209094",
+"default_profile": true,
+"default_profile_image": false,
+"following": null,
+"follow_request_sent": null,
+"notifications": null
+},
+"geo": null,
+"coordinates": null,
+"place": null,
+"contributors": null,
+"retweeted_status": {
+"created_at": "Fri Jun 05 17:30:06 +0000 2020",
+"id": 1268958288055603200,
+"id_str": "1268958288055603200",
+"text": "This is the new 2-block-long mural on the streets leading to the White House, painted by the city of Washington, D.\u2026 https://t.co/schFbB1mhQ",
+"display_text_range": [
+0,
+140
+],
+"source": "<a href=\"http://www.socialflow.com\" rel=\"nofollow\">SocialFlow</a>",
+"truncated": true,
+"in_reply_to_status_id": null,
+"in_reply_to_status_id_str": null,
+"in_reply_to_user_id": null,
+"in_reply_to_user_id_str": null,
+"in_reply_to_screen_name": null,
+"user": {
+"id": 807095,
+"id_str": "807095",
+"name": "The New York Times",
+"screen_name": "nytimes",
+"location": "New York City",
+"url": "http://www.nytimes.com/",
+"description": "News tips? Share them here: http://nyti.ms/2FVHq9v",
+"translator_type": "none",
+"protected": false,
+"verified": true,
+"followers_count": 46793267,
+"friends_count": 906,
+"listed_count": 199487,
+"favourites_count": 18494,
+"statuses_count": 397870,
+"created_at": "Fri Mar 02 20:41:42 +0000 2007",
+"utc_offset": null,
+"time_zone": null,
+"geo_enabled": false,
+"lang": null,
+"contributors_enabled": false,
+"is_translator": false,
+"profile_background_color": "131516",
+"profile_background_image_url": "http://abs.twimg.com/images/themes/theme14/bg.gif",
+"profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme14/bg.gif",
+"profile_background_tile": true,
+"profile_link_color": "607696",
+"profile_sidebar_border_color": "FFFFFF",
+"profile_sidebar_fill_color": "EFEFEF",
+"profile_text_color": "333333",
+"profile_use_background_image": true,
+"profile_image_url": "http://pbs.twimg.com/profile_images/1098244578472280064/gjkVMelR_normal.png",
+"profile_image_url_https": "https://pbs.twimg.com/profile_images/1098244578472280064/gjkVMelR_normal.png",
+"profile_banner_url": "https://pbs.twimg.com/profile_banners/807095/1584666392",
+"default_profile": false,
+"default_profile_image": false,
+"following": null,
+"follow_request_sent": null,
+"notifications": null
+},
+"geo": null,
+"coordinates": null,
+"place": null,
+"contributors": null,
+"is_quote_status": false,
+"extended_tweet": {
+"full_text": "This is the new 2-block-long mural on the streets 
+    leading to the White House, painted by the city of Washington, D.C. It reads: \u201cBlack Lives Matter.\" https://t.co/xg7s1Z704C https://t.co/XDiqwS7IkI",
+"display_text_range": [
+0,
+173
+],
+"entities": {
+"hashtags": [],
+"urls": [
+    {
+        "url": "https://t.co/xg7s1Z704C",
+        "expanded_url": "https://nyti.ms/3cDpaOm",
+        "display_url": "nyti.ms/3cDpaOm",
+        "indices": [
+            150,
+            173
+        ]
+    }
+],
+"user_mentions": [],
+"symbols": [],
+"media": [
+    {
+        "id": 1268957589217427462,
+        "id_str": "1268957589217427462",
+        "indices": [
+            174,
+            197
+        ],
+        "additional_media_info": {
+            "monetizable": false
+        },
+        "media_url": "http://pbs.twimg.com/amplify_video_thumb/1268957589217427462/img/_z_Xm1Ugp-8T56pW.jpg",
+        "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/1268957589217427462/img/_z_Xm1Ugp-8T56pW.jpg",
+        "url": "https://t.co/XDiqwS7IkI",
+        "display_url": "pic.twitter.com/XDiqwS7IkI",
+        "expanded_url": "https://twitter.com/nytimes/status/1268958288055603200/video/1",
+        "type": "video",
+        "video_info": {
+            "aspect_ratio": [
+                16,
+                9
+            ],
+            "duration_millis": 27793,
+            "variants": [
+                {
+                    "content_type": "application/x-mpegURL",
+                    "url": "https://video.twimg.com/amplify_video/1268957589217427462/pl/O5Z6A1lQKT1Bnerh.m3u8?tag=13"
+                },
+                {
+                    "bitrate": 288000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/1268957589217427462/vid/480x270/UaiX-YeLRGiX-lR_.mp4?tag=13"
+                },
+                {
+                    "bitrate": 832000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/1268957589217427462/vid/640x360/ZqriwyLnTTr21cag.mp4?tag=13"
+                },
+                {
+                    "bitrate": 2176000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/1268957589217427462/vid/1280x720/9BU04j1jWbaYXMPl.mp4?tag=13"
+                }
+            ]
+        },
+        "sizes": {
+            "thumb": {
+                "w": 150,
+                "h": 150,
+                "resize": "crop"
+            },
+            "medium": {
+                "w": 1200,
+                "h": 675,
+                "resize": "fit"
+            },
+            "small": {
+                "w": 680,
+                "h": 383,
+                "resize": "fit"
+            },
+            "large": {
+                "w": 1280,
+                "h": 720,
+                "resize": "fit"
+            }
+        }
+    }
+]
+},
+"extended_entities": {
+"media": [
+    {
+        "id": 1268957589217427462,
+        "id_str": "1268957589217427462",
+        "indices": [
+            174,
+            197
+        ],
+        "additional_media_info": {
+            "monetizable": false
+        },
+        "media_url": "http://pbs.twimg.com/amplify_video_thumb/1268957589217427462/img/_z_Xm1Ugp-8T56pW.jpg",
+        "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/1268957589217427462/img/_z_Xm1Ugp-8T56pW.jpg",
+        "url": "https://t.co/XDiqwS7IkI",
+        "display_url": "pic.twitter.com/XDiqwS7IkI",
+        "expanded_url": "https://twitter.com/nytimes/status/1268958288055603200/video/1",
+        "type": "video",
+        "video_info": {
+            "aspect_ratio": [
+                16,
+                9
+            ],
+            "duration_millis": 27793,
+            "variants": [
+                {
+                    "content_type": "application/x-mpegURL",
+                    "url": "https://video.twimg.com/amplify_video/1268957589217427462/pl/O5Z6A1lQKT1Bnerh.m3u8?tag=13"
+                },
+                {
+                    "bitrate": 288000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/1268957589217427462/vid/480x270/UaiX-YeLRGiX-lR_.mp4?tag=13"
+                },
+                {
+                    "bitrate": 832000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/1268957589217427462/vid/640x360/ZqriwyLnTTr21cag.mp4?tag=13"
+                },
+                {
+                    "bitrate": 2176000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/1268957589217427462/vid/1280x720/9BU04j1jWbaYXMPl.mp4?tag=13"
+                }
+            ]
+        },
+        "sizes": {
+            "thumb": {
+                "w": 150,
+                "h": 150,
+                "resize": "crop"
+            },
+            "medium": {
+                "w": 1200,
+                "h": 675,
+                "resize": "fit"
+            },
+            "small": {
+                "w": 680,
+                "h": 383,
+                "resize": "fit"
+            },
+            "large": {
+                "w": 1280,
+                "h": 720,
+                "resize": "fit"
+            }
+        }
+    }
+]
+}
+},
+"quote_count": 207,
+"reply_count": 213,
+"retweet_count": 1712,
+"favorite_count": 6561,
+"entities": {
+"hashtags": [],
+"urls": [
+{
+    "url": "https://t.co/schFbB1mhQ",
+    "expanded_url": "https://twitter.com/i/web/status/1268958288055603200",
+    "display_url": "twitter.com/i/web/status/1\u2026",
+    "indices": [
+        117,
+        140
+    ]
+}
+],
+"user_mentions": [],
+"symbols": []
+},
+"favorited": false,
+"retweeted": false,
+"possibly_sensitive": false,
+"filter_level": "low",
+"lang": "en"
+},
+"is_quote_status": false,
+"quote_count": 0,
+"reply_count": 0,
+"retweet_count": 0,
+"favorite_count": 0,
+"entities": {
+"hashtags": [],
+"urls": [],
+"user_mentions": [
+{
+"screen_name": "nytimes",
+"name": "The New York Times",
+"id": 807095,
+"id_str": "807095",
+"indices": [
+    3,
+    11
+]
+}
+],
+"symbols": []
+},
+"favorited": false,
+"retweeted": false,
+"filter_level": "low",
+"lang": "en",
+"timestamp_ms": "1591388981946"
+}  
+    {
+"created_at": "Fri Jun 05 20:29:54 +0000 2020",
+"id": 1269003534701223936,
+"id_str": "1269003534701223936",
+"text": "@nytimes How is the stock market at 27,000 WHEN 43 MILLION PEOPLE ARE UNEMPLOYED???",
+"display_text_range": [
+9,
+83
+],
+"source": "<a href=\"https://mobile.twitter.com\" rel=\"nofollow\">Twitter Web App</a>",
+"truncated": false,
+"in_reply_to_status_id": 1268998726292590592,
+"in_reply_to_status_id_str": "1268998726292590592",
+"in_reply_to_user_id": 807095,
+"in_reply_to_user_id_str": "807095",
+"in_reply_to_screen_name": "nytimes",
+"user": {
+"id": 776449689356865536,
+"id_str": "776449689356865536",
+"name": "Terry Heart",
+"screen_name": "grams_terry",
+"location": "USA",
+"url": null,
+"description": null,
+"translator_type": "none",
+"protected": false,
+"verified": false,
+"followers_count": 149,
+"friends_count": 389,
+"listed_count": 2,
+"favourites_count": 43345,
+"statuses_count": 29153,
+"created_at": "Thu Sep 15 15:56:46 +0000 2016",
+"utc_offset": null,
+"time_zone": null,
+"geo_enabled": false,
+"lang": null,
+"contributors_enabled": false,
+"is_translator": false,
+"profile_background_color": "F5F8FA",
+"profile_background_image_url": "",
+"profile_background_image_url_https": "",
+"profile_background_tile": false,
+"profile_link_color": "1DA1F2",
+"profile_sidebar_border_color": "C0DEED",
+"profile_sidebar_fill_color": "DDEEF6",
+"profile_text_color": "333333",
+"profile_use_background_image": true,
+"profile_image_url": "http://pbs.twimg.com/profile_images/1261316792640630786/ag-36JwF_normal.jpg",
+"profile_image_url_https": "https://pbs.twimg.com/profile_images/1261316792640630786/ag-36JwF_normal.jpg",
+"default_profile": true,
+"default_profile_image": false,
+"following": null,
+"follow_request_sent": null,
+"notifications": null
+},
+"geo": null,
+"coordinates": null,
+"place": null,
+"contributors": null,
+"is_quote_status": false,
+"quote_count": 0,
+"reply_count": 0,
+"retweet_count": 0,
+"favorite_count": 0,
+"entities": {
+"hashtags": [],
+"urls": [],
+"user_mentions": [
+{
+"screen_name": "nytimes",
+"name": "The New York Times",
+"id": 807095,
+"id_str": "807095",
+"indices": [
+    0,
+    8
+]
+}
+],
+"symbols": []
+},
+"favorited": false,
+"retweeted": false,
+"filter_level": "low",
+"lang": "en",
+"timestamp_ms": "1591388994275"
+}
+    {
+"created_at": "Fri Jun 05 20:29:54 +0000 2020",
+"id": 1269003536035176448,
+"id_str": "1269003536035176448",
+"text": "@nytimes you are SO tiresome and rapidly becoming irrelevant",
+"source": "<a href=\"https://mobile.twitter.com\" rel=\"nofollow\">Twitter Web App</a>",
+"truncated": false,
+"in_reply_to_status_id": null,
+"in_reply_to_status_id_str": null,
+"in_reply_to_user_id": 807095,
+"in_reply_to_user_id_str": "807095",
+"in_reply_to_screen_name": "nytimes",
+"user": {
+"id": 382633535,
+"id_str": "382633535",
+"name": "Mulva Vandelay",
+"screen_name": "Blackbunnyfibrz",
+"location": null,
+"url": "http://www.blackbunnyfibers.com",
+"description": "Official feed of knitting juggernaut Black Bunny Fibers. Do keep in mind that all opinions are mine & NOT those of my employer. She/her",
+"translator_type": "none",
+"protected": false,
+"verified": false,
+"followers_count": 414,
+"friends_count": 245,
+"listed_count": 9,
+"favourites_count": 16157,
+"statuses_count": 8639,
+"created_at": "Fri Sep 30 12:26:49 +0000 2011",
+"utc_offset": null,
+"time_zone": null,
+"geo_enabled": false,
+"lang": null,
+"contributors_enabled": false,
+"is_translator": false,
+"profile_background_color": "000000",
+"profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+"profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+"profile_background_tile": false,
+"profile_link_color": "1B95E0",
+"profile_sidebar_border_color": "000000",
+"profile_sidebar_fill_color": "000000",
+"profile_text_color": "000000",
+"profile_use_background_image": false,
+"profile_image_url": "http://pbs.twimg.com/profile_images/1010575350894596098/sNx-XFWz_normal.jpg",
+"profile_image_url_https": "https://pbs.twimg.com/profile_images/1010575350894596098/sNx-XFWz_normal.jpg",
+"default_profile": false,
+"default_profile_image": false,
+"following": null,
+"follow_request_sent": null,
+"notifications": null
+},
+"geo": null,
+"coordinates": null,
+"place": null,
+"contributors": null,
+"quoted_status_id": 1269002119593541633,
+"quoted_status_id_str": "1269002119593541633",
+"quoted_status": {
+"created_at": "Fri Jun 05 20:24:16 +0000 2020",
+"id": 1269002119593541633,
+"id_str": "1269002119593541633",
+"text": "Joe Biden Did A Gaffe, Oh Wait No He Didn't, GET HIM ANYWAY, NEW YORK TIMES!\nhttps://t.co/dxcEUOmgrn via @EvanHurst",
+"source": "<a href=\"https://www.hootsuite.com\" rel=\"nofollow\">Hootsuite Inc.</a>",
+"truncated": false,
+"in_reply_to_status_id": null,
+"in_reply_to_status_id_str": null,
+"in_reply_to_user_id": null,
+"in_reply_to_user_id_str": null,
+"in_reply_to_screen_name": null,
+"user": {
+"id": 13215382,
+"id_str": "13215382",
+"name": "Wonkette",
+"screen_name": "Wonkette",
+"location": "Montana",
+"url": "http://wonkette.com",
+"description": "Mitch better have my money. https://www.patreon.com/wonkette",
+"translator_type": "none",
+"protected": false,
+"verified": false,
+"followers_count": 73244,
+"friends_count": 1178,
+"listed_count": 2779,
+"favourites_count": 3874,
+"statuses_count": 129137,
+"created_at": "Thu Feb 07 18:40:18 +0000 2008",
+"utc_offset": null,
+"time_zone": null,
+"geo_enabled": false,
+"lang": null,
+"contributors_enabled": false,
+"is_translator": false,
+"profile_background_color": "EBEBEB",
+"profile_background_image_url": "http://abs.twimg.com/images/themes/theme7/bg.gif",
+"profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme7/bg.gif",
+"profile_background_tile": true,
+"profile_link_color": "990000",
+"profile_sidebar_border_color": "FFFFFF",
+"profile_sidebar_fill_color": "F3F3F3",
+"profile_text_color": "333333",
+"profile_use_background_image": true,
+"profile_image_url": "http://pbs.twimg.com/profile_images/525319034619715584/P0NtXc4f_normal.jpeg",
+"profile_image_url_https": "https://pbs.twimg.com/profile_images/525319034619715584/P0NtXc4f_normal.jpeg",
+"profile_banner_url": "https://pbs.twimg.com/profile_banners/13215382/1485372492",
+"default_profile": false,
+"default_profile_image": false,
+"following": null,
+"follow_request_sent": null,
+"notifications": null
+},
+"geo": null,
+"coordinates": null,
+"place": null,
+"contributors": null,
+"is_quote_status": false,
+"quote_count": 0,
+"reply_count": 0,
+"retweet_count": 2,
+"favorite_count": 3,
+"entities": {
+"hashtags": [],
+"urls": [
+{
+    "url": "https://t.co/dxcEUOmgrn",
+    "expanded_url": "https://www.wonkette.com/joe-biden-did-a-gaffe-oh-wait-no-he-didnt-get-him-anyway-new-york-times",
+    "display_url": "wonkette.com/joe-biden-did-\u2026",
+    "indices": [
+        77,
+        100
+    ]
+}
+],
+"user_mentions": [
+{
+    "screen_name": "EvanHurst",
+    "name": "Evan Hurst",
+    "id": 34133456,
+    "id_str": "34133456",
+    "indices": [
+        105,
+        115
+    ]
+}
+],
+"symbols": []
+},
+"favorited": false,
+"retweeted": false,
+"possibly_sensitive": false,
+"filter_level": "low",
+"lang": "en"
+},
+"quoted_status_permalink": {
+"url": "https://t.co/oF0G3j3oSH",
+"expanded": "https://twitter.com/Wonkette/status/1269002119593541633",
+"display": "twitter.com/Wonkette/statu\u2026"
+},
+"is_quote_status": true,
+"quote_count": 0,
+"reply_count": 0,
+"retweet_count": 0,
+"favorite_count": 0,
+"entities": {
+"hashtags": [],
+"urls": [],
+"user_mentions": [
+{
+"screen_name": "nytimes",
+"name": "The New York Times",
+"id": 807095,
+"id_str": "807095",
+"indices": [
+    0,
+    8
+]
+}
+],
+"symbols": []
+},
+"favorited": false,
+"retweeted": false,
+"filter_level": "low",
+"lang": "en",
+"timestamp_ms": "1591388994593"
+}
+    {
+"created_at": "Fri Jun 05 20:29:59 +0000 2020",
+"id": 1269003556360617984,
+"id_str": "1269003556360617984",
+"text": "RT @nytimes: This is the new 2-block-long 
+    mural on the streets leading to the White House, painted by the city of Washington, D.C. It reads\u2026", "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+"truncated": false,
+"in_reply_to_status_id": null,
+"in_reply_to_status_id_str": null,
+"in_reply_to_user_id": null,
+"in_reply_to_user_id_str": null,
+"in_reply_to_screen_name": null,
+"user": {
+"id": 910731902880845824,
+"id_str": "910731902880845824",
+"name": "Jenni Harding",
+"screen_name": "JenniHarding123",
+"location": null,
+"url": null,
+"description": "Stephen Moyer, Anna Paquin fan :) game of thrones fan :) true blood fan :)",
+"translator_type": "none",
+"protected": false,
+"verified": false,
+"followers_count": 51,
+"friends_count": 52,
+"listed_count": 0,
+"favourites_count": 24785,
+"statuses_count": 3151,
+"created_at": "Thu Sep 21 05:06:21 +0000 2017",
+"utc_offset": null,
+"time_zone": null,
+"geo_enabled": true,
+"lang": null,
+"contributors_enabled": false,
+"is_translator": false,
+"profile_background_color": "F5F8FA",
+"profile_background_image_url": "",
+"profile_background_image_url_https": "",
+"profile_background_tile": false,
+"profile_link_color": "1DA1F2",
+"profile_sidebar_border_color": "C0DEED",
+"profile_sidebar_fill_color": "DDEEF6",
+"profile_text_color": "333333",
+"profile_use_background_image": true,
+"profile_image_url": "http://pbs.twimg.com/profile_images/982086331743404032/mOkjahRY_normal.jpg",
+"profile_image_url_https": "https://pbs.twimg.com/profile_images/982086331743404032/mOkjahRY_normal.jpg",
+"default_profile": true,
+"default_profile_image": false,
+"following": null,
+"follow_request_sent": null,
+"notifications": null
+},
+"geo": null,
+"coordinates": null,
+"place": null,
+"contributors": null,
+"retweeted_status": {
+"created_at": "Fri Jun 05 17:30:06 +0000 2020",
+"id": 1268958288055603200,
+"id_str": "1268958288055603200",
+"text": "This is the new 2-block-long mural on the streets leading to the White House, painted by the city of Washington, D.\u2026 https://t.co/schFbB1mhQ",
+"display_text_range": [
+0,
+140
+],
+"source": "<a href=\"http://www.socialflow.com\" rel=\"nofollow\">SocialFlow</a>",
+"truncated": true,
+"in_reply_to_status_id": null,
+"in_reply_to_status_id_str": null,
+"in_reply_to_user_id": null,
+"in_reply_to_user_id_str": null,
+"in_reply_to_screen_name": null,
+"user": {
+"id": 807095,
+"id_str": "807095",
+"name": "The New York Times",
+"screen_name": "nytimes",
+"location": "New York City",
+"url": "http://www.nytimes.com/",
+"description": "News tips? Share them here: http://nyti.ms/2FVHq9v",
+"translator_type": "none",
+"protected": false,
+"verified": true,
+"followers_count": 46792598,
+"friends_count": 906,
+"listed_count": 199472,
+"favourites_count": 18494,
+"statuses_count": 397870,
+"created_at": "Fri Mar 02 20:41:42 +0000 2007",
+"utc_offset": null,
+"time_zone": null,
+"geo_enabled": false,
+"lang": null,
+"contributors_enabled": false,
+"is_translator": false,
+"profile_background_color": "131516",
+"profile_background_image_url": "http://abs.twimg.com/images/themes/theme14/bg.gif",
+"profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme14/bg.gif",
+"profile_background_tile": true,
+"profile_link_color": "607696",
+"profile_sidebar_border_color": "FFFFFF",
+"profile_sidebar_fill_color": "EFEFEF",
+"profile_text_color": "333333",
+"profile_use_background_image": true,
+"profile_image_url": "http://pbs.twimg.com/profile_images/1098244578472280064/gjkVMelR_normal.png",
+"profile_image_url_https": "https://pbs.twimg.com/profile_images/1098244578472280064/gjkVMelR_normal.png",
+"profile_banner_url": "https://pbs.twimg.com/profile_banners/807095/1584666392",
+"default_profile": false,
+"default_profile_image": false,
+"following": null,
+"follow_request_sent": null,
+"notifications": null
+},
+"geo": null,
+"coordinates": null,
+"place": null,
+"contributors": null,
+"is_quote_status": false,
+"extended_tweet": {
+"full_text": "This is the new 2-block-long mural on the streets leading to the White House, painted by the city of Washington, D.C. It reads: \u201cBlack Lives Matter.\" https://t.co/xg7s1Z704C https://t.co/XDiqwS7IkI",
+"display_text_range": [
+0,
+173
+],
+"entities": {
+"hashtags": [],
+"urls": [
+    {
+        "url": "https://t.co/xg7s1Z704C",
+        "expanded_url": "https://nyti.ms/3cDpaOm",
+        "display_url": "nyti.ms/3cDpaOm",
+        "indices": [
+            150,
+            173
+        ]
+    }
+],
+"user_mentions": [],
+"symbols": [],
+"media": [
+    {
+        "id": 1268957589217427462,
+        "id_str": "1268957589217427462",
+        "indices": [
+            174,
+            197
+        ],
+        "additional_media_info": {
+            "monetizable": false
+        },
+        "media_url": "http://pbs.twimg.com/amplify_video_thumb/1268957589217427462/img/_z_Xm1Ugp-8T56pW.jpg",
+        "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/1268957589217427462/img/_z_Xm1Ugp-8T56pW.jpg",
+        "url": "https://t.co/XDiqwS7IkI",
+        "display_url": "pic.twitter.com/XDiqwS7IkI",
+        "expanded_url": "https://twitter.com/nytimes/status/1268958288055603200/video/1",
+        "type": "video",
+        "video_info": {
+            "aspect_ratio": [
+                16,
+                9
+            ],
+            "duration_millis": 27793,
+            "variants": [
+                {
+                    "content_type": "application/x-mpegURL",
+                    "url": "https://video.twimg.com/amplify_video/1268957589217427462/pl/O5Z6A1lQKT1Bnerh.m3u8?tag=13"
+                },
+                {
+                    "bitrate": 288000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/1268957589217427462/vid/480x270/UaiX-YeLRGiX-lR_.mp4?tag=13"
+                },
+                {
+                    "bitrate": 832000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/1268957589217427462/vid/640x360/ZqriwyLnTTr21cag.mp4?tag=13"
+                },
+                {
+                    "bitrate": 2176000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/1268957589217427462/vid/1280x720/9BU04j1jWbaYXMPl.mp4?tag=13"
+                }
+            ]
+        },
+        "sizes": {
+            "thumb": {
+                "w": 150,
+                "h": 150,
+                "resize": "crop"
+            },
+            "medium": {
+                "w": 1200,
+                "h": 675,
+                "resize": "fit"
+            },
+            "small": {
+                "w": 680,
+                "h": 383,
+                "resize": "fit"
+            },
+            "large": {
+                "w": 1280,
+                "h": 720,
+                "resize": "fit"
+            }
+        }
+    }
+]
+},
+"extended_entities": {
+"media": [
+    {
+        "id": 1268957589217427462,
+        "id_str": "1268957589217427462",
+        "indices": [
+            174,
+            197
+        ],
+        "additional_media_info": {
+            "monetizable": false
+        },
+        "media_url": "http://pbs.twimg.com/amplify_video_thumb/1268957589217427462/img/_z_Xm1Ugp-8T56pW.jpg",
+        "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/1268957589217427462/img/_z_Xm1Ugp-8T56pW.jpg",
+        "url": "https://t.co/XDiqwS7IkI",
+        "display_url": "pic.twitter.com/XDiqwS7IkI",
+        "expanded_url": "https://twitter.com/nytimes/status/1268958288055603200/video/1",
+        "type": "video",
+        "video_info": {
+            "aspect_ratio": [
+                16,
+                9
+            ],
+            "duration_millis": 27793,
+            "variants": [
+                {
+                    "content_type": "application/x-mpegURL",
+                    "url": "https://video.twimg.com/amplify_video/1268957589217427462/pl/O5Z6A1lQKT1Bnerh.m3u8?tag=13"
+                },
+                {
+                    "bitrate": 288000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/1268957589217427462/vid/480x270/UaiX-YeLRGiX-lR_.mp4?tag=13"
+                },
+                {
+                    "bitrate": 832000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/1268957589217427462/vid/640x360/ZqriwyLnTTr21cag.mp4?tag=13"
+                },
+                {
+                    "bitrate": 2176000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/1268957589217427462/vid/1280x720/9BU04j1jWbaYXMPl.mp4?tag=13"
+                }
+            ]
+        },
+        "sizes": {
+            "thumb": {
+                "w": 150,
+                "h": 150,
+                "resize": "crop"
+            },
+            "medium": {
+                "w": 1200,
+                "h": 675,
+                "resize": "fit"
+            },
+            "small": {
+                "w": 680,
+                "h": 383,
+                "resize": "fit"
+            },
+            "large": {
+                "w": 1280,
+                "h": 720,
+                "resize": "fit"
+            }
+        }
+    }
+]
+}
+},
+"quote_count": 207,
+"reply_count": 213,
+"retweet_count": 1714,
+"favorite_count": 6566,
+"entities": {
+"hashtags": [],
+"urls": [
+{
+    "url": "https://t.co/schFbB1mhQ",
+    "expanded_url": "https://twitter.com/i/web/status/1268958288055603200",
+    "display_url": "twitter.com/i/web/status/1\u2026",
+    "indices": [
+        117,
+        140
+    ]
+}
+],
+"user_mentions": [],
+"symbols": []
+},
+"favorited": false,
+"retweeted": false,
+"possibly_sensitive": false,
+"filter_level": "low",
+"lang": "en"
+},
+"is_quote_status": false,
+"quote_count": 0,
+"reply_count": 0,
+"retweet_count": 0,
+"favorite_count": 0,
+"entities": {
+"hashtags": [],
+"urls": [],
+"user_mentions": [
+{
+"screen_name": "nytimes",
+"name": "The New York Times",
+"id": 807095,
+"id_str": "807095",
+"indices": [
+    3,
+    11
+]
+}
+],
+"symbols": []
+},
+"favorited": false,
+"retweeted": false,
+"filter_level": "low",
+"lang": "en",
+"timestamp_ms": "1591388999439"
+}
+    {
+"created_at": "Fri Jun 05 20:30:05 +0000 2020",
+"id": 1269003582243831809,
+"id_str": "1269003582243831809",
+"text": "New York provides unemployment benefits through direct deposit or on debit cards from KeyBank, a regional Ohio bank\u2026 https://t.co/56qnlZUhTT",
+"source": "<a href=\"http://www.socialflow.com\" rel=\"nofollow\">SocialFlow</a>",
+"truncated": true,
+"in_reply_to_status_id": null,
+"in_reply_to_status_id_str": null,
+"in_reply_to_user_id": null,
+"in_reply_to_user_id_str": null,
+"in_reply_to_screen_name": null,
+"user": {
+"id": 807095,
+"id_str": "807095",
+"name": "The New York Times",
+"screen_name": "nytimes",
+"location": "New York City",
+"url": "http://www.nytimes.com/",
+"description": "News tips? Share them here: http://nyti.ms/2FVHq9v",
+"translator_type": "none",
+"protected": false,
+"verified": true,
+"followers_count": 46793274,
+"friends_count": 906,
+"listed_count": 199487,
+"favourites_count": 18494,
+"statuses_count": 397871,
+"created_at": "Fri Mar 02 20:41:42 +0000 2007",
+"utc_offset": null,
+"time_zone": null,
+"geo_enabled": false,
+"lang": null,
+"contributors_enabled": false,
+"is_translator": false,
+"profile_background_color": "131516",
+"profile_background_image_url": "http://abs.twimg.com/images/themes/theme14/bg.gif",
+"profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme14/bg.gif",
+"profile_background_tile": true,
+"profile_link_color": "607696",
+"profile_sidebar_border_color": "FFFFFF",
+"profile_sidebar_fill_color": "EFEFEF",
+"profile_text_color": "333333",
+"profile_use_background_image": true,
+"profile_image_url": "http://pbs.twimg.com/profile_images/1098244578472280064/gjkVMelR_normal.png",
+"profile_image_url_https": "https://pbs.twimg.com/profile_images/1098244578472280064/gjkVMelR_normal.png",
+"profile_banner_url": "https://pbs.twimg.com/profile_banners/807095/1584666392",
+"default_profile": false,
+"default_profile_image": false,
+"following": null,
+"follow_request_sent": null,
+"notifications": null
+},
+"geo": null,
+"coordinates": null,
+"place": null,
+"contributors": null,
+"is_quote_status": false,
+"extended_tweet": {
+"full_text": "New York provides unemployment benefits through direct deposit or on debit cards from KeyBank, a regional Ohio bank. Now, some are waiting in line for hours to use the single ATM inside the only KeyBank branch in New York City to access their benefits https://t.co/3G90CkCpDC",
+"display_text_range": [
+0,
+275
+],
+"entities": {
+"hashtags": [],
+"urls": [
+{
+    "url": "https://t.co/3G90CkCpDC",
+    "expanded_url": "https://nyti.ms/3eX0th8",
+    "display_url": "nyti.ms/3eX0th8",
+    "indices": [
+        252,
+        275
+    ]
+}
+],
+"user_mentions": [],
+"symbols": []
+}
+},
+"quote_count": 0,
+"reply_count": 0,
+"retweet_count": 0,
+"favorite_count": 0,
+"entities": {
+"hashtags": [],
+"urls": [
+{
+"url": "https://t.co/56qnlZUhTT",
+"expanded_url": "https://twitter.com/i/web/status/1269003582243831809",
+"display_url": "twitter.com/i/web/status/1\u2026",
+"indices": [
+    117,
+    140
+]
+}
+],
+"user_mentions": [],
+"symbols": []
+},
+"favorited": false,
+"retweeted": false,
+"possibly_sensitive": false,
+"filter_level": "low",
+"lang": "en",
+"timestamp_ms": "1591389005610"
+}
+    {
+"created_at": "Fri Jun 05 20:30:08 +0000 2020",
+"id": 1269003594608578564,
+"id_str": "1269003594608578564",
+"text": "@nytimes We cannot forget that there are many diseases besides COVID 19 that kills every day. There are deaths from\u2026 https://t.co/yZP89VUWBN",
+"display_text_range": [
+9,
+140
+],
+"source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+"truncated": true,
+"in_reply_to_status_id": 1268886185797136385,
+"in_reply_to_status_id_str": "1268886185797136385",
+"in_reply_to_user_id": 807095,
+"in_reply_to_user_id_str": "807095",
+"in_reply_to_screen_name": "nytimes",
+"user": {
+"id": 1251508875360116736,
+"id_str": "1251508875360116736",
+"name": "Mia Rodrigues",
+"screen_name": "soumiarodrigues",
+"location": "Hortol\u00e2ndia, Brasil",
+"url": null,
+"description": "\ud83c\udde7\ud83c\uddf7\n\nInstagran: @soumiarodrigues",
+"translator_type": "none",
+"protected": false,
+"verified": false,
+"followers_count": 4,
+"friends_count": 42,
+"listed_count": 0,
+"favourites_count": 488,
+"statuses_count": 205,
+"created_at": "Sat Apr 18 13:52:35 +0000 2020",
+"utc_offset": null,
+"time_zone": null,
+"geo_enabled": true,
+"lang": null,
+"contributors_enabled": false,
+"is_translator": false,
+"profile_background_color": "F5F8FA",
+"profile_background_image_url": "",
+"profile_background_image_url_https": "",
+"profile_background_tile": false,
+"profile_link_color": "1DA1F2",
+"profile_sidebar_border_color": "C0DEED",
+"profile_sidebar_fill_color": "DDEEF6",
+"profile_text_color": "333333",
+"profile_use_background_image": true,
+"profile_image_url": "http://pbs.twimg.com/profile_images/1266789395975286784/IRC-ERlB_normal.jpg",
+"profile_image_url_https": "https://pbs.twimg.com/profile_images/1266789395975286784/IRC-ERlB_normal.jpg",
+"profile_banner_url": "https://pbs.twimg.com/profile_banners/1251508875360116736/1588082615",
+"default_profile": true,
+"default_profile_image": false,
+"following": null,
+"follow_request_sent": null,
+"notifications": null
+},
+"geo": null,
+"coordinates": null,
+"place": {
+"id": "dcfb523083152c0f",
+"url": "https://api.twitter.com/1.1/geo/id/dcfb523083152c0f.json",
+"place_type": "city",
+"name": "Hortol\u00e2ndia",
+"full_name": "Hortol\u00e2ndia, Brasil",
+"country_code": "BR",
+"country": "Brasil",
+"bounding_box": {
+"type": "Polygon",
+"coordinates": [
+[
+    [
+        -47.259762,
+        -22.913139
+    ],
+    [
+        -47.259762,
+        -22.825939
+    ],
+    [
+        -47.155826,
+        -22.825939
+    ],
+    [
+        -47.155826,
+        -22.913139
+    ]
+]
+]
+},
+"attributes": {}
+},
+"contributors": null,
+"is_quote_status": false,
+"extended_tweet": {
+"full_text": "@nytimes We cannot forget that there are many diseases besides COVID 19 that kills every day. There are deaths from other diseases besides Corona Virus !!!",
+"display_text_range": [
+9,
+155
+],
+"entities": {
+"hashtags": [],
+"urls": [],
+"user_mentions": [
+{
+    "screen_name": "nytimes",
+    "name": "The New York Times",
+    "id": 807095,
+    "id_str": "807095",
+    "indices": [
+        0,
+        8
+    ]
+}
+],
+"symbols": []
+}
+},
+"quote_count": 0,
+"reply_count": 0,
+"retweet_count": 0,
+"favorite_count": 0,
+"entities": {
+"hashtags": [],
+"urls": [
+{
+"url": "https://t.co/yZP89VUWBN",
+"expanded_url": "https://twitter.com/i/web/status/1269003594608578564",
+"display_url": "twitter.com/i/web/status/1\u2026",
+"indices": [
+    117,
+    140
+]
+}
+],
+"user_mentions": [
+{
+"screen_name": "nytimes",
+"name": "The New York Times",
+"id": 807095,
+"id_str": "807095",
+"indices": [
+    0,
+    8
+]
+}
+],
+"symbols": []
+},
+"favorited": false,
+"retweeted": false,
+"filter_level": "low",
+"lang": "en",
+"timestamp_ms": "1591389008558"
+}
+    {
+"created_at": "Fri Jun 05 20:30:09 +0000 2020",
+"id": 1269003600488996865,
+"id_str": "1269003600488996865",
+"text": "RT @nytimes: Because it\u2019s not a state, the District of Columbia is at a disadvantage in any clash with federal authorities. \u201cSometimes they\u2026",
+"source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+"truncated": false,
+"in_reply_to_status_id": null,
+"in_reply_to_status_id_str": null,
+"in_reply_to_user_id": null,
+"in_reply_to_user_id_str": null,
+"in_reply_to_screen_name": null,
+"user": {
+"id": 27068042,
+"id_str": "27068042",
+"name": "Jason Calvert",
+"screen_name": "jasonpjfan",
+"location": "Fort Lauderdale",
+"url": null,
+"description": "Work too much as a culinary plate assembler/chef/pastry chef and loves Pearl Jam.",
+"translator_type": "none",
+"protected": false,
+"verified": false,
+"followers_count": 767,
+"friends_count": 3185,
+"listed_count": 14,
+"favourites_count": 64890,
+"statuses_count": 58993,
+"created_at": "Fri Mar 27 18:48:03 +0000 2009",
+"utc_offset": null,
+"time_zone": null,
+"geo_enabled": true,
+"lang": null,
+"contributors_enabled": false,
+"is_translator": false,
+"profile_background_color": "EDECE9",
+"profile_background_image_url": "http://abs.twimg.com/images/themes/theme3/bg.gif",
+"profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme3/bg.gif",
+"profile_background_tile": false,
+"profile_link_color": "088253",
+"profile_sidebar_border_color": "D3D2CF",
+"profile_sidebar_fill_color": "E3E2DE",
+"profile_text_color": "634047",
+"profile_use_background_image": true,
+"profile_image_url": "http://pbs.twimg.com/profile_images/1080945706515525632/l427fxkH_normal.jpg",
+"profile_image_url_https": "https://pbs.twimg.com/profile_images/1080945706515525632/l427fxkH_normal.jpg",
+"profile_banner_url": "https://pbs.twimg.com/profile_banners/27068042/1460561358",
+"default_profile": false,
+"default_profile_image": false,
+"following": null,
+"follow_request_sent": null,
+"notifications": null
+},
+"geo": null,
+"coordinates": null,
+"place": null,
+"contributors": null,
+"retweeted_status": {
+"created_at": "Fri Jun 05 20:00:06 +0000 2020",
+"id": 1268996036216979456,
+"id_str": "1268996036216979456",
+"text": "Because it\u2019s not a state, the District of Columbia is at a disadvantage in any clash with federal authorities. \u201cSom\u2026 https://t.co/rZEGG8ogo6",
+"source": "<a href=\"http://www.socialflow.com\" rel=\"nofollow\">SocialFlow</a>",
+"truncated": true,
+"in_reply_to_status_id": null,
+"in_reply_to_status_id_str": null,
+"in_reply_to_user_id": null,
+"in_reply_to_user_id_str": null,
+"in_reply_to_screen_name": null,
+"user": {
+"id": 807095,
+"id_str": "807095",
+"name": "The New York Times",
+"screen_name": "nytimes",
+"location": "New York City",
+"url": "http://www.nytimes.com/",
+"description": "News tips? Share them here: http://nyti.ms/2FVHq9v",
+"translator_type": "none",
+"protected": false,
+"verified": true,
+"followers_count": 46793274,
+"friends_count": 906,
+"listed_count": 199487,
+"favourites_count": 18494,
+"statuses_count": 397870,
+"created_at": "Fri Mar 02 20:41:42 +0000 2007",
+"utc_offset": null,
+"time_zone": null,
+"geo_enabled": false,
+"lang": null,
+"contributors_enabled": false,
+"is_translator": false,
+"profile_background_color": "131516",
+"profile_background_image_url": "http://abs.twimg.com/images/themes/theme14/bg.gif",
+"profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme14/bg.gif",
+"profile_background_tile": true,
+"profile_link_color": "607696",
+"profile_sidebar_border_color": "FFFFFF",
+"profile_sidebar_fill_color": "EFEFEF",
+"profile_text_color": "333333",
+"profile_use_background_image": true,
+"profile_image_url": "http://pbs.twimg.com/profile_images/1098244578472280064/gjkVMelR_normal.png",
+"profile_image_url_https": "https://pbs.twimg.com/profile_images/1098244578472280064/gjkVMelR_normal.png",
+"profile_banner_url": "https://pbs.twimg.com/profile_banners/807095/1584666392",
+"default_profile": false,
+"default_profile_image": false,
+"following": null,
+"follow_request_sent": null,
+"notifications": null
+},
+"geo": null,
+"coordinates": null,
+"place": null,
+"contributors": null,
+"is_quote_status": false,
+"extended_tweet": {
+"full_text": "Because it\u2019s not a state, the District of Columbia is at a disadvantage in any clash with federal authorities. \u201cSometimes they\u2019re benevolent,\" Muriel Bowser, the mayor of Washington, said, \"and sometimes they\u2019re not.\u201d https://t.co/LIwBsMT9ST",
+"display_text_range": [
+0,
+241
+],
+"entities": {
+"hashtags": [],
+"urls": [
+    {
+        "url": "https://t.co/LIwBsMT9ST",
+        "expanded_url": "https://nyti.ms/3dBVUbT",
+        "display_url": "nyti.ms/3dBVUbT",
+        "indices": [
+            218,
+            241
+        ]
+    }
+],
+"user_mentions": [],
+"symbols": []
+}
+},
+"quote_count": 6,
+"reply_count": 28,
+"retweet_count": 52,
+"favorite_count": 159,
+"entities": {
+"hashtags": [],
+"urls": [
+{
+    "url": "https://t.co/rZEGG8ogo6",
+    "expanded_url": "https://twitter.com/i/web/status/1268996036216979456",
+    "display_url": "twitter.com/i/web/status/1\u2026",
+    "indices": [
+        117,
+        140
+    ]
+}
+],
+"user_mentions": [],
+"symbols": []
+},
+"favorited": false,
+"retweeted": false,
+"possibly_sensitive": false,
+"filter_level": "low",
+"lang": "en"
+},
+"is_quote_status": false,
+"quote_count": 0,
+"reply_count": 0,
+"retweet_count": 0,
+"favorite_count": 0,
+"entities": {
+"hashtags": [],
+"urls": [],
+"user_mentions": [
+{
+"screen_name": "nytimes",
+"name": "The New York Times",
+"id": 807095,
+"id_str": "807095",
+"indices": [
+    3,
+    11
+]
+}
+],
+"symbols": []
+},
+"favorited": false,
+"retweeted": false,
+"filter_level": "low",
+"lang": "en",
+"timestamp_ms": "1591389009960"
+}
+    {
+"created_at": "Fri Jun 05 20:30:10 +0000 2020",
+"id": 1269003602078695425,
+"id_str": "1269003602078695425",
+"text": "RT @nytimes: This is the new 2-block-long 
+    mural on the streets leading to the White House, painted by the city of Washington, D.C. It reads\u2026", "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+"truncated": false,
+"in_reply_to_status_id": null,
+"in_reply_to_status_id_str": null,
+"in_reply_to_user_id": null,
+"in_reply_to_user_id_str": null,
+"in_reply_to_screen_name": null,
+"user": {
+"id": 1247915404707708928,
+"id_str": "1247915404707708928",
+"name": "Gina Garza",
+"screen_name": "GinaG_1",
+"location": null,
+"url": null,
+"description": null,
+"translator_type": "none",
+"protected": false,
+"verified": false,
+"followers_count": 8,
+"friends_count": 98,
+"listed_count": 0,
+"favourites_count": 997,
+"statuses_count": 127,
+"created_at": "Wed Apr 08 15:54:56 +0000 2020",
+"utc_offset": null,
+"time_zone": null,
+"geo_enabled": false,
+"lang": null,
+"contributors_enabled": false,
+"is_translator": false,
+"profile_background_color": "F5F8FA",
+"profile_background_image_url": "",
+"profile_background_image_url_https": "",
+"profile_background_tile": false,
+"profile_link_color": "1DA1F2",
+"profile_sidebar_border_color": "C0DEED",
+"profile_sidebar_fill_color": "DDEEF6",
+"profile_text_color": "333333",
+"profile_use_background_image": true,
+"profile_image_url": "http://pbs.twimg.com/profile_images/1247916829231767552/jhx23D13_normal.jpg",
+"profile_image_url_https": "https://pbs.twimg.com/profile_images/1247916829231767552/jhx23D13_normal.jpg",
+"profile_banner_url": "https://pbs.twimg.com/profile_banners/1247915404707708928/1586362167",
+"default_profile": true,
+"default_profile_image": false,
+"following": null,
+"follow_request_sent": null,
+"notifications": null
+},
+"geo": null,
+"coordinates": null,
+"place": null,
+"contributors": null,
+"retweeted_status": {
+"created_at": "Fri Jun 05 17:30:06 +0000 2020",
+"id": 1268958288055603200,
+"id_str": "1268958288055603200",
+"text": "This is the new 2-block-long mural on the streets leading to the White House, painted by the city of Washington, D.\u2026 https://t.co/schFbB1mhQ",
+"display_text_range": [
+0,
+140
+],
+"source": "<a href=\"http://www.socialflow.com\" rel=\"nofollow\">SocialFlow</a>",
+"truncated": true,
+"in_reply_to_status_id": null,
+"in_reply_to_status_id_str": null,
+"in_reply_to_user_id": null,
+"in_reply_to_user_id_str": null,
+"in_reply_to_screen_name": null,
+"user": {
+"id": 807095,
+"id_str": "807095",
+"name": "The New York Times",
+"screen_name": "nytimes",
+"location": "New York City",
+"url": "http://www.nytimes.com/",
+"description": "News tips? Share them here: http://nyti.ms/2FVHq9v",
+"translator_type": "none",
+"protected": false,
+"verified": true,
+"followers_count": 46793275,
+"friends_count": 906,
+"listed_count": 199487,
+"favourites_count": 18494,
+"statuses_count": 397870,
+"created_at": "Fri Mar 02 20:41:42 +0000 2007",
+"utc_offset": null,
+"time_zone": null,
+"geo_enabled": false,
+"lang": null,
+"contributors_enabled": false,
+"is_translator": false,
+"profile_background_color": "131516",
+"profile_background_image_url": "http://abs.twimg.com/images/themes/theme14/bg.gif",
+"profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme14/bg.gif",
+"profile_background_tile": true,
+"profile_link_color": "607696",
+"profile_sidebar_border_color": "FFFFFF",
+"profile_sidebar_fill_color": "EFEFEF",
+"profile_text_color": "333333",
+"profile_use_background_image": true,
+"profile_image_url": "http://pbs.twimg.com/profile_images/1098244578472280064/gjkVMelR_normal.png",
+"profile_image_url_https": "https://pbs.twimg.com/profile_images/1098244578472280064/gjkVMelR_normal.png",
+"profile_banner_url": "https://pbs.twimg.com/profile_banners/807095/1584666392",
+"default_profile": false,
+"default_profile_image": false,
+"following": null,
+"follow_request_sent": null,
+"notifications": null
+},
+"geo": null,
+"coordinates": null,
+"place": null,
+"contributors": null,
+"is_quote_status": false,
+"extended_tweet": {
+"full_text": "This is the new 2-block-long mural on the streets leading to the White House, painted by the city of Washington, D.C. It reads: \u201cBlack Lives Matter.\" https://t.co/xg7s1Z704C https://t.co/XDiqwS7IkI",
+"display_text_range": [
+0,
+173
+],
+"entities": {
+"hashtags": [],
+"urls": [
+    {
+        "url": "https://t.co/xg7s1Z704C",
+        "expanded_url": "https://nyti.ms/3cDpaOm",
+        "display_url": "nyti.ms/3cDpaOm",
+        "indices": [
+            150,
+            173
+        ]
+    }
+],
+"user_mentions": [],
+"symbols": [],
+"media": [
+    {
+        "id": 1268957589217427462,
+        "id_str": "1268957589217427462",
+        "indices": [
+            174,
+            197
+        ],
+        "additional_media_info": {
+            "monetizable": false
+        },
+        "media_url": "http://pbs.twimg.com/amplify_video_thumb/1268957589217427462/img/_z_Xm1Ugp-8T56pW.jpg",
+        "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/1268957589217427462/img/_z_Xm1Ugp-8T56pW.jpg",
+        "url": "https://t.co/XDiqwS7IkI",
+        "display_url": "pic.twitter.com/XDiqwS7IkI",
+        "expanded_url": "https://twitter.com/nytimes/status/1268958288055603200/video/1",
+        "type": "video",
+        "video_info": {
+            "aspect_ratio": [
+                16,
+                9
+            ],
+            "duration_millis": 27793,
+            "variants": [
+                {
+                    "content_type": "application/x-mpegURL",
+                    "url": "https://video.twimg.com/amplify_video/1268957589217427462/pl/O5Z6A1lQKT1Bnerh.m3u8?tag=13"
+                },
+                {
+                    "bitrate": 288000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/1268957589217427462/vid/480x270/UaiX-YeLRGiX-lR_.mp4?tag=13"
+                },
+                {
+                    "bitrate": 832000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/1268957589217427462/vid/640x360/ZqriwyLnTTr21cag.mp4?tag=13"
+                },
+                {
+                    "bitrate": 2176000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/1268957589217427462/vid/1280x720/9BU04j1jWbaYXMPl.mp4?tag=13"
+                }
+            ]
+        },
+        "sizes": {
+            "thumb": {
+                "w": 150,
+                "h": 150,
+                "resize": "crop"
+            },
+            "medium": {
+                "w": 1200,
+                "h": 675,
+                "resize": "fit"
+            },
+            "small": {
+                "w": 680,
+                "h": 383,
+                "resize": "fit"
+            },
+            "large": {
+                "w": 1280,
+                "h": 720,
+                "resize": "fit"
+            }
+        }
+    }
+]
+},
+"extended_entities": {
+"media": [
+    {
+        "id": 1268957589217427462,
+        "id_str": "1268957589217427462",
+        "indices": [
+            174,
+            197
+        ],
+        "additional_media_info": {
+            "monetizable": false
+        },
+        "media_url": "http://pbs.twimg.com/amplify_video_thumb/1268957589217427462/img/_z_Xm1Ugp-8T56pW.jpg",
+        "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/1268957589217427462/img/_z_Xm1Ugp-8T56pW.jpg",
+        "url": "https://t.co/XDiqwS7IkI",
+        "display_url": "pic.twitter.com/XDiqwS7IkI",
+        "expanded_url": "https://twitter.com/nytimes/status/1268958288055603200/video/1",
+        "type": "video",
+        "video_info": {
+            "aspect_ratio": [
+                16,
+                9
+            ],
+            "duration_millis": 27793,
+            "variants": [
+                {
+                    "content_type": "application/x-mpegURL",
+                    "url": "https://video.twimg.com/amplify_video/1268957589217427462/pl/O5Z6A1lQKT1Bnerh.m3u8?tag=13"
+                },
+                {
+                    "bitrate": 288000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/1268957589217427462/vid/480x270/UaiX-YeLRGiX-lR_.mp4?tag=13"
+                },
+                {
+                    "bitrate": 832000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/1268957589217427462/vid/640x360/ZqriwyLnTTr21cag.mp4?tag=13"
+                },
+                {
+                    "bitrate": 2176000,
+                    "content_type": "video/mp4",
+                    "url": "https://video.twimg.com/amplify_video/1268957589217427462/vid/1280x720/9BU04j1jWbaYXMPl.mp4?tag=13"
+                }
+            ]
+        },
+        "sizes": {
+            "thumb": {
+                "w": 150,
+                "h": 150,
+                "resize": "crop"
+            },
+            "medium": {
+                "w": 1200,
+                "h": 675,
+                "resize": "fit"
+            },
+            "small": {
+                "w": 680,
+                "h": 383,
+                "resize": "fit"
+            },
+            "large": {
+                "w": 1280,
+                "h": 720,
+                "resize": "fit"
+            }
+        }
+    }
+]
+}
+},
+"quote_count": 207,
+"reply_count": 213,
+"retweet_count": 1715,
+"favorite_count": 6572,
+"entities": {
+"hashtags": [],
+"urls": [
+{
+    "url": "https://t.co/schFbB1mhQ",
+    "expanded_url": "https://twitter.com/i/web/status/1268958288055603200",
+    "display_url": "twitter.com/i/web/status/1\u2026",
+    "indices": [
+        117,
+        140
+    ]
+}
+],
+"user_mentions": [],
+"symbols": []
+},
+"favorited": false,
+"retweeted": false,
+"possibly_sensitive": false,
+"filter_level": "low",
+"lang": "en"
+},
+"is_quote_status": false,
+"quote_count": 0,
+"reply_count": 0,
+"retweet_count": 0,
+"favorite_count": 0,
+"entities": {
+"hashtags": [],
+"urls": [],
+"user_mentions": [
+{
+"screen_name": "nytimes",
+"name": "The New York Times",
+"id": 807095,
+"id_str": "807095",
+"indices": [
+    3,
+    11
+]
+}
+],
+"symbols": []
+},
+"favorited": false,
+"retweeted": false,
+"filter_level": "low",
+"lang": "en",
+"timestamp_ms": "1591389010339"
+}
+    {
+"created_at": "Fri Jun 05 20:30:11 +0000 2020",
+"id": 1269003605165686784,
+"id_str": "1269003605165686784",
+"text": "RT @nytimes: New York provides unemployment benefits through direct deposit or on debit cards from KeyBank, a regional Ohio bank. Now, some\u2026",
+"source": "<a href=\"https://twitter.com\" rel=\"nofollow\">Twitter-Repost-Filter</a>",
+"truncated": false,
+"in_reply_to_status_id": null,
+"in_reply_to_status_id_str": null,
+"in_reply_to_user_id": null,
+"in_reply_to_user_id_str": null,
+"in_reply_to_screen_name": null,
+"user": {
+"id": 1263754012215525376,
+"id_str": "1263754012215525376",
+"name": "test11lmagsino",
+"screen_name": "test11lmagsino",
+"location": null,
+"url": null,
+"description": "test11",
+"translator_type": "none",
+"protected": false,
+"verified": false,
+"followers_count": 9,
+"friends_count": 3,
+"listed_count": 0,
+"favourites_count": 0,
+"statuses_count": 843,
+"created_at": "Fri May 22 08:50:47 +0000 2020",
+"utc_offset": null,
+"time_zone": null,
+"geo_enabled": false,
+"lang": null,
+"contributors_enabled": false,
+"is_translator": false,
+"profile_background_color": "F5F8FA",
+"profile_background_image_url": "",
+"profile_background_image_url_https": "",
+"profile_background_tile": false,
+"profile_link_color": "1DA1F2",
+"profile_sidebar_border_color": "C0DEED",
+"profile_sidebar_fill_color": "DDEEF6",
+"profile_text_color": "333333",
+"profile_use_background_image": true,
+"profile_image_url": "http://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png",
+"profile_image_url_https": "https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png",
+"default_profile": true,
+"default_profile_image": false,
+"following": null,
+"follow_request_sent": null,
+"notifications": null
+},
+"geo": null,
+"coordinates": null,
+"place": null,
+"contributors": null,
+"retweeted_status": {
+"created_at": "Fri Jun 05 20:30:05 +0000 2020",
+"id": 1269003582243831809,
+"id_str": "1269003582243831809",
+"text": "New York provides unemployment benefits through direct deposit or on debit cards from KeyBank, a regional Ohio bank\u2026 https://t.co/56qnlZUhTT",
+"source": "<a href=\"http://www.socialflow.com\" rel=\"nofollow\">SocialFlow</a>",
+"truncated": true,
+"in_reply_to_status_id": null,
+"in_reply_to_status_id_str": null,
+"in_reply_to_user_id": null,
+"in_reply_to_user_id_str": null,
+"in_reply_to_screen_name": null,
+"user": {
+"id": 807095,
+"id_str": "807095",
+"name": "The New York Times",
+"screen_name": "nytimes",
+"location": "New York City",
+"url": "http://www.nytimes.com/",
+"description": "News tips? Share them here: http://nyti.ms/2FVHq9v",
+"translator_type": "none",
+"protected": false,
+"verified": true,
+"followers_count": 46793273,
+"friends_count": 906,
+"listed_count": 199487,
+"favourites_count": 18494,
+"statuses_count": 397870,
+"created_at": "Fri Mar 02 20:41:42 +0000 2007",
+"utc_offset": null,
+"time_zone": null,
+"geo_enabled": false,
+"lang": null,
+"contributors_enabled": false,
+"is_translator": false,
+"profile_background_color": "131516",
+"profile_background_image_url": "http://abs.twimg.com/images/themes/theme14/bg.gif",
+"profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme14/bg.gif",
+"profile_background_tile": true,
+"profile_link_color": "607696",
+"profile_sidebar_border_color": "FFFFFF",
+"profile_sidebar_fill_color": "EFEFEF",
+"profile_text_color": "333333",
+"profile_use_background_image": true,
+"profile_image_url": "http://pbs.twimg.com/profile_images/1098244578472280064/gjkVMelR_normal.png",
+"profile_image_url_https": "https://pbs.twimg.com/profile_images/1098244578472280064/gjkVMelR_normal.png",
+"profile_banner_url": "https://pbs.twimg.com/profile_banners/807095/1584666392",
+"default_profile": false,
+"default_profile_image": false,
+"following": null,
+"follow_request_sent": null,
+"notifications": null
+},
+"geo": null,
+"coordinates": null,
+"place": null,
+"contributors": null,
+"is_quote_status": false,
+"extended_tweet": {
+"full_text": "New York provides unemployment benefits through direct deposit or on debit cards from KeyBank, a regional Ohio bank. Now, some are waiting in line for hours to use the single ATM inside the only KeyBank branch in New York City to access their benefits https://t.co/3G90CkCpDC",
+"display_text_range": [
+0,
+275
+],
+"entities": {
+"hashtags": [],
+"urls": [
+    {
+        "url": "https://t.co/3G90CkCpDC",
+        "expanded_url": "https://nyti.ms/3eX0th8",
+        "display_url": "nyti.ms/3eX0th8",
+        "indices": [
+            252,
+            275
+        ]
+    }
+],
+"user_mentions": [],
+"symbols": []
+}
+},
+"quote_count": 0,
+"reply_count": 0,
+"retweet_count": 1,
+"favorite_count": 0,
+"entities": {
+"hashtags": [],
+"urls": [
+{
+    "url": "https://t.co/56qnlZUhTT",
+    "expanded_url": "https://twitter.com/i/web/status/1269003582243831809",
+    "display_url": "twitter.com/i/web/status/1\u2026",
+    "indices": [
+        117,
+        140
+    ]
+}
+],
+"user_mentions": [],
+"symbols": []
+},
+"favorited": false,
+"retweeted": false,
+"possibly_sensitive": false,
+"filter_level": "low",
+"lang": "en"
+},
+"is_quote_status": false,
+"quote_count": 0,
+"reply_count": 0,
+"retweet_count": 0,
+"favorite_count": 0,
+"entities": {
+"hashtags": [],
+"urls": [],
+"user_mentions": [
+{
+"screen_name": "nytimes",
+"name": "The New York Times",
+"id": 807095,
+"id_str": "807095",
+"indices": [
+    3,
+    11
+]
+}
+],
+"symbols": []
+},
+"favorited": false,
+"retweeted": false,
+"filter_level": "low",
+"lang": "en",
+"timestamp_ms": "1591389011075"
+}
+    {
+"created_at": "Fri Jun 05 20:30:12 +0000 2020",
+"id": 1269003611557822467,
+"id_str": "1269003611557822467",
+"text": "@nytimes https://t.co/hNrz01BLUE",
+"display_text_range": [
+9,
+32
+],
+"source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+"truncated": false,
+"in_reply_to_status_id": 1269003582243831809,
+"in_reply_to_status_id_str": "1269003582243831809",
+"in_reply_to_user_id": 807095,
+"in_reply_to_user_id_str": "807095",
+"in_reply_to_screen_name": "nytimes",
+"user": {
+"id": 1266980990221717504,
+"id_str": "1266980990221717504",
+"name": "GOD\u2019s Victory",
+"screen_name": "HereForQ1",
+"location": null,
+"url": null,
+"description": "Here for Q+ \u2b50\ufe0f\u2b50\ufe0f\u2b50\ufe0f",
+"translator_type": "none",
+"protected": false,
+"verified": false,
+"followers_count": 251,
+"friends_count": 56,
+"listed_count": 1,
+"favourites_count": 264,
+"statuses_count": 2160,
+"created_at": "Sun May 31 06:33:17 +0000 2020",
+"utc_offset": null,
+"time_zone": null,
+"geo_enabled": false,
+"lang": null,
+"contributors_enabled": false,
+"is_translator": false,
+"profile_background_color": "F5F8FA",
+"profile_background_image_url": "",
+"profile_background_image_url_https": "",
+"profile_background_tile": false,
+"profile_link_color": "1DA1F2",
+"profile_sidebar_border_color": "C0DEED",
+"profile_sidebar_fill_color": "DDEEF6",
+"profile_text_color": "333333",
+"profile_use_background_image": true,
+"profile_image_url": "http://pbs.twimg.com/profile_images/1268225245242167297/E75pa4wC_normal.jpg",
+"profile_image_url_https": "https://pbs.twimg.com/profile_images/1268225245242167297/E75pa4wC_normal.jpg",
+"profile_banner_url": "https://pbs.twimg.com/profile_banners/1266980990221717504/1591203645",
+"default_profile": true,
+"default_profile_image": false,
+"following": null,
+"follow_request_sent": null,
+"notifications": null
+},
+"geo": null,
+"coordinates": null,
+"place": null,
+"contributors": null,
+"quoted_status_id": 1268972759813623808,
+"quoted_status_id_str": "1268972759813623808",
+"quoted_status": {
+"created_at": "Fri Jun 05 18:27:36 +0000 2020",
+"id": 1268972759813623808,
+"id_str": "1268972759813623808",
+"text": "My fellow humans: \n\nWhat we are witnessing is darkness being exposed and transmuted into light. \n\nEvil is powerless\u2026 https://t.co/VdJvlslPCs",
+"display_text_range": [
+0,
+140
+],
+"source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+"truncated": true,
+"in_reply_to_status_id": null,
+"in_reply_to_status_id_str": null,
+"in_reply_to_user_id": null,
+"in_reply_to_user_id_str": null,
+"in_reply_to_screen_name": null,
+"user": {
+"id": 1266980990221717504,
+"id_str": "1266980990221717504",
+"name": "GOD\u2019s Victory",
+"screen_name": "HereForQ1",
+"location": null,
+"url": null,
+"description": "Here for Q+ \u2b50\ufe0f\u2b50\ufe0f\u2b50\ufe0f",
+"translator_type": "none",
+"protected": false,
+"verified": false,
+"followers_count": 251,
+"friends_count": 56,
+"listed_count": 1,
+"favourites_count": 264,
+"statuses_count": 2159,
+"created_at": "Sun May 31 06:33:17 +0000 2020",
+"utc_offset": null,
+"time_zone": null,
+"geo_enabled": false,
+"lang": null,
+"contributors_enabled": false,
+"is_translator": false,
+"profile_background_color": "F5F8FA",
+"profile_background_image_url": "",
+"profile_background_image_url_https": "",
+"profile_background_tile": false,
+"profile_link_color": "1DA1F2",
+"profile_sidebar_border_color": "C0DEED",
+"profile_sidebar_fill_color": "DDEEF6",
+"profile_text_color": "333333",
+"profile_use_background_image": true,
+"profile_image_url": "http://pbs.twimg.com/profile_images/1268225245242167297/E75pa4wC_normal.jpg",
+"profile_image_url_https": "https://pbs.twimg.com/profile_images/1268225245242167297/E75pa4wC_normal.jpg",
+"profile_banner_url": "https://pbs.twimg.com/profile_banners/1266980990221717504/1591203645",
+"default_profile": true,
+"default_profile_image": false,
+"following": null,
+"follow_request_sent": null,
+"notifications": null
+},
+"geo": null,
+"coordinates": null,
+"place": null,
+"contributors": null,
+"is_quote_status": false,
+"extended_tweet": {
+"full_text": "My fellow humans: \n\nWhat we are witnessing is darkness being exposed and transmuted into light. \n\nEvil is powerless. \n\nALMIGHTY GOD WINS! \u271d\ufe0f\u2764\ufe0f\u262e\ufe0f\ud83c\uddfa\ud83c\uddf8\ud83c\udf0e\n\nAnd so it is. https://t.co/FdqjMfg6WQ",
+"display_text_range": [
+0,
+162
+],
+"entities": {
+"hashtags": [],
+"urls": [],
+"user_mentions": [],
+"symbols": [],
+"media": [
+    {
+        "id": 1268972755174768640,
+        "id_str": "1268972755174768640",
+        "indices": [
+            163,
+            186
+        ],
+        "media_url": "http://pbs.twimg.com/media/EZxL_13XQAAn5UN.jpg",
+        "media_url_https": "https://pbs.twimg.com/media/EZxL_13XQAAn5UN.jpg",
+        "url": "https://t.co/FdqjMfg6WQ",
+        "display_url": "pic.twitter.com/FdqjMfg6WQ",
+        "expanded_url": "https://twitter.com/HereForQ1/status/1268972759813623808/photo/1",
+        "type": "photo",
+        "sizes": {
+            "thumb": {
+                "w": 150,
+                "h": 150,
+                "resize": "crop"
+            },
+            "large": {
+                "w": 425,
+                "h": 598,
+                "resize": "fit"
+            },
+            "medium": {
+                "w": 425,
+                "h": 598,
+                "resize": "fit"
+            },
+            "small": {
+                "w": 425,
+                "h": 598,
+                "resize": "fit"
+            }
+        }
+    }
+]
+},
+"extended_entities": {
+"media": [
+    {
+        "id": 1268972755174768640,
+        "id_str": "1268972755174768640",
+        "indices": [
+            163,
+            186
+        ],
+        "media_url": "http://pbs.twimg.com/media/EZxL_13XQAAn5UN.jpg",
+        "media_url_https": "https://pbs.twimg.com/media/EZxL_13XQAAn5UN.jpg",
+        "url": "https://t.co/FdqjMfg6WQ",
+        "display_url": "pic.twitter.com/FdqjMfg6WQ",
+        "expanded_url": "https://twitter.com/HereForQ1/status/1268972759813623808/photo/1",
+        "type": "photo",
+        "sizes": {
+            "thumb": {
+                "w": 150,
+                "h": 150,
+                "resize": "crop"
+            },
+            "large": {
+                "w": 425,
+                "h": 598,
+                "resize": "fit"
+            },
+            "medium": {
+                "w": 425,
+                "h": 598,
+                "resize": "fit"
+            },
+            "small": {
+                "w": 425,
+                "h": 598,
+                "resize": "fit"
+            }
+        }
+    }
+]
+}
+},
+"quote_count": 116,
+"reply_count": 0,
+"retweet_count": 1,
+"favorite_count": 1,
+"entities": {
+"hashtags": [],
+"urls": [
+{
+    "url": "https://t.co/VdJvlslPCs",
+    "expanded_url": "https://twitter.com/i/web/status/1268972759813623808",
+    "display_url": "twitter.com/i/web/status/1\u2026",
+    "indices": [
+        117,
+        140
+    ]
+}
+],
+"user_mentions": [],
+"symbols": []
+},
+"favorited": false,
+"retweeted": false,
+"possibly_sensitive": false,
+"filter_level": "low",
+"lang": "en"
+},
+"quoted_status_permalink": {
+"url": "https://t.co/yXGJlLCziO",
+"expanded": "https://twitter.com/hereforq1/status/1268972759813623808",
+"display": "twitter.com/hereforq1/stat\u2026"
+},
+"is_quote_status": true,
+"quote_count": 0,
+"reply_count": 0,
+"retweet_count": 0,
+"favorite_count": 0,
+"entities": {
+"hashtags": [],
+"urls": [
+{
+"url": "https://t.co/hNrz01BLUE",
+"expanded_url": "https://twitter.com/hereforq1/status/1268972759813623808?s=21",
+"display_url": "twitter.com/hereforq1/stat\u2026",
+"indices": [
+    9,
+    32
+]
+}
+],
+"user_mentions": [
+{
+"screen_name": "nytimes",
+"name": "The New York Times",
+"id": 807095,
+"id_str": "807095",
+"indices": [
+    0,
+    8
+]
+}
+],
+"symbols": []
+},
+"favorited": false,
+"retweeted": false,
+"possibly_sensitive": false,
+"filter_level": "low",
+"lang": "und",
+"timestamp_ms": "1591389012599"
+}
+    {
+"created_at": "Fri Jun 05 20:30:16 +0000 2020",
+"id": 1269003627659657218,
+"id_str": "1269003627659657218",
+"text": "RT @nytimes: Stocks jumped, with the tech-heavy Nasdaq composite nearing a record high and the S&amp;P 500 close to wiping out its losses for 2\u2026",
+"source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+"truncated": false,
+"in_reply_to_status_id": null,
+"in_reply_to_status_id_str": null,
+"in_reply_to_user_id": null,
+"in_reply_to_user_id_str": null,
+"in_reply_to_screen_name": null,
+"user": {
+"id": 856922915555749888,
+"id_str": "856922915555749888",
+"name": "A. Hassan",
+"screen_name": "Hassan48744178",
+"location": null,
+"url": null,
+"description": null,
+"translator_type": "none",
+"protected": false,
+"verified": false,
+"followers_count": 6,
+"friends_count": 276,
+"listed_count": 0,
+"favourites_count": 133,
+"statuses_count": 55,
+"created_at": "Tue Apr 25 17:28:38 +0000 2017",
+"utc_offset": null,
+"time_zone": null,
+"geo_enabled": false,
+"lang": null,
+"contributors_enabled": false,
+"is_translator": false,
+"profile_background_color": "F5F8FA",
+"profile_background_image_url": "",
+"profile_background_image_url_https": "",
+"profile_background_tile": false,
+"profile_link_color": "1DA1F2",
+"profile_sidebar_border_color": "C0DEED",
+"profile_sidebar_fill_color": "DDEEF6",
+"profile_text_color": "333333",
+"profile_use_background_image": true,
+"profile_image_url": "http://pbs.twimg.com/profile_images/1255279443066662913/C5koO1le_normal.jpg",
+"profile_image_url_https": "https://pbs.twimg.com/profile_images/1255279443066662913/C5koO1le_normal.jpg",
+"profile_banner_url": "https://pbs.twimg.com/profile_banners/856922915555749888/1588117006",
+"default_profile": true,
+"default_profile_image": false,
+"following": null,
+"follow_request_sent": null,
+"notifications": null
+},
+"geo": null,
+"coordinates": null,
+"place": null,
+"contributors": null,
+"retweeted_status": {
+"created_at": "Fri Jun 05 20:10:47 +0000 2020",
+"id": 1268998726292590592,
+"id_str": "1268998726292590592",
+"text": "Stocks jumped, with the tech-heavy Nasdaq composite nearing a record high and the S&amp;P 500 close to wiping out its l\u2026 https://t.co/T9tsgYGQZJ",
+"source": "<a href=\"http://www.socialflow.com\" rel=\"nofollow\">SocialFlow</a>",
+"truncated": true,
+"in_reply_to_status_id": null,
+"in_reply_to_status_id_str": null,
+"in_reply_to_user_id": null,
+"in_reply_to_user_id_str": null,
+"in_reply_to_screen_name": null,
+"user": {
+"id": 807095,
+"id_str": "807095",
+"name": "The New York Times",
+"screen_name": "nytimes",
+"location": "New York City",
+"url": "http://www.nytimes.com/",
+"description": "News tips? Share them here: http://nyti.ms/2FVHq9v",
+"translator_type": "none",
+"protected": false,
+"verified": true,
+"followers_count": 46793274,
+"friends_count": 906,
+"listed_count": 199487,
+"favourites_count": 18494,
+"statuses_count": 397870,
+"created_at": "Fri Mar 02 20:41:42 +0000 2007",
+"utc_offset": null,
+"time_zone": null,
+"geo_enabled": false,
+"lang": null,
+"contributors_enabled": false,
+"is_translator": false,
+"profile_background_color": "131516",
+"profile_background_image_url": "http://abs.twimg.com/images/themes/theme14/bg.gif",
+"profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme14/bg.gif",
+"profile_background_tile": true,
+"profile_link_color": "607696",
+"profile_sidebar_border_color": "FFFFFF",
+"profile_sidebar_fill_color": "EFEFEF",
+"profile_text_color": "333333",
+"profile_use_background_image": true,
+"profile_image_url": "http://pbs.twimg.com/profile_images/1098244578472280064/gjkVMelR_normal.png",
+"profile_image_url_https": "https://pbs.twimg.com/profile_images/1098244578472280064/gjkVMelR_normal.png",
+"profile_banner_url": "https://pbs.twimg.com/profile_banners/807095/1584666392",
+"default_profile": false,
+"default_profile_image": false,
+"following": null,
+"follow_request_sent": null,
+"notifications": null
+},
+"geo": null,
+"coordinates": null,
+"place": null,
+"contributors": null,
+"is_quote_status": false,
+"extended_tweet": {
+"full_text": "Stocks jumped, with the tech-heavy Nasdaq composite nearing a record high and the S&amp;P 500 close to wiping out its losses for 2020\nhttps://t.co/yABlShFNCI",
+"display_text_range": [
+0,
+157
+],
+"entities": {
+"hashtags": [],
+"urls": [
+    {
+        "url": "https://t.co/yABlShFNCI",
+        "expanded_url": "https://nyti.ms/3gU8F3T",
+        "display_url": "nyti.ms/3gU8F3T",
+        "indices": [
+            134,
+            157
+        ]
+    }
+],
+"user_mentions": [],
+"symbols": []
+}
+},
+"quote_count": 5,
+"reply_count": 22,
+"retweet_count": 25,
+"favorite_count": 76,
+"entities": {
+"hashtags": [],
+"urls": [
+{
+    "url": "https://t.co/T9tsgYGQZJ",
+    "expanded_url": "https://twitter.com/i/web/status/1268998726292590592",
+    "display_url": "twitter.com/i/web/status/1\u2026",
+    "indices": [
+        121,
+        144
+    ]
+}
+],
+"user_mentions": [],
+"symbols": []
+},
+"favorited": false,
+"retweeted": false,
+"possibly_sensitive": false,
+"filter_level": "low",
+"lang": "en"
+},
+"is_quote_status": false,
+"quote_count": 0,
+"reply_count": 0,
+"retweet_count": 0,
+"favorite_count": 0,
+"entities": {
+"hashtags": [],
+"urls": [],
+"user_mentions": [
+{
+"screen_name": "nytimes",
+"name": "The New York Times",
+"id": 807095,
+"id_str": "807095",
+"indices": [
+    3,
+    11
+]
+}
+],
+"symbols": []
+},
+"favorited": false,
+"retweeted": false,
+"filter_level": "low",
+"lang": "en",
+"timestamp_ms": "1591389016438"
+}
+    {
+"created_at": "Fri Jun 05 20:30:25 +0000 2020",
+"id": 1269003666096295936,
+"id_str": "1269003666096295936",
+"text": "RT @nytimes: New York provides unemployment benefits through direct deposit or on debit cards from KeyBank, a regional Ohio bank. Now, some\u2026",
+"source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+"truncated": false,
+"in_reply_to_status_id": null,
+"in_reply_to_status_id_str": null,
+"in_reply_to_user_id": null,
+"in_reply_to_user_id_str": null,
+"in_reply_to_screen_name": null,
+"user": {
+"id": 2777522400,
+"id_str": "2777522400",
+"name": "mrbigg",
+"screen_name": "mrbigg450",
+"location": null,
+"url": null,
+"description": "\u201cYou don\u2019t make the timeline. The virus makes the timeline.\u201d \u2014 Dr. Anthony Fauci",
+"translator_type": "none",
+"protected": false,
+"verified": false,
+"followers_count": 1324,
+"friends_count": 3189,
+"listed_count": 9,
+"favourites_count": 120549,
+"statuses_count": 89695,
+"created_at": "Fri Aug 29 01:55:02 +0000 2014",
+"utc_offset": null,
+"time_zone": null,
+"geo_enabled": false,
+"lang": null,
+"contributors_enabled": false,
+"is_translator": false,
+"profile_background_color": "C0DEED",
+"profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+"profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+"profile_background_tile": false,
+"profile_link_color": "1DA1F2",
+"profile_sidebar_border_color": "C0DEED",
+"profile_sidebar_fill_color": "DDEEF6",
+"profile_text_color": "333333",
+"profile_use_background_image": true,
+"profile_image_url": "http://pbs.twimg.com/profile_images/1240028252216975361/SDszTs3b_normal.jpg",
+"profile_image_url_https": "https://pbs.twimg.com/profile_images/1240028252216975361/SDszTs3b_normal.jpg",
+"profile_banner_url": "https://pbs.twimg.com/profile_banners/2777522400/1588552450",
+"default_profile": true,
+"default_profile_image": false,
+"following": null,
+"follow_request_sent": null,
+"notifications": null
+},
+"geo": null,
+"coordinates": null,
+"place": null,
+"contributors": null,
+"retweeted_status": {
+"created_at": "Fri Jun 05 20:30:05 +0000 2020",
+"id": 1269003582243831809,
+"id_str": "1269003582243831809",
+"text": "New York provides unemployment benefits through direct deposit or on debit cards from KeyBank, a regional Ohio bank\u2026 https://t.co/56qnlZUhTT",
+"source": "<a href=\"http://www.socialflow.com\" rel=\"nofollow\">SocialFlow</a>",
+"truncated": true,
+"in_reply_to_status_id": null,
+"in_reply_to_status_id_str": null,
+"in_reply_to_user_id": null,
+"in_reply_to_user_id_str": null,
+"in_reply_to_screen_name": null,
+"user": {
+"id": 807095,
+"id_str": "807095",
+"name": "The New York Times",
+"screen_name": "nytimes",
+"location": "New York City",
+"url": "http://www.nytimes.com/",
+"description": "News tips? Share them here: http://nyti.ms/2FVHq9v",
+"translator_type": "none",
+"protected": false,
+"verified": true,
+"followers_count": 46793274,
+"friends_count": 906,
+"listed_count": 199487,
+"favourites_count": 18494,
+"statuses_count": 397871,
+"created_at": "Fri Mar 02 20:41:42 +0000 2007",
+"utc_offset": null,
+"time_zone": null,
+"geo_enabled": false,
+"lang": null,
+"contributors_enabled": false,
+"is_translator": false,
+"profile_background_color": "131516",
+"profile_background_image_url": "http://abs.twimg.com/images/themes/theme14/bg.gif",
+"profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme14/bg.gif",
+"profile_background_tile": true,
+"profile_link_color": "607696",
+"profile_sidebar_border_color": "FFFFFF",
+"profile_sidebar_fill_color": "EFEFEF",
+"profile_text_color": "333333",
+"profile_use_background_image": true,
+"profile_image_url": "http://pbs.twimg.com/profile_images/1098244578472280064/gjkVMelR_normal.png",
+"profile_image_url_https": "https://pbs.twimg.com/profile_images/1098244578472280064/gjkVMelR_normal.png",
+"profile_banner_url": "https://pbs.twimg.com/profile_banners/807095/1584666392",
+"default_profile": false,
+"default_profile_image": false,
+"following": null,
+"follow_request_sent": null,
+"notifications": null
+},
+"geo": null,
+"coordinates": null,
+"place": null,
+"contributors": null,
+"is_quote_status": false,
+"extended_tweet": {
+"full_text": "New York provides unemployment benefits through direct deposit or on debit cards from KeyBank, a regional Ohio bank. Now, some are waiting in line for hours to use the single ATM inside the only KeyBank branch in New York City to access their benefits https://t.co/3G90CkCpDC",
+"display_text_range": [
+0,
+275
+],
+"entities": {
+"hashtags": [],
+"urls": [
+    {
+        "url": "https://t.co/3G90CkCpDC",
+        "expanded_url": "https://nyti.ms/3eX0th8",
+        "display_url": "nyti.ms/3eX0th8",
+        "indices": [
+            252,
+            275
+        ]
+    }
+],
+"user_mentions": [],
+"symbols": []
+}
+},
+"quote_count": 0,
+"reply_count": 1,
+"retweet_count": 2,
+"favorite_count": 1,
+"entities": {
+"hashtags": [],
+"urls": [
+{
+    "url": "https://t.co/56qnlZUhTT",
+    "expanded_url": "https://twitter.com/i/web/status/1269003582243831809",
+    "display_url": "twitter.com/i/web/status/1\u2026",
+    "indices": [
+        117,
+        140
+    ]
+}
+],
+"user_mentions": [],
+"symbols": []
+},
+"favorited": false,
+"retweeted": false,
+"possibly_sensitive": false,
+"filter_level": "low",
+"lang": "en"
+},
+"is_quote_status": false,
+"quote_count": 0,
+"reply_count": 0,
+"retweet_count": 0,
+"favorite_count": 0,
+"entities": {
+"hashtags": [],
+"urls": [],
+"user_mentions": [
+{
+"screen_name": "nytimes",
+"name": "The New York Times",
+"id": 807095,
+"id_str": "807095",
+"indices": [
+    3,
+    11
+]
+}
+],
+"symbols": []
+},
+"favorited": false,
+"retweeted": false,
+"filter_level": "low",
+"lang": "en",
+"timestamp_ms": "1591389025602"
+}
