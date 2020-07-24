@@ -1,0 +1,15 @@
+# This file should be put under /etc/systemd/system/
+
+[Unit]
+Description=Gunicorn instance to serve project_viralnews
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/project_viralnews/webapp
+Environment="PATH=/home/ubuntu/project_viralnews/venv/bin"
+ExecStart=/home/ubuntu/project_viralnews/venv/bin/gunicorn --bind unix:project_viralnews.sock -m 007 app:app
+
+[Install]
+WantedBy=multi-user.target
