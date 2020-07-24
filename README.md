@@ -33,10 +33,3 @@ python app.py
 cd ui
 npm start
 ```
-
-### Deployment
-
-1. For deploying backend server:
-```
-gunicorn --bind 0.0.0.0:5000 app:app
-```
