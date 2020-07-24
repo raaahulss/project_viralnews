@@ -18,5 +18,3 @@ MAX_TWEET_CREATION_RANGE=7
 SEARCH_PER_REQUEST=100
 # 7 for standard and 30 for premium
 SEARCH_WINDOW = 7
-
-

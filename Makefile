@@ -1,5 +1,5 @@
 ENV=./venv
-PYTHON_DEPENDENCIES_PATH=./requirements.txt
+PYTHON_DEPENDENCIES_PATH=./webapp/requirements.txt
 PYTHON_VERSION=3.7.6
 
 

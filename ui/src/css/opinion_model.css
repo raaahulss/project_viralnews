@@ -1,0 +1,30 @@
+#opinion-card-main {
+	margin-bottom: 50px;
+	background-color: #69c9bc;
+	padding-left: 50px;
+}
+
+#opinion-card-body {
+	height: 200px;
+	background-image: radial-gradient(#b0e8d3, #85dcbb, #69c9bc);
+	border-radius: 25px;
+}
+
+#opinion-card {
+	width: 100%;
+	border-color: #69c9bc;
+}
+
+#opinion-card-title {
+	color: #e27d60;
+}
+
+#opinion-text {
+	margin-top: 30px;
+    background: -webkit-linear-gradient(#e27d60, #f0c4a8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 300%;
+    font-family: "American Typewriter", Helvetica, serif;
+  	background-blend-mode: lighten;
+}

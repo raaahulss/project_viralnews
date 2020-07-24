@@ -1,0 +1,24 @@
+.error-page-title {
+  padding: 50px 50px 50px 50px;
+  color: #E27D60;
+  text-align: center;
+  font-family: "Lucida Console", Courier, monospace;
+  font-style: oblique;
+  font-weight: 900;
+  font-size: 320%;
+  margin-top: 100px;
+}
+
+.error-message {
+  padding: 50px 50px 50px 50px;
+  color: #E27D60;
+  text-align: center;
+  font-family: "Lucida Console", Courier, monospace;
+  font-style: oblique;
+  font-weight: 900;
+  font-size: 160%;
+}
+
+.input {
+  width: 100%;
+}
