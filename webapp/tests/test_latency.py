@@ -21,10 +21,9 @@ def print_time(url, latencies, titles):
     start_time = datetime.datetime.now()
     response = requests.post(f'http://localhost:5000/api/url?url={url}')
     end_time = datetime.datetime.now()
-
-    latencies.append((end_time - start_time).microseconds / 1000.0)
+    delta_time = end_time - start_time
+    latencies.append(delta_time.total_seconds())
     titles.append(response.content)
-    # titles.append(json.loads(response.content)['details']['title'])
 
 
 if __name__ == '__main__':
@@ -36,10 +35,11 @@ if __name__ == '__main__':
             'https://twitter.com/CNN/status/1286386172852342784',
             'https://twitter.com/CNN/status/1286390909953810438',
             'https://twitter.com/CNN/status/1286385860209004544',
-            'https://twitter.com/ABC/status/1286404486894944256',
-            'https://twitter.com/ABC/status/1286397840596643841',
-            'https://twitter.com/ABC/status/1286395172973088771'
+            'https://twitter.com/WSJ/status/1286647356788740097',
+            'https://twitter.com/WSJ/status/1286620915141312515',
+            'https://twitter.com/WSJ/status/1286518814189006848'
             ]
+
     latencies = []
     titles = []
 
@@ -47,9 +47,9 @@ if __name__ == '__main__':
         print_time(url, latencies, titles)
 
     for i in range(len(latencies)):
-        print(f"{latencies[i]} ms: {titles[i]}")
+        print(f"{latencies[i]} s: {titles[i]}")
     print("Exiting Main Thread")
 
     print(
-        f"Maximum {np.max(latencies)} ms\nMinimum {np.min(latencies)} ms\nMean {np.mean(latencies)}\nMedian {np.median(latencies)}\nStandard deviation {np.std(latencies)}"
+        f"Maximum {np.max(latencies)} s\nMinimum {np.min(latencies)} s\nMean {np.mean(latencies)} s\nMedian {np.median(latencies)} s\nStandard deviation {np.std(latencies)} s"
     )
