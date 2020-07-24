@@ -1,0 +1,33 @@
+#analysis-details-main {
+	text-align: center;
+	width: 100%;
+	margin-top: 25px;
+	margin-bottom: 75px;
+	height: 225px;
+	align-content: center;
+}
+
+.vline {
+	border-left: 1px solid green;
+	border-color: #0b7d6e;
+}
+
+#viralness-column {
+	width: 300px;
+	align-content: center;
+	margin: auto;
+}
+
+#sentiment-column {
+	width: 300px;
+	align-content: center;
+	margin: auto;
+}
+
+#opinion-column {
+	width: 300px;
+}
+
+.row {
+	margin: auto;
+}

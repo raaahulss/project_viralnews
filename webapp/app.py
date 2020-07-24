@@ -15,7 +15,6 @@
 #             return r.text
 #         return "No url information is given"
 
-
 # if __name__ == '__main__':
 #     app.run(debug = True)
 import src
@@ -25,4 +24,4 @@ app = src.main("config")
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", debug=True, threaded=True)
+    app.run(host="0.0.0.0", debug=True)
