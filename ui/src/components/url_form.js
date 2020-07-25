@@ -35,7 +35,7 @@ class UrlForm extends Component {
     var self = this;
     let response = axios({
                     method: 'post',
-                    url: 'http://3.128.42.45:5000/api/url',
+                    url: 'https://isviral.news/api/url',
                     params: {
                       url: input_url
                     },

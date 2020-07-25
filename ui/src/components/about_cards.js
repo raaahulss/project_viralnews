@@ -27,11 +27,11 @@ class AboutCards extends Component {
             <Card.Body>
               <Card.Title>Fangzhou Xie</Card.Title>
               <Card.Text>
-                Backend Developer, ML Researcher
+                Backend & Political Bias Model Developer
               </Card.Text>
             </Card.Body>
             <Card.Footer>
-              <Card.Link href="#">GitHub</Card.Link>
+              <Card.Link href="https://github.com/fangzhouxie">GitHub</Card.Link>
               <Card.Link href="#">Linkedin</Card.Link>
             </Card.Footer>
           </Card>
@@ -40,11 +40,11 @@ class AboutCards extends Component {
             <Card.Body>
               <Card.Title>Rahul Salla</Card.Title>
               <Card.Text>
-                Frontend Developer, ML Researcher
+                Frontend & Public Reaction Model Developer
               </Card.Text>
             </Card.Body>
             <Card.Footer>
-              <Card.Link href="#">GitHub</Card.Link>
+              <Card.Link href="https://github.com/raaahulss">GitHub</Card.Link>
               <Card.Link href="#">Linkedin</Card.Link>
             </Card.Footer>
           </Card>
@@ -53,12 +53,12 @@ class AboutCards extends Component {
             <Card.Body>
               <Card.Title>Gaurav Deshpande</Card.Title>
               <Card.Text>
-                Backend Developer, ML Researcher
+                Backend & Viralness Model Developer
               </Card.Text>
             </Card.Body>
             <Card.Footer>
-              <Card.Link href="#">GitHub</Card.Link>
-              <Card.Link href="#">Linkedin</Card.Link>
+              <Card.Link href="https://github.com/g2des">GitHub</Card.Link>
+              <Card.Link href="https://www.linkedin.com/in/gaurav-n-deshpande/">Linkedin</Card.Link>
             </Card.Footer>
           </Card>
           <Card border="primary">
@@ -66,12 +66,12 @@ class AboutCards extends Component {
             <Card.Body>
               <Card.Title>Sam Teplov</Card.Title>
               <Card.Text>
-                Frontend Developer, ML Researcher
+                Frontend & Viralness Model Developer
               </Card.Text>
             </Card.Body>
             <Card.Footer>
-              <Card.Link href="#">GitHub</Card.Link>
-              <Card.Link href="#">Linkedin</Card.Link>
+              <Card.Link href="https://github.com/samteplov">Github</Card.Link>
+              <Card.Link href="https://www.linkedin.com/in/samteplov/">Linkedin</Card.Link>
             </Card.Footer>
           </Card>
         </CardDeck>
@@ -91,7 +91,7 @@ class AboutCards extends Component {
                 </Card.Text>
               </Card.Body>
               <Card.Footer>
-                <Card.Link href="#">GitHub</Card.Link>
+                <Card.Link href="https://github.com/andrewmellinger">GitHub</Card.Link>
                 <Card.Link href="#">Linkedin</Card.Link>
               </Card.Footer>
             </Card>
