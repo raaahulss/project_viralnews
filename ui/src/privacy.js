@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import './css/privacy.css'
 
 class Privacy extends Component {
+  componentDidMount(){
+    document.title = "isViral - Privacy"
+  }
   render() {
     return (
       <div className = "about_pad">
