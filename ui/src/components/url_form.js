@@ -82,7 +82,7 @@ class UrlForm extends Component {
           <br />
           <center>
             <Spinner animation="border" />
-            <p>This may take about 5 seconds ...</p>
+            <p>This may take about 10 seconds ...</p>
           </center>
         </div>
       )
