@@ -99,14 +99,14 @@ class LSTM_glove_vecs(torch.nn.Module) :
         
 def get_viralness(news: NewsObject) -> float:
     #Load elements
-    tok = spacy.load('en_core_web_sm')
-    stop_words = set(stopwords.words('english'))
+    tok = spacy.load(cnst.VIRALNESS_TOKENIZER)
+    stop_words = set(stopwords.words(cnst.VIRALNESS_STOPWORDS_LANG))
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    pretrained_weights = np.load("./src/models/pretrained_weights_80.npy", allow_pickle=True)
-    vocab2index = np.load("./src/models/vocab2index_80.npy", allow_pickle=True)
+    pretrained_weights = np.load(cnst.VIRALNESS_GLOVE_WEIGHT_PATH, allow_pickle=True)
+    vocab2index = np.load(cnst.VIRALNESS_VOCAB2INDEX_PATH, allow_pickle=True)
     vocab2index = vocab2index.item()
     viralness_model = LSTM_glove_vecs(cnst.VIRALNESS_VOCAB_SIZE, 100, 100, pretrained_weights)
-    viralness_model.load_state_dict(torch.load("./src/models/viralness.pt", map_location=device))
+    viralness_model.load_state_dict(torch.load(cnst.VIRALNESS_STATE_DICT, map_location=device))
 
     #Process request
     encoded_content, length = preprocess(news.content, vocab2index, tok, stop_words)
@@ -125,8 +125,3 @@ def get_viralness(news: NewsObject) -> float:
     # viralness_model.load_state_dict(torch.load("./src/models/viralness.pt", map_location=device))
     # y_hat = viralness_model(encoded_content, len)
     # return int(torch.max(y_hat, 1)[1])
-
-if __name__ == "__main__":
-    news = NewsObject("https://www.nytimes.com/2020/07/03/us/politics/trump-coronavirus-mount-rushmore.html")
-    news.fetch_from_url()
-    print(get_viralness(news))
