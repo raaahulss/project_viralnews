@@ -14,7 +14,8 @@ error_list = {
     "URL_NT_FND": ["URL_NT_FND", "URL not found"],
     "EXPRD_TWT": ["EXPRD_TWT", "The tweet is beyond the range of API. Tweet should be less than 7 days old."],
     "RATE_LIMIT_EXCEEDED": ["RATE_LIMIT_EXCEEDED", "Request rate limit has been exceeded, please try again later."],
-    "CONTENT_TOO_SHORT": ["CONTENT_TOO_SHORT", "Content length is too short."]
+    "CONTENT_TOO_SHORT": ["CONTENT_TOO_SHORT", "Content length is too short for analysis."],
+    "TIME_OUT" : ["TIME_OUT", "Request timeout while querying for the article."]
     }
 
 
