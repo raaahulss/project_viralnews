@@ -21,7 +21,7 @@
 import src
 
 
-app = src.main("config")
+app = src.main()
 
 
 if __name__ == '__main__':

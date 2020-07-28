@@ -174,7 +174,17 @@ class Tweet:
         self.responses = responses
         self.responses_count = len(responses)
         self.embeded_url = tweet.entities["urls"][0]["url"]
-        resp = requests.get(tweet.entities["urls"][0]["url"])
+        http = requests.Session()
+        http.headers.update({'User-Agent': 'newspaper/0.2.8',
+                            'Accept-Encoding': 'gzip, deflate',
+                            'Accept': '*/*',
+                            'Connection': 'keep-alive'})
+        try:
+            resp = http.get(tweet.entities["urls"][0]["url"], timeout=cnst.REQUEST_TIME_OUT)
+        except Exception:
+            raise ApplicationError(*error_list["TIME_OUT"]) 
+
+        # resp = requests.get(tweet.entities["urls"][0]["url"])
         self.expanded_url = resp.url
         # self.trending = trending
 
