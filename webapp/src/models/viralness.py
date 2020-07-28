@@ -10,7 +10,8 @@ from nltk.corpus import stopwords
 import src.constants as cnst
 import boto3
 from io import BytesIO
-from numpy.lib.npyio import NpzFile 
+from numpy.lib.npyio import NpzFile
+import nltk
 
 from src.collection.news_fetcher import NewsObject
 
@@ -112,6 +113,7 @@ def load_model():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     state_dict = torch.load( BytesIO(s3.Object('project-viralnews-model', 'bilstm_content.pt').get()['Body'].read()), map_location=device)
     # tok = spacy.load(cnst.VIRALNESS_TOKENIZER)
+    nltk.download('stopwords')
     stop_words = set(stopwords.words(cnst.VIRALNESS_STOPWORDS_LANG))
     viralness_model = LSTM_glove_vecs(cnst.VIRALNESS_VOCAB_SIZE, 100, 100, pretrained_weights)
     viralness_model.load_state_dict(state_dict)
