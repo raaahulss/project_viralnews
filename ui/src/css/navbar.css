@@ -1,0 +1,33 @@
+.justify-content-center {
+  font-size: x-large;
+  /*padding-top: 30px;*/
+  top: 0;
+}
+
+.nav-link {
+	color: #0b7d6e;
+	font-family: "Lucida Console", Courier, monospace;
+	margin: 2px;
+}
+
+.vline {
+	border-left: 1px solid green;
+	border-color: #0b7d6e;
+}
+
+#sticky-nav {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  width: 100%;
+  font-size: x-large;
+}
+
+#navbar-center {
+  font-size: x-large;
+  width: 100%;
+  left: 0;
+  right: 0;
+  position: absolute;
+  background: #ffbb43;
+  top: 0;
+}

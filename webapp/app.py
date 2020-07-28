@@ -16,10 +16,13 @@
 #         return "No url information is given"
 
 
-
 # if __name__ == '__main__':
 #     app.run(debug = True)
 import src
 
+
+app = src.main()
+
+
 if __name__ == '__main__':
-    src.main("config").run()
+    app.run(host="127.0.0.1")

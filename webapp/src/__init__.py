@@ -1,8 +1,12 @@
 from flask import Flask
-from src.requestRouter import router
+from src.requestRouter import router, limiter
+
+
 
 def main(config="default"):
     app = Flask("IDK")
     app.register_blueprint(router)
-    print(__name__, config)
+    limiter.init_app(app)
+    print(__name__)
     return app
+
