@@ -3,20 +3,23 @@ import torch
 import spacy
 from collections import Counter
 import re
+import json
 import string
 import numpy as np
 from nltk.corpus import stopwords
 import src.constants as cnst
+import boto3
+from io import BytesIO
+from numpy.lib.npyio import NpzFile 
+
 from src.collection.news_fetcher import NewsObject
 
-
-
-def tokenize(text, tok, stopwords):
+def tokenize(text):
     text = text.replace("[^\w\s]","").lower()
     text = re.sub(r"[^\x00-\x7F]+", " ", text)
     regex = re.compile('[' + re.escape(string.punctuation) + '0-9\\r\\t\\n]')
     nopunct = regex.sub(" ", text.lower())
-    return [token.text for token in tok.tokenizer(nopunct) if token not in stopwords]
+    return [token.text for token in tok.tokenizer(nopunct) if token not in stop_words]
 
 # def counter(content ):
 #     counts = Counter()
@@ -36,12 +39,12 @@ def tokenize(text, tok, stopwords):
 #         words.append(word)
 #     return vocab2index, words
 
-def preprocess(content, vocab2index, tok, stop_words):
+def preprocess(content):
     # counts = counter(content)
     # vocab2index = np.load("./src/models/vocab2index.npy",allow_pickle='TRUE').item()
     # words = np.load("./src/models/wordlist.npy",allow_pickle='TRUE')
     # print(type(vocab2index), type(words))
-    encoded, length = encode_sentence(content, vocab2index, tok, stop_words)
+    encoded, length = encode_sentence(content)
     return (encoded, length)
 
 # def encode_sentence(text, vocab2index, N=450):
@@ -58,8 +61,8 @@ def preprocess(content, vocab2index, tok, stop_words):
 #     vocab2index[word] = len(words)
 #     words.append(word)
 
-def encode_sentence(text, vocab2index, tok, stop_words, N=cnst.VIRALNESS_FIXED_LENGTH):
-    tokenized = tokenize(text, tok, stop_words)
+def encode_sentence(text, N=cnst.VIRALNESS_FIXED_LENGTH):
+    tokenized = tokenize(text)
     encoded = np.zeros(N,dtype=int)
     enc1 = np.array([vocab2index.get(word,vocab2index["UNK"]) for word in tokenized])
     length = min(N, len(enc1))
@@ -96,20 +99,37 @@ class LSTM_glove_vecs(torch.nn.Module) :
         x = self.dropout(x)
         lstm_out, (ht, ct) = self.lstm(x)
         return self.linear(ht[-1])
-        
+
+def load_model():
+    s3 = boto3.resource('s3')
+    stream =  BytesIO(s3.Object('project-viralnews-model', 'viralness.npz').get()['Body'].read())
+    viralness_files = NpzFile(stream, own_fid=True, allow_pickle=True)
+    
+    vocab2index = viralness_files['vocab2index'].item()
+    tok = spacy.load('en_core_web_sm')
+    # stop_words = viralness_files['stop_words']
+    pretrained_weights = viralness_files['pretrained_weights']
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    state_dict = torch.load( BytesIO(s3.Object('project-viralnews-model', 'bilstm_content.pt').get()['Body'].read()), map_location=device)
+    # tok = spacy.load(cnst.VIRALNESS_TOKENIZER)
+    stop_words = set(stopwords.words(cnst.VIRALNESS_STOPWORDS_LANG))
+    viralness_model = LSTM_glove_vecs(cnst.VIRALNESS_VOCAB_SIZE, 100, 100, pretrained_weights)
+    viralness_model.load_state_dict(state_dict)
+    return vocab2index, tok, stop_words, device, viralness_model
+
+
 def get_viralness(news: NewsObject) -> float:
     #Load elements
-    tok = spacy.load(cnst.VIRALNESS_TOKENIZER)
-    stop_words = set(stopwords.words(cnst.VIRALNESS_STOPWORDS_LANG))
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    pretrained_weights = np.load(cnst.VIRALNESS_GLOVE_WEIGHT_PATH, allow_pickle=True)
-    vocab2index = np.load(cnst.VIRALNESS_VOCAB2INDEX_PATH, allow_pickle=True)
-    vocab2index = vocab2index.item()
-    viralness_model = LSTM_glove_vecs(cnst.VIRALNESS_VOCAB_SIZE, 100, 100, pretrained_weights)
-    viralness_model.load_state_dict(torch.load(cnst.VIRALNESS_STATE_DICT, map_location=device))
+    # tok = spacy.load(cnst.VIRALNESS_TOKENIZER)
+    # stop_words = set(stopwords.words(cnst.VIRALNESS_STOPWORDS_LANG))
+    # device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    # pretrained_weights = np.load(cnst.VIRALNESS_GLOVE_WEIGHT_PATH, allow_pickle=True)
+    # vocab2index = np.load(cnst.VIRALNESS_VOCAB2INDEX_PATH, allow_pickle=True)
+    # vocab2index = vocab2index.item()
+    
 
     #Process request
-    encoded_content, length = preprocess(news.content, vocab2index, tok, stop_words)
+    encoded_content, length = preprocess(news.content)
     encoded_content = torch.from_numpy(encoded_content).to(torch.int64)
     encoded_content = encoded_content.unsqueeze(0)
     y_hat = viralness_model(encoded_content, len)
@@ -125,3 +145,7 @@ def get_viralness(news: NewsObject) -> float:
     # viralness_model.load_state_dict(torch.load("./src/models/viralness.pt", map_location=device))
     # y_hat = viralness_model(encoded_content, len)
     # return int(torch.max(y_hat, 1)[1])
+
+print("Importing viralness model")
+vocab2index, tok, stop_words, device, viralness_model = load_model()
+print("Viralness model imported",type(vocab2index), type(tok), type(stop_words))
