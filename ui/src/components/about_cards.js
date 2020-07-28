@@ -32,7 +32,7 @@ class AboutCards extends Component {
             </Card.Body>
             <Card.Footer>
               <Card.Link href="https://github.com/fangzhouxie">GitHub</Card.Link>
-              <Card.Link href="#">Linkedin</Card.Link>
+              <Card.Link href="https://www.linkedin.com/in/fangzhouxie/">Linkedin</Card.Link>
             </Card.Footer>
           </Card>
           <Card border="primary">
