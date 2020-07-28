@@ -45,7 +45,7 @@ class AboutCards extends Component {
             </Card.Body>
             <Card.Footer>
               <Card.Link href="https://github.com/raaahulss">GitHub</Card.Link>
-              <Card.Link href="#">Linkedin</Card.Link>
+              <Card.Link href="https://www.linkedin.com/in/rahulssalla/">Linkedin</Card.Link>
             </Card.Footer>
           </Card>
           <Card border="primary">
@@ -104,7 +104,6 @@ class AboutCards extends Component {
                 </Card.Text>
               </Card.Body>
               <Card.Footer>
-                <Card.Link href="#">GitHub</Card.Link>
                 <Card.Link href="#">Linkedin</Card.Link>
               </Card.Footer>
             </Card>
@@ -117,7 +116,6 @@ class AboutCards extends Component {
                 </Card.Text>
               </Card.Body>
               <Card.Footer>
-                <Card.Link href="#">GitHub</Card.Link>
                 <Card.Link href="#">Linkedin</Card.Link>
               </Card.Footer>
             </Card>
