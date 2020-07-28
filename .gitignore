@@ -5,4 +5,4 @@ venv
 */**/*.json
 */**/*.jsonl
 */**/*.csv
-*/**/*.ipynb_checkpoints
+*/**/*.ipynb_checkpoint

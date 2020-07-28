@@ -35,7 +35,7 @@ class UrlForm extends Component {
     var self = this;
     let response = axios({
                     method: 'post',
-                    url: 'http://3.22.37.246:5000/api/url',
+                    url: 'https://isviral.news/api/url',
                     params: {
                       url: input_url
                     },
@@ -82,7 +82,7 @@ class UrlForm extends Component {
           <br />
           <center>
             <Spinner animation="border" />
-            <p>This may take about 5 seconds ...</p>
+            <p>This may take about 10 seconds ...</p>
           </center>
         </div>
       )
