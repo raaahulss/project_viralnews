@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import '../css/error_card.css'
 
 class ErrorCard extends Component {
+  componentDidMount(){
+    document.title = "IsViral - Error"
+  }
   constructor(props){
     super(props);
   }

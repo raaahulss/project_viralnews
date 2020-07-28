@@ -6,6 +6,9 @@ import ErrorCard from './components/error_card'
 
 
 class Dashboard extends Component {
+  componentDidMount(){
+    document.title = "isViral - Dashboard"
+  }
   constructor(props){
     super(props);
   }

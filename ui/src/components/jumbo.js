@@ -8,7 +8,7 @@ class Jumbo extends Component {
       <div className = "jumbo_pad">
       <h2 className="api_title">API for Published Articles</h2>
       <Jumbotron >
-        <h1>POST /url</h1>
+        <h1>POST https://isviral.news/api/url/</h1>
         <p>
           Request body parameters:
         </p>
@@ -24,7 +24,7 @@ class Jumbo extends Component {
       </Jumbotron>
       <h2 className="api_title">API for Unpublished Articles</h2>
       <Jumbotron>
-        <h1>POST /article</h1>
+        <h1>POST https://isviral.news/api/article/</h1>
         <p>
           Request body parameters:
         </p>

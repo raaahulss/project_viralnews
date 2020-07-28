@@ -16,7 +16,7 @@ class NavBar extends Component {
           </Nav.Item>
           <div className="vline" />
           <Nav.Item>
-            <Nav.Link href="/api">API Documentation</Nav.Link>
+            <Nav.Link href="/doc">API Documentation</Nav.Link>
           </Nav.Item>
           <div className="vline" />
           <Nav.Item>

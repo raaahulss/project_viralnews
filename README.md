@@ -32,4 +32,6 @@ python app.py
 ```
 cd ui
 npm start
+
 ```
+
