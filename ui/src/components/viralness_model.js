@@ -51,7 +51,7 @@ class ViralnessModel extends Component {
         <Card id="viralness-card">
           <Card.Body id="viralness-card-body">
             <Card.Title id="viralness-card-title">{this.props.title}</Card.Title>
-              <p> 1000+Retweets </p>
+              <p id="class-value"> 1000+Retweets </p>
               <ViralnessMeter id="viralness-model" value={this.props.value} />
           </Card.Body>
         </Card>
