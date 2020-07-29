@@ -13,6 +13,7 @@ class SentimentMeter extends Component {
           colors={ ['#0000cc', '#0000e6' ,'#1a53ff', '#0066ff', '#0099ff',
                     '#ff704d', '#ff471a', '#ff471a' ,'#ff3300', '#ff0000']}
           style={{width: 300}}
+          hideText={"True"}
         />
       </div>
     );
