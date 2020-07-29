@@ -5,7 +5,7 @@
 }
 
 #viralness-card-body {
-	height: 200px;
+	height: 225px;
 	background-image: radial-gradient(#b0e8d3, #85dcbb, #69c9bc);
 	border-radius: 25px;
 }
@@ -17,6 +17,7 @@
 
 #viralness-card-title {
 	color: #e27d60;
+	font-size: x-large;
 }
 
 #viralness-text {
@@ -32,4 +33,11 @@
 #viralness-details-main {
   width: 330px;
   align-content: center;
+}
+
+#class-value{
+	color: #e27d60;
+	font-size: large;
+	font-weight: 600;
+
 }

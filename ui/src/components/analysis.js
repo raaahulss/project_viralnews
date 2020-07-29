@@ -70,7 +70,7 @@ function ViralnessHTML(props) {
           <p style={{color:'#ffffff'}}>1000+ Retweets</p>
         </Col>
       </Row>
-      <a href='/ml' style={{color:'#ffffff',fontWeight: "bold"}}>Uses a base-10 log scale</a>
+      <a href='/ml' style={{color:'#ffffff',fontWeight: "bold"}}>Learn how we calculate viralness</a>
     </Col>
   );
 }
@@ -87,7 +87,7 @@ function SentimentHTML(props) {
           <p style={{color:'#ffffff'}}>Conservative</p>
         </Col>
       </Row>
-      <a href='/ml' style={{color:'#ffffff',fontWeight: "bold"}}>0% is Liberal - 100% is Conservative </a>
+      <a href='/ml' style={{color:'#ffffff',fontWeight: "bold"}}>Learn how we calculate political bias</a>
     </Col>
   );
 }
@@ -104,7 +104,7 @@ function OpinionHTML(props) {
           <p style={{color:'#ffffff'}}>Agree</p>
         </Col>
       </Row>
-    <a href='/ml' style={{color:'#ffffff',fontWeight: "bold"}}>Percentage of users that agree</a>
+    <a href='/ml' style={{color:'#ffffff',fontWeight: "bold"}}>Learn how we calculate public opinion</a>
     </Col>
   );
 }

@@ -13,6 +13,7 @@ class OpinionMeter extends Component {
           arcPadding={0.02}
           textColor={'#e27d60'}
           style={{width: 300}}
+          hideText={"True"}
         />
       </div>
     );
