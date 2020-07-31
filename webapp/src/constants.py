@@ -17,6 +17,7 @@ SEARCH_ENV = 'projectidk' # Search environment name
 
 
 
+
 # key set 2
 # CONSUMER_KEY='58wlGpzEOwum6nghvA8tj6nz6'
 # CONSUMER_SECRET='b04KqyzRyquIiYGwqv9B12hRqjEj9tvOp53DtoFZJtetaZ7cZE'
@@ -30,6 +31,7 @@ SEARCH_ENV = 'projectidk' # Search environment name
 # ACCESS_TOKEN_KEY='1242221626256773120-I1w5qsMOQ4RkLJAtr4C0TR092TtXd2'
 # ACCESS_TOKEN_SECRET='stOnsbz98GwkceoufXAuObBaXzvritHwe3Blc057Kd8Vz'
 # SEARCH_ENV = 'dev' # Search environment name
+
 
 # 100 for standard twitter api and 500 for premium
 SEARCH_PER_REQUEST=100
