@@ -7,7 +7,6 @@ from src.error import ApplicationError, error_list
 
 supported_sources = ('twitter', 'nytimes', 'wsj', 'cnn', 'nbcnews','latimes','npr','reuters','huffpost','abcnews')
 
-
 def preprocessor(url, published):
     """
     Given a url(a web url or a file object), the preprocessor identifies 
