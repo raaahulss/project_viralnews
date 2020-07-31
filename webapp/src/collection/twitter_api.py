@@ -53,7 +53,6 @@ class TwitterApi(object):
         m = re.match("https://twitter.com/(.*)/status/(.*)", url_without_share)
         n = re.match("twitter.com/(.*)/status/(.*)", url_without_share)
         o = m or n
-        print("Group",o.group(2))
         return o
     
     def get_tweet_from_url(self, tweet_url):
@@ -88,8 +87,6 @@ class TwitterApi(object):
             # if tweet is None then this is first call and we use the tweet_url
             if tweet is None:
                 tweet = self.get_tweet_from_url(tweet_url)
-                print("Got tweet with id", tweet.id)
-            print("Type of obj", type(tweet))
             if not tweet.is_quote_status:
                 # is_quote_status is false for original tweet 
                 original_tweet = tweet
@@ -161,7 +158,6 @@ class TwitterApi(object):
         user_name = tweet.user.screen_name
         search_string = "url:https%3A%2F%2Ftwitter.com%2F{}%2Fstatus%2F{} lang:en".format(user_name, tweet_id)
         replies = tweepy.Cursor(self._api.search_30_day,cnst.SEARCH_ENV,search_string, maxResults=search_per_request).items()
-        print("Trying to gather reply ids with query", search_string)
         try:
             startTime = datetime.now()
             for reply in replies:
@@ -170,7 +166,6 @@ class TwitterApi(object):
                     reply_tweet_ids_list.append(reply.id)
                 if len(reply_tweet_ids_list) == reply_limit or \
                      (current_time-startTime).total_seconds() >= cnst.MAX_TIME_REPLY_SEARCH :
-                    print("Breaking time : ", (current_time - startTime))
                     break
             print("Returning",len(reply_tweet_ids_list), " replies")
             return reply_tweet_ids_list
@@ -206,7 +201,6 @@ class TwitterApi(object):
                     reply_tweet_ids_list.append(reply.id)
                 if len(reply_tweet_ids_list) == reply_limit or \
                      (current_time-startTime).total_seconds() >= cnst.MAX_TIME_REPLY_SEARCH :
-                    print("Breaking time : ", (current_time - startTime))
                     # pytest.set_trace()
                     break
                 max_id = reply.id
@@ -236,7 +230,6 @@ class Tweet:
 
         # resp = requests.get(tweet.entities["urls"][0]["url"])
         self.expanded_url = resp.url
-        print(self.expanded_url)
         # self.trending = trending
 
     def to_dict(self):
@@ -258,7 +251,6 @@ def get_tweet(tweet_url):
                          cnst.ACCESS_TOKEN_KEY, cnst.ACCESS_TOKEN_SECRET)
         # tweet = api.get_tweet_from_url(url)
         original_tweet = api.get_original_tweet_from_url(tweet_url)
-        print("Original ID:", original_tweet.id)
         responses = api.get_replies(original_tweet)
         return Tweet(original_tweet, responses), None
     except ApplicationError as err:
