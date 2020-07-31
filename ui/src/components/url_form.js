@@ -96,6 +96,8 @@ class UrlForm extends Component {
             <SubmitButton/>
           </Form>
           <div id="url-note">Note: The list of supported politcal news sources are The New York Times, The Wall Street Journal, CNN, NBC News, Los Angeles Times, National Public Radio(NPR), Reuters, HuffPost and ABC News.</div>
+          <div id="url-note">Note: Twitter URLs: Results for all 3 models are returned (article viralness, political bias and public opinion)</div>
+          <div id="url-note">Note: Non-Twitter URLs: Results for only 2 models are returned (article viralness and politcal bias)</div>
         </div>
       );
     }

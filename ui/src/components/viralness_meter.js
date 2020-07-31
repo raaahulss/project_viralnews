@@ -12,6 +12,8 @@ class ViralnessMeter extends Component {
           percent={this.props.value}
           textColor={'#e27d60'}
           style={{width: 300}}
+          hideText={"True"}
+
         />
       </div>
     );

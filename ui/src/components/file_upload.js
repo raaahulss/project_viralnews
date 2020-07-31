@@ -203,6 +203,7 @@ class FileUpload extends Component {
             </Container>
           </div>
           <div id="file-note">Note: Please upload a .doc/.docx file containing the article title as the first paragraph and the article content as the remaining text.</div>
+          <div id="url-note">Note: Unpublished files: Results for only 2 models are returned (article viralness and politcal bias)</div>
         </div>
       );
     }
