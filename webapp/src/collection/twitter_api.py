@@ -6,7 +6,6 @@ import src.constants as cnst
 import pytest
 import requests
 from datetime import datetime
-from src.utility import timeit
 from twarc import Twarc
 class TwitterApi(object):
 
@@ -145,7 +144,6 @@ class TwitterApi(object):
         #         replies.append(tweet.full_text)
         return replies
 
-    @timeit
     def get_reply_ids_(self, tweet, reply_limit, search_per_request, reply_tweet_ids_list):
         """
         Given a tweet this method returns a list of ids for the retweets with comments using the premium api.
@@ -238,7 +236,6 @@ class Tweet:
                 "responses": self.responses_count,}
                 # "trending": self.trending}
 
-@timeit
 def get_tweet(tweet_url):
     """
     given a twitter url this method returns original tweet object and error object
