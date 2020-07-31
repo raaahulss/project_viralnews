@@ -32,7 +32,7 @@ class SentimentModel extends Component {
         </Card>
       </div>
     );
-  } else if (this.props.value > 0.41 && this.props.value <= 0.60 ){
+  } else if (this.props.value > 0.40 && this.props.value <= 0.60 ){
     return (
       <div id="sentiment-details-main">
         <Card id="sentiment-card">
@@ -44,7 +44,7 @@ class SentimentModel extends Component {
         </Card>
       </div>
     );
-  } else if (this.props.value > 0.61 && this.props.value <= 0.80 ){
+  } else if (this.props.value > 0.60 && this.props.value <= 0.80 ){
     return (
       <div id="sentiment-details-main">
         <Card id="sentiment-card">
