@@ -27,6 +27,10 @@ Although the goals of this project were quite ambitious and we were time bounded
 
 ## How to Use this Repo
 
+This repo consists of multiple different branches. The [master branch](https://github.com/raaahulss/project_viralnews) contains all of the latest production code for the backend and UI. The [production branch](https://github.com/raaahulss/project_viralnews/tree/production) is essentially a copy of the [master branch](https://github.com/raaahulss/project_viralnews), but is linked to our CI/CD pipeline for automatic deployment. The [ui](https://github.com/raaahulss/project_viralnews/tree/ui) and [backend](https://github.com/raaahulss/project_viralnews/tree/backend) branches are where we push our bug fixes and new features before we merge them into the [production branch](https://github.com/raaahulss/project_viralnews/tree/production)
+
+The other three branches [viralness branch](https://github.com/raaahulss/project_viralnews/tree/viralness), [public opinion branch](https://github.com/raaahulss/project_viralnews/tree/public_opinion), and [sentiment analysis branch](https://github.com/raaahulss/project_viralnews/tree/sentiment_analysis) is where we store all of the datasets, notebooks, tests, and documentation for our models. Even though the final deployed models can be seen in the backend code of the [master branch](https://github.com/raaahulss/project_viralnews), the journey that we took to arrive at these final models can be seen in these three branches. 
+
 
 
 ## Project Overview
