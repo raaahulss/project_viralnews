@@ -51,5 +51,20 @@ The other three branches [viralness branch](https://github.com/raaahulss/project
 
 ## License
 
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/raaahulss/project_viralnews/blob/master/LICENSE) file for details
+
 
 ## Authors
+
+- [Gaurav Deshpande](https://github.com/g2des):
+  - [Backend](https://github.com/raaahulss/project_viralnews/tree/master/webapp) Developer
+  - [Viralness model](https://github.com/raaahulss/project_viralnews/tree/viralness) Researcher & Developer
+- [Fangzhou Xie](https://github.com/fangzhouxie):
+  - [Backend](https://github.com/raaahulss/project_viralnews/tree/master/webapp) Developer
+  - [Political bias model](https://github.com/raaahulss/project_viralnews/tree/sentiment_analysis) Researcher & Developer
+- [Rahul Salla](https://github.com/raaahulss):
+  - [UI](https://github.com/raaahulss/project_viralnews/tree/master/ui) Developer 
+  - [Public opinion model](https://github.com/raaahulss/project_viralnews/tree/public_opinion) Researcher & Developer
+- [Sam Teplov](https://github.com/samteplov):
+  - [UI](https://github.com/raaahulss/project_viralnews/tree/master/ui) Developer
+  - [Viralness model](https://github.com/raaahulss/project_viralnews/tree/viralness) Researcher & Developer
