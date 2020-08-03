@@ -73,6 +73,6 @@ In order to hydrate the Tweets and scrape the article contents, you need to run 
 
 ## Data
 
-Our most up-to-date retweet file can be found [here](https://github.com/raaahulss/project_viralnews/blob/viralness/data/retweet_July_20_20_19.csv). It has 49,509 rows. 
+Our most up-to-date retweet file can be found [here](https://github.com/raaahulss/project_viralnews/blob/viralness/data/retweet_July_20_20_19.csv). It has 49,509 rows. The most up-to-date dataset (hydrated and cleaned) can be found here [here](https://github.com/raaahulss/project_viralnews/blob/viralness/data/viralness_dataset.csv)
 
 
