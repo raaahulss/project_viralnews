@@ -25,7 +25,7 @@ Analyze the article and the comments to extract features. Use some kind of simil
 Machine Learning:
 
 
-Analysing the twitter comments to produce feature embeddings - (Baseline - Binary classification(Pos/Neg) 
+Analysing the twitter comments to produce classes - (Binary classification(Agree/Disagree) 
 
 
 References:
