@@ -11,9 +11,10 @@
 4. [Machine Learning](#machine-learning)
 5. [UI](#ui)
 6. [Backend](#backend)
-7. [Future Work](#future-work)
-8. [License](#license)
-9. [Authors](#authors)
+7. [Deployment](#deployment)
+8. [Future Work](#future-work)
+9. [License](#license)
+10. [Authors](#authors)
 
 ## About
 The Carnegie Mellon University (CMU) Master of Information Technology Strategy (MITS) Viral News Project aims to apply machine learning and deep learning techniques to viral news. After the 2016 U.S. presidential election, it became clear that news was no longer just news; it could be manipulated and weaponized by nation states to carry out psychological and information operations against entire populations. Since then, there has been a large focus on trying to detect 'fake news' via machine learning and deep learning techniques. One of the more fundamental questions that often doesn't get as much attention is "what makes a news story go viral"? Why do some news stories only get a couple of views, while others are shared thousands of times across social circles? Does it have to do with how long the article is? Does the language of the article affect its virality? Of course, this question has a psychological and human behavior aspect to it, but it can also be attacked from a different angle. What if we could train a neural network to detect whether a certain article will go viral? What if a machine learning model could be trained to pick out the political bias from an article? What is the definition of viral? What if the public's reaction to an article could be capture in one simple chart? These are just some of the questions that we set out to answer as part of this project. In the end, this project only raised more questions than we had before the project started. Nevertheless, there are several contributions that this project makes:
@@ -75,6 +76,10 @@ python -m nltk.downloader stopwords
 python app.py
 ```
 In addition, for our implementation, the weights and vocabs for each model were stored in S3 and pulled on server start. This code can easily be modified in order to accomodate local weight and vocab files.  
+
+## Deployment
+
+If you would like to deploy the webapp, you can follow a similar configuration to us. In the [deployment](https://github.com/raaahulss/project_viralnews/tree/ui/deployment/backend) directory, there are a couple files that will help you. First, you will need nginx, as well as gunicorn (or you can use something else). The [deployment](https://github.com/raaahulss/project_viralnews/tree/ui/deployment/backend) directory contains the unit file for running the web application as as a systemd service, as well as the nginx configuration file used. We also used [CertBot](https://certbot.eff.org/) to get SSL/TLS setup. 
 
 ## Future Work
 
