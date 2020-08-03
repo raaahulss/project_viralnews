@@ -1,9 +1,9 @@
 # Sentiment analysis
 
-The goal of this model is to detect sentence-level political bias for U.S. political news. The logistic regression model achieved an best accuracy of **64.71%**.
+The goal of this model is to detect sentence-level political bias for U.S. political news. The logistic regression model achieved a best accuracy of **64.71%**.
 
 ## Dataset
-* [IBC](https://drive.google.com/open?id=1y0qCANgsCbpDEjeUB660xGHf-z6CLzS5) (2025 liberal sentences, 1701 conservative sentences)
+We used the [IBC](https://drive.google.com/open?id=1y0qCANgsCbpDEjeUB660xGHf-z6CLzS5) dataset, which contains 2025 liberal sentences and 1701 conservative sentences.
 
 ## Models
 | Models | Accuracy |
