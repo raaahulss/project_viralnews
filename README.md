@@ -45,9 +45,9 @@ This project is meant to provide a user-friendly website that anyone can use to 
 Each model has its own branch, and more detailed information can be found about each one on its respective branch. Here is a quick overview of each model:
 1. [viralness model](https://github.com/raaahulss/project_viralnews/tree/viralness): The viralness model is a multi-class text classification Bi-LSTM w/ GloVe embeddings model implemented using PyTorch. The model was trained on a [dataset](https://github.com/raaahulss/project_viralnews/blob/viralness/data/viralness_dataset.csv) that we collected over the span of about a month (~38,000 articles) using our own [approach](https://github.com/raaahulss/project_viralnews/tree/viralness/dataset_collector). The model is entirely trained on only the content and title of an article, so it can be used on both published and unpublished articles. The model predicts how many retweets an article will get using a log base 10 scale (0-10 retweets, 11-100 retweets, 101-1000 retweets, 1000+ retweets). The final accuracy of the deployed model is around 60%. 
 
-2. [political bias model](https://github.com/raaahulss/project_viralnews/tree/sentiment_analysis): The political bias model is a logistic regression model which can detect the politial bias in an article. It was trained on the IBC dataset which consists of sentences that are labeled liberal, conservate, or neutral. The final accuracy of the deployed model is around 64%. 
+2. [political bias model](https://github.com/raaahulss/project_viralnews/tree/sentiment_analysis): The political bias model is a logistic regression model which can detect the political bias in an article. It was trained on the IBC dataset which consists of sentences that are labeled liberal, conservative, or neutral. The final accuracy of the deployed model is around 64%. 
 
-3. [public opinion model](https://github.com/raaahulss/project_viralnews/tree/public_opinion): The public opinion model is a deep learning model implemented using TensorFlow which analyzes the reactions to an article on Twitter. It runs each reaction through the model and then averages the overall sentimented detected in all of the responses. The final accuracy of the deployed model is arounnd 83%. 
+3. [public opinion model](https://github.com/raaahulss/project_viralnews/tree/public_opinion): The public opinion model is a deep learning model implemented using TensorFlow which analyzes the reactions to an article on Twitter. It runs each reaction through the model and then averages the overall sentiment detected in all of the responses. The final accuracy of the deployed model is around 83%. 
 
 ## UI
 
@@ -58,7 +58,7 @@ npm install
 npm start
 ```
 
-In order to build the UI to serve it locally, simply run the following command from the [ui](https://github.com/raaahulss/project_viralnews/tree/master/ui) directory:
+In order to build the UI to serve it statically, simply run the following command from the [ui](https://github.com/raaahulss/project_viralnews/tree/master/ui) directory:
 
 ```
 npm build
@@ -75,11 +75,11 @@ pip install -r ./webapp/requirements.txt
 python -m nltk.downloader stopwords
 python app.py
 ```
-In addition, for our implementation, the weights and vocabs for each model were stored in S3 and pulled on server start. This code can easily be modified in order to accomodate local weight and vocab files.  
+In addition, for our implementation, the weights and vocabs for each model were stored in S3 and pulled when the server started up. This code can easily be modified to accommodate local weight and vocab files.  
 
 ## Deployment
 
-If you would like to deploy the webapp, you can follow a similar configuration to us. In the [deployment](https://github.com/raaahulss/project_viralnews/tree/ui/deployment/backend) directory, there are a couple files that will help you. First, you will need nginx, as well as gunicorn (or you can use something else). The [deployment](https://github.com/raaahulss/project_viralnews/tree/ui/deployment/backend) directory contains the unit file for running the web application as as a systemd service, as well as the nginx configuration file used. We also used [CertBot](https://certbot.eff.org/) to get SSL/TLS setup. 
+If you would like to deploy the webapp, you can follow a similar configuration to us. In the [deployment](https://github.com/raaahulss/project_viralnews/tree/ui/deployment/backend) directory, there are a couple of files that will help you. First, you will need nginx, as well as gunicorn (or you can use something else). The [deployment](https://github.com/raaahulss/project_viralnews/tree/ui/deployment/backend) directory contains the unit file for running the web application as a systemd service, as well as the nginx configuration file used. We also used [CertBot](https://certbot.eff.org/) to get SSL/TLS setup. 
 
 ## Future Work
 
