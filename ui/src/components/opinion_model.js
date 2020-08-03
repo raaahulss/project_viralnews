@@ -20,7 +20,7 @@ class OpinionModel extends Component {
           </Card>
         </div>
       );
-    } else if (this.props.value > 0.36 && this.props.value <= 0.65 ){
+    } else if (this.props.value > 0.35 && this.props.value <= 0.65 ){
     return (
       <div id="opinion-details-main">
         <Card id="opinion-card">
