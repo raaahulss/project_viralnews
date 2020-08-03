@@ -1,4 +1,4 @@
-Goal: 
+Goal:
 Given a tweet, classify the opinion being conveyed by the author
 
 
