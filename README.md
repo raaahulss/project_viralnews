@@ -73,6 +73,7 @@ conda create -p ./venv python=3.7.6
 conda activate ./venv
 pip install -r ./webapp/requirements.txt
 python -m nltk.downloader stopwords
+python -m spacy download en_core_web_sm
 python app.py
 ```
 In addition, for our implementation, the weights and vocabs for each model were stored in S3 and pulled when the server started up. This code can easily be modified to accommodate local weight and vocab files.  
