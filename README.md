@@ -2,7 +2,7 @@
 
 ## Original Goal
 
-Our original goal was to try to predict if a given article will go viral or not with an accuracy of at leasy 60%. We started by doing an extensive literature review and found that most work in this area has used the [UCI News Popularity Data Set](https://archive.ics.uci.edu/ml/datasets/Online+News+Popularity). As we started working with this data, we found that this data (collected from Mashable) will not extrapolate well to other news articles. So we set out on a mission to collect our own [data](https://github.com/raaahulss/project_viralnews/tree/viralness/dataset).
+Our original goal was to try to predict if a given article will go viral or not with an accuracy of at leasy 60%. We started by doing an extensive literature review and found that most work in this area has used the [UCI News Popularity Data Set](https://archive.ics.uci.edu/ml/datasets/Online+News+Popularity). As we started working with this data, we found that this data (collected from Mashable) will not extrapolate well to other news articles. So we set out on a mission to collect our own data[data](https://github.com/raaahulss/project_viralnews/tree/viralness/data) using our own [method](https://github.com/raaahulss/project_viralnews/tree/viralness/dataset).
 
 ## New Goal
 
