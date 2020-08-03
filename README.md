@@ -76,7 +76,7 @@ python -m nltk.downloader stopwords
 python -m spacy download en_core_web_sm
 python app.py
 ```
-In addition, for our implementation, the weights and vocabs for each model were stored in S3 and pulled when the server started up. This code can easily be modified to accommodate local weight and vocab files.  
+In addition, for our implementation, the weights and vocabs for each model were stored in S3 and pulled when the server started up. If you would to use S3 to store your weight files, you will need to install AWS CLI and add your AWS keys. This code can easily be modified to accommodate local weight and vocab files.  
 
 ## Deployment
 
