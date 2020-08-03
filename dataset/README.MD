@@ -71,4 +71,8 @@ By default, the script is made to be resilient from failures. On every other ite
 
 In order to hydrate the Tweets and scrape the article contents, you need to run the dataset through a cleaner. Although we don't have a command line program to do that, you can look at the [Dataset Cleaner](https://github.com/raaahulss/project_viralnews/blob/viralness/dataset/data_cleaning/Dataset%20Cleaner.ipynb) notebook and the [Dataset Creator](https://github.com/raaahulss/project_viralnews/blob/viralness/dataset/data_cleaning/Dataset%20Creator.ipynb) notebook to get an idea of how that is done. 
 
+## Data
+
+Our most up-to-date retweet file can be found [here](https://github.com/raaahulss/project_viralnews/blob/viralness/data/retweet_July_20_20_19.csv)
+
 
