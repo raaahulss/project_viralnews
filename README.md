@@ -35,18 +35,59 @@ The other three branches [viralness branch](https://github.com/raaahulss/project
 
 ## Project Overview
 
+This project is meant to provide a user-friendly website that anyone can use to analyze news articles. The front end is implemented using ReactJS framework, while the backend is implemented using Flask. The deep learning models use PyTorch and TensorFlow. The website allows for user input via a web browser, and the backend provides a callable API as well. Whenever a published article is submitted by a user, the content and metadata for the article are scraped. If it is a news article from Twitter, then the replies to the tweet are also fetched using Twitter's 30-day search API. Once the backend has all of this data for an article, each model is run and the output for each is displayed on a dashboard to the user. 
+
 
 
 ## Machine Learning
 
+Each model has its own branch, and more detailed information can be found about each one on its respective branch. Here is a quick overview of each model:
+1. [viralness model](https://github.com/raaahulss/project_viralnews/tree/viralness): The viralness model is a multi-class text classification Bi-LSTM w/ GloVe embeddings model implemented using PyTorch. The model was trained on a [dataset](https://github.com/raaahulss/project_viralnews/tree/viralness/dataset) that we collected over the span of about a month (~28,000 articles). The model is entirely trained on only the content and title of an article, so it can be used on both published and unpublished articles. The model predicts how many retweets an article will get using a log base 10 scale (0-10 retweets, 11-100 retweets, 101-1000 retweets, 1000+ retweets). The final accuracy of the deployed model is around 60%. 
+
+2. [political bias model](https://github.com/raaahulss/project_viralnews/tree/sentiment_analysis): The political bias model is a logistic regression model which can detect the politial bias in an article. It was trained on the IBC dataset which consists of sentences that are labeled liberal, conservate, or neutral. The final accuracy of the deployed model is around 64%. 
+
+3. [public opinion model](https://github.com/raaahulss/project_viralnews/tree/public_opinion): The public opinion model is a deep learning model implemented using TensorFlow which analyzes the reactions to an article on Twitter. It runs each reaction through the model and then averages the overall sentimented detected in all of the responses. The final accuracy of the deployed model is arounnd 83%. 
 
 ## UI
 
+The [ui](https://github.com/raaahulss/project_viralnews/tree/master/ui) is implemented using ReactJS framework. It currently only provides support for web browsers and was not developed for mobile devices. To start the UI, simply run the following commands from the [ui](https://github.com/raaahulss/project_viralnews/tree/master/ui) directory:
+
+```
+npm install
+npm start
+```
+
+In order to build the UI to serve it locally, simply run the following command from the [ui](https://github.com/raaahulss/project_viralnews/tree/master/ui) directory:
+
+```
+npm build
+```
 
 ## Backend
 
+The backend is implemented using the Python framework Flask. In order to run the backend server, navigate to the [webapp](https://github.com/raaahulss/project_viralnews/tree/master/webapp) directory and run the following commands:
+
+```
+conda create -p ./venv python=3.7.6
+conda activate ./venv
+pip install -r ./webapp/requirements.txt
+python -m nltk.downloader stopwords
+python app.py
+```
+In addition, for our implementation, the weights and vocabs for each model were stored in S3 and pulled on server start. This code can easily be modified in order to accomodate local weight and vocab files.  
 
 ## Future Work
+
+In terms of future work, there are a number of different aspects of this project that can be improved and worked on:
+1. Collecting a bigger dataset for the viralness model
+2. Improving the performance of the viralness model
+3. Collecting a bigger dataset for the political bias model
+4. Improving the accuracy of the political bias model
+5. Adding new models (fake news detection) 
+6. Improving the UI to support mobile devices
+7. Creating a mobile app
+
+The possibilities of this project are endless and there is still a lot of work to be done. 
 
 
 ## License
