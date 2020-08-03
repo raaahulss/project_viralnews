@@ -1,3 +1,0 @@
-twarc
-pandas
-tweepy
