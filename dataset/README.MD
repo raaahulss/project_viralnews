@@ -67,4 +67,8 @@ The script also outputs the debug information for both threads to ```stdout```. 
 
 By default, the script is made to be resilient from failures. On every other iteration through the  ```scheduler``` thread, both dataframes are written to disk in the ```../data``` directory. The original tweet IDs from the ```bird_watcher``` thread are written to ```../data/original_df_[MON]_[DAY]_[YEAR]_[HOUR]``` and the retweets from the ```scheduler``` thread are written to ```../data/retweet_[MON]_[DAY]_[YEAR]_[HOUR]```. When the script starts up after a failure, it looks for the newest instances of these two files and regenerates the dataframes to regain state. Every hour, a new version of both of these files is created, which means that the state of both dataframes is exported and saved. 
 
+## Data Cleaning
+
+In order to hydrate the Tweets and scrape the article contents, you need to run the dataset through a cleaner. Although we don't have a command line program to do that, you can look at the [Dataset Cleaner](https://github.com/raaahulss/project_viralnews/blob/viralness/dataset/data_cleaning/Dataset%20Cleaner.ipynb) notebook and the [Dataset Creator](https://github.com/raaahulss/project_viralnews/blob/viralness/dataset/data_cleaning/Dataset%20Creator.ipynb) notebook to get an idea of how that is done. 
+
 
