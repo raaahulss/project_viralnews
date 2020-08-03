@@ -1,3 +1,10 @@
 .vscode
 venv
 OnlineNewsPopularity_extended.csv
+*/**/*.csv
+*/**/*.npy
+*/**/*.txt
+*/**/*.tar.gz
+*/**/*.zip
+*/**/*.pt
+*/**/*.ipynb_checkpoints
